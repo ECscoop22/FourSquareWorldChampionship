@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Index</title>
+  <title>Register</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,6 +19,16 @@
   <a href="media.html">Media</a>
 </nav>
 
-<main><h1>Four Square</h1><p>Welcome to the Four Square World Championship site.</p></main>
+<main>
+<h1>Register for 2026</h1>
+<form action="https://formspree.io/f/moqgqyyl" method="POST">
+  <label>Name: <input type="text" name="name" required></label><br>
+  <label>Age: <input type="number" name="age" required></label><br>
+  <label>Email: <input type="email" name="email" required></label><br>
+  <label>Location: <input type="text" name="location" required></label><br>
+  <button type="submit">Submit</button>
+</form>
+<p>Submissions go directly to ericcostanza@yahoo.com</p>
+</main>
 </body>
 </html>
