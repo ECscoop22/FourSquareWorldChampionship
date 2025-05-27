@@ -1,6 +1,7 @@
 
 body { font-family: sans-serif; background: #fff; color: #222; margin: 0; padding: 1em; }
 h1 { color: #d60000; }
-nav a { margin: 0 10px; text-decoration: none; color: #d60000; }
-main img { margin: 1em 0; max-width: 100%; height: auto; }
-section { margin-top: 2em; }
+nav {
+  background-color: #d0f0f4; /* light teal/blue */
+  padding: 1em;
+}
