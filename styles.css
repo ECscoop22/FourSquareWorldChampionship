@@ -5,8 +5,9 @@ body {
   margin: 0;
   padding: 1em;
 }
+
 nav {
-  background-color: #d0f0f4; /* light teal/blue */
+  background-color: #d0f0f4;
   padding: 1.2em 2em;
   display: flex;
   flex-wrap: wrap;
