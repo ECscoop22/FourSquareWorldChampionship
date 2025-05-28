@@ -1,7 +1,13 @@
-
-body { font-family: sans-serif; background: #fff; color: #222; margin: 0; padding: 1em; }
-h1 { color: #d60000; }
 nav {
   background-color: #d0f0f4; /* light teal/blue */
-  padding: 1em;
+  padding: 1.2em 2em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
 }
+
+nav a {
+  text-decoration: none;
+  color: #d60000;
+  font-weight: bold;
+  font-size: 1.1em;
