@@ -1,11 +1,10 @@
-body 
+body {
   font-family: 'Fredoka', sans-serif;
   background: #fff;
   color: #222;
   margin: 0;
   padding: 1em;
 }
-
 nav {
   background-color: #d0f0f4; /* light teal/blue */
   padding: 1.2em 2em;
