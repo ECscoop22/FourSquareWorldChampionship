@@ -101,3 +101,7 @@ li {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+.blog-banner img:hover {
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
