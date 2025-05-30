@@ -84,3 +84,15 @@ ul {
 li {
   margin-bottom: 0.6em;
 }
+/* Blog promo section on homepage */
+.blog-banner {
+  background-color: #d0f0f4; /* match teal banner */
+  padding: 2em 1em;
+  text-align: center;
+  font-family: 'Comic Sans MS', 'Fredoka', cursive, sans-serif;
+  font-size: 1.5em;
+  color: #d60000;
+  margin-top: 2em;
+  border-top: 3px solid #d60000;
+  border-radius: 0 0 10px 10px;
+}
