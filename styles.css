@@ -102,7 +102,4 @@ li {
   transform: rotate(-1.5deg);
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
-.blog-banner img:hover {
-  transform: rotate(-2deg);
-  transition: transform 0.3s ease;
-}
+
