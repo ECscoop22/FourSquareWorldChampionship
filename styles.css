@@ -97,9 +97,10 @@ li {
   border-radius: 0 0 10px 10px;
 }
 .blog-banner:hover {
-  background-color: #b3e5ea; /* slightly darker teal */
+  background-color: #b3e5ea;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transform: rotate(-1.5deg);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .blog-banner img:hover {
   transform: rotate(-2deg);
