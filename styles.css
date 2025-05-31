@@ -109,3 +109,20 @@ li {
   margin: 1.5em 0;
   border-radius: 2px;
 }
+.youtube-banner {
+  background-color: #d0f0f4;
+  padding: 2em 1em;
+  text-align: center;
+  font-family: 'Comic Sans MS', 'Fredoka', cursive, sans-serif;
+  font-size: 1.5em;
+  color: #d60000;
+  margin-top: 2em;
+  border-top: 3px solid #d60000;
+  border-radius: 10px;
+}
+.youtube-banner:hover {
+  background-color: #b3e5ea;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1.5deg);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
