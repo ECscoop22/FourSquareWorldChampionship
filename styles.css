@@ -119,10 +119,21 @@ li {
   margin-top: 2em;
   border-top: 3px solid #d60000;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  cursor: pointer;
 }
+
 .youtube-banner:hover {
   background-color: #b3e5ea;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transform: rotate(-1.5deg);
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.youtube-banner img {
+  height: 60px;
+  width: auto;
 }
