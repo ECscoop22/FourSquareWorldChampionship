@@ -87,11 +87,10 @@ li {
 
 /* Blog promo section on homepage */
 .blog-banner {
-  background-color: #d0f0f4; /* match teal banner */
+  background-color: #d0f0f4;
   padding: 2em 1em;
   text-align: center;
   font-family: 'Comic Sans MS', 'Fredoka', cursive, sans-serif;
-  font-size: 1.5em;
   color: #d60000;
   font-weight: bold;
   margin-top: 2em;
@@ -114,13 +113,6 @@ li {
 .blog-banner img {
   height: 60px;
   width: auto;
-}
-
-.blog-banner p,
-.youtube-banner p {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin: 0;
 }
 
 /* YouTube promo section */
@@ -153,6 +145,8 @@ li {
   width: auto;
 }
 
+/* Shared font styling for text in banners */
+.blog-banner p,
 .youtube-banner p {
   font-size: 1.5em;
   font-weight: bold;
@@ -166,9 +160,4 @@ li {
   background-color: #d60000;
   margin: 1.5em 0;
   border-radius: 2px;
-}
-
-.youtube-banner img {
-  height: 60px;
-  width: auto;
 }
