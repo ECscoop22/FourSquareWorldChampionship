@@ -84,6 +84,7 @@ ul {
 li {
   margin-bottom: 0.6em;
 }
+
 /* Blog promo section on homepage */
 .blog-banner {
   background-color: #d0f0f4; /* match teal banner */
@@ -92,30 +93,43 @@ li {
   font-family: 'Comic Sans MS', 'Fredoka', cursive, sans-serif;
   font-size: 1.5em;
   color: #d60000;
+  font-weight: bold;
   margin-top: 2em;
   border-top: 3px solid #d60000;
   border-radius: 0 0 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  cursor: pointer;
 }
+
 .blog-banner:hover {
   background-color: #b3e5ea;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transform: rotate(-1.5deg);
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
-.red-divider {
-  border: none;
-  height: 4px;
-  background-color: #d60000;
-  margin: 1.5em 0;
-  border-radius: 2px;
+
+.blog-banner img {
+  height: 60px;
+  width: auto;
 }
+
+.blog-banner p {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* YouTube promo section */
 .youtube-banner {
   background-color: #d0f0f4;
   padding: 2em 1em;
   text-align: center;
   font-family: 'Comic Sans MS', 'Fredoka', cursive, sans-serif;
-  font-size: 1.2em;
   color: #d60000;
+  font-weight: bold;
   margin-top: 2em;
   border-top: 3px solid #d60000;
   border-radius: 10px;
@@ -131,6 +145,26 @@ li {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transform: rotate(-1.5deg);
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.youtube-banner img {
+  height: 60px;
+  width: auto;
+}
+
+.youtube-banner p {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Divider line between sections */
+.red-divider {
+  border: none;
+  height: 4px;
+  background-color: #d60000;
+  margin: 1.5em 0;
+  border-radius: 2px;
 }
 
 .youtube-banner img {
