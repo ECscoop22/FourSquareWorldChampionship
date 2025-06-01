@@ -116,7 +116,8 @@ li {
   width: auto;
 }
 
-.blog-banner p {
+.blog-banner p,
+.youtube-banner p {
   font-size: 1.5em;
   font-weight: bold;
   margin: 0;
