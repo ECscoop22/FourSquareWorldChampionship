@@ -22,7 +22,13 @@ nav a {
   font-weight: bold;
   font-size: 1.1em;
 }
-
+nav a:hover {
+  color: #000;
+  background-color: #ffecec;
+  padding: 0.3em 0.6em;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
 /* Card layout for content sections */
 section.card {
   background-color: #ffffff;
