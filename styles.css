@@ -167,3 +167,13 @@ li {
   margin: 1.5em 0;
   border-radius: 2px;
 }
+.video-wrapper {
+  width: 48%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.video-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
