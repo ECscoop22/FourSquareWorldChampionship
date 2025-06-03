@@ -212,3 +212,31 @@ li {
 .video-container:hover .play-overlay {
   opacity: 1;
 }
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 2.5em;
+  color: #d60000;
+  transition: transform 0.3s ease;
+}
+
+.site-title:hover {
+  transform: scale(1.05);
+}
+
+.site-ball {
+  height: 60px;
+  width: auto;
+  transition: transform 0.4s ease;
+}
+
+.site-ball:hover {
+  transform: rotate(-10deg) scale(1.1);
+}
