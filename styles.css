@@ -9,11 +9,14 @@ body {
 
 /* Navigation bar styles */
 nav {
-  background-color: #d0f0f4; /* light teal/blue */
+  background-color: #d0f0f4;
   padding: 1.2em 2em;
   display: flex;
   flex-wrap: wrap;
   gap: 1.2em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
