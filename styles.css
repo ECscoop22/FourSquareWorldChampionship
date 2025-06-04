@@ -282,3 +282,25 @@ li {
     margin-bottom: 0.5em;
   }
 }
+/* Animated header section (used on Rules page) */
+.header-animate:hover h1 {
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+}
+
+.header-animate:hover img {
+  transform: rotate(5deg);
+  transition: transform 0.3s ease;
+}
+
+/* Smooth fade-in effect for images */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn ease 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
