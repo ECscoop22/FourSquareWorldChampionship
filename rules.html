@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rules</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -20,129 +20,150 @@
   </nav>
 
   <main>
-    <!-- Title and Ball -->
-    <div class="title-row" style="margin-top: 1.5em;">
+    <div class="title-row">
       <h1 class="site-title">Rules of Four Square</h1>
       <img src="images/ball.webp" alt="Red Four Square Ball" class="site-ball" />
     </div>
 
-    <!-- Court Image -->
-    <div class="fade-in" style="margin: 1.5em 0;">
-      <img src="images/4sq rules.png" alt="Four Square Rules Poster" style="max-width: 100%; height: auto; border-radius: 8px;" />
-    </div>
+    <img src="images/4sq rules.png" alt="Four Square Rules Poster" class="fade-in header-animate" style="max-width: 100%; height: auto; border-radius: 8px;" />
 
-    <!-- Rulebook Content -->
     <section class="card light fade-in">
-      <h2 class="section-header teal">Introduction</h2>
+      <h2 class="section-header red">📜 Introduction</h2>
       <p>The Four Square World Championships is an annual tournament held in Bridgton, Maine, to crown the world champions of the sport. This rulebook serves as the official guide governing gameplay, court specifications, and tournament structure.</p>
+    </section>
 
-      <h2 class="section-header red">Equipment</h2>
+    <section class="card dark fade-in">
+      <h2 class="section-header teal">🏐 Equipment</h2>
       <p><strong>Ball:</strong> An 8.5-inch rubber playground ball inflated to 2 lbs.</p>
+    </section>
 
-      <h2 class="section-header blue">Court Specifications</h2>
-      <p><strong>Dimensions:</strong> A 16 x 16-foot square divided into four equal 8 x 8-foot squares, numbered 1–4 with 4 and 1 diagonal from each other.</p>
-      <pre>4   3
-2   1</pre>
+    <section class="card light fade-in">
+      <h2 class="section-header orange">🟦 Court Specifications</h2>
+      <p>Dimensions: A 16 x 16-foot square divided into four equal 8 x 8-foot squares, numbered 1–4 with 4 and 1 diagonal from each other.</p>
+      <img src="images/court layout.png" alt="Four Square Court Layout" class="fade-in" style="max-width: 100%; border-radius: 8px;" />
       <p><strong>Lines:</strong></p>
       <ul>
         <li>All court lines are 1 inch wide.</li>
-        <li>Outside lines are in-bounds.</li>
-        <li>Inside lines are out-of-bounds.</li>
+        <li>Outside lines are in-bounds; a ball landing on these remains in play.</li>
+        <li>Inside lines (dividing squares) are out-of-bounds.</li>
       </ul>
+    </section>
 
-      <h2 class="section-header orange">Out-of-Play Zone</h2>
+    <section class="card dark fade-in">
+      <h2 class="section-header blue">🚫 Out-of-Play Zone</h2>
+      <p>To balance overhand and closed-fist strikes, the Out-of-Play Zone discourages unreturnable shots:</p>
       <ul>
-        <li>10 ft boundary around the court.</li>
-        <li>If a legally hit ball lands in the Out-of-Play Zone after bouncing in another square, the striker is out.</li>
-        <li>Only used in the Championship Round, depending on venue.</li>
+        <li>A 10-foot zone beyond each court boundary.</li>
+        <li>If a ball lands here after a legal hit, the striker is out.</li>
+        <li>Used in the Championship Round based on venue/house rules.</li>
       </ul>
+      <img src="images/out of play zone.png" alt="Out of Play Zone" class="fade-in" style="max-width: 100%; border-radius: 8px;" />
+    </section>
 
-      <h2 class="section-header teal">Objective</h2>
-      <p>Be the last remaining player. Square 4 serves to Square 1. Rally continues until someone is out.</p>
+    <section class="card light fade-in">
+      <h2 class="section-header red">🎯 Objective</h2>
+      <p>Be the last player standing! Each round begins with one player per square and others in line. The player in Square 4 serves to Square 1. Play continues until someone is out.</p>
+    </section>
 
-      <h2 class="section-header red">Player Positioning</h2>
+    <section class="card dark fade-in">
+      <h2 class="section-header teal">👣 Player Positioning</h2>
       <ul>
-        <li>Each square has one player.</li>
         <li>Square 4 serves to Square 1.</li>
-        <li>Players can move freely but may not interfere.</li>
+        <li>Players may move freely without interference.</li>
       </ul>
+    </section>
 
-      <h2 class="section-header blue">Serving the Ball</h2>
+    <section class="card light fade-in">
+      <h2 class="section-header orange">📤 Serving the Ball</h2>
       <ul>
-        <li>Server (Square 4) stands near corner and bounces/hits to Square 1.</li>
-        <li>Serve must be non-aggressive and below head height.</li>
-        <li>One do-over allowed ("one bad").</li>
-        <li>Illegal serve = server out.</li>
+        <li>Adults: must serve within 6 inches of the back corner (1 foot for kids).</li>
+        <li>Serve must bounce and be hit with one/two hands to Square 1 — not above head height.</li>
+        <li>Player in Square 1 gets one "one bad" do-over.</li>
       </ul>
+    </section>
 
-      <h2 class="section-header teal">Ball Striking Rules</h2>
+    <section class="card dark fade-in">
+      <h2 class="section-header blue">✋ Ball Striking Rules</h2>
       <ul>
-        <li>Strike with hand(s) only.</li>
-        <li>No catching, holding, or carrying.</li>
-        <li>Only one deliberate hit allowed per strike.</li>
-        <li>Unnatural spins allowed as long as they follow hit rules.</li>
+        <li>Only hands/wrists may strike the ball.</li>
+        <li>No carrying, holding, or double taps.</li>
+        <li>Unnatural spins are allowed if hit with one clean strike.</li>
       </ul>
+    </section>
 
-      <h2 class="section-header red">Interference, Poaching & Possession</h2>
+    <section class="card light fade-in">
+      <h2 class="section-header red">🙅 Interference & Poaching</h2>
       <ul>
-        <li>Only the player whose square the ball bounces in can hit it.</li>
-        <li>If another player hits it first and the correct player had a chance to play, the poacher is out.</li>
-        <li>If no attempt was made, the player of that square is out.</li>
-        <li>No physical obstruction allowed.</li>
+        <li>Only the square’s owner may hit the ball after a bounce.</li>
+        <li>Any contact by others = out if the owner made an attempt and had a chance to return it.</li>
+        <li>No physical blocking of opponents.</li>
+        <li>Kids' divisions require a bounce before hitting.</li>
       </ul>
+    </section>
 
-      <h2 class="section-header blue">Elimination ("Out")</h2>
+    <section class="card dark fade-in">
+      <h2 class="section-header teal">❌ Elimination (Out)</h2>
       <ul>
-        <li>Fails to return ball correctly.</li>
-        <li>Double bounce.</li>
-        <li>Hits out or on inside line.</li>
-        <li>Illegal hits or poaching.</li>
+        <li>Letting the ball bounce twice.</li>
+        <li>Hitting it out-of-bounds or on inside lines.</li>
+        <li>Carrying, poaching, interfering.</li>
       </ul>
+    </section>
 
-      <h2 class="section-header orange">Court Environment</h2>
+    <section class="card light fade-in">
+      <h2 class="section-header orange">🏟️ Court Environment</h2>
       <ul>
-        <li>If ball hits wall after bounce — continue play.</li>
-        <li>If ball hits chair/person and player had a chance — dead ball, replay.</li>
-        <li>If player couldn’t return anyway — they’re out.</li>
+        <li>Ball bouncing off walls = in play.</li>
+        <li>If a player had a legit chance and it hits a chair or person: round restarts.</li>
+        <li>If no chance to return it: player is out.</li>
       </ul>
+    </section>
 
-      <h2 class="section-header teal">Showdown Rule</h2>
-      <p>Players may settle disputes with a 1-on-1 match in two squares. Higher square serves.</p>
+    <section class="card dark fade-in">
+      <h2 class="section-header blue">⚔️ Showdown Rule</h2>
+      <p>Disputes? Settle it with a 1-on-1 showdown using just 2 squares. Higher square serves.</p>
+    </section>
 
-      <h2 class="section-header red">Prohibited Moves</h2>
+    <section class="card light fade-in">
+      <h2 class="section-header red">🚫 Prohibited Moves</h2>
       <ul>
-        <li><strong>Blackjack:</strong> Catching the ball outside squares.</li>
-        <li><strong>Spinzies:</strong> Two-handed spin hits.</li>
-        <li><strong>Short-stopping:</strong> Hitting to self.</li>
-        <li><strong>Body language:</strong> Hitting with body instead of hands.</li>
+        <li><strong>Blackjack:</strong> Catching the ball.</li>
+        <li><strong>Spinzies:</strong> Using two hands to spin.</li>
+        <li><strong>Short-stopping:</strong> Hitting ball to self.</li>
+        <li><strong>Body Language:</strong> Using body parts other than hands.</li>
       </ul>
+    </section>
 
-      <h2 class="section-header blue">Divisions</h2>
+    <section class="card dark fade-in">
+      <h2 class="section-header teal">👫 Divisions</h2>
       <ul>
-        <li>Children’s Girls: 14 & under</li>
-        <li>Children’s Boys: 14 & under</li>
-        <li>Women: 15+</li>
-        <li>Men: 15+</li>
+        <li>Boys 14 & under</li>
+        <li>Girls 14 & under</li>
+        <li>Men 15+</li>
+        <li>Women 15+</li>
       </ul>
+    </section>
 
-      <h2 class="section-header teal">Tournament Structure</h2>
-      <p><strong>Round 1 (Scoring):</strong></p>
+    <section class="card light fade-in">
+      <h2 class="section-header orange">🏆 Tournament Structure</h2>
+      <p><strong>Round 1 (Scoring Round):</strong></p>
       <ul>
-        <li>Children together on 4 courts for 45 minutes.</li>
-        <li>Men and Women separately for 45 minutes on 2 courts.</li>
-        <li>“Outs” are tracked.</li>
+        <li>Kids play together; adults separated by gender.</li>
+        <li>45 minutes of play across multiple courts.</li>
+        <li>Each "out" is tallied.</li>
       </ul>
       <p><strong>Round 2 (Semifinals):</strong></p>
       <ul>
-        <li>25 minutes each division. Players continue from Round 1.</li>
-        <li>Top 8 lowest “outs” advance.</li>
+        <li>Divisions separated again — 25 minutes of play.</li>
+        <li>“Outs” continue from Round 1.</li>
+        <li>Top 8 players per division advance.</li>
       </ul>
       <p><strong>Championship Round:</strong></p>
       <ul>
-        <li>Untimed “10-out” format.</li>
-        <li>Start position drawn from hat.</li>
-        <li>3 players left → Square 2 removed. 2 players → 1v1 in diagonal squares.</li>
-        <li>Last player wins the championship!</li>
+        <li>Finalists compete in a “10-out” untimed final.</li>
+        <li>Square 2 is vacated with 3 players left.</li>
+        <li>2 remaining players go 1v1 in adjacent squares.</li>
+        <li>Last player standing is crowned champion.</li>
       </ul>
     </section>
   </main>
