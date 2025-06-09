@@ -315,3 +315,23 @@ li {
 .rule-intro p {
   margin: 0 0 0.75em 0;
 }
+.rule-intro {
+  background-color: #fff3cd;
+  border-left: 6px solid #ffa500;
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 8px;
+  font-size: 1.05em;
+}
+
+.rule-block {
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 1em;
+  border-radius: 6px;
+  margin-bottom: 2em;
+}
+
+.rule-block h2 {
+  margin-top: 0;
+}
