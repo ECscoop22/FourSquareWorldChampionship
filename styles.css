@@ -304,3 +304,14 @@ li {
     opacity: 1;
   }
 }
+.rule-intro {
+  background-color: #fff3cd;
+  border-left: 6px solid #ffa500;
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 8px;
+  font-size: 1.05em;
+}
+.rule-intro p {
+  margin: 0 0 0.75em 0;
+}
