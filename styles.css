@@ -288,11 +288,6 @@ li {
   transition: transform 0.3s ease;
 }
 
-.header-animate:hover img {
-  transform: rotate(5deg);
-  transition: transform 0.3s ease;
-}
-
 /* Smooth fade-in effect for images */
 .fade-in {
   opacity: 0;
