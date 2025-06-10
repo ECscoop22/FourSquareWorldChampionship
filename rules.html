@@ -202,4 +202,37 @@ When play begins, each square contains a player along with the players waiting i
   </main>
 </body>
 </html>
+<!-- Divider -->
+<hr style="border: none; border-top: 4px solid #5a1e1e; margin: 40px 0;" />
+
+<!-- Collapsible OTHER RULES Section -->
+<section class="card light fade-in">
+  <button class="collapsible-toggle" onclick="toggleOtherRules()" style="font-size: 1.5rem; font-weight: bold; background-color: #eee; border: none; padding: 10px 20px; width: 100%; text-align: left; cursor: pointer; border-radius: 6px;">
+    ➕ OTHER RULES
+  </button>
+  <div id="otherRulesContent" style="display: none; margin-top: 15px;">
+    <p>While the rules above reflect the standards used at the Four Square World Championships, we recognize that many versions of the game exist. These “Other Rules” may include:</p>
+    <ul>
+      <li>Only underhand hits allowed (no overhand or spike strikes).</li>
+      <li>No poaching or interference under any circumstances.</li>
+      <li>“Cherry Bomb” hits are banned for safety reasons.</li>
+      <li>Custom house rules, such as “Double Bounce”, “Body Hits”, or “No Lines”.</li>
+    </ul>
+    <p>These variations are popular in schools, local tournaments, and backyard play. While they are not used at the World Championships, they reflect the creativity and fun of the game!</p>
+  </div>
+</section>
+
+<script>
+  function toggleOtherRules() {
+    const content = document.getElementById("otherRulesContent");
+    const button = document.querySelector(".collapsible-toggle");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+      button.textContent = "➖ OTHER RULES";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ OTHER RULES";
+    }
+  }
+</script>
 </p>The nations finest resource for all things four square.</p>
