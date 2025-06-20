@@ -270,5 +270,16 @@ When play begins, each square contains a player along with the players waiting i
       button.textContent = "➕ OTHER RULES";
     }
   }
+  function toggleObjectOfGame() {
+  const content = document.getElementById("objectOfGameContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[1]; // 2nd button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Object of the Game";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Object of the Game";
+  }
+}
 </script>
 </p>The nations finest resource for all things four square.</p>
