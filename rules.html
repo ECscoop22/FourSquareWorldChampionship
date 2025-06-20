@@ -353,6 +353,33 @@ When play begins, each square contains a player along with the players waiting i
     <li>Others limit the number of “bad” serves allowed.</li>
   </ul>
 </div>
+    <!-- Ball Striking -->
+<button class="collapsible-toggle" onclick="toggleOtherStriking()" style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; border: none; padding: 8px 16px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;">
+  ➕ Ball Striking
+</button>
+<div id="otherStrikingContent" style="display: none; margin-top: 10px;">
+  <p><strong>Legal Hits</strong></p>
+  <ul>
+    <li>Rules differ by game:</li>
+    <ul>
+      <li>Some allow any kind of hit (overhand, underhand).</li>
+      <li>Others ban overhand hits (“palmsies down”) and require underhand only.</li>
+      <li>Some allow or prohibit spins (“spinzies”).</li>
+    </ul>
+  </ul>
+
+  <p><strong>Server's Rule-Setting</strong></p>
+  <ul>
+    <li>In casual games, the player in Square 4 may set rules until they are eliminated (e.g., “underhands only,” “no spins”).</li>
+  </ul>
+
+  <p><strong>Air Balls</strong></p>
+  <ul>
+    <li>Defined as hitting the ball into another square before it bounces.</li>
+    <li>Some games ban air balls entirely.</li>
+    <li>Others allow them, except when returning a serve.</li>
+  </ul>
+</div>
 </div> <!-- closes #otherRulesContent -->
 </section> <!-- closes the OTHER RULES card -->
 
@@ -410,6 +437,17 @@ When play begins, each square contains a player along with the players waiting i
   } else {
     content.style.display = "none";
     button.textContent = "➕ Serving the Ball";
+  }
+}
+  function toggleOtherStriking() {
+  const content = document.getElementById("otherStrikingContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[6]; // 7th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Ball Striking";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Ball Striking";
   }
 }
 </script>
