@@ -316,6 +316,16 @@ When play begins, each square contains a player along with the players waiting i
     <li>This area is referred to as the “out-of-play” zone in competitive settings.</li>
   </ul>
 </div>
+    <!-- Player Positioning -->
+<button class="collapsible-toggle" onclick="toggleOtherPlayerPositioning()" style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; border: none; padding: 8px 16px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;">
+  ➕ Player Positioning
+</button>
+<div id="otherPlayerPositioningContent" style="display: none; margin-top: 10px;">
+  <ul>
+    <li>Players typically must stay in their own square or within a reasonable proximity.</li>
+    <li>Specific movement restrictions may vary depending on house rules.</li>
+  </ul>
+</div>
 </div> <!-- closes #otherRulesContent -->
 </section> <!-- closes the OTHER RULES card -->
 
@@ -351,6 +361,17 @@ When play begins, each square contains a player along with the players waiting i
   } else {
     content.style.display = "none";
     button.textContent = "➕ Court Specifications";
+  }
+}
+  function toggleOtherPlayerPositioning() {
+  const content = document.getElementById("otherPlayerPositioningContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[4]; // 5th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Player Positioning";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Player Positioning";
   }
 }
 </script>
