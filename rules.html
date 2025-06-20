@@ -271,6 +271,51 @@ When play begins, each square contains a player along with the players waiting i
     <li>The ball should rebound to at least 50% of the height from which it was dropped.</li>
   </ul>
 </div>
+    <!-- Court Specifications -->
+<button class="collapsible-toggle" onclick="toggleOtherCourtSpecs()" style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; border: none; padding: 8px 16px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;">
+  ➕ Court Specifications
+</button>
+<div id="otherCourtSpecsContent" style="display: none; margin-top: 10px;">
+  <p><strong>Court Size</strong></p>
+  <ul>
+    <li><strong>Standard recreational courts:</strong> 10' x 10' (divided into four 5' x 5' squares).</li>
+    <li><strong>World Championship courts:</strong> 16' x 16' (divided into four 8' x 8' squares).</li>
+  </ul>
+
+  <p><strong>Court Setup</strong></p>
+  <ul>
+    <li>Requires only a flat surface, a ball, and at least 2 players.</li>
+    <li>Temporary courts can be marked with chalk or tape; permanent ones may be painted.</li>
+    <li>Common surfaces: asphalt, concrete, gym floors, grass, dirt, carpet.</li>
+    <li>Common locations: playgrounds, driveways, sidewalks, parking lots, gyms.</li>
+  </ul>
+
+  <p><strong>Square Designations</strong></p>
+  <ul>
+    <li>Most common naming system: Numbers (4, 3, 2, 1).</li>
+    <li>Alternatives: Letters (A, B, C, D), or titles (King, Queen, Jack, Pawn).</li>
+    <li>Some use colors.</li>
+  </ul>
+
+  <p><strong>Square Orientation</strong></p>
+  <ul>
+    <li><strong>Recreational courts:</strong> often have Squares 4 and 2 diagonal from each other.</li>
+    <li><strong>World Championship format:</strong> Square 4 and 1 are diagonal, with serves required to go to Square 1.</li>
+    <li>This setup helps prevent teaming and ensures new players touch the ball.</li>
+  </ul>
+
+  <p><strong>Line Rules</strong></p>
+  <ul>
+    <li>In some games, all lines are out—hitting any line results in an out.</li>
+    <li>This is up to house rules.</li>
+  </ul>
+
+  <p><strong>Out-of-Play Zone</strong></p>
+  <ul>
+    <li>Ideally, courts should have a 10-foot clearance surrounding them.</li>
+    <li>This area is referred to as the “out-of-play” zone in competitive settings.</li>
+  </ul>
+</div>
 </div> <!-- closes #otherRulesContent -->
 </section> <!-- closes the OTHER RULES card -->
 
@@ -295,6 +340,17 @@ When play begins, each square contains a player along with the players waiting i
   } else {
     content.style.display = "none";
     button.textContent = "➕ Object of the Game";
+  }
+}
+  function toggleOtherCourtSpecs() {
+  const content = document.getElementById("otherCourtSpecsContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[3]; // 4th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Court Specifications";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Court Specifications";
   }
 }
 </script>
