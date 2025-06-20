@@ -380,6 +380,40 @@ When play begins, each square contains a player along with the players waiting i
     <li>Others allow them, except when returning a serve.</li>
   </ul>
 </div>
+    <!-- Interference & Poaching -->
+<button class="collapsible-toggle" onclick="toggleOtherInterference()" style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; border: none; padding: 8px 16px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;">
+  ➕ Interference & Poaching
+</button>
+<div id="otherInterferenceContent" style="display: none; margin-top: 10px;">
+  <p><strong>Ball Ownership</strong></p>
+  <ul>
+    <li>Once a ball bounces in a square, only the occupying player may hit it.</li>
+    <li>If another player hits the ball:
+      <ul>
+        <li><strong>And</strong> the rightful player attempted to play the ball: the interfering player is out.</li>
+        <li><strong>If</strong> the rightful player did not attempt to play: the rightful player is out.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><strong>Interference Determination</strong></p>
+  <ul>
+    <li>Situational, especially in recreational games.</li>
+    <li>Judgment is made by officials or fellow players in competitive games.</li>
+  </ul>
+
+  <p><strong>Physical Interference</strong></p>
+  <ul>
+    <li>Players may not physically impede others from reaching the ball.</li>
+    <li>This form of interference typically results in an out.</li>
+  </ul>
+
+  <p><strong>Air Ball Caution</strong></p>
+  <ul>
+    <li>Air balls often increase risk of interference due to players crossing into other squares.</li>
+    <li>Most games allow this if no interference occurs.</li>
+  </ul>
+</div>
 </div> <!-- closes #otherRulesContent -->
 </section> <!-- closes the OTHER RULES card -->
 
@@ -448,6 +482,17 @@ When play begins, each square contains a player along with the players waiting i
   } else {
     content.style.display = "none";
     button.textContent = "➕ Ball Striking";
+  }
+}
+  function toggleOtherInterference() {
+  const content = document.getElementById("otherInterferenceContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[7]; // 8th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Interference & Poaching";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Interference & Poaching";
   }
 }
 </script>
