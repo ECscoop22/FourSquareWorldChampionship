@@ -414,6 +414,18 @@ When play begins, each square contains a player along with the players waiting i
     <li>Most games allow this if no interference occurs.</li>
   </ul>
 </div>
+    <!-- Court Environment & House Rules -->
+<button class="collapsible-toggle" onclick="toggleOtherEnvironment()" style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; border: none; padding: 8px 16px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;">
+  ➕ Court Environment & House Rules
+</button>
+<div id="otherEnvironmentContent" style="display: none; margin-top: 10px;">
+  <p>Four Square can be played in varied environments, so it’s important to set house rules before playing.</p>
+  <p><strong>Examples:</strong></p>
+  <ul>
+    <li>If playing in a garage, agree on what happens if the ball hits the ceiling or a wall.</li>
+    <li>Determine how obstacles, surfaces, or boundaries affect play.</li>
+  </ul>
+</div>
 </div> <!-- closes #otherRulesContent -->
 </section> <!-- closes the OTHER RULES card -->
 
@@ -493,6 +505,17 @@ When play begins, each square contains a player along with the players waiting i
   } else {
     content.style.display = "none";
     button.textContent = "➕ Interference & Poaching";
+  }
+}
+  function toggleOtherEnvironment() {
+  const content = document.getElementById("otherEnvironmentContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[8]; // 9th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Court Environment & House Rules";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Court Environment & House Rules";
   }
 }
 </script>
