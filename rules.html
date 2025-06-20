@@ -326,6 +326,33 @@ When play begins, each square contains a player along with the players waiting i
     <li>Specific movement restrictions may vary depending on house rules.</li>
   </ul>
 </div>
+    <!-- Serving the Ball -->
+<button class="collapsible-toggle" onclick="toggleOtherServing()" style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; border: none; padding: 8px 16px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;">
+  ➕ Serving the Ball
+</button>
+<div id="otherServingContent" style="display: none; margin-top: 10px;">
+  <p><strong>Serving Styles</strong></p>
+  <ul>
+    <li>Rules vary widely:</li>
+    <ul>
+      <li>Some games have no serving rules.</li>
+      <li>Others enforce strict rules: serve with one or two hands, from outside the square, to a specific square, at a certain height, or with a specific spin.</li>
+    </ul>
+  </ul>
+
+  <p><strong>Serve Target</strong></p>
+  <ul>
+    <li>In World Championship play, the serve must go to Square 1.</li>
+    <li>Other games may allow serves to any square.</li>
+  </ul>
+
+  <p><strong>“One Bad” / Do-Overs</strong></p>
+  <ul>
+    <li>Also called “first serve” or “do-over.”</li>
+    <li>Some games allow unlimited retries until a fair serve is made.</li>
+    <li>Others limit the number of “bad” serves allowed.</li>
+  </ul>
+</div>
 </div> <!-- closes #otherRulesContent -->
 </section> <!-- closes the OTHER RULES card -->
 
@@ -372,6 +399,17 @@ When play begins, each square contains a player along with the players waiting i
   } else {
     content.style.display = "none";
     button.textContent = "➕ Player Positioning";
+  }
+}
+  function toggleOtherServing() {
+  const content = document.getElementById("otherServingContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[5]; // 6th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Serving the Ball";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Serving the Ball";
   }
 }
 </script>
