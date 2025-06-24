@@ -329,12 +329,11 @@ li {
 
 .rule-block h2 {
   margin-top: 0;
-}
 .logo-banner {
   display: flex;
   justify-content: center;
   margin: 30px auto;
-  max-width: 400px;
+  max-width: 500px; /* Adjust this value if still too big */
   animation: pop-in 0.8s ease-out;
 }
 
@@ -342,22 +341,11 @@ li {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.25);
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.25);
   transition: transform 0.3s ease;
 }
 
 .logo-banner img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
-}
-
-@keyframes pop-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  box-shadow: 0 0 30px rgba(139, 0, 0, 0.4);
 }
