@@ -333,7 +333,8 @@ li {
   display: flex;
   justify-content: center;
   margin: 30px auto;
-  max-width: 500px; /* Adjust this value if still too big */
+  max-width: 500px;
+  padding: 10px;
   animation: pop-in 0.8s ease-out;
 }
 
@@ -348,13 +349,6 @@ li {
 .logo-banner img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 30px rgba(139, 0, 0, 0.4);
-}
-.logo-banner {
-  display: flex;
-  justify-content: center;
-  margin: 30px auto;
-  max-width: 500px; /* Controls the image's max size */
-  padding: 10px;
 }
 
 .logo-banner img {
