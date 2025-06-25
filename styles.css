@@ -334,14 +334,16 @@ li {
 .logo-banner {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 30px auto;
   max-width: 500px;
+  width: 100%;
   padding: 10px;
   animation: pop-in 0.8s ease-out;
 }
 
 .logo-banner img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(139, 0, 0, 0.25);
@@ -351,12 +353,4 @@ li {
 .logo-banner img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 30px rgba(139, 0, 0, 0.4);
-}
-
-.logo-banner img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(139, 0, 0, 0.25);
-  transition: transform 0.3s ease;
 }
