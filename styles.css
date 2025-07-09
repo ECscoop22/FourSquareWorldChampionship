@@ -384,3 +384,37 @@ details:not([open]) summary::before {
 details summary strong {
   font-weight: 600;
 }
+.champ-card {
+  flex: 1 1 250px;
+  max-width: 250px;
+  text-align: center;
+  background-color: #fff4f4; /* soft red-tinted background */
+  border: 2px solid #a10000;
+  border-radius: 10px;
+  padding: 1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.champ-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 0.5em;
+}
+
+.champ-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.champ-card p {
+  margin: 0;
+  font-size: 1.05em;
+}
+
+.champ-card span {
+  display: block;
+  margin-top: 0.2em;
+  font-size: 0.95em;
+  color: #444;
+}
