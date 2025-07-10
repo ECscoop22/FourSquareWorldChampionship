@@ -418,3 +418,17 @@ details summary strong {
   font-size: 0.95em;
   color: #444;
 }
+.champion-card {
+  flex: 1 1 250px;
+  background-color: #ffecec;
+  border: 2px solid #a80000;
+  border-radius: 10px;
+  padding: 1em;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.champion-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
