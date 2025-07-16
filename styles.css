@@ -65,7 +65,7 @@ section.card.dark {
 }
 .glow-title {
   font-size: 3rem;
-  text-align: center;
+  text-align: left;
   color: #a10000 !important;
   text-shadow: 0 0 5px #a10000, 0 0 10px #a10000;
   animation: pulse-glow 2s infinite ease-in-out;
