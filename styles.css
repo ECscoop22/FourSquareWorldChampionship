@@ -505,12 +505,12 @@ details summary strong {
   color: #d60000;
   margin-bottom: 0.25em;
 }
-.champ-top-section 
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start; /* left-justify */
-  gap: 2rem;
-  margin-bottom: 2rem;
+.champ-top-image 
+  width: auto;
+  max-width: 400px;  /* You can reduce or increase if needed */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .champ-top-image {
