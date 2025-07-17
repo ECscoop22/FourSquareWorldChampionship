@@ -505,3 +505,28 @@ details summary strong {
   color: #d60000;
   margin-bottom: 0.25em;
 }
+.champ-top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.champ-top-image {
+  max-width: 48%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.countdown-wrapper.beside-image {
+  max-width: 48%;
+  padding: 1rem;
+  background: #fff2f2;
+  border: 2px dashed #a10000;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #a10000;
+}
