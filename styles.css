@@ -507,26 +507,35 @@ details summary strong {
 }
 .champ-top-section {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .champ-top-image {
-  max-width: 48%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-.countdown-wrapper.beside-image {
-  max-width: 48%;
+.countdown-wrapper {
+  max-width: 400px;
   padding: 1rem;
-  background: #fff2f2;
-  border: 2px dashed #a10000;
-  border-radius: 1rem;
-  text-align: center;
-  font-size: 1.4rem;
+  border-left: 4px solid #a10000;
+}
+
+.countdown-wrapper h2 {
+  margin-bottom: 0.5rem;
   color: #a10000;
+  font-size: 1.2rem;
+}
+
+#countdown {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
 }
