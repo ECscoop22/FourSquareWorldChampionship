@@ -70,7 +70,25 @@ section.card.dark {
   text-shadow: 0 0 5px #a10000, 0 0 10px #a10000;
   animation: pulse-glow 2s infinite ease-in-out;
 }
+.glow-title {
+  font-size: 3rem;
+  text-align: left;
+  color: #a10000 !important;
+  text-shadow: 0 0 5px #a10000, 0 0 10px #a10000;
+  animation: pulse-glow 2s infinite ease-in-out;
+}
 
+@keyframes pulse-glow {
+  0% {
+    text-shadow: 0 0 5px #a10000, 0 0 10px #a10000;
+  }
+  50% {
+    text-shadow: 0 0 15px #ff4d4d, 0 0 30px #ff4d4d;
+  }
+  100% {
+    text-shadow: 0 0 5px #a10000, 0 0 10px #a10000;
+  }
+}
 @keyframes pulse-glow {
   0% {
     text-shadow: 0 0 5px #a10000, 0 0 10px #a10000;
