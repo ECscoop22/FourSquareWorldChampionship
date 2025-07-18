@@ -514,15 +514,23 @@ details summary strong {
 }
 .champ-top-section {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
 }
 
 .champ-image-wrapper {
-  max-width: 350px;
-  width: 100%;
   flex-shrink: 0;
+  width: 100%;
+  max-width: 350px;
+}
+
+.champ-top-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: block;
 }
