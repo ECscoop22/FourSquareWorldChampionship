@@ -419,7 +419,7 @@ details:not([open]) summary::before {
 
 details summary strong {
   font-weight: 600;
-}
+
 .champ-card {
   flex: 1 1 250px;
   max-width: 250px;
@@ -454,15 +454,6 @@ details summary strong {
   font-size: 0.95em;
   color: #444;
 }
-.champion-card {
-  flex: 1 1 250px;
-  background-color: #ffecec;
-  border: 2px solid #a80000;
-  border-radius: 10px;
-  padding: 1em;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 .champion-card:hover {
   transform: scale(1.03);
@@ -474,16 +465,6 @@ details summary strong {
   gap: 2em;
   justify-content: center;
   margin-top: 1em;
-}
-
-.champion-card {
-  border: 2px solid #8b0000;
-  background-color: #fff5f5;
-  border-radius: 12px;
-  padding: 1em;
-  text-align: center;
-  width: 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .champion-card:hover {
@@ -505,20 +486,14 @@ details summary strong {
   color: #d60000;
   margin-bottom: 0.25em;
 }
-.champ-top-image 
-  width: auto;
-  max-width: 400px;  /* You can reduce or increase if needed */
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
 
 .champ-top-image {
   width: 100%;
-  max-width: 350px; /* Reduce to previous size */
+  max-width: 350px; /* This mimics the original smaller image */
   height: auto;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: block;
 }
 
 .countdown-wrapper {
@@ -537,4 +512,17 @@ details summary strong {
   font-size: 2rem;
   font-weight: bold;
   color: #333;
+}
+.champ-top-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* stacks vertically on smaller screens */
+  padding: 1rem 0;
+}
+
+.champ-image-wrapper {
+  flex-shrink: 0;
+  max-width: 350px;
 }
