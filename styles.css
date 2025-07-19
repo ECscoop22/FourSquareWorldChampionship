@@ -487,14 +487,6 @@ details summary strong {
   margin-bottom: 0.25em;
 }
 
-.champ-top-image {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  display: block;
-}
-
 .countdown-wrapper {
   max-width: 400px;
   padding: 1rem;
@@ -533,4 +525,12 @@ details summary strong {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: block;
+}
+section.card .champ-top-image {
+  max-width: 350px !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
