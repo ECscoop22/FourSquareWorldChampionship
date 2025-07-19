@@ -419,6 +419,7 @@ details:not([open]) summary::before {
 
 details summary strong {
   font-weight: 600;
+}
 
 .champ-card {
   flex: 1 1 250px;
