@@ -145,8 +145,7 @@
 <p>Since 2023, this site has taken over as the home for not only the World Championship but also as the central one-stop shop for all things Four Square.</p>
 </section>
 </main>
-  <script>
-  // Set the target date for the World Championship
+<script>
   const targetDate = new Date("April 25, 2026");
 
   function updateCountdown() {
@@ -155,13 +154,16 @@
 
     if (timeDiff > 0) {
       const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-      document.getElementById("countdown").textContent = `${daysLeft} day${daysLeft !== 1 ? 's' : ''} until World Championships on April 25, 2026!`;
+      document.getElementById("countdown").innerHTML =
+        `${daysLeft} day${daysLeft !== 1 ? 's' : ''} until<br>` +
+        `World Championships on<br>` +
+        `April 25, 2026!`;
     } else {
       document.getElementById("countdown").textContent = `It's World Championship Day!`;
     }
   }
 
-  updateCountdown(); // Run on load
+  updateCountdown();
   setInterval(updateCountdown, 86400000); // Update once per day
 </script>
 </body>
