@@ -510,13 +510,6 @@ details summary strong {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-/* Optional: Limit image max width on large screens */
-@media (min-width: 768px) {
-  .champ-top-image {
-    max-width: 100%;
-    width: 350px;
-    height: auto;
-  }
 #countdown {
   font-size: 1.4em;
   line-height: 1.5;
@@ -528,3 +521,10 @@ details summary strong {
 .countdown-wrapper {
   text-align: center;
 }
+/* Optional: Limit image max width on large screens */
+@media (min-width: 768px) {
+  .champ-top-image {
+    max-width: 100%;
+    width: 350px;
+    height: auto;
+  }
