@@ -521,12 +521,6 @@ details summary strong {
 .countdown-wrapper {
   text-align: center;
 }
-.champ-top-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
 /* Optional: Limit image max width on large screens */
 @media (min-width: 768px) {
   .champ-top-image {
