@@ -511,16 +511,19 @@ details summary strong {
 .media-flex-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start; /* aligns items to the left */
   align-items: flex-start;
   gap: 2em;
   margin-bottom: 1em;
 }
 
-.media-flex-wrapper .champ-image-wrapper,
+.media-flex-wrapper .champ-image-wrapper {
+  flex: 0 1 auto;
+}
+
 .media-flex-wrapper .video-container {
   flex: 1 1 300px;
-  max-width: 500px;
+  max-width: 600px;
 }
 #countdown {
   font-size: 1.4em;
