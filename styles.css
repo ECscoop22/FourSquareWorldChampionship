@@ -542,3 +542,19 @@ details summary strong {
     width: 350px;
     height: auto;
   }
+.home-logo {
+  display: block;
+  margin: 1em auto;
+  max-width: 90%;
+  height: auto;
+  border: 4px solid #e53935; /* red frame */
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* base shadow */
+  transition: all 0.3s ease;
+}
+
+.home-logo:hover {
+  box-shadow: 0 0 24px rgba(255, 0, 0, 0.5); /* red glow */
+  transform: scale(1.02); /* slight zoom */
+}
