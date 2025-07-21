@@ -517,4 +517,11 @@ details summary strong {
     width: 350px;
     height: auto;
   }
+  #countdown {
+  font-size: 1.4em;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 0.5em;
+  white-space: normal;
+}
 }
