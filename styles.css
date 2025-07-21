@@ -508,6 +508,20 @@ details summary strong {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+.media-flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2em;
+  margin-bottom: 1em;
+}
+
+.media-flex-wrapper .champ-image-wrapper,
+.media-flex-wrapper .video-container {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
 #countdown {
   font-size: 1.4em;
   line-height: 1.5;
