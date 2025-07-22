@@ -558,3 +558,27 @@ details summary strong {
   box-shadow: 0 0 24px rgba(255, 0, 0, 0.5); /* red glow */
   transform: scale(1.02); /* slight zoom */
 }
+/* === Home Page Section Styling Enhancements === */
+.section-card {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 1.5em;
+  margin: 2em auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+}
+
+/* Image Logo Enhancements */
+.hero-logo {
+  display: block;
+  margin: 1em auto;
+  max-width: 90%;
+  height: auto;
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-logo:hover {
+  transform: scale(1.03);
+}
