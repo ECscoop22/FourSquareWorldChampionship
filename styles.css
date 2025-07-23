@@ -235,10 +235,9 @@ li {
 .title-row {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1em;
-  margin-top: 2.5em;     /* pushes title down from nav */
-  margin-bottom: 1.5em;   /* adds spacing before content starts */
+  margin-top: 4em;     /* pushes it down below nav */
+  margin-left: 1em;     /* keeps it left-aligned like the main content */
 }
 .site-title {
   margin: 0;
