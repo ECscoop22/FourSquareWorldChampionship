@@ -231,15 +231,15 @@ li {
 
 .video-container:hover .play-overlay {
   opacity: 1;
-}
+  }
 .title-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1em;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  margin-top: 2.5em;     /* pushes title down from nav */
+  margin-bottom: 1.5em;   /* adds spacing before content starts */
 }
-
 .site-title {
   margin: 0;
   font-size: 2.5em;
