@@ -581,3 +581,17 @@ details summary strong {
 .hero-logo:hover {
   transform: scale(1.03);
 }
+@media (max-width: 768px) {
+  .home-section h1.glow-title {
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+  }
+
+  .home-section p {
+    text-align: center;
+    width: 100%;
+  }
+.home-section {
+  margin-bottom: 2em;
+}
