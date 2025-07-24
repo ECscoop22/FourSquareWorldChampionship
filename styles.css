@@ -594,20 +594,20 @@ details summary strong {
   margin: 3em 0;
 }
 
-.highlight-banner a {
-  color: #ffffff;
-  text-decoration: underline;
-}
 .highlight-banner {
   background-color: #d60000;
   color: white;
-  padding: 1.3em 1em;  /* slightly less than others */
+  padding: 1em 0.8em;
   text-align: center;
-  font-size: 1.3em;     /* reduced font-size for visual match */
+  font-size: 1.1em;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  line-height: 1.4;     /* optional: helps control vertical height */
+  line-height: 1.4;
+}
+
+.highlight-banner p {
+  margin: 0.3em 0;
 }
 
 .highlight-banner a {
