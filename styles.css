@@ -608,7 +608,7 @@ details summary strong {
 .highlight-banner {
   background-color: #d60000;
   color: white;
-  padding: 2.5em 1em;
+  padding: 1.5em 1em;  /* reduce vertical padding */
   text-align: center;
   font-size: 1.25em;
   position: relative;
