@@ -601,12 +601,13 @@ details summary strong {
 .highlight-banner {
   background-color: #d60000;
   color: white;
-  padding: 1.5em 1em;  /* reduce vertical padding */
+  padding: 1.3em 1em;  /* slightly less than others */
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.3em;     /* reduced font-size for visual match */
   position: relative;
   overflow: hidden;
   border-radius: 8px;
+  line-height: 1.4;     /* optional: helps control vertical height */
 }
 
 .highlight-banner a {
