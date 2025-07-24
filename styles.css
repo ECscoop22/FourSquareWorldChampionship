@@ -580,3 +580,10 @@ details summary strong {
 
 .hero-logo:hover {
   transform: scale(1.03);
+  }
+.teal-banner {
+  background-color: #d0f0f4;
+  padding: 1.5em 1em;
+  border-radius: 12px;
+  margin: 2em auto;
+}
