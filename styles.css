@@ -593,3 +593,15 @@ details summary strong {
   width: 100%;
   margin: 3em 0;
 }
+  .highlight-banner {
+  background-color: #d60000;
+  color: white;
+  padding: 2em;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.highlight-banner a {
+  color: #ffffff;
+  text-decoration: underline;
+}
