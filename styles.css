@@ -69,6 +69,7 @@ section.card.dark {
   color: #a10000 !important;
   text-shadow: 0 0 5px #a10000, 0 0 10px #a10000;
   animation: pulse-glow 2s infinite ease-in-out;
+  margin-bottom: 0.2em; /* This is the key fix */
 }
 
 @keyframes pulse-glow {
@@ -234,10 +235,10 @@ li {
   }
 .title-row {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1em;
-  margin-top: 4em;     /* pushes it down below nav */
-  margin-left: 1em;     /* keeps it left-aligned like the main content */
+  gap: 0.2em; /* Reduce vertical spacing */
+  margin-bottom: 1em; /* You can tweak or remove this if it adds extra space */
 }
 .site-title {
   margin: 0;
