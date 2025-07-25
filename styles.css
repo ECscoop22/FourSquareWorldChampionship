@@ -644,3 +644,24 @@ details summary strong {
   50% { transform: scale(1.05); opacity: 1; }
   100% { transform: scale(1); opacity: 0.5; }
 }
+.social-buttons {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.social-buttons a {
+  background-color: #000; /* black background */
+  color: white;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.social-buttons a:hover {
+  background-color: #333; /* dark gray on hover */
+}
