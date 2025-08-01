@@ -715,3 +715,42 @@ details summary strong {
     filter: drop-shadow(0 0 20px rgba(255, 0, 0, 1));
   }
 }
+.follow-banner {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1.5em 1em;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 2em auto;
+}
+
+.follow-banner h2 {
+  margin-bottom: 1em;
+  font-size: 1.4em;
+}
+
+.follow-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.follow-buttons .btn {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-x { background: #1A1A1A; color: #fff; }
+.btn-instagram { background: #E4405F; color: #fff; }
+.btn-facebook { background: #4267B2; color: #fff; }
+
+.follow-buttons .btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
