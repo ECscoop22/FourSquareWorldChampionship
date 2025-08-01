@@ -765,3 +765,10 @@ details summary strong {
   min-width: 140px; /* ensures consistent size */
   text-align: center;
 }
+.ball-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  margin-top: 0.5em;
+}
