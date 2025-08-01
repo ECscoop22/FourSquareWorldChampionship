@@ -665,3 +665,20 @@ details summary strong {
 .social-buttons a:hover {
   background-color: #333; /* dark gray on hover */
 }
+.four-square-balls {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.four-square-balls img {
+  width: 60px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.four-square-balls img:hover {
+  transform: scale(1.1);
+}
