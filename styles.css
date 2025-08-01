@@ -754,3 +754,7 @@ details summary strong {
   transform: scale(1.05);
   filter: brightness(1.1);
 }
+.follow-buttons .btn {
+  min-width: 140px; /* ensures consistent size */
+  text-align: center;
+}
