@@ -772,3 +772,23 @@ details summary strong {
   gap: 1.5em;
   margin-top: 0.5em;
 }
+.site-ball {
+  height: 60px;
+  animation: pulse 2s infinite ease-in-out;
+  filter: drop-shadow(0 0 10px #7b1d1d);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px #7b1d1d);
+  }
+  50% {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 20px #7b1d1d);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px #7b1d1d);
+  }
+}
