@@ -887,3 +887,32 @@ details summary strong {
 .rulebook-toc a:hover {
   text-decoration: underline;
 }
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.rulebook-toc li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+  color: #7b1d1d;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.rulebook-toc li a:hover {
+  color: #b02525;
+  text-decoration: underline;
+}
+
+.rulebook-toc li a::before {
+  content: attr(data-icon);
+  display: inline-block;
+  animation: bounce 1.5s infinite;
+}
