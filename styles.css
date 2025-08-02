@@ -916,3 +916,9 @@ details summary strong {
   display: inline-block;
   animation: bounce 1.5s infinite;
 }
+.rulebook-icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin-top: 1em;
+}
