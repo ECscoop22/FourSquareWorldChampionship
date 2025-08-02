@@ -838,3 +838,52 @@ details summary strong {
   color: #b53030;
   text-decoration: underline;
 }
+.rulebook-row {
+  margin-bottom: 2em;
+}
+
+.rulebook-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2em;
+  padding-bottom: 2em;
+}
+
+.rulebook-intro,
+.rulebook-toc {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+}
+
+.ref-image-container {
+  flex-shrink: 0;
+}
+
+.ref-image {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.rulebook-toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rulebook-toc li {
+  margin-bottom: 0.5em;
+}
+
+.rulebook-toc a {
+  text-decoration: none;
+  color: #7b1d1d;
+  font-weight: bold;
+}
+
+.rulebook-toc a:hover {
+  text-decoration: underline;
+}
