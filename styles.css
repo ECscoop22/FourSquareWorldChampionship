@@ -922,3 +922,23 @@ details summary strong {
   gap: 1.5em;
   margin-top: 1em;
 }
+.rulebook-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.rulebook-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Optional: Style the image in the center column */
+.rulebook-column img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
