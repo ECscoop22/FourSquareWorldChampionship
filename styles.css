@@ -1002,3 +1002,11 @@ details summary strong {
 .rulebook-toc a:hover {
   color: #e63946;
 }
+.rules-intro-container {
+  background-color: #fff5f5; /* very light red */
+  border: 2px solid #e63946;
+  padding: 2em;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2em;
+}
