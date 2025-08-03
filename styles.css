@@ -1003,7 +1003,7 @@ details summary strong {
   color: #e63946;
 }
 .rules-intro-container {
-  background-color: #fff5f5; /* very light red */
+  background: linear-gradient(135deg, #ffe5ec, #e0f7fa);
   border: 2px solid #e63946;
   padding: 2em;
   border-radius: 16px;
