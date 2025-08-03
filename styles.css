@@ -942,3 +942,63 @@ details summary strong {
   display: block;
   margin: 0 auto;
 }
+.rules-intro-container {
+  background: #ffffff;
+  border: 2px solid #e63946;
+  padding: 2em;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2em;
+}
+
+.rules-intro-text {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.rules-top-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
+}
+
+.ref-image-container .ref-image {
+  max-width: 300px;
+  border: 2px solid #e63946;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rulebook-toc {
+  background-color: #fefae0;
+  padding: 1.5em;
+  border-left: 5px solid #e63946;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+.rulebook-toc h2 {
+  margin-top: 0;
+}
+
+.rulebook-toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rulebook-toc li {
+  margin-bottom: 0.5em;
+}
+
+.rulebook-toc a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.rulebook-toc a:hover {
+  color: #e63946;
+}
