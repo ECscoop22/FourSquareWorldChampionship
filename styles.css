@@ -51,12 +51,13 @@ section.card.dark {
 
 /* Colored section headers */
 .section-header {
-  padding: 0.5em 1em;
-  color: #ffffff;
-  margin: 0;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font-size: 1.3em;
+  background: linear-gradient(to right, #800000, #008080); /* maroon to teal */
+  color: white;
+  padding: 0.75em 1em;
+  margin-top: 2em;
+  border-radius: 8px;
+  font-size: 1.4em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Header color themes */
