@@ -554,6 +554,18 @@ When play begins, each square contains a player along with the players waiting i
     content.style.display = "none";
     button.textContent = "➕ Court Environment & House Rules";
   }
+    <script>
+  function toggleOtherRules() {
+    const content = document.getElementById("otherRulesContent");
+    const button = document.querySelector(".collapsible-toggle");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+      button.textContent = "➖ OTHER RULES";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ OTHER RULES";
+    }
+  }
 }
 </script>
 </p>The nations finest resource for all things four square.</p>
