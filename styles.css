@@ -218,7 +218,9 @@ li {
   height: 250px;
   border-radius: 8px;
 }
-
+.video-container iframe {
+  border-radius: 1em;
+}
 .play-overlay {
   position: absolute;
   top: 50%;
@@ -509,6 +511,11 @@ details summary strong {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+/* World Championship top image tweak */
+.champ-top-section .champ-top-image {
+  border-radius: 1em; /* softer corners like the Rules page */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* subtle depth */
+}
 .media-flex-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -525,6 +532,11 @@ details summary strong {
 .media-flex-wrapper .video-container {
   flex: 1 1 300px;
   max-width: 600px;
+}
+/* World Championship page-specific layout tweak */
+.champ-top-section.media-flex-wrapper {
+  justify-content: center; /* center align for better symmetry */
+  align-items: center;
 }
 #countdown {
   font-size: 1.4em;
@@ -807,7 +819,13 @@ details summary strong {
   flex: 1 1 250px;
   max-width: 300px;
 }
-
+.intro-text {
+  font-size: 1.2em;
+  text-align: center;
+  margin: 1em auto 2em;
+  max-width: 800px; /* overrides the 300px max-width for this context */
+  color: #333;
+}
 .ref-image-container {
   flex: 0 0 auto;
   text-align: center;
