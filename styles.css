@@ -1060,3 +1060,6 @@ html {
   flex-direction: column;
   align-items: center;
 }
+.champ-logo {
+  display: block; /* ensures it behaves like an image, no text */
+}
