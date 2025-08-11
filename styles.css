@@ -1063,3 +1063,44 @@ html {
 .champ-logo {
   display: block; /* ensures it behaves like an image, no text */
 }
+.intro-section.media-flex-wrapper {
+  display: flex;
+  align-items: center; /* vertically center all three */
+  justify-content: space-between; /* space between columns */
+  gap: 1.5rem; /* spacing between items */
+  flex-wrap: wrap; /* be responsive on small screens */
+}
+
+/* Left image */
+.champ-image-wrapper.left {
+  flex: 1 1 25%; /* 25% width min, can shrink/grow */
+  max-width: 250px; /* optional max width */
+}
+
+/* Center text */
+.intro-text.center {
+  flex: 2 1 40%; /* wider center column */
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Right video */
+.video-container.right {
+  flex: 1 1 30%;
+  max-width: 400px; /* optional max width */
+}
+
+/* Responsive tweak - stack on small screens */
+@media (max-width: 768px) {
+  .intro-section.media-flex-wrapper {
+    flex-direction: column;
+  }
+
+  .champ-image-wrapper.left,
+  .intro-text.center,
+  .video-container.right {
+    max-width: 100%;
+    flex: none;
+    margin-bottom: 1.5rem;
+  }
+}
