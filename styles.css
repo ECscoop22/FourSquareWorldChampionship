@@ -1039,3 +1039,24 @@ html {
   margin-top: 2em;
   font-size: 1.1em;
 }
+.intro-section {
+  background-color: #f9f9f9; /* same as Rules page top */
+  padding: 2em;
+  border-radius: 10px;
+  margin-bottom: 2em;
+}
+
+.intro-section .champ-logo {
+  max-width: 150px;
+  margin: 0.5em;
+}
+
+.intro-section .intro-text {
+  flex: 1 1 300px;
+}
+
+.intro-section .champ-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
