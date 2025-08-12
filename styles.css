@@ -51,13 +51,12 @@ section.card.dark {
 
 /* Colored section headers */
 .section-header {
-  background: linear-gradient(to right, #800000, #008080); /* maroon to teal */
-  color: white;
-  padding: 0.75em 1em;
-  margin-top: 2em;
-  border-radius: 8px;
-  font-size: 1.4em;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 0.5em 1em;
+  color: #ffffff;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1.3em;
 }
 
 /* Header color themes */
@@ -66,7 +65,7 @@ section.card.dark {
 }
 .glow-title {
   font-size: 3rem;
-  text-align: center;
+  text-align: left;
   color: #a10000 !important;
   text-shadow: 0 0 5px #a10000, 0 0 10px #a10000;
   animation: pulse-glow 2s infinite ease-in-out;
@@ -218,9 +217,7 @@ li {
   height: 250px;
   border-radius: 8px;
 }
-.video-container iframe {
-  border-radius: 1em;
-}
+
 .play-overlay {
   position: absolute;
   top: 50%;
@@ -511,60 +508,22 @@ details summary strong {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-/* World Championship top image tweak */
-.champ-top-section .champ-top-image {
-  border-radius: 1em; /* softer corners like the Rules page */
-  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* subtle depth */
-}
 .media-flex-wrapper {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* aligns items to the left */
   align-items: flex-start;
-  gap: 20px; /* space between columns */
-  flex-wrap: wrap; /* stack on small screens */
+  gap: 2em;
+  margin-bottom: 1em;
 }
 
-.champ-image-wrapper,
-.video-wrapper {
-  flex: 0 0 35%; /* fixed width proportion for image & video */
-  display: flex;
-  justify-content: center;
+.media-flex-wrapper .champ-image-wrapper {
+  flex: 0 1 auto;
 }
 
-.champ-image-wrapper img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  display: block;
-  border-radius: 8px; /* optional: rounded corners */
-}
-
-.center-content {
-  flex: 0 0 25%; /* slightly skinnier than image/video */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.video-wrapper iframe,
-.video-wrapper video {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  border-radius: 8px; /* optional: rounded corners */
-}
-
-/* Stack vertically on smaller screens */
-@media (max-width: 900px) {
-  .champ-image-wrapper,
-  .center-content,
-  .video-wrapper {
-    flex: 0 0 100%;
-}
-/* World Championship page-specific layout tweak */
-.champ-top-section.media-flex-wrapper {
-  justify-content: center; /* center align for better symmetry */
-  align-items: center;
+.media-flex-wrapper .video-container {
+  flex: 1 1 300px;
+  max-width: 600px;
 }
 #countdown {
   font-size: 1.4em;
@@ -722,413 +681,4 @@ details summary strong {
 
 .four-square-balls img:hover {
   transform: scale(1.1);
-}
-/* Ball Container */
-.four-square-balls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2em;
-  margin-top: 1em;
-}
-
-/* Ball Image Effects */
-.four-square-balls img {
-  width: 60px;
-  height: auto;
-  animation: pulse 2.5s infinite ease-in-out;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.7));
-}
-
-.four-square-balls img:hover {
-  transform: translateY(-8px) scale(1.1);
-}
-
-/* Pulse Animation */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.7));
-  }
-  50% {
-    transform: scale(1.15);
-    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 1));
-  }
-}
-.follow-banner {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 1.5em 1em;
-  border-radius: 10px;
-  max-width: 800px;
-  margin: 2em auto;
-}
-
-.follow-banner h2 {
-  margin-bottom: 1em;
-  font-size: 1.4em;
-}
-
-.follow-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-}
-
-.follow-buttons .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4em;
-  padding: 0.6em 1.2em;
-  margin: 0.4em;
-  border: none;
-  border-radius: 8px;
-  background-color: #8B0000; /* Maroon */
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  min-width: 140px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-x { background: #1A1A1A; color: #fff; }
-.btn-instagram { background: #E4405F; color: #fff; }
-.btn-facebook { background: #4267B2; color: #fff; }
-
-.follow-buttons .btn:hover {
-  background-color: #a30000; /* Slightly lighter maroon on hover */
-  transform: scale(1.05);
-}
-.follow-buttons .btn {
-  min-width: 140px; /* ensures consistent size */
-  text-align: center;
-}
-.ball-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5em;
-  margin-top: 0.5em;
-}
-.site-ball {
-  height: 60px;
-  animation: pulse 2s infinite ease-in-out;
-  filter: drop-shadow(0 0 10px #7b1d1d);
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 5px #7b1d1d);
-  }
-  50% {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 20px #7b1d1d);
-  }
-  100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 5px #7b1d1d);
-  }
-}
-.rules-three-column {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2em;
-  flex-wrap: wrap;
-  margin: 2em 0;
-}
-
-.intro-text,
-.table-of-contents {
-  flex: 1 1 250px;
-  max-width: 300px;
-}
-.intro-text {
-  font-size: 1.2em;
-  text-align: center;
-  margin: 1em auto 2em;
-  max-width: 800px; /* overrides the 300px max-width for this context */
-  color: #333;
-}
-.ref-image-container {
-  flex: 0 0 auto;
-  text-align: center;
-}
-
-.ref-image {
-  max-width: 200px;
-  height: auto;
-}
-
-.table-of-contents ul {
-  list-style: none;
-  padding: 0;
-}
-
-.table-of-contents li {
-  margin-bottom: 0.75em;
-  font-size: 1.1em;
-}
-
-.table-of-contents a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #7b1d1d;
-  transition: color 0.3s;
-}
-
-.table-of-contents a:hover {
-  color: #b53030;
-  text-decoration: underline;
-}
-.rulebook-row {
-  margin-bottom: 2em;
-}
-
-.rulebook-layout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2em;
-  padding-bottom: 2em;
-}
-
-.rulebook-intro,
-.rulebook-toc {
-  flex: 1;
-  min-width: 250px;
-  max-width: 400px;
-}
-
-.ref-image-container {
-  flex-shrink: 0;
-}
-
-.ref-image {
-  max-width: 200px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.rulebook-toc ul {
-  list-style: none;
-  padding: 0;
-}
-
-.rulebook-toc li {
-  margin-bottom: 0.5em;
-}
-
-.rulebook-toc a {
-  text-decoration: none;
-  color: #7b1d1d;
-  font-weight: bold;
-}
-
-.rulebook-toc a:hover {
-  text-decoration: underline;
-}
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-.rulebook-toc li a {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  text-decoration: none;
-  color: #7b1d1d;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.rulebook-toc li a:hover {
-  color: #b02525;
-  text-decoration: underline;
-}
-
-.rulebook-toc li a::before {
-  content: attr(data-icon);
-  display: inline-block;
-  animation: bounce 1.5s infinite;
-}
-.rulebook-icons-row {
-  display: flex;
-  justify-content: center;
-  gap: 1.5em;
-  margin-top: 1em;
-}
-.rulebook-layout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  margin-bottom: 2em;
-}
-
-.rulebook-column {
-  flex: 1;
-  min-width: 250px;
-}
-
-/* Optional: Style the image in the center column */
-.rulebook-column img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-}
-.rules-intro-container {
-  background: #ffffff;
-  border: 2px solid #e63946;
-  padding: 2em;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  margin-bottom: 2em;
-}
-
-.rules-intro-text {
-  text-align: center;
-  margin-bottom: 1.5em;
-}
-
-.rules-top-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2em;
-  align-items: center;
-}
-
-.ref-image-container .ref-image {
-  max-width: 300px;
-  border: 2px solid #e63946;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.rulebook-toc {
-  background-color: #fefae0;
-  padding: 1.5em;
-  border-left: 5px solid #e63946;
-  border-radius: 8px;
-  max-width: 400px;
-}
-
-.rulebook-toc h2 {
-  margin-top: 0;
-}
-
-.rulebook-toc ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.rulebook-toc li {
-  margin-bottom: 0.5em;
-}
-
-.rulebook-toc a {
-  text-decoration: none;
-  color: #222;
-  font-weight: bold;
-  transition: color 0.2s ease;
-}
-
-.rulebook-toc a:hover {
-  color: #e63946;
-}
-.rules-intro-container {
-  background: linear-gradient(135deg, #ffe5ec, #e0f7fa);
-  border: 2px solid #e63946;
-  padding: 2em;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  margin-bottom: 2em;
-}
-html {
-  scroll-behavior: smooth;
-}
-.site-tagline {
-  text-align: center;
-  font-style: italic;
-  color: #444;
-  margin-top: 2em;
-  font-size: 1.1em;
-}
-.intro-section {
-  background-color: #f9f9f9; /* same as Rules page top */
-  padding: 2em;
-  border-radius: 10px;
-  margin-bottom: 2em;
-}
-
-.intro-section .champ-logo {
-  max-width: 150px;
-  margin: 0.5em;
-}
-
-.intro-section .intro-text {
-  flex: 1 1 300px;
-}
-
-.intro-section .champ-image-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.champ-logo {
-  display: block; /* ensures it behaves like an image, no text */
-}
-.intro-section.media-flex-wrapper {
-  display: flex;
-  align-items: center; /* vertically center all three */
-  justify-content: space-between; /* space between columns */
-  gap: 1.5rem; /* spacing between items */
-  flex-wrap: wrap; /* be responsive on small screens */
-}
-
-/* Left image */
-.champ-image-wrapper.left {
-  flex: 1 1 25%; /* 25% width min, can shrink/grow */
-  max-width: 250px; /* optional max width */
-}
-
-/* Center text */
-.intro-text.center {
-  flex: 2 1 40%; /* wider center column */
-  text-align: center;
-  font-size: 1.1rem;
-}
-
-/* Right video */
-.video-container.right {
-  flex: 1 1 30%;
-  max-width: 400px; /* optional max width */
-}
-
-/* Responsive tweak - stack on small screens */
-@media (max-width: 768px) {
-  .intro-section.media-flex-wrapper {
-    flex-direction: column;
-  }
-
-  .champ-image-wrapper.left,
-  .intro-text.center,
-  .video-container.right {
-    max-width: 100%;
-    flex: none;
-    margin-bottom: 1.5rem;
-  }
 }
