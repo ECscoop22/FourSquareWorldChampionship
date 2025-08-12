@@ -1112,7 +1112,73 @@ html {
   gap: 1.5rem; /* spacing between items */
   flex-wrap: wrap; /* be responsive on small screens */
 }
+/* Three-column intro layout: left image | centered text | right video */
+.intro-section {
+  margin: 1.5rem 0 2rem;
+}
 
+/* center the h1 above (ensure header uses centered text) */
+.glow-title {
+  text-align: center;
+}
+
+/* The grid that guarantees the center column stays centered on the page */
+.intro-section .three-cols {
+  display: grid;
+  grid-template-columns: 1fr min(520px, 42%) 1fr; /* left flexible | center fixed-ish | right flexible */
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto; /* center the whole block in the page */
+}
+
+/* Left and right columns will center their content horizontally */
+.intro-section .left-col,
+.intro-section .right-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make sure image fills its column cleanly */
+.intro-section .champ-image-wrapper img.champ-logo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Centered text column */
+.intro-section .center-col .intro-text {
+  text-align: center;
+  padding: 0 0.5rem;
+  color: #222;
+  line-height: 1.4;
+}
+
+/* Make iframe responsive and match image width */
+.intro-section .video-container iframe {
+  width: 100%;
+  height: calc( (100% / 16) * 9 ); /* fallback; browsers handle height:auto for iframe differently — see below */
+  aspect-ratio: 16/9;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Responsive stack on small screens */
+@media (max-width: 900px) {
+  .intro-section .three-cols {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .intro-section .center-col .intro-text {
+    font-size: 1rem;
+  }
+}
 /* Left image */
 .champ-image-wrapper.left {
   flex: 1 1 25%; /* 25% width min, can shrink/grow */
