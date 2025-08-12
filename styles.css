@@ -1225,3 +1225,58 @@ html {
   gap: 20px;
   flex-wrap: wrap;
 }
+/* Ensure the title stays centered */
+.glow-title {
+  text-align: center;
+}
+
+/* Intro three-column layout */
+.intro-section.three-col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Equal width for image and video */
+.intro-section.three-col .image-col,
+.intro-section.three-col .video-col {
+  flex: 0 0 33%;
+  max-width: 33%;
+}
+
+/* Text column narrower and centered */
+.intro-section.three-col .text-col {
+  flex: 0 0 34%;
+  max-width: 34%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Responsive media */
+.intro-section.three-col img,
+.intro-section.three-col iframe {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Stack vertically on small screens */
+@media (max-width: 768px) {
+  .intro-section.three-col {
+    flex-direction: column;
+    text-align: center;
+  }
+  .intro-section.three-col .image-col,
+  .intro-section.three-col .text-col,
+  .intro-section.three-col .video-col {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+}
