@@ -518,10 +518,24 @@ details summary strong {
 }
 .media-flex-wrapper {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 20px; /* space between columns */
-  flex-wrap: wrap; /* stack on small screens */
+  gap: 2em;
+  margin-bottom: 1em;
+}
+
+.media-flex-wrapper .champ-image-wrapper,
+.media-flex-wrapper .video-container {
+  flex: 1 1 300px; /* allows flexible shrinking */
+  max-width: 300px; /* keeps 3 columns max on larger screens */
+}
+
+.media-flex-wrapper img,
+.media-flex-wrapper iframe {
+  width: 100%; /* keeps content inside the column */
+  height: auto;
+  display: block;
 }
 
 .champ-image-wrapper,
