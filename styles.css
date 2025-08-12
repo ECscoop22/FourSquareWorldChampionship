@@ -1074,46 +1074,31 @@ html {
   margin-bottom: 2em;
 }
 
-.intro-section {
-  display: flex;
-  justify-content: space-between; /* even spacing */
-  align-items: flex-start;         /* align tops */
-  gap: 20px;                      /* space between columns */
-  max-width: 1200px;              /* limit width */
-  margin: 0 auto 2em;             /* center horizontally with bottom margin */
-  padding: 2em;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  flex-wrap: wrap;                /* stack on narrow screens */
+.intro-section .champ-logo {
+  max-width: 150px;
+  margin: 0.5em;
 }
 
-.intro-section > div {
-  flex: 1;
-  min-width: 250px;               /* don’t get too narrow */
+.intro-section .intro-text {
+  flex: 1 1 300px;
 }
 
-.image-col img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.text-col {
+.intro-section .champ-image-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;        /* vertically center text */
-  padding: 0 1em;
-  font-size: 1.1em;
-  line-height: 1.5;
+  align-items: center;
+}
+.champ-logo {
+  display: block; /* ensures it behaves like an image, no text */
+}
+.intro-section.media-flex-wrapper {
+  display: flex;
+  align-items: center; /* vertically center all three */
+  justify-content: space-between; /* space between columns */
+  gap: 1.5rem; /* spacing between items */
+  flex-wrap: wrap; /* be responsive on small screens */
 }
 
-.video-col iframe {
-  width: 100%;
-  height: 200px;                  /* fixed video height */
-  border-radius: 8px;
-}
 /* Left image */
 .champ-image-wrapper.left {
   flex: 1 1 25%; /* 25% width min, can shrink/grow */
