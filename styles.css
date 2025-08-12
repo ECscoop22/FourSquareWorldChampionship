@@ -518,20 +518,48 @@ details summary strong {
 }
 .media-flex-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start; /* aligns items to the left */
+  justify-content: center;
   align-items: flex-start;
-  gap: 2em;
-  margin-bottom: 1em;
+  gap: 20px; /* space between columns */
+  flex-wrap: wrap; /* stack on small screens */
 }
 
-.media-flex-wrapper .champ-image-wrapper {
-  flex: 0 1 auto;
+.champ-image-wrapper,
+.video-wrapper {
+  flex: 0 0 35%; /* fixed width proportion for image & video */
+  display: flex;
+  justify-content: center;
 }
 
-.media-flex-wrapper .video-container {
-  flex: 1 1 300px;
-  max-width: 600px;
+.champ-image-wrapper img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  border-radius: 8px; /* optional: rounded corners */
+}
+
+.center-content {
+  flex: 0 0 25%; /* slightly skinnier than image/video */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px; /* optional: rounded corners */
+}
+
+/* Stack vertically on smaller screens */
+@media (max-width: 900px) {
+  .champ-image-wrapper,
+  .center-content,
+  .video-wrapper {
+    flex: 0 0 100%;
 }
 /* World Championship page-specific layout tweak */
 .champ-top-section.media-flex-wrapper {
