@@ -682,3 +682,35 @@ details summary strong {
 .four-square-balls img:hover {
   transform: scale(1.1);
 }
+.follow-banner {
+  text-align: center;
+  background-color: #ff4d4d; /* Site theme red */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.follow-banner h2 {
+  margin-bottom: 15px;
+}
+
+.follow-buttons {
+  margin-bottom: 15px;
+}
+
+.follow-buttons a {
+  margin: 0 10px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.follow-buttons a:hover {
+  text-decoration: underline;
+}
+
+.follow-text {
+  font-size: 1.1em;
+}
