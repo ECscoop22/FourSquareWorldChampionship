@@ -1146,3 +1146,16 @@ html {
     margin-bottom: 1.5rem;
   }
 }
+/* Center heading and content */
+.world-championship-section {
+  text-align: center;
+}
+
+/* Keep the media items in a centered flex layout */
+.media-flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
