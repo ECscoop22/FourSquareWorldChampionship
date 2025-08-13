@@ -235,10 +235,11 @@ li {
   }
 .title-row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2em;
-  margin-bottom: 1em;
+  flex-direction: row; /* Makes icons and text sit side by side */
+  align-items: center; /* Vertically center icons with the text */
+  justify-content: center; /* Center everything horizontally */
+  gap: 20px; /* Space between icon, title, and icon */
+  margin: 1em 0; /* Optional spacing above and below */
 }
 .site-title {
   margin: 0;
@@ -848,9 +849,9 @@ details summary strong {
   transform-origin: center bottom;
 }
 .bouncing-icon {
-  width: 50px;
-  height: 50px;
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .moving-ball {
@@ -863,5 +864,5 @@ details summary strong {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
