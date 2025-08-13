@@ -480,7 +480,7 @@ When play begins, each square contains a player along with the players waiting i
       button.textContent = "➕ OTHER RULES";
     }
   }
-  function toggleObjectOfGame() {
+function toggleObjectOfGame() {
   const content = document.getElementById("objectOfGameContent");
   const button = document.querySelectorAll(".collapsible-toggle")[1]; // 2nd button
   if (content.style.display === "none") {
@@ -490,7 +490,9 @@ When play begins, each square contains a player along with the players waiting i
     content.style.display = "none";
     button.textContent = "➕ Object of the Game";
   }
-    function toggleOtherEquipment() {
+}
+
+function toggleOtherEquipment() {
   const content = document.getElementById("otherEquipmentContent");
   const button = document.querySelectorAll(".collapsible-toggle")[2]; // 3rd button under OTHER RULES
   if (content.style.display === "none") {
@@ -500,7 +502,6 @@ When play begins, each square contains a player along with the players waiting i
     content.style.display = "none";
     button.textContent = "➕ Equipment";
   }
-}
 }
   function toggleOtherCourtSpecs() {
   const content = document.getElementById("otherCourtSpecsContent");
