@@ -866,3 +866,16 @@ details summary strong {
   50% {
     transform: translateY(-8px);
 }
+/* Rules page title layout */
+.rules-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* space between icon and text */
+}
+
+/* Smaller icons for Rules page */
+.rulebook-icon {
+  width: 40px;
+  height: auto;
+}
