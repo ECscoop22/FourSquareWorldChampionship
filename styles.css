@@ -832,3 +832,16 @@ details summary strong {
   animation: bounce 1.5s ease-in-out infinite;
   transform-origin: center bottom;
 }
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bouncing-ball {
+  animation: bounce 1.5s ease-in-out infinite;
+  transform-origin: center bottom;
+}
