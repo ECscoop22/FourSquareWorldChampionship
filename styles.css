@@ -880,3 +880,7 @@ details summary strong {
   height: auto;
   filter: drop-shadow(0 0 6px #ff0000); /* red glow like glow-title */
 }
+.rulebook-icon {
+  width: 50px; /* adjust as needed */
+  height: auto;
+}
