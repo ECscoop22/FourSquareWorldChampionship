@@ -878,4 +878,5 @@ details summary strong {
 .rulebook-icon {
   width: 40px;
   height: auto;
+  filter: drop-shadow(0 0 6px #ff0000); /* red glow like glow-title */
 }
