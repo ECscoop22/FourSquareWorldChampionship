@@ -272,9 +272,11 @@ li {
     font-size: 1em;
   }
 
-  .title-row {
-    flex-direction: column;
-    align-items: flex-start;
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em; /* horizontal space between SVGs and header */
   }
 
   .video-container,
@@ -846,8 +848,9 @@ details summary strong {
   transform-origin: center bottom;
 }
 .bouncing-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
 }
 
 .moving-ball {
@@ -856,6 +859,9 @@ details summary strong {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
 }
