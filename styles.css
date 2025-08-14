@@ -903,3 +903,26 @@ details summary strong {
   margin: 0 6px;
   vertical-align: middle;
   filter: drop-shadow(0 0 6px #a10000);
+/* === Rules page header sizing (scoped) === */
+#rules-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#rules-header .rulebook-icon {
+  width: 18px !important;
+  height: auto !important;
+  flex-shrink: 0;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 6px #a10000);
+}
+
+#rules-header .glow-title {
+  font-size: 3rem;
+  color: #a10000;
+  text-shadow: 0 0 5px #a10000, 0 0 10px #a10000;
+  animation: pulse-glow 2s infinite ease-in-out;
+  margin: 0;
+}
