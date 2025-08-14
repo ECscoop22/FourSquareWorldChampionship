@@ -934,3 +934,11 @@ details summary strong {
   max-height: 300px; /* adjust this to your preferred size */
   object-fit: cover; /* ensures it crops nicely instead of squishing */
 }
+/* World Championship hero image */
+.hero-img {
+  max-width: 680px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
