@@ -872,7 +872,7 @@ details summary strong {
 }
 
 .rulebook-icon {
-  width: 20px; /* smaller icon size */
+  width: 30px; /* smaller icon size */
   height: auto;
   flex-shrink: 0; /* stops it from stretching */
   vertical-align: middle;
