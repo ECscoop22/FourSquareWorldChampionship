@@ -871,16 +871,20 @@ details summary strong {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px; /* space between icon and text */
+  gap: 20px; /* space between icon and text */
 }
 
-/* Smaller icons for Rules page */
 .rulebook-icon {
-  width: 40px;
+  width: 35px; /* smaller than before */
   height: auto;
-  filter: drop-shadow(0 0 6px #ff0000); /* red glow like glow-title */
+  filter: drop-shadow(0 0 8px #a10000); /* match glow-title red glow */
 }
-.rulebook-icon {
-  width: 50px; /* adjust as needed */
-  height: auto;
+
+/* Apply glow effect to RULES header */
+.rules-title .glow-title {
+  font-size: 3rem; /* match home page */
+  color: #a10000;
+  text-shadow: 0 0 5px #a10000, 0 0 10px #a10000;
+  animation: pulse-glow 2s infinite ease-in-out;
+  margin: 0;
 }
