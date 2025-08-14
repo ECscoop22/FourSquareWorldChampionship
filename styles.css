@@ -875,8 +875,10 @@ details summary strong {
 }
 
 .rulebook-icon {
-  width: 35px; /* smaller than before */
+  width: 25px; /* reduced size */
   height: auto;
+  vertical-align: middle; /* aligns nicely with text */
+  margin: 0 8px; /* even spacing from the title */
   filter: drop-shadow(0 0 8px #a10000); /* match glow-title red glow */
 }
 
