@@ -942,3 +942,8 @@ details summary strong {
   display: block;
   margin: 0 auto 1.5rem;
 }
+/* Override generic image sizing for hero image */
+.champ-image-wrapper .hero-img {
+  max-width: 80%;
+  width: auto;
+}
