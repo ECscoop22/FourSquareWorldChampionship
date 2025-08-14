@@ -891,3 +891,18 @@ details summary strong {
   animation: pulse-glow 2s infinite ease-in-out;
   margin: 0;
 }
+/* Rules page header */
+.rules-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* tighter spacing */
+}
+
+/* Smaller icons for the Rules page header */
+.rules-title .rulebook-icon {
+  width: 18px !important;   /* ← change this number to taste */
+  height: auto !important;
+  margin: 0 6px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 6px #a10000);
