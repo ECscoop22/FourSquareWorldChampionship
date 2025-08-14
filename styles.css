@@ -871,14 +871,15 @@ details summary strong {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* space between icon and text */
+  gap: 10px; /* tighter space between icon and text */
 }
 
 .rulebook-icon {
-  width: 25px !important;
-  height: auto !important;
+  width: 20px; /* smaller icon size */
+  height: auto;
+  flex-shrink: 0; /* stops it from stretching */
   vertical-align: middle;
-  margin: 0 8px; /* even spacing from the title */
+  margin: 0 4px; /* less margin so text stays close */
   filter: drop-shadow(0 0 8px #a10000); /* match glow-title red glow */
 }
 
