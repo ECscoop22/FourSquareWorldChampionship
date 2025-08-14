@@ -947,3 +947,34 @@ details summary strong {
   max-width: 80%;
   width: auto;
 }
+/* ========== Force container size so image cannot blow up ==========
+   Keeps the parent from expanding and giving the image room to grow. */
+.champ-image-wrapper {
+  max-width: 720px;    /* change to taste (560, 680, 720, etc.) */
+  flex: 0 0 auto;      /* prevents it from flexing to fill available space */
+  box-sizing: border-box;
+}
+
+/* ========== Strong override for the hero image itself ==========
+   Uses more specific selector + !important to beat other global img rules. */
+.champ-image-wrapper .hero-img {
+  max-width: 100% !important;   /* never exceed the wrapper width */
+  width: auto !important;       /* let the image keep its correct aspect */
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 1.5rem !important;
+  object-fit: contain !important;
+}
+
+/* ========== Mobile tweaks so it looks good on phones ==========
+   Make the image narrower on small screens. */
+@media (max-width: 768px) {
+  .champ-image-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+  .champ-image-wrapper .hero-img {
+    width: 90% !important;
+    max-width: 420px !important;
+  }
+}
