@@ -926,3 +926,11 @@ details summary strong {
   animation: pulse-glow 2s infinite ease-in-out;
   margin: 0;
 }
+.hero-banner {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  max-height: 300px; /* adjust this to your preferred size */
+  object-fit: cover; /* ensures it crops nicely instead of squishing */
+}
