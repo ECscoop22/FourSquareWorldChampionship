@@ -978,3 +978,14 @@ details summary strong {
     max-width: 420px !important;
   }
 }
+/* Full-width video for World Championship page */
+.world-championship-video {
+  width: 100%;
+  max-width: 900px; /* Optional: keeps it from getting too huge */
+  margin: 1rem auto; /* Center horizontally */
+}
+
+.world-championship-video iframe {
+  width: 100%;
+  height: 500px; /* Taller like Media page */
+}
