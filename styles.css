@@ -989,3 +989,36 @@ details summary strong {
   width: 100%;
   height: 500px; /* Taller like Media page */
 }
+/* ===== WC page: full-width responsive video under the title ===== */
+.wc-hero-video {
+  position: relative;
+  width: min(100%, 1100px);
+  margin: 12px auto 24px;        /* tight spacing under the title */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* 16:9 aspect ratio */
+.wc-hero-video::before {
+  content: "";
+  display: block;
+  padding-bottom: 56.25%;
+}
+
+.wc-hero-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Make sure the intro section doesn’t add big extra space above it */
+.title-row + .wc-hero-video { margin-top: 10px; }
+.intro-section { margin-top: 8px; }
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .wc-hero-video { width: 95%; margin: 8px auto 20px; border-radius: 10px; }
+}
