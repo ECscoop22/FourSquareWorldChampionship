@@ -1022,3 +1022,35 @@ details summary strong {
 @media (max-width: 768px) {
   .wc-hero-video { width: 95%; margin: 8px auto 20px; border-radius: 10px; }
 }
+/* ===== World Championship: full-width hero video under the title ===== */
+.wc-hero-video {
+  position: relative;
+  width: min(100%, 1100px);
+  margin: 12px auto 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Maintain 16:9 aspect ratio */
+.wc-hero-video::before {
+  content: "";
+  display: block;
+  padding-bottom: 56.25%;
+}
+
+.wc-hero-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .wc-hero-video {
+    width: 95%;
+    margin: 8px auto 20px;
+    border-radius: 10px;
+  }
+}
