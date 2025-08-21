@@ -978,3 +978,36 @@ details summary strong {
     max-width: 420px !important;
   }
 }
+/* ===== World Championship Section ===== */
+.wc-section {
+  background: #f9f9f9;          /* same light background as index */
+  border-top: 8px solid #800000; /* maroon divider */
+  border-bottom: 8px solid #800000;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.wc-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.wc-image {
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.wc-intro {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 20px auto 30px;
+  max-width: 800px;
+}
+
+.wc-countdown {
+  margin-top: 20px;
+}
