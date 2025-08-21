@@ -980,24 +980,29 @@ details summary strong {
 }
 /* ===== World Championship Section ===== */
 .wc-section {
-  background: #f9f9f9;          /* same light background as index */
-  border-top: 8px solid #800000; /* maroon divider */
+  background: #f9f9f9;
+  border-top: 8px solid #800000;
   border-bottom: 8px solid #800000;
   padding: 40px 20px;
-  text-align: center;
 }
 
-.wc-content {
-  max-width: 900px;
+.wc-flex {
+  display: flex;
+  flex-wrap: wrap;         /* stacks on smaller screens */
+  align-items: center;     /* vertical alignment */
+  justify-content: center; /* center the group */
+  max-width: 1200px;
   margin: 0 auto;
+  gap: 30px;               /* space between image and text */
+}
+
+.wc-col {
+  flex: 1 1 400px;         /* responsive: shrinks but doesn’t go too small */
 }
 
 .wc-image {
-  max-width: 600px;  /* smaller so it doesn’t dominate */
   width: 100%;
   height: auto;
-  margin: 0 auto 25px;
-  display: block;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
@@ -1005,11 +1010,11 @@ details summary strong {
 .wc-intro {
   font-size: 1.2rem;
   line-height: 1.6;
-  margin: 20px auto 30px;
-  max-width: 750px;
-  color: #333;
+  margin-bottom: 20px;
 }
 
 .wc-countdown {
-  margin-top: 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #800000;
 }
