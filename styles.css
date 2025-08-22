@@ -1024,3 +1024,10 @@ details summary strong {
     text-align: center;
   }
 }
+.small-hero-img {
+  max-width: 350px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
