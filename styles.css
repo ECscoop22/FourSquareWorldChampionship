@@ -1041,3 +1041,52 @@ details summary strong {
   flex-shrink: 0 !important;     /* prevent flex container from stretching it */
   object-fit: contain !important; /* keeps proportions */
 }
+/* World Championship Intro Block */
+.wc-batched-section {
+  border: 5px solid #800000; /* same maroon as home */
+  background: linear-gradient(135deg, #008080 0%, #800000 100%); /* teal → maroon */
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Text column */
+.wc-batched-text {
+  flex: 1;
+  min-width: 280px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Image column */
+.wc-batched-image {
+  flex: 0 0 auto;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.wc-batched-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Responsive stacking */
+@media (max-width: 768px) {
+  .wc-batched-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .wc-batched-text {
+    text-align: center;
+  }
+}
