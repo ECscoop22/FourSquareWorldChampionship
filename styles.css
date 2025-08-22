@@ -1048,3 +1048,13 @@ details summary strong {
   margin: 0 auto 1rem !important;
   flex-shrink: 0 !important;     /* prevents flex container from stretching it */
 }
+/* Force the batched section hero image to stay small */
+.wc-batched-section .wc-batched-image img.small-hero-img {
+  max-width: 360px !important; /* desired size */
+  width: 100% !important;      /* responsive on smaller screens */
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 1rem !important;
+  flex-shrink: 0 !important;   /* prevents flex container from stretching it */
+  object-fit: contain !important; /* keeps proportions */
+}
