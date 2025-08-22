@@ -1041,3 +1041,35 @@ details summary strong {
   flex-shrink: 0 !important;     /* prevent flex container from stretching it */
   object-fit: contain !important; /* keeps proportions */
 }
+/* Welcome Section */
+.wc-welcome-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #f7f7f7; /* match home page background */
+  border: 2px solid #e63946; /* match border color from index */
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.wc-welcome-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.wc-welcome-image {
+  flex: 0 0 auto;
+  max-width: 360px;
+}
+
+.wc-welcome-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
