@@ -1031,30 +1031,13 @@ details summary strong {
   display: block;
   margin: 0 auto;
 }
-/* Make the 2nd banner small regardless of container rules */
-.wc-batched-section .wc-batched-image img.small-hero-img {
-  max-width: 360px !important;  /* adjust to taste */
-  width: auto !important;
-  height: auto;
-  display: block;
-  margin: 0 auto 1rem;
-}
-/* Force the second hero-banner image in the batched section to stay small */
-.wc-batched-section .wc-batched-image img.small-hero-img {
-  max-width: 360px !important;  /* adjust size as needed */
-  width: 100% !important;       /* responsive on smaller screens */
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto 1rem !important;
-  flex-shrink: 0 !important;     /* prevents flex container from stretching it */
-}
 /* Force the batched section hero image to stay small */
-.wc-batched-section .wc-batched-image img.small-hero-img {
-  max-width: 360px !important; /* desired size */
-  width: 100% !important;      /* responsive on smaller screens */
+.wc-batched-section .wc-batched-image img.only-batched {
+  max-width: 360px !important;   /* desired size */
+  width: 100% !important;        /* responsive on smaller screens */
   height: auto !important;
   display: block !important;
   margin: 0 auto 1rem !important;
-  flex-shrink: 0 !important;   /* prevents flex container from stretching it */
+  flex-shrink: 0 !important;     /* prevent flex container from stretching it */
   object-fit: contain !important; /* keeps proportions */
 }
