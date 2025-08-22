@@ -1031,3 +1031,11 @@ details summary strong {
   display: block;
   margin: 0 auto;
 }
+/* Make the 2nd banner small regardless of container rules */
+.wc-batched-section .wc-batched-image img.small-hero-img {
+  max-width: 360px !important;  /* adjust to taste */
+  width: auto !important;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
