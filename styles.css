@@ -967,11 +967,6 @@ details summary strong {
 }
 
 /* ========== Batched Section (Image + Intro + Countdown) ========== */
-.wc-batched-section {
-  padding: 40px 20px;
-  background: #fff;
-}
-
 .wc-batched-inner {
   display: flex;
   flex-wrap: wrap;
