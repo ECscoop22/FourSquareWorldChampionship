@@ -1086,3 +1086,10 @@ details summary strong {
     text-align: center;
   }
 }
+.wc-video-caption {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #800000; /* maroon */
+  margin-bottom: 12px;
+}
