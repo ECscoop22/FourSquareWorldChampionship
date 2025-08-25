@@ -1100,7 +1100,7 @@ details summary strong {
   color: #a10000 !important; /* match exact maroon */
   margin-bottom: 12px;
 }
-/* Trophy icons for WORLD CHAMPIONSHIP title */
+/* Trophy emoji for WORLD CHAMPIONSHIP title */
 .wc-title {
   display: flex;
   align-items: center;
@@ -1109,9 +1109,8 @@ details summary strong {
 }
 
 .trophy-icon {
-  width: 28px;
-  height: auto;
-  filter: drop-shadow(0 0 6px #a10000); /* glowing maroon effect */
+  font-size: 2rem;
+  filter: drop-shadow(0 0 6px #a10000);
   animation: pulseGlow 2s infinite alternate;
 }
 
