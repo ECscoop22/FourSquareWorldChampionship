@@ -1100,3 +1100,27 @@ details summary strong {
   color: #a10000 !important; /* match exact maroon */
   margin-bottom: 12px;
 }
+/* Trophy icons for WORLD CHAMPIONSHIP title */
+.wc-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.trophy-icon {
+  width: 28px;
+  height: auto;
+  filter: drop-shadow(0 0 6px #a10000); /* glowing maroon effect */
+  animation: pulseGlow 2s infinite alternate;
+}
+
+/* Subtle glowing animation */
+@keyframes pulseGlow {
+  from {
+    filter: drop-shadow(0 0 4px #a10000);
+  }
+  to {
+    filter: drop-shadow(0 0 12px #ffcc00);
+  }
+}
