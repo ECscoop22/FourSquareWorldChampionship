@@ -1140,3 +1140,52 @@ details summary strong {
   font-weight: bold;
   color: #222;
 }
+/* --- WC image column stacks image + countdown --- */
+.wc-batched-image {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px;
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Countdown block styling (works on the gradient background) */
+.countdown-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+}
+
+.clock-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.countdown-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.countdown-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.countdown-numbers {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
