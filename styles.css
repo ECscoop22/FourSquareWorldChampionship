@@ -1123,3 +1123,20 @@ details summary strong {
     filter: drop-shadow(0 0 12px #ffcc00);
   }
 }
+.countdown-wrapper {
+  text-align: center;
+  margin-top: 20px;
+  color: #a10000; /* maroon */
+}
+
+.countdown-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.countdown-timer {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #222;
+}
