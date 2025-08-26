@@ -1190,8 +1190,8 @@ details summary strong {
   color: #ffffff;
 }
 #countdown {
-  color: #a10000; /* strong maroon, same as other headings */
+  color: #ffffff;
   font-size: 2rem;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* helps against bright backgrounds */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
