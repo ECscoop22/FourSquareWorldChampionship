@@ -275,10 +275,12 @@ li {
 
 .title-row {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* stack items vertically */
+  align-items: center;    /* center everything horizontally */
   justify-content: center;
-  gap: 1em; /* horizontal space between SVGs and header */
-  }
+  gap: 0.5em;            /* vertical spacing between items */
+  text-align: center;
+}
 
   .video-container,
   .hero-row img {
