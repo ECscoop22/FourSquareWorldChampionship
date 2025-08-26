@@ -1243,3 +1243,11 @@ details summary strong {
     height: auto;
   }
 }
+.wc-tagline {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #a10000; /* match the maroon theme */
+  margin-top: 6px;
+  font-style: italic;
+}
