@@ -1197,3 +1197,18 @@ details summary strong {
   margin-top: 12px;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
+.countdown-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 12px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.countdown-number {
+  font-size: 2.2rem;
+  color: #ffdd00; /* bright gold/yellow for emphasis */
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+  margin-right: 6px;
+}
