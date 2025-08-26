@@ -1217,3 +1217,29 @@ details summary strong {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* subtle shadow for readability */
   display: inline-block;                 /* shrink-wrap the background to the numbers */
 }
+/* Responsive adjustments for countdown and image */
+@media (max-width: 768px) {
+  .wc-batched-section {
+    display: flex;
+    flex-direction: column; /* stack columns vertically */
+    align-items: center;    /* center everything */
+  }
+
+  .wc-batched-image {
+    margin-top: 1em; /* add some space above countdown */
+    text-align: center; /* center countdown under image */
+  }
+
+  .countdown-block {
+    margin-top: 0.8em; /* spacing between image and countdown */
+  }
+
+  .wc-batched-text {
+    text-align: center; /* center text for mobile */
+  }
+
+  .wc-batched-image img {
+    width: 90%; /* make image slightly smaller to fit mobile */
+    height: auto;
+  }
+}
