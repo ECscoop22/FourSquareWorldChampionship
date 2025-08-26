@@ -1195,3 +1195,17 @@ details summary strong {
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
+@keyframes tick {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-15deg); }
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.clock-emoji {
+  display: inline-block;
+  font-size: 2.5rem;
+  animation: tick 1s infinite ease-in-out;
+  transform-origin: center bottom;
+}
