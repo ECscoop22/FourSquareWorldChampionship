@@ -62,18 +62,20 @@
 </p>
   </div>
 
-<!-- Right Column: Image + Countdown -->
-<div class="wc-image">
-  <img 
-    src="images/hero-banner.jpg" 
-    alt="World Championship Banner" 
+  <!-- Right Column: Image -->
+<div class="wc-batched-image">
+  <img
+    src="images/hero-banner.jpg"
+    alt="World Championship Banner"
     class="only-batched"
   />
 
-  <!-- Countdown below image -->
-  <div class="countdown-wrapper">
-    <img src="images/clock-icon.png" alt="Countdown Clock" class="countdown-icon pulse">
-    <div id="countdown" class="countdown-text">Loading…</div>
+  <div class="countdown-block">
+    <span class="clock-emoji" aria-hidden="true">⏰</span>
+    <div class="countdown-content">
+      <div class="countdown-title">Countdown until the 2026 World Championships</div>
+      <div id="countdown" class="countdown-numbers">Loading…</div>
+    </div>
   </div>
 </div>
 </section>
@@ -203,8 +205,8 @@
 
     if (timeDiff > 0) {
       const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-document.getElementById("countdown").innerHTML =
-  `<span class="countdown-number">${daysLeft}</span> days left`;
+      document.getElementById("countdown").innerHTML =
+        `${daysLeft} day${daysLeft !== 1 ? 's' : ''} left`;
     } else {
       document.getElementById("countdown").textContent = `It's World Championship Day!`;
     }
