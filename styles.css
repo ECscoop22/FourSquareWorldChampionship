@@ -1251,3 +1251,13 @@ details summary strong {
   margin-top: 6px;
   font-style: italic;
 }
+.wc-tagline {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #a10000;
+  margin-top: 6px;
+  font-style: italic;
+}
