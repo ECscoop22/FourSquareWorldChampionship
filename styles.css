@@ -1263,3 +1263,9 @@ details summary strong {
   margin-top: 6px;
   font-style: italic;
 }
+/* Stack title + tagline vertically inside World Championship header */
+.wc-title-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center text under title */
+}
