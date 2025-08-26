@@ -1209,3 +1209,11 @@ details summary strong {
   animation: tick 1s infinite ease-in-out;
   transform-origin: center bottom;
 }
+/* Countdown numbers highlight */
+.countdown-numbers {
+  background: rgba(255, 255, 255, 0.2); /* semi-transparent white for subtle highlight */
+  padding: 0.3em 0.6em;                 /* adds breathing room around the numbers */
+  border-radius: 8px;                    /* soft rounded corners */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* subtle shadow for readability */
+  display: inline-block;                 /* shrink-wrap the background to the numbers */
+}
