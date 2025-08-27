@@ -1348,3 +1348,31 @@ details summary strong {
   margin: 0.4em auto 0;
   border-radius: 2px;
 }
+/* WORLD CHAMPIONSHIP section headings */
+.wc-section h2 {
+  font-family: 'Fredoka', sans-serif; /* consistent with site */
+  font-size: 1.6rem;                  /* slightly smaller to fit section */
+  color: #ffffff;                     /* white so it stands out on colored background */
+  text-align: center;                  /* keep centered, matches current layout */
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+/* underline decoration */
+.wc-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: gold;
+  margin: 0.3em auto 0;
+  border-radius: 2px;
+}
+
+/* paragraphs inside WC sections */
+.wc-section p {
+  color: #ffffff;            /* white text so it contrasts with gradient background */
+  font-size: 1.1rem;         /* readable size, matches other body text */
+  line-height: 1.6;          /* nice spacing */
+  text-align: center;        /* center to match headings, can be left if you prefer */
+}
