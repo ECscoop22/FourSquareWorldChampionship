@@ -1269,96 +1269,19 @@ details summary strong {
   flex-direction: column;
   align-items: center; /* center text under title */
 }
-.wc-section h2 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 1.8em;
-  color: #800000; /* maroon */
-  text-align: center;
-  margin-bottom: 0.5em;
-  position: relative;
-}
 
-.wc-section h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: gold;
-  margin: 0.3em auto 0;
-  border-radius: 2px;
-}
-.section-header.red {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 1.8em;
-  color: #800000; /* maroon */
-  text-align: center;
-  margin-bottom: 0.5em;
-  position: relative;
-}
-
-.section-header.red::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: gold;
-  margin: 0.3em auto 0;
-  border-radius: 2px;
-}
-.section-header.red {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 1.6em; /* slightly smaller, matches site hierarchy */
-  color: #b22222; /* firebrick red for better balance */
-  text-align: center;
-  margin-bottom: 0.5em;
-  position: relative;
-}
-
-.section-header.red::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: gold;
-  margin: 0.3em auto 0;
-  border-radius: 2px;
-}
-
-.wc-section p {
-  color: #333; /* softer, readable dark gray */
-  text-align: left; /* better readability */
-  line-height: 1.5;
-}
-.wc-section h2 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 1.6em;
-  color: #FFD700; /* gold */
-  text-align: center;
-  margin-bottom: 0.5em;
-  position: relative;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-}
-
-.wc-section h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #fff; /* subtle underline */
-  margin: 0.4em auto 0;
-  border-radius: 2px;
-}
 /* WORLD CHAMPIONSHIP section headings */
 .wc-section h2 {
-  font-family: 'Fredoka', sans-serif; /* consistent with site */
-  font-size: 1.6rem;                  /* slightly smaller to fit section */
-  color: #ffffff;                     /* white so it stands out on colored background */
-  text-align: center;                  /* keep centered, matches current layout */
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.8rem;
+  color: #ffffff; /* white so it stands out on gradient background */
+  text-align: center;
   margin-bottom: 0.5em;
   position: relative;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* optional, helps readability */
 }
 
-/* underline decoration */
+/* underline decoration for WC headings */
 .wc-section h2::after {
   content: "";
   display: block;
@@ -1371,45 +1294,22 @@ details summary strong {
 
 /* paragraphs inside WC sections */
 .wc-section p {
-  color: #ffffff;            /* white text so it contrasts with gradient background */
-  font-size: 1.1rem;         /* readable size, matches other body text */
-  line-height: 1.6;          /* nice spacing */
-  text-align: center;        /* center to match headings, can be left if you prefer */
+  color: #ffffff; /* white text */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center; /* or left if you prefer */
+  margin-bottom: 1em;
 }
-/* WORLD CHAMPIONSHIP sections - override card styles */
+
+/* WORLD CHAMPIONSHIP section wrapper */
 .wc-section {
   background: linear-gradient(135deg, #008080, #800000); /* teal → maroon */
-  color: #ffffff !important; /* force white text for contrast */
   padding: 2em;
   border-radius: 12px;
   text-align: center; /* keep centered */
 }
 
-.wc-section h2 {
-  font-family: 'Fredoka', sans-serif; /* consistent with site */
-  font-size: 1.8rem;
-  color: #ffffff !important;
-  margin-bottom: 0.5em;
-  position: relative;
-}
-
-.wc-section h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: gold;
-  margin: 0.3em auto 0;
-  border-radius: 2px;
-}
-
-.wc-section p {
-  color: #ffffff !important;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1em;
-}
-
+/* links inside WC sections */
 .wc-section a {
   color: #ffd700; /* gold links */
   font-weight: bold;
