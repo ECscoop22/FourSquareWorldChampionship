@@ -1376,3 +1376,46 @@ details summary strong {
   line-height: 1.6;          /* nice spacing */
   text-align: center;        /* center to match headings, can be left if you prefer */
 }
+/* WORLD CHAMPIONSHIP sections - override card styles */
+.wc-section {
+  background: linear-gradient(135deg, #008080, #800000); /* teal → maroon */
+  color: #ffffff !important; /* force white text for contrast */
+  padding: 2em;
+  border-radius: 12px;
+  text-align: center; /* keep centered */
+}
+
+.wc-section h2 {
+  font-family: 'Fredoka', sans-serif; /* consistent with site */
+  font-size: 1.8rem;
+  color: #ffffff !important;
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+.wc-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: gold;
+  margin: 0.3em auto 0;
+  border-radius: 2px;
+}
+
+.wc-section p {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.wc-section a {
+  color: #ffd700; /* gold links */
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.wc-section a:hover {
+  color: #ffffff;
+}
