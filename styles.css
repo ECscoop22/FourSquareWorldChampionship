@@ -1319,3 +1319,19 @@ details summary strong {
 .wc-section a:hover {
   color: #ffffff;
 }
+/* Ensure all WC sections have consistent horizontal alignment */
+.wc-section {
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* keep headings and paragraphs centered */
+  max-width: 1200px;  /* optional, ensures consistent width */
+}
+
+/* Remove any extra indentation on specific sections */
+.wc-section h2, 
+.wc-section p {
+  margin-left: 0;
+  margin-right: 0;
+}
