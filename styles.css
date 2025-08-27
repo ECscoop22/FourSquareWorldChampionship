@@ -1287,3 +1287,21 @@ details summary strong {
   margin: 0.3em auto 0;
   border-radius: 2px;
 }
+.section-header.red {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.8em;
+  color: #800000; /* maroon */
+  text-align: center;
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+.section-header.red::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: gold;
+  margin: 0.3em auto 0;
+  border-radius: 2px;
+}
