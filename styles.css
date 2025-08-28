@@ -1359,3 +1359,9 @@ details summary strong {
   border-radius: 12px; /* subtle rounded corners */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* soft shadow for depth */
 }
+/* Footer tagline styling */
+.site-tagline {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 3em;
+}
