@@ -24,13 +24,31 @@
 </h1>
 
   <section class="card">
-    <form action="https://formspree.io/f/moqgqyyl" method="POST">
-      <label>Name:<br><input type="text" name="name" required></label><br><br>
-      <label>Age:<br><input type="number" name="age" required></label><br><br>
-      <label>Email:<br><input type="email" name="email" required></label><br><br>
-      <label>Location:<br><input type="text" name="location" required></label><br><br>
-      <button type="submit">Submit</button>
-    </form>
+<form action="https://formspree.io/f/your-id" method="POST" class="registration-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="gender">Gender:</label>
+  <select id="gender" name="gender" required>
+    <option value="">--Select--</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+
+  <label for="age">Age:</label>
+  <input type="number" id="age" name="age" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="phone">Phone #:</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <label for="location">Where do you live?</label>
+  <input type="text" id="location" name="location" required>
+
+  <button type="submit">Submit</button>
+</form>
 
     <p>Placeholder text</p>
   </section>
