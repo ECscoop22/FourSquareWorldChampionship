@@ -1393,17 +1393,25 @@ form label {
   color: #ddd; /* softer text instead of pure black */
   letter-spacing: 0.5px;
 }
-
 form input,
 form select,
 form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 8px;
   font-size: 16px;
   width: 100%;
+  background-color: #222;   /* darker background */
+  color: #fff;              /* white text */
+  transition: all 0.3s ease;
 }
-
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #b22222;   /* red highlight */
+  outline: none;
+  box-shadow: 0 0 6px rgba(178, 34, 34, 0.6);
+}
 form button {
   padding: 12px;
   background-color: #b22222;
