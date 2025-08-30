@@ -1373,3 +1373,40 @@ details summary strong {
   font-size: 1.2em; /* adjust as needed */
   color: #333; /* or any color that fits your design */
 }
+/* Form styling */
+form {
+  max-width: 500px;
+  margin: 0 auto; /* centers the form */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* space between fields */
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+}
+
+form button {
+  padding: 12px;
+  background-color: #b22222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #8b1a1a;
+}
