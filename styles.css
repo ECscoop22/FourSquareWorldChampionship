@@ -1472,3 +1472,10 @@ form button:hover {
   max-width: 1000px;
   margin: 30px auto;
 }
+.slogan {
+    font-family: 'Fredoka', sans-serif;
+    color: #E10600; /* replace with your exact red if different */
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem; /* adjust size as needed */
+}
