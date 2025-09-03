@@ -1488,3 +1488,7 @@ form button:hover {
   text-align: center;
   margin-top: 1em;
 }
+/* Match Register tagline spacing to Home */
+.register-page .site-tagline {
+  margin-top: 0.2em !important; /* tighter like Home page */
+}
