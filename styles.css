@@ -1367,14 +1367,6 @@ details summary strong {
   text-align: center;
   margin-top: 0.5em; /* adjust spacing so tagline sits close under title */
 }
-/* Home page tagline under FOUR SQUARE */
-.home-tagline {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 1em;
-  font-size: 1.2em; /* adjust as needed */
-  color: #333; /* or any color that fits your design */
-}
 /* Form styling */
 form {
   max-width: 500px;
