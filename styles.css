@@ -1361,11 +1361,12 @@ details summary strong {
 }
 /* Footer tagline styling */
 .site-tagline {
-  font-size: 1.5em;
+  font-size: 1.2em;     /* smaller than before */
   font-weight: 500;
-  color: #b22222;   /* ✅ maroon to match other pages */
+  font-style: italic;   /* ✅ italic like the others */
+  color: #b22222;       /* maroon */
   text-align: center;
-  margin-top: 0.5em; /* adjust spacing so tagline sits close under title */
+  margin-top: 0.3em;    /* slightly closer to the title */
 }
 /* Form styling */
 form {
