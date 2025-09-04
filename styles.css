@@ -1496,3 +1496,17 @@ form button:hover {
   color: #b22222; /* same maroonish color */
   line-height: 1.5;
 }
+/* Highlighted box for registration note */
+.register-note {
+  background: rgba(255, 255, 255, 0.08); /* subtle transparent highlight */
+  border-left: 4px solid #b22222;        /* maroon accent bar */
+  padding: 15px 20px;
+  margin: 1.5em auto;
+  max-width: 600px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  color: #f0f0f0;  /* light gray/white text */
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+}
