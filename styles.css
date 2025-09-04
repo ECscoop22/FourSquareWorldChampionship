@@ -1361,9 +1361,11 @@ details summary strong {
 }
 /* Footer tagline styling */
 .site-tagline {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #b22222;   /* ✅ maroon to match other pages */
   text-align: center;
-  font-weight: bold;
-  margin-top: 3em;
+  margin-top: 0.5em; /* adjust spacing so tagline sits close under title */
 }
 /* Home page tagline under FOUR SQUARE */
 .home-tagline {
