@@ -1487,3 +1487,12 @@ form button:hover {
 .register-page .site-tagline {
   margin-top: 0.2em !important; /* tighter like Home page */
 }
+.register-note {
+  max-width: 600px;
+  margin: 1.5em auto;
+  text-align: center;
+  font-size: 1.1em;
+  font-style: italic;
+  color: #b22222; /* same maroonish color */
+  line-height: 1.5;
+}
