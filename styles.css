@@ -1479,14 +1479,12 @@ form button:hover {
   font-family: 'Fredoka', sans-serif;
   font-weight: bold;
   font-size: 1.2em;
-  color: #333 !important;
+  color: #b22222 !important;   /* ✅ match maroon used on other pages */
   text-align: center;
-  margin-top: 1em;
+  margin-top: 0.2em;           /* ✅ same tighter spacing as Home */
+  font-style: italic;          /* ✅ italicized like other taglines */
 }
-/* Match Register tagline spacing to Home */
-.register-page .site-tagline {
-  margin-top: 0.2em !important; /* tighter like Home page */
-}
+
 /* Registration note — tuned for LIGHT page background */
 .register-note {
   max-width: 700px;
