@@ -1487,26 +1487,19 @@ form button:hover {
 .register-page .site-tagline {
   margin-top: 0.2em !important; /* tighter like Home page */
 }
+/* Registration note — tuned for LIGHT page background */
 .register-note {
-  max-width: 600px;
-  margin: 1.5em auto;
-  text-align: center;
-  font-size: 1.1em;
-  font-style: italic;
-  color: #b22222; /* same maroonish color */
-  line-height: 1.5;
-}
-/* Highlighted box for registration note */
-.register-note {
-  background: rgba(255, 255, 255, 0.08); /* subtle transparent highlight */
-  border-left: 4px solid #b22222;        /* maroon accent bar */
-  padding: 15px 20px;
-  margin: 1.5em auto;
-  max-width: 600px;
-  border-radius: 8px;
-  font-size: 1.1em;
-  color: #f0f0f0;  /* light gray/white text */
-  line-height: 1.6;
+  max-width: 700px;
+  margin: 1rem auto 1.5rem;
+  padding: 14px 18px;
+  background: #ffffff;                    /* visible on light bg */
+  border: 1px solid #f1d7d7;              /* soft maroon tint */
+  border-left: 4px solid #b22222;         /* maroon accent bar */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  color: #800000;                         /* readable maroon text */
+  font-size: 1.05rem;
+  line-height: 1.55;
   text-align: center;
   font-style: italic;
 }
