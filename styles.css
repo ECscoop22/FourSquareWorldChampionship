@@ -1648,7 +1648,8 @@ form input[type="submit"]:hover {
   font-style: italic;
 }
 /* ---------------------------
-   Register page - HIGH CONTRAST
+  /* ---------------------------
+   Register page - DARK THEME
    (Place at the *end* of styles.css)
    --------------------------- */
 
@@ -1656,19 +1657,19 @@ form input[type="submit"]:hover {
   max-width: 680px;
   margin: 0 auto;
   padding: 24px;
-  background: #ffffff;          /* solid card so text never bleeds with background */
-  color: #111;                  /* page text color */
+  background: rgba(0, 0, 0, 0.85);  /* dark translucent panel */
+  color: #f5f5f5;                   /* light text */
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   box-sizing: border-box;
 }
 
-/* Labels (clear and brand-colored but not harsh) */
+/* Labels */
 .register-page .register-intro form label {
   display: block;
   margin-bottom: 6px;
-  color: #5a1111;               /* darker maroon, easier on the eyes than bright red */
-  font-weight: 700;
+  color: #ffdddd;                   /* soft light red/pink for brand tie-in */
+  font-weight: 600;
   font-size: 0.95rem;
 }
 
@@ -1678,39 +1679,40 @@ form input[type="submit"]:hover {
 .register-page .register-intro form textarea {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #d0d0d0;
-  background: #fff;             /* white inputs for consistent contrast */
-  color: #111;                  /* dark input text */
+  border: 1px solid #444;
+  background: #111;                 /* deep gray input background */
+  color: #fff;                      /* white text */
   border-radius: 8px;
   font-size: 1rem;
   box-sizing: border-box;
 }
 
-/* Placeholder color for better UX */
+/* Placeholder styling */
 .register-page .register-intro form input::placeholder,
 .register-page .register-intro form textarea::placeholder {
-  color: #999;
+  color: #aaa;
   opacity: 1;
 }
 
-/* Select explicit color on selects (some browsers render differently) */
+/* Select dropdown text */
 .register-page .register-intro form select {
-  color: #111;
+  color: #fff;
+  background-color: #111;
 }
 
-/* Focus styles to improve visibility when tabbing */
+/* Focus styles */
 .register-page .register-intro form input:focus,
 .register-page .register-intro form select:focus,
 .register-page .register-intro form textarea:focus {
   outline: none;
   border-color: #b22222;
-  box-shadow: 0 0 0 4px rgba(178,34,34,0.08);
+  box-shadow: 0 0 0 3px rgba(178,34,34,0.4);
 }
 
 /* Buttons */
 .register-page .register-intro form button,
 .register-page .register-intro form input[type="submit"] {
-  background: #d60000;
+  background: #b22222;
   color: #fff;
   border: none;
   padding: 10px 18px;
@@ -1722,16 +1724,6 @@ form input[type="submit"]:hover {
 
 .register-page .register-intro form button:hover,
 .register-page .register-intro form input[type="submit"]:hover {
-  background: #a10000;
+  background: #8b1a1a;
   transform: translateY(-1px);
-}
-
-/* Tidy small layout niceties */
-.register-page .register-intro form .form-row {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.register-page .register-intro form .form-row .half {
-  flex: 1 1 0;
 }
