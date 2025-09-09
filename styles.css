@@ -1631,3 +1631,27 @@ form input[type="submit"]:hover {
   background-color: #a10000;
   transform: scale(1.03);
 }
+/* ✅ Fix tagline on Register page */
+.register-page .site-tagline {
+  font-size: 1.1em;
+  font-style: italic;
+  color: #800000;  /* maroon like other pages */
+  margin-top: 0.2em;
+  text-align: center;
+}
+
+/* ✅ Fix the registration note box (remove white bg) */
+.register-note {
+  max-width: 700px;
+  margin: 1rem auto 1.5rem;
+  padding: 14px 18px;
+  background: rgba(178, 34, 34, 0.1);   /* subtle maroon tint instead of white */
+  border-left: 4px solid #b22222;       /* maroon accent bar */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  color: #333;                          /* readable text */
+  font-size: 1.05rem;
+  line-height: 1.55;
+  text-align: center;
+  font-style: italic;
+}
