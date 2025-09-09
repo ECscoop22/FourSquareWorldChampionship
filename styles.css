@@ -1508,3 +1508,71 @@ form button:hover {
   text-align: center;
   font-style: italic;
 }
+/* ===== Register page overrides (paste at end of file) ===== */
+
+/* Make the tagline on the Register page match the other pages */
+.register-page .site-tagline {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;     /* slightly smaller */
+  color: #b22222;         /* maroon used sitewide */
+  text-align: center;
+  margin-top: 0.2em;      /* tight spacing like the Home page */
+  font-style: italic;
+}
+
+/* Subtle highlighted box (non-white) for the registration note */
+.register-note {
+  max-width: 760px;
+  margin: 1rem auto;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.06); /* subtle light overlay over the gradient */
+  border-left: 4px solid #b22222;     /* maroon accent bar */
+  color: #ffffff;                     /* text white for contrast */
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* Keep the section background (register-intro) as your gradient,
+   but style the form *inside* it so the form itself looks like the mockup */
+.register-intro {
+  /* your existing gradient stays; this just ensures spacing */
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Form inside the register-intro gets a subtle dark panel */
+.register-intro form {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(0,0,0,0.18); /* subtle dark panel inside gradient */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-sizing: border-box;
+}
+
+/* Ensure inputs inside that panel keep dark style and do not overflow */
+.register-intro form input,
+.register-intro form select,
+.register-intro form textarea {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+  box-sizing: border-box; /* prevents overflow */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Tighten button spacing to match mock */
+.register-intro form button {
+  align-self: center;
+  min-width: 160px;
+  padding: 10px 18px;
+}
