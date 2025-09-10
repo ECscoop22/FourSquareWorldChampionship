@@ -1727,3 +1727,20 @@ form input[type="submit"]:hover {
   background: #8b1a1a;
   transform: translateY(-1px);
 }
+.event-details {
+  text-align: center;
+  margin: 1.5em auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #b22222; /* maroon tie-in */
+  font-weight: 600;
+}
+
+.event-date {
+  margin: 0;
+}
+
+.event-location {
+  margin: 0;
+  font-style: italic;
+}
