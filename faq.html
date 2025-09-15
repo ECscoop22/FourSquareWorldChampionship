@@ -98,7 +98,7 @@ function renderGames() {
       date: document.getElementById("date").value,
       time: document.getElementById("time").value,
       details: document.getElementById("details").value,
-      attendees: 0
+      attendees: []  // array to store name + email objects
     };
     games.push(newGame);
     localStorage.setItem("games", JSON.stringify(games));
