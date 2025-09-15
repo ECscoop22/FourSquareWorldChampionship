@@ -63,32 +63,40 @@
   let highlights = JSON.parse(localStorage.getItem("highlights")) || [];
 
   // Render games
-function renderGames() {
-  gameList.innerHTML = "";
-  games.forEach((game, index) => {
-    // Convert time to 12-hour format
-    let [hour, minute] = game.time.split(":");
-    hour = parseInt(hour);
-    let ampm = hour >= 12 ? "PM" : "AM";
-    hour = hour % 12 || 12; // converts 0 to 12 for midnight
-    let formattedTime = hour + ":" + minute + " " + ampm;
+  function renderGames() {
+    gameList.innerHTML = "";
+    games.forEach((game, index) => {
+      // Convert time to 12-hour format
+      let [hour, minute] = game.time.split(":");
+      hour = parseInt(hour);
+      let ampm = hour >= 12 ? "PM" : "AM";
+      hour = hour % 12 || 12; // converts 0 to 12 for midnight
+      let formattedTime = hour + ":" + minute + " " + ampm;
 
-    // Convert date to Month Day, Year
-    let dateObj = new Date(game.date);
-    let options = { year: 'numeric', month: 'long', day: 'numeric' };
-    let formattedDate = dateObj.toLocaleDateString(undefined, options);
+      // Convert date to Month Day, Year
+      let dateObj = new Date(game.date);
+      let options = { year: 'numeric', month: 'long', day: 'numeric' };
+      let formattedDate = dateObj.toLocaleDateString(undefined, options);
 
-    const div = document.createElement("div");
-    div.classList.add("event");
-    div.innerHTML = `
-      <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
-      ${game.details ? `<em>${game.details}</em><br>` : ""}
-      <span>Attendees: ${game.attendees}</span>
-      <button class="join-btn" onclick="joinGame(${index})">Join</button>
-    `;
-    gameList.appendChild(div);
-  });
-}
+      // Build attendees list
+      let attendeeList = "";
+      if (game.attendees.length > 0) {
+        attendeeList = "<ul>" + game.attendees.map(a => `<li>${a.name} (${a.email})</li>`).join("") + "</ul>";
+      } else {
+        attendeeList = "<p>No one joined yet</p>";
+      }
+
+      const div = document.createElement("div");
+      div.classList.add("event");
+      div.innerHTML = `
+        <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
+        ${game.details ? `<em>${game.details}</em><br>` : ""}
+        <strong>Attendees:</strong> ${attendeeList}
+        <button class="join-btn" onclick="joinGame(${index})">Join</button>
+      `;
+      gameList.appendChild(div);
+    });
+  }
 
   // Add game
   gameForm.addEventListener("submit", (e) => {
@@ -108,7 +116,12 @@ function renderGames() {
 
   // Join game
   function joinGame(index) {
-    games[index].attendees++;
+    const name = prompt("Enter your first name:");
+    if (!name) return;
+    const email = prompt("Enter your email:");
+    if (!email) return;
+
+    games[index].attendees.push({ name, email });
     localStorage.setItem("games", JSON.stringify(games));
     renderGames();
   }
