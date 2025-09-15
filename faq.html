@@ -31,7 +31,6 @@
 
 <h1 class="glow-title" style="text-align:center;">GAME HUB</h1>
 
-<!-- Post a Game Form -->
 <section class="card">
   <h2>Host a Game</h2>
   <form id="gameForm">
@@ -43,13 +42,11 @@
   </form>
 </section>
 
-<!-- Event Listings -->
 <section class="card">
   <h2>Upcoming Games</h2>
   <div id="gameList"></div>
 </section>
 
-<!-- Highlights -->
 <section class="card">
   <h2>Game Highlights</h2>
   <form id="highlightForm">
@@ -64,7 +61,7 @@
 </footer>
 
 <script>
-  const adminEmail = "youremail@domain.com"; // set your admin email here
+  const adminEmail = "youremail@domain.com"; // Set your admin email here
 
   const gameForm = document.getElementById("gameForm");
   const gameList = document.getElementById("gameList");
@@ -128,7 +125,7 @@
       time: document.getElementById("time").value,
       details: document.getElementById("details").value,
       attendees: [],
-      creator: { name: creatorName, email: creatorEmail }
+      creator: { name: creatorName, email: creatorEmail.trim().toLowerCase() }
     };
 
     games.push(newGame);
@@ -144,7 +141,7 @@
     const email = prompt("Enter your email:");
     if (!email) return;
 
-    games[index].attendees.push({ name, email });
+    games[index].attendees.push({ name, email: email.trim().toLowerCase() });
     localStorage.setItem("games", JSON.stringify(games));
     renderGames();
   }
@@ -154,8 +151,12 @@
     const email = prompt("Enter your email to confirm deletion:");
     if (!email) return;
 
+    const inputEmail = email.trim().toLowerCase();
     const game = games[index];
-    if (game.creator.email === email || email === adminEmail) {
+    const creatorEmail = (game.creator && game.creator.email ? game.creator.email.trim().toLowerCase() : "");
+    const admin = adminEmail.trim().toLowerCase();
+
+    if (inputEmail === creatorEmail || inputEmail === admin) {
       if (confirm("Are you sure you want to delete this game?")) {
         games.splice(index, 1);
         localStorage.setItem("games", JSON.stringify(games));
@@ -171,8 +172,12 @@
     const email = prompt("Enter your email to edit this game:");
     if (!email) return;
 
+    const inputEmail = email.trim().toLowerCase();
     const game = games[index];
-    if (game.creator.email === email || email === adminEmail) {
+    const creatorEmail = (game.creator && game.creator.email ? game.creator.email.trim().toLowerCase() : "");
+    const admin = adminEmail.trim().toLowerCase();
+
+    if (inputEmail === creatorEmail || inputEmail === admin) {
       const newLocation = prompt("Update location:", game.location);
       if (!newLocation) return;
       const newDate = prompt("Update date (YYYY-MM-DD):", game.date);
