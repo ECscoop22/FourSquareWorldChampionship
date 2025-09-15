@@ -1788,3 +1788,12 @@ button:hover {
   font-size: 0.9em; 
   color: #555; 
 }
+/* Center main Game Hub title */
+.glow-title {
+  text-align: center;
+}
+
+/* Center section headings like "Host a Game" */
+main h2 {
+  text-align: center;
+}
