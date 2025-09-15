@@ -6,6 +6,17 @@
   <title>Game Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .card { margin: 1em 0; padding: 1em; border-radius: 12px; background: #fff; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
+    form input, form textarea { width: 100%; padding: 8px; margin: 6px 0; border: 1px solid #ccc; border-radius: 6px; }
+    button { padding: 8px 16px; margin-top: 8px; border: none; border-radius: 6px; cursor: pointer; background: #e63946; color: white; }
+    button:hover { background: #c92f3f; }
+    .join-btn { background: #457b9d; margin-left: 5px; }
+    .join-btn:hover { background: #35607a; }
+    .event { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 8px; }
+    ul { margin: 5px 0 0 20px; padding: 0; }
+    li { margin: 2px 0; }
+  </style>
 </head>
 <body>
 <nav>
@@ -18,40 +29,40 @@
   <a href="media.html">Media</a>
 </nav>
   
- <h1 class="glow-title">GAME HUB</h1>
+<h1 class="glow-title" style="text-align:center;">GAME HUB</h1>
   
-  <!-- Post a Game Form -->
-  <section class="card">
-    <h2>Host a Game</h2>
-    <form id="gameForm">
-      <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-      <input type="date" id="date" required />
-      <input type="time" id="time" required />
-      <textarea id="details" placeholder="Extra details (optional)"></textarea>
-      <button type="submit">Post Game</button>
-    </form>
-  </section>
+<!-- Post a Game Form -->
+<section class="card">
+  <h2>Host a Game</h2>
+  <form id="gameForm">
+    <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
+    <input type="date" id="date" required />
+    <input type="time" id="time" required />
+    <textarea id="details" placeholder="Extra details (optional)"></textarea>
+    <button type="submit">Post Game</button>
+  </form>
+</section>
 
-  <!-- Event Listings -->
-  <section class="card">
-    <h2>Upcoming Games</h2>
-    <div id="gameList"></div>
-  </section>
+<!-- Event Listings -->
+<section class="card">
+  <h2>Upcoming Games</h2>
+  <div id="gameList"></div>
+</section>
 
-  <!-- Highlights -->
-  <section class="card">
-    <h2>Game Highlights</h2>
-    <form id="highlightForm">
-      <textarea id="highlightText" placeholder="Share your summary, photos, or video link"></textarea>
-      <button type="submit">Post Highlight</button>
-    </form>
-    <div id="highlightList"></div>
-  </section>
-</main>
-     
+<!-- Highlights -->
+<section class="card">
+  <h2>Game Highlights</h2>
+  <form id="highlightForm">
+    <textarea id="highlightText" placeholder="Share your summary, photos, or video link"></textarea>
+    <button type="submit">Post Highlight</button>
+  </form>
+  <div id="highlightList"></div>
+</section>
+
 <footer>
   <p class="site-tagline">The nation's finest resource for all things four square.</p>
 </footer>
+
 <script>
   // LocalStorage-based event system
   const gameForm = document.getElementById("gameForm");
@@ -62,15 +73,18 @@
   let games = JSON.parse(localStorage.getItem("games")) || [];
   let highlights = JSON.parse(localStorage.getItem("highlights")) || [];
 
+  const adminEmail = "youremail@domain.com"; // your email as admin
+
   // Render games
   function renderGames() {
     gameList.innerHTML = "";
+
     games.forEach((game, index) => {
       // Convert time to 12-hour format
       let [hour, minute] = game.time.split(":");
       hour = parseInt(hour);
       let ampm = hour >= 12 ? "PM" : "AM";
-      hour = hour % 12 || 12; // converts 0 to 12 for midnight
+      hour = hour % 12 || 12;
       let formattedTime = hour + ":" + minute + " " + ampm;
 
       // Convert date to Month Day, Year
@@ -78,12 +92,23 @@
       let options = { year: 'numeric', month: 'long', day: 'numeric' };
       let formattedDate = dateObj.toLocaleDateString(undefined, options);
 
-      // Build attendees list
+      // Attendees list
       let attendeeList = "";
-      if (game.attendees.length > 0) {
+      if (Array.isArray(game.attendees) && game.attendees.length > 0) {
         attendeeList = "<ul>" + game.attendees.map(a => `<li>${a.name} (${a.email})</li>`).join("") + "</ul>";
       } else {
         attendeeList = "<p>No one joined yet</p>";
+      }
+
+      // Current user email for permissions
+      const currentUserEmail = prompt("Enter your email to manage your games (or leave blank to just view):") || "";
+
+      let actionButtons = "";
+      if ((game.creator && game.creator.email === currentUserEmail) || currentUserEmail === adminEmail) {
+        actionButtons = `
+          <button class="join-btn" style="background:#f77;" onclick="editGame(${index})">Edit</button>
+          <button class="join-btn" style="background:#c92f3f;" onclick="deleteGame(${index})">Delete</button>
+        `;
       }
 
       const div = document.createElement("div");
@@ -93,6 +118,7 @@
         ${game.details ? `<em>${game.details}</em><br>` : ""}
         <strong>Attendees:</strong> ${attendeeList}
         <button class="join-btn" onclick="joinGame(${index})">Join</button>
+        ${actionButtons}
       `;
       gameList.appendChild(div);
     });
@@ -101,12 +127,18 @@
   // Add game
   gameForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    const creatorName = prompt("Enter your first name:");
+    if (!creatorName) return;
+    const creatorEmail = prompt("Enter your email:");
+    if (!creatorEmail) return;
+
     const newGame = {
       location: document.getElementById("location").value,
       date: document.getElementById("date").value,
       time: document.getElementById("time").value,
       details: document.getElementById("details").value,
-      attendees: []  // array to store name + email objects
+      attendees: [],
+      creator: { name: creatorName, email: creatorEmail }
     };
     games.push(newGame);
     localStorage.setItem("games", JSON.stringify(games));
@@ -122,6 +154,35 @@
     if (!email) return;
 
     games[index].attendees.push({ name, email });
+    localStorage.setItem("games", JSON.stringify(games));
+    renderGames();
+  }
+
+  // Delete game
+  function deleteGame(index) {
+    if (confirm("Are you sure you want to delete this game?")) {
+      games.splice(index, 1);
+      localStorage.setItem("games", JSON.stringify(games));
+      renderGames();
+    }
+  }
+
+  // Edit game
+  function editGame(index) {
+    const game = games[index];
+    const newLocation = prompt("Update location:", game.location);
+    if (!newLocation) return;
+    const newDate = prompt("Update date (YYYY-MM-DD):", game.date);
+    if (!newDate) return;
+    const newTime = prompt("Update time (HH:MM):", game.time);
+    if (!newTime) return;
+    const newDetails = prompt("Update details:", game.details);
+
+    game.location = newLocation;
+    game.date = newDate;
+    game.time = newTime;
+    game.details = newDetails;
+
     localStorage.setItem("games", JSON.stringify(games));
     renderGames();
   }
