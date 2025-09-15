@@ -17,21 +17,113 @@
   <a href="blog.html">Blog</a>
   <a href="media.html">Media</a>
 </nav>
-<main>
-  <h1 class="glow-title">GAME HUB</h1>
-
+  <!-- Post a Game Form -->
   <section class="card">
-    <ul>
-      <li><strong>Who can play?</strong> Anyone in our children's, men's, or women's divisions.</li>
-      <li><strong>Where is it held?</strong> In Bridgton, Maine.</li>
-      <li><strong>When is the next event?</strong> Saturday, April 25, 2026.</li>
-      <li><strong>Is there a fee?</strong> No cost to enter!</li>
-    </ul>
+    <h2>Host a Game</h2>
+    <form id="gameForm">
+      <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
+      <input type="date" id="date" required />
+      <input type="time" id="time" required />
+      <textarea id="details" placeholder="Extra details (optional)"></textarea>
+      <button type="submit">Post Game</button>
+    </form>
+  </section>
+
+  <!-- Event Listings -->
+  <section class="card">
+    <h2>Upcoming Games</h2>
+    <div id="gameList"></div>
+  </section>
+
+  <!-- Highlights -->
+  <section class="card">
+    <h2>Game Highlights</h2>
+    <form id="highlightForm">
+      <textarea id="highlightText" placeholder="Share your summary, photos, or video link"></textarea>
+      <button type="submit">Post Highlight</button>
+    </form>
+    <div id="highlightList"></div>
   </section>
 </main>
      
 <footer>
   <p class="site-tagline">The nation's finest resource for all things four square.</p>
 </footer>
+<script>
+  // LocalStorage-based event system
+  const gameForm = document.getElementById("gameForm");
+  const gameList = document.getElementById("gameList");
+  const highlightForm = document.getElementById("highlightForm");
+  const highlightList = document.getElementById("highlightList");
+
+  let games = JSON.parse(localStorage.getItem("games")) || [];
+  let highlights = JSON.parse(localStorage.getItem("highlights")) || [];
+
+  // Render games
+  function renderGames() {
+    gameList.innerHTML = "";
+    games.forEach((game, index) => {
+      const div = document.createElement("div");
+      div.classList.add("event");
+      div.innerHTML = `
+        <strong>${game.location}</strong> — ${game.date} at ${game.time}<br>
+        ${game.details ? `<em>${game.details}</em><br>` : ""}
+        <span>Attendees: ${game.attendees}</span>
+        <button class="join-btn" onclick="joinGame(${index})">Join</button>
+      `;
+      gameList.appendChild(div);
+    });
+  }
+
+  // Add game
+  gameForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const newGame = {
+      location: document.getElementById("location").value,
+      date: document.getElementById("date").value,
+      time: document.getElementById("time").value,
+      details: document.getElementById("details").value,
+      attendees: 0
+    };
+    games.push(newGame);
+    localStorage.setItem("games", JSON.stringify(games));
+    gameForm.reset();
+    renderGames();
+  });
+
+  // Join game
+  function joinGame(index) {
+    games[index].attendees++;
+    localStorage.setItem("games", JSON.stringify(games));
+    renderGames();
+  }
+
+  // Render highlights
+  function renderHighlights() {
+    highlightList.innerHTML = "";
+    highlights.forEach((text) => {
+      const div = document.createElement("div");
+      div.classList.add("highlight");
+      div.innerText = text;
+      highlightList.appendChild(div);
+    });
+  }
+
+  // Add highlight
+  highlightForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const text = document.getElementById("highlightText").value;
+    if (text.trim() !== "") {
+      highlights.push(text);
+      localStorage.setItem("highlights", JSON.stringify(highlights));
+      highlightForm.reset();
+      renderHighlights();
+    }
+  });
+
+  // Init
+  renderGames();
+  renderHighlights();
+</script>
 </body>
 </html>
