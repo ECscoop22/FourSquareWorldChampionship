@@ -63,20 +63,32 @@
   let highlights = JSON.parse(localStorage.getItem("highlights")) || [];
 
   // Render games
-  function renderGames() {
-    gameList.innerHTML = "";
-    games.forEach((game, index) => {
-      const div = document.createElement("div");
-      div.classList.add("event");
-      div.innerHTML = `
-        <strong>${game.location}</strong> — ${game.date} at ${game.time}<br>
-        ${game.details ? `<em>${game.details}</em><br>` : ""}
-        <span>Attendees: ${game.attendees}</span>
-        <button class="join-btn" onclick="joinGame(${index})">Join</button>
-      `;
-      gameList.appendChild(div);
-    });
-  }
+function renderGames() {
+  gameList.innerHTML = "";
+  games.forEach((game, index) => {
+    // Convert time to 12-hour format
+    let [hour, minute] = game.time.split(":");
+    hour = parseInt(hour);
+    let ampm = hour >= 12 ? "PM" : "AM";
+    hour = hour % 12 || 12; // converts 0 to 12 for midnight
+    let formattedTime = hour + ":" + minute + " " + ampm;
+
+    // Convert date to Month Day, Year
+    let dateObj = new Date(game.date);
+    let options = { year: 'numeric', month: 'long', day: 'numeric' };
+    let formattedDate = dateObj.toLocaleDateString(undefined, options);
+
+    const div = document.createElement("div");
+    div.classList.add("event");
+    div.innerHTML = `
+      <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
+      ${game.details ? `<em>${game.details}</em><br>` : ""}
+      <span>Attendees: ${game.attendees}</span>
+      <button class="join-btn" onclick="joinGame(${index})">Join</button>
+    `;
+    gameList.appendChild(div);
+  });
+}
 
   // Add game
   gameForm.addEventListener("submit", (e) => {
