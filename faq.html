@@ -89,11 +89,11 @@
 
       // Attendees list
       let attendeeList = "";
-      if (Array.isArray(game.attendees) && game.attendees.length > 0) {
-        attendeeList = "<ul>" + game.attendees.map(a => `<li>${a.name} (${a.email})</li>`).join("") + "</ul>";
-      } else {
-        attendeeList = "<p>No one joined yet</p>";
-      }
+     if (Array.isArray(game.attendees) && game.attendees.length > 0) {
+  attendeeList = "<ul>" + game.attendees.map(a => `<li>${a.name}</li>`).join("") + "</ul>";
+} else {
+  attendeeList = "<p>No one joined yet</p>";
+}
 
       const div = document.createElement("div");
       div.classList.add("event");
