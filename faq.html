@@ -153,17 +153,18 @@ function deleteGame(index) {
 
   const inputEmail = email.trim().toLowerCase();
   const game = games[index];
-  const creatorEmail = (game.creator && game.creator.email ? game.creator.email.toString().trim().toLowerCase() : "");
+  const creatorEmail = (game.creator && game.creator.email ? game.creator.email.toString().trim().toLowerCase() : null);
   const admin = adminEmail.trim().toLowerCase();
 
-  if (inputEmail === creatorEmail || inputEmail === admin) {
+  // Allow admin to override if no creator exists
+  if ((creatorEmail && inputEmail === creatorEmail) || inputEmail === admin || (!creatorEmail && inputEmail === admin)) {
     if (confirm("Are you sure you want to delete this game?")) {
       games.splice(index, 1);
       localStorage.setItem("games", JSON.stringify(games));
       renderGames();
     }
   } else {
-    alert(`You are not authorized to delete this game.\n\nEntered: ${inputEmail}\nCreator: ${creatorEmail}`);
+    alert(`You are not authorized to delete this game.\n\nEntered: ${inputEmail}\nCreator: ${creatorEmail || "N/A"}`);
   }
 }
 
@@ -174,10 +175,11 @@ function editGame(index) {
 
   const inputEmail = email.trim().toLowerCase();
   const game = games[index];
-  const creatorEmail = (game.creator && game.creator.email ? game.creator.email.toString().trim().toLowerCase() : "");
+  const creatorEmail = (game.creator && game.creator.email ? game.creator.email.toString().trim().toLowerCase() : null);
   const admin = adminEmail.trim().toLowerCase();
 
-  if (inputEmail === creatorEmail || inputEmail === admin) {
+  // Allow admin to override if no creator exists
+  if ((creatorEmail && inputEmail === creatorEmail) || inputEmail === admin || (!creatorEmail && inputEmail === admin)) {
     const newLocation = prompt("Update location:", game.location);
     if (!newLocation) return;
     const newDate = prompt("Update date (YYYY-MM-DD):", game.date);
@@ -194,7 +196,7 @@ function editGame(index) {
     localStorage.setItem("games", JSON.stringify(games));
     renderGames();
   } else {
-    alert(`You are not authorized to edit this game.\n\nEntered: ${inputEmail}\nCreator: ${creatorEmail}`);
+    alert(`You are not authorized to edit this game.\n\nEntered: ${inputEmail}\nCreator: ${creatorEmail || "N/A"}`);
   }
 }
 
