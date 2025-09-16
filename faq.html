@@ -146,57 +146,57 @@
     renderGames();
   }
 
-  // Delete game
-  function deleteGame(index) {
-    const email = prompt("Enter your email to confirm deletion:");
-    if (!email) return;
+// Delete game
+function deleteGame(index) {
+  const email = prompt("Enter your email to confirm deletion:");
+  if (!email) return;
 
-    const inputEmail = email.trim().toLowerCase();
-    const game = games[index];
-    const creatorEmail = (game.creator && game.creator.email ? game.creator.email.trim().toLowerCase() : "");
-    const admin = adminEmail.trim().toLowerCase();
+  const inputEmail = email.trim().toLowerCase();
+  const game = games[index];
+  const creatorEmail = (game.creator && game.creator.email ? game.creator.email.toString().trim().toLowerCase() : "");
+  const admin = adminEmail.trim().toLowerCase();
 
-    if (inputEmail === creatorEmail || inputEmail === admin) {
-      if (confirm("Are you sure you want to delete this game?")) {
-        games.splice(index, 1);
-        localStorage.setItem("games", JSON.stringify(games));
-        renderGames();
-      }
-    } else {
-      alert("You are not authorized to delete this game.");
-    }
-  }
-
-  // Edit game
-  function editGame(index) {
-    const email = prompt("Enter your email to edit this game:");
-    if (!email) return;
-
-    const inputEmail = email.trim().toLowerCase();
-    const game = games[index];
-    const creatorEmail = (game.creator && game.creator.email ? game.creator.email.trim().toLowerCase() : "");
-    const admin = adminEmail.trim().toLowerCase();
-
-    if (inputEmail === creatorEmail || inputEmail === admin) {
-      const newLocation = prompt("Update location:", game.location);
-      if (!newLocation) return;
-      const newDate = prompt("Update date (YYYY-MM-DD):", game.date);
-      if (!newDate) return;
-      const newTime = prompt("Update time (HH:MM):", game.time);
-      if (!newTime) return;
-      const newDetails = prompt("Update details:", game.details);
-
-      game.location = newLocation;
-      game.date = newDate;
-      game.time = newTime;
-      game.details = newDetails;
-
+  if (inputEmail === creatorEmail || inputEmail === admin) {
+    if (confirm("Are you sure you want to delete this game?")) {
+      games.splice(index, 1);
       localStorage.setItem("games", JSON.stringify(games));
       renderGames();
-    } else {
-      alert("You are not authorized to edit this game.");
     }
+  } else {
+    alert(`You are not authorized to delete this game.\n\nEntered: ${inputEmail}\nCreator: ${creatorEmail}`);
   }
+}
+
+// Edit game
+function editGame(index) {
+  const email = prompt("Enter your email to edit this game:");
+  if (!email) return;
+
+  const inputEmail = email.trim().toLowerCase();
+  const game = games[index];
+  const creatorEmail = (game.creator && game.creator.email ? game.creator.email.toString().trim().toLowerCase() : "");
+  const admin = adminEmail.trim().toLowerCase();
+
+  if (inputEmail === creatorEmail || inputEmail === admin) {
+    const newLocation = prompt("Update location:", game.location);
+    if (!newLocation) return;
+    const newDate = prompt("Update date (YYYY-MM-DD):", game.date);
+    if (!newDate) return;
+    const newTime = prompt("Update time (HH:MM):", game.time);
+    if (!newTime) return;
+    const newDetails = prompt("Update details:", game.details);
+
+    game.location = newLocation;
+    game.date = newDate;
+    game.time = newTime;
+    game.details = newDetails;
+
+    localStorage.setItem("games", JSON.stringify(games));
+    renderGames();
+  } else {
+    alert(`You are not authorized to edit this game.\n\nEntered: ${inputEmail}\nCreator: ${creatorEmail}`);
+  }
+}
 
   // Render highlights
   function renderHighlights() {
