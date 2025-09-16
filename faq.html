@@ -1,229 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    .card { margin: 1em 0; padding: 1em; border-radius: 12px; background: #fff; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
-    form input, form textarea { width: 100%; padding: 8px; margin: 6px 0; border: 1px solid #ccc; border-radius: 6px; }
-    button { padding: 8px 16px; margin-top: 8px; border: none; border-radius: 6px; cursor: pointer; background: #e63946; color: white; }
-    button:hover { background: #c92f3f; }
-    .join-btn { background: #457b9d; margin-left: 5px; }
-    .join-btn:hover { background: #35607a; }
-    .event { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 8px; }
-    ul { margin: 5px 0 0 20px; padding: 0; }
-    li { margin: 2px 0; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9f9f9;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fff;
+    }
+    input, button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+    }
+    .game {
+      border: 1px solid #ddd;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 5px;
+      background: #fff;
+      max-width: 600px;
+    }
+    .game strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .actions {
+      margin-top: 10px;
+    }
+    .actions button {
+      width: auto;
+      margin-right: 10px;
+      padding: 5px 10px;
+    }
+    #clearAllBtn {
+      display: none;
+      background: #d9534f;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 20px auto;
+      text-align: center;
+    }
+    #clearAllBtn:hover {
+      background: #c9302c;
+    }
   </style>
 </head>
 <body>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="rules.html">Rules</a>
-  <a href="world-championship.html">World Championship</a>
-  <a href="register.html">Register</a>
-  <a href="faq.html">Game Hub</a>
-  <a href="blog.html">Blog</a>
-  <a href="media.html">Media</a>
-</nav>
+  <h1>GAME HUB</h1>
 
-<h1 class="glow-title" style="text-align:center;">GAME HUB</h1>
-
-<section class="card">
   <h2>Host a Game</h2>
   <form id="gameForm">
-    <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-    <input type="date" id="date" required />
-    <input type="time" id="time" required />
-    <textarea id="details" placeholder="Extra details (optional)"></textarea>
-    <button type="submit">Post Game</button>
+    <input type="text" id="hostName" placeholder="Your Name" required>
+    <input type="email" id="hostEmail" placeholder="Your Email" required>
+    <input type="text" id="location" placeholder="Location" required>
+    <input type="date" id="date" required>
+    <input type="time" id="time" required>
+    <button type="submit">Create Game</button>
   </form>
-</section>
 
-<section class="card">
   <h2>Upcoming Games</h2>
-  <div id="gameList"></div>
-</section>
+  <div id="gamesList"></div>
 
-<section class="card">
-  <h2>Game Highlights</h2>
-  <form id="highlightForm">
-    <textarea id="highlightText" placeholder="Share your summary, photos, or video link"></textarea>
-    <button type="submit">Post Highlight</button>
-  </form>
-  <div id="highlightList"></div>
-</section>
+  <!-- Admin-only Clear All button -->
+  <button id="clearAllBtn">Clear All Games</button>
 
-<footer>
-  <p class="site-tagline">The nation's finest resource for all things four square.</p>
-</footer>
+  <script>
+    const ADMIN_EMAIL = "ericcostanza@yahoo.com"; 
+    let currentUserEmail = "";
 
-<script>
-  const adminEmail = "youremail@domain.com"; // Set your admin email here
+    document.addEventListener("DOMContentLoaded", () => {
+      loadGames();
+    });
 
-  const gameForm = document.getElementById("gameForm");
-  const gameList = document.getElementById("gameList");
-  const highlightForm = document.getElementById("highlightForm");
-  const highlightList = document.getElementById("highlightList");
+    document.getElementById("gameForm").addEventListener("submit", (e) => {
+      e.preventDefault();
 
-  let games = JSON.parse(localStorage.getItem("games")) || [];
-  let highlights = JSON.parse(localStorage.getItem("highlights")) || [];
+      const hostName = document.getElementById("hostName").value;
+      const hostEmail = document.getElementById("hostEmail").value;
+      const location = document.getElementById("location").value;
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
 
-  function renderGames() {
-    gameList.innerHTML = "";
+      currentUserEmail = hostEmail;
 
-    games.forEach((game, index) => {
-      // Format time to 12-hour
-      let [hour, minute] = game.time.split(":");
-      hour = parseInt(hour);
-      let ampm = hour >= 12 ? "PM" : "AM";
-      hour = hour % 12 || 12;
-      let formattedTime = hour + ":" + minute + " " + ampm;
-
-      // Format date
-      let dateObj = new Date(game.date);
-      let options = { year: 'numeric', month: 'long', day: 'numeric' };
-      let formattedDate = dateObj.toLocaleDateString(undefined, options);
-
-      // Attendees list
-      let attendeeList = "";
-      if (Array.isArray(game.attendees) && game.attendees.length > 0) {
-        attendeeList = "<ul>" + game.attendees.map(a => `<li>${a.name} (${a.email})</li>`).join("") + "</ul>";
-      } else {
-        attendeeList = "<p>No one joined yet</p>";
+      if (currentUserEmail === ADMIN_EMAIL) {
+        document.getElementById("clearAllBtn").style.display = "block";
       }
 
-      const div = document.createElement("div");
-      div.classList.add("event");
+      const game = {
+        id: Date.now(),
+        hostName,
+        hostEmail,
+        location,
+        date,
+        time,
+        players: []
+      };
 
-      div.innerHTML = `
-        <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
-        ${game.details ? `<em>${game.details}</em><br>` : ""}
-        <strong>Attendees:</strong> ${attendeeList}
-        <button class="join-btn" onclick="joinGame(${index})">Join</button>
-        <button class="join-btn" style="background:#f77;" onclick="editGame(${index})">Edit</button>
-        <button class="join-btn" style="background:#c92f3f;" onclick="deleteGame(${index})">Delete</button>
-      `;
-
-      gameList.appendChild(div);
-    });
-  }
-
-  // Add a new game
-  gameForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const creatorName = prompt("Enter your first name:");
-    if (!creatorName) return;
-    const creatorEmail = prompt("Enter your email:");
-    if (!creatorEmail) return;
-
-    const newGame = {
-      location: document.getElementById("location").value,
-      date: document.getElementById("date").value,
-      time: document.getElementById("time").value,
-      details: document.getElementById("details").value,
-      attendees: [],
-      creator: { name: creatorName, email: creatorEmail.trim().toLowerCase() }
-    };
-
-    games.push(newGame);
-    localStorage.setItem("games", JSON.stringify(games));
-    gameForm.reset();
-    renderGames();
-  });
-
-  // Join a game
-  function joinGame(index) {
-    const name = prompt("Enter your first name:");
-    if (!name) return;
-    const email = prompt("Enter your email:");
-    if (!email) return;
-
-    games[index].attendees.push({ name, email: email.trim().toLowerCase() });
-    localStorage.setItem("games", JSON.stringify(games));
-    renderGames();
-  }
-
-// Delete game
-function deleteGame(index) {
-  const email = prompt("Enter your email to confirm deletion:");
-  if (!email) return;
-
-  const inputEmail = email.trim().toLowerCase();
-  const game = games[index];
-  const creatorEmail = (game.creator && game.creator.email ? game.creator.email.toString().trim().toLowerCase() : "");
-  const admin = adminEmail.trim().toLowerCase();
-
-  if (inputEmail === creatorEmail || inputEmail === admin) {
-    if (confirm("Are you sure you want to delete this game?")) {
-      games.splice(index, 1);
+      let games = JSON.parse(localStorage.getItem("games")) || [];
+      games.push(game);
       localStorage.setItem("games", JSON.stringify(games));
-      renderGames();
-    }
-  } else {
-    alert(`You are not authorized to delete this game.\n\nEntered: ${inputEmail}\nCreator: ${creatorEmail}`);
-  }
-}
 
-// Edit game
-function editGame(index) {
-  const email = prompt("Enter your email to edit this game:");
-  if (!email) return;
-
-  const inputEmail = email.trim().toLowerCase();
-  const game = games[index];
-  const creatorEmail = (game.creator && game.creator.email ? game.creator.email.toString().trim().toLowerCase() : "");
-  const admin = adminEmail.trim().toLowerCase();
-
-  if (inputEmail === creatorEmail || inputEmail === admin) {
-    const newLocation = prompt("Update location:", game.location);
-    if (!newLocation) return;
-    const newDate = prompt("Update date (YYYY-MM-DD):", game.date);
-    if (!newDate) return;
-    const newTime = prompt("Update time (HH:MM):", game.time);
-    if (!newTime) return;
-    const newDetails = prompt("Update details:", game.details);
-
-    game.location = newLocation;
-    game.date = newDate;
-    game.time = newTime;
-    game.details = newDetails;
-
-    localStorage.setItem("games", JSON.stringify(games));
-    renderGames();
-  } else {
-    alert(`You are not authorized to edit this game.\n\nEntered: ${inputEmail}\nCreator: ${creatorEmail}`);
-  }
-}
-
-  // Render highlights
-  function renderHighlights() {
-    highlightList.innerHTML = "";
-    highlights.forEach((text) => {
-      const div = document.createElement("div");
-      div.classList.add("highlight");
-      div.innerText = text;
-      highlightList.appendChild(div);
+      e.target.reset();
+      loadGames();
     });
-  }
 
-  // Add highlight
-  highlightForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const text = document.getElementById("highlightText").value;
-    if (text.trim() !== "") {
-      highlights.push(text);
-      localStorage.setItem("highlights", JSON.stringify(highlights));
-      highlightForm.reset();
-      renderHighlights();
+    function loadGames() {
+      const gamesList = document.getElementById("gamesList");
+      gamesList.innerHTML = "";
+
+      let games = JSON.parse(localStorage.getItem("games")) || [];
+
+      games.forEach(game => {
+        const gameDiv = document.createElement("div");
+        gameDiv.className = "game";
+
+        const formattedDate = new Date(game.date).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        });
+
+        let [hour, minute] = game.time.split(":");
+        hour = parseInt(hour);
+        const ampm = hour >= 12 ? "PM" : "AM";
+        hour = hour % 12 || 12;
+        const formattedTime = `${hour}:${minute} ${ampm}`;
+
+        gameDiv.innerHTML = `
+          <strong>Host:</strong> ${game.hostName} <br>
+          <strong>Email:</strong> ${game.hostEmail} <br>
+          <strong>Location:</strong> ${game.location} <br>
+          <strong>Date:</strong> ${formattedDate} <br>
+          <strong>Time:</strong> ${formattedTime} <br>
+          <strong>Players Joined:</strong>
+          <ul>${game.players.map(p => `<li>${p.name} (${p.email})</li>`).join("")}</ul>
+        `;
+
+        const actionsDiv = document.createElement("div");
+        actionsDiv.className = "actions";
+
+        // Edit button (host or admin)
+        if (currentUserEmail === game.hostEmail || currentUserEmail === ADMIN_EMAIL) {
+          const editBtn = document.createElement("button");
+          editBtn.textContent = "Edit";
+          editBtn.onclick = () => editGame(game.id);
+          actionsDiv.appendChild(editBtn);
+
+          const deleteBtn = document.createElement("button");
+          deleteBtn.textContent = "Delete";
+          deleteBtn.onclick = () => deleteGame(game.id);
+          actionsDiv.appendChild(deleteBtn);
+        }
+
+        // Join button
+        const joinBtn = document.createElement("button");
+        joinBtn.textContent = "Join";
+        joinBtn.onclick = () => joinGame(game.id);
+        actionsDiv.appendChild(joinBtn);
+
+        gameDiv.appendChild(actionsDiv);
+        gamesList.appendChild(gameDiv);
+      });
     }
-  });
 
-  // Initialize
-  renderGames();
-  renderHighlights();
-</script>
+    function joinGame(id) {
+      const name = prompt("Enter your first name:");
+      const email = prompt("Enter your email:");
+
+      if (!name || !email) return;
+
+      let games = JSON.parse(localStorage.getItem("games")) || [];
+      const game = games.find(g => g.id === id);
+
+      if (game) {
+        game.players.push({ name, email });
+        localStorage.setItem("games", JSON.stringify(games));
+        loadGames();
+      }
+    }
+
+    function editGame(id) {
+      let games = JSON.parse(localStorage.getItem("games")) || [];
+      const game = games.find(g => g.id === id);
+
+      if (game) {
+        const newLocation = prompt("Enter new location:", game.location);
+        const newDate = prompt("Enter new date (YYYY-MM-DD):", game.date);
+        const newTime = prompt("Enter new time (HH:MM):", game.time);
+
+        if (newLocation && newDate && newTime) {
+          game.location = newLocation;
+          game.date = newDate;
+          game.time = newTime;
+
+          localStorage.setItem("games", JSON.stringify(games));
+          loadGames();
+        }
+      }
+    }
+
+    function deleteGame(id) {
+      let games = JSON.parse(localStorage.getItem("games")) || [];
+      games = games.filter(g => g.id !== id);
+      localStorage.setItem("games", JSON.stringify(games));
+      loadGames();
+    }
+
+    // Admin-only: Clear All Games
+    document.getElementById("clearAllBtn").addEventListener("click", () => {
+      if (confirm("Are you sure you want to delete ALL games? This cannot be undone.")) {
+        localStorage.removeItem("games");
+        loadGames();
+      }
+    });
+  </script>
 </body>
 </html>
