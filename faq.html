@@ -135,16 +135,22 @@
   });
 
   // Join a game
-  function joinGame(index) {
-    const name = prompt("Enter your first name:");
-    if (!name) return;
-    const email = prompt("Enter your email:");
-    if (!email) return;
+function joinGame(index) {
+  const name = prompt("Enter your first name:");
+  if (!name) return;
 
-    games[index].attendees.push({ name, email: email.trim().toLowerCase() });
-    localStorage.setItem("games", JSON.stringify(games));
-    renderGames();
+  const email = prompt("Enter your email:"); // we will store it but not display
+  if (!email) return;
+
+  // Ensure attendees array exists
+  if (!Array.isArray(games[index].attendees)) {
+    games[index].attendees = [];
   }
+
+  games[index].attendees.push({ name, email: email.trim().toLowerCase() });
+  localStorage.setItem("games", JSON.stringify(games));
+  renderGames();
+}
 
 // Delete game
 function deleteGame(index) {
