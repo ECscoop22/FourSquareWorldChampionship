@@ -101,7 +101,7 @@
       div.innerHTML = `
         <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
         ${game.details ? `<em>${game.details}</em><br>` : ""}
-        <strong>Attendees:</strong> ${attendeeList}
+        <strong>Attendees (${game.attendees.length}):</strong> ${attendeeList}
         <button class="join-btn" onclick="joinGame(${index})">Join</button>
         <button class="join-btn" style="background:#f77;" onclick="editGame(${index})">Edit</button>
         <button class="join-btn" style="background:#c92f3f;" onclick="deleteGame(${index})">Delete</button>
