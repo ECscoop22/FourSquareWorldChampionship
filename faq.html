@@ -83,31 +83,43 @@ function renderGames() {
 
 let highlightsList = "";
 if (Array.isArray(game.highlights) && game.highlights.length > 0) {
-  highlightsList = "<ul>" + game.highlights.map(h => {
-    let text = h;  // assuming h is something like "My highlight or https://youtu.be/... "
-    let content = `<strong>${h.name || "Someone"}:</strong> `;
+  highlightsList =
+    "<ul>" +
+    game.highlights
+      .map((h) => {
+        let content = `<strong>${h.name || "Someone"}:</strong> `;
 
-    // Detect YouTube URL: supports both youtube.com/watch?v=... and youtu.be/...
-    let ytEmbed = null;
-    const youTubeReg = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/;
-    const match = text.match(youTubeReg);
-    if (match && match[1]) {
-      const videoId = match[1];
-      ytEmbed = `<iframe width="300" height="169" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
-    }
+        // Case 1: Embedded media file
+        if (h.media && h.type === "image") {
+          content += `<br><img src="${h.media}" alt="highlight image" style="max-width:200px;border-radius:8px;">`;
+        } else if (h.media && h.type === "video") {
+          content += `<br><video controls style="max-width:300px;border-radius:8px;">
+                        <source src="${h.media}" type="video/mp4">
+                        Your browser does not support video.
+                      </video>`;
+        }
 
-    if (ytEmbed) {
-      content += `<br>${ytEmbed}`;
-    } else if (text.startsWith("https://") || text.startsWith("http://")) {
-      // if it's another kind of link, show clickable
-      content += `<a href="${text}" target="_blank">${text}</a>`;
-    } else {
-      // just text
-      content += text;
-    }
+        // Case 2: Text content
+        if (h.text) {
+          // Detect YouTube
+          const youTubeReg =
+            /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/;
+          const match = h.text.match(youTubeReg);
+          if (match && match[1]) {
+            content += `<br><iframe width="300" height="169"
+                          src="https://www.youtube.com/embed/${match[1]}"
+                          frameborder="0" allowfullscreen></iframe>`;
+          } else if (/^https?:\/\//.test(h.text)) {
+            content += `<br><a href="${h.text}" target="_blank">${h.text}</a>`;
+          } else {
+            content += `<br>${h.text}`;
+          }
+        }
 
-    return `<li>${content}</li>`;
-  }).join("") + "</ul>";
+        return `<li>${content}</li>`;
+      })
+      .join("") +
+    "</ul>";
 } else {
   highlightsList = "<p>No highlights yet</p>";
 }
