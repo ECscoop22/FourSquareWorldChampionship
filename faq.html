@@ -84,12 +84,20 @@ function renderGames() {
     let options = { year: 'numeric', month: 'long', day: 'numeric' };
     let formattedDate = dateObj.toLocaleDateString(undefined, options);
 
-    let attendeeList = "";
-    if (Array.isArray(game.attendees) && game.attendees.length > 0) {
-      attendeeList = "<ul>" + game.attendees.map(a => `<li>${a.name}</li>`).join("") + "</ul>";
-    } else {
-      attendeeList = "<p>No one joined yet</p>";
-    }
+let attendeeList = "";
+if (Array.isArray(game.attendees) && game.attendees.length > 0) {
+  // filter out "test" and empty/whitespace names
+  const cleanAttendees = game.attendees.filter(a => a && a.name && a.name.trim().toLowerCase() !== "test");
+
+  if (cleanAttendees.length > 0) {
+    attendeeList = "<ul>" + cleanAttendees.map(a => `<li>${a.name}</li>`).join("") + "</ul>";
+  } else {
+    attendeeList = "<p>No one joined yet</p>";
+  }
+} else {
+  attendeeList = "<p>No one joined yet</p>";
+}
+
 
     let highlightsList = "";
     if (Array.isArray(game.highlights) && game.highlights.length > 0) {
