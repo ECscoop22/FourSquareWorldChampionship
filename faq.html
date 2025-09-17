@@ -81,27 +81,39 @@ function renderGames() {
       attendeeList = "<p>No one joined yet</p>";
     }
 
-    let highlightsList = "";
-    if (Array.isArray(game.highlights) && game.highlights.length > 0) {
-      highlightsList = "<ul>" + game.highlights.map(h => `<li>${h}</li>`).join("") + "</ul>";
-    } else {
-      highlightsList = "<p>No highlights yet</p>";
+let highlightsList = "";
+if (Array.isArray(game.highlights) && game.highlights.length > 0) {
+  highlightsList = "<ul>" + game.highlights.map(h => {
+    let item = `<li><strong>${h.name}:</strong> ${h.text || ""}`;
+    if (h.type === "image") {
+      item += `<br><img src="${h.media}" alt="highlight image" style="max-width:200px; border-radius:6px; margin-top:5px;">`;
+    } else if (h.type === "video") {
+      item += `<br><video src="${h.media}" controls style="max-width:200px; border-radius:6px; margin-top:5px;"></video>`;
     }
+    item += "</li>";
+    return item;
+  }).join("") + "</ul>";
+} else {
+  highlightsList = "<p>No highlights yet</p>";
+}
 
     const div = document.createElement("div");
     div.classList.add("event");
 
-    div.innerHTML = `
-      <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
-      ${game.details ? `<em>${game.details}</em><br>` : ""}
-      <strong>Attendees (${game.attendees.length}):</strong> ${attendeeList}<br><br>
-      <strong>Highlights:</strong> ${highlightsList}<br>
-      <input type="text" id="highlightInput${index}" placeholder="Add a highlight or photo/video URL" />
-      <button class="join-btn" onclick="addHighlight(${index})">Add Highlight</button><br><br>
-      <button class="join-btn" onclick="joinGame(${index})">Join</button>
-      <button class="join-btn" style="background:#f77;" onclick="editGame(${index})">Edit</button>
-      <button class="join-btn" style="background:#c92f3f;" onclick="deleteGame(${index})">Delete</button>
-    `;
+div.innerHTML = `
+  <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
+  ${game.details ? `<em>${game.details}</em><br>` : ""}
+  <strong>Attendees (${game.attendees.length}):</strong> ${attendeeList}<br><br>
+
+  <strong>Highlights:</strong> ${highlightsList}<br>
+  <input type="text" id="highlightInput${index}" placeholder="Add a highlight or video URL" />
+  <input type="file" id="highlightFile${index}" accept="image/*,video/*" /><br>
+  <button class="join-btn" onclick="addHighlight(${index})">Add Highlight</button><br><br>
+
+  <button class="join-btn" onclick="joinGame(${index})">Join</button>
+  <button class="join-btn" style="background:#f77;" onclick="editGame(${index})">Edit</button>
+  <button class="join-btn" style="background:#c92f3f;" onclick="deleteGame(${index})">Delete</button>
+`;
 
     gameList.appendChild(div);
   });
@@ -125,14 +137,37 @@ function addHighlight(index) {
     return;
   }
 
-  const input = document.getElementById(`highlightInput${index}`);
-  if (!input || !input.value.trim()) return;
+  const textInput = document.getElementById(`highlightInput${index}`);
+  const fileInput = document.getElementById(`highlightFile${index}`);
+  const textValue = textInput.value.trim();
+  const file = fileInput.files[0];
 
   if (!Array.isArray(game.highlights)) game.highlights = [];
-  game.highlights.push(`${name}: ${input.value.trim()}`);
-  localStorage.setItem("games", JSON.stringify(games));
-  input.value = "";
-  renderGames();
+
+  // Helper to save highlight
+  const saveHighlight = (mediaData, mediaType) => {
+    game.highlights.push({
+      name,
+      text: textValue || "",
+      media: mediaData || null,
+      type: mediaType || null
+    });
+    localStorage.setItem("games", JSON.stringify(games));
+    textInput.value = "";
+    fileInput.value = "";
+    renderGames();
+  };
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const mediaType = file.type.startsWith("video") ? "video" : "image";
+      saveHighlight(reader.result, mediaType);
+    };
+    reader.readAsDataURL(file);
+  } else if (textValue) {
+    saveHighlight(null, null);
+  }
 }
 
 // Add a new game
