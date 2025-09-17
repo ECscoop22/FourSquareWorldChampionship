@@ -2,231 +2,174 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Game Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Manager</title>
   <style>
-    .card { margin: 1em 0; padding: 1em; border-radius: 12px; background: #fff; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
-    form input, form textarea { width: 100%; padding: 8px; margin: 6px 0; border: 1px solid #ccc; border-radius: 6px; }
-    button { padding: 8px 16px; margin-top: 8px; border: none; border-radius: 6px; cursor: pointer; background: #e63946; color: white; }
-    button:hover { background: #c92f3f; }
-    .join-btn { background: #457b9d; margin-left: 5px; }
-    .join-btn:hover { background: #35607a; }
-    .event { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 8px; }
-    ul { margin: 5px 0 0 20px; padding: 0; }
-    li { margin: 2px 0; }
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .event { border: 1px solid #ccc; padding: 10px; margin-bottom: 15px; border-radius: 8px; }
+    .join-btn { margin: 5px 5px 0 0; padding: 5px 10px; cursor: pointer; border: none; border-radius: 6px; background: #007BFF; color: white; }
+    .highlight-item { margin-top: 8px; padding: 5px; background: #f9f9f9; border-radius: 6px; }
+    .highlight-item img { max-width: 200px; display: block; margin-top: 5px; border-radius: 6px; }
+    
+    /* Responsive video embed wrapper */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      border-radius: 6px;
+      margin-top: 5px;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="rules.html">Rules</a>
-  <a href="world-championship.html">World Championship</a>
-  <a href="register.html">Register</a>
-  <a href="faq.html">Game Hub</a>
-  <a href="blog.html">Blog</a>
-  <a href="media.html">Media</a>
-</nav>
-
-<h1 class="glow-title" style="text-align:center;">GAME HUB</h1>
-
-<section class="card">
-  <h2>Host a Game</h2>
-  <form id="gameForm">
-    <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-    <input type="date" id="date" required />
-    <input type="time" id="time" required />
-    <textarea id="details" placeholder="Extra details (optional)"></textarea>
-    <button type="submit">Post Game</button>
-  </form>
-</section>
-
-<section class="card">
-  <h2>Upcoming Games</h2>
+  <h1>Game Manager</h1>
   <div id="gameList"></div>
-</section>
 
-<footer>
-  <p class="site-tagline">The nation's finest resource for all things four square.</p>
-</footer>
+  <script>
+    let games = JSON.parse(localStorage.getItem("games")) || [];
+    const adminEmail = "admin@example.com"; // change if needed
 
-<script>
-const adminEmail = "ericcostanza@yahoo.com";
+    function renderGames() {
+      const gameList = document.getElementById("gameList");
+      gameList.innerHTML = "";
+      games.forEach((game, index) => {
+        const div = document.createElement("div");
+        div.classList.add("event");
 
-const gameForm = document.getElementById("gameForm");
-const gameList = document.getElementById("gameList");
+        const formattedDate = new Date(game.date).toLocaleDateString();
+        const formattedTime = new Date(game.date).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
 
-let games = JSON.parse(localStorage.getItem("games")) || [];
+        const attendeeList = game.attendees?.length
+          ? game.attendees.map(a => a.name).join(", ")
+          : "No one joined yet";
 
-// Render games
-function renderGames() {
-  gameList.innerHTML = "";
+        const highlightsList = game.highlights?.length
+          ? game.highlights.map(h => {
+              let content = `<div class="highlight-item"><strong>${h.name}:</strong> ${h.text || ""}`;
+              if (h.image) content += `<br><img src="${h.image}" alt="Highlight image" />`;
+              if (h.video) {
+                let videoEmbed = "";
+                // ✅ Detect YouTube full + short
+                if (h.video.includes("youtube.com") || h.video.includes("youtu.be")) {
+                  let videoId = "";
+                  if (h.video.includes("v=")) {
+                    videoId = h.video.split("v=")[1]?.split("&")[0];
+                  } else if (h.video.includes("youtu.be/")) {
+                    videoId = h.video.split("youtu.be/")[1]?.split("?")[0];
+                  }
+                  if (videoId) {
+                    videoEmbed = `<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe></div>`;
+                  }
+                }
+                // ✅ Detect Vimeo
+                else if (h.video.includes("vimeo.com")) {
+                  const videoId = h.video.split("/").pop();
+                  videoEmbed = `<div class="video-wrapper"><iframe src="https://player.vimeo.com/video/${videoId}" allowfullscreen></iframe></div>`;
+                }
+                // Fallback: show as link
+                else {
+                  videoEmbed = `<br><a href="${h.video}" target="_blank">Watch Video</a>`;
+                }
+                content += videoEmbed;
+              }
+              return content + "</div>";
+            }).join("")
+          : "<em>No highlights yet</em>";
 
-  games.forEach((game, index) => {
-    let [hour, minute] = game.time.split(":");
-    hour = parseInt(hour);
-    let ampm = hour >= 12 ? "PM" : "AM";
-    hour = hour % 12 || 12;
-    let formattedTime = hour + ":" + minute + " " + ampm;
-
-    let dateObj = new Date(game.date);
-    let options = { year: 'numeric', month: 'long', day: 'numeric' };
-    let formattedDate = dateObj.toLocaleDateString(undefined, options);
-
-    let attendeeList = "";
-    if (Array.isArray(game.attendees) && game.attendees.length > 0) {
-      attendeeList = "<ul>" + game.attendees.map(a => `<li>${a.name}</li>`).join("") + "</ul>";
-    } else {
-      attendeeList = "<p>No one joined yet</p>";
+        div.innerHTML = `
+          <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
+          ${game.details ? `<em>${game.details}</em><br>` : ""}
+          <strong>Attendees (${game.attendees.length}):</strong> ${attendeeList}<br><br>
+          <strong>Highlights:</strong><br>${highlightsList}<br>
+          <input type="text" id="highlightText${index}" placeholder="Add highlight text or video URL" /><br>
+          <input type="file" id="highlightImage${index}" accept="image/*" /><br>
+          <button class="join-btn" onclick="addHighlight(${index})">Add Highlight</button><br><br>
+          <button class="join-btn" onclick="joinGame(${index})">Join</button>
+          <button class="join-btn" style="background:#f77;" onclick="editGame(${index})">Edit</button>
+          <button class="join-btn" style="background:#c92f3f;" onclick="deleteGame(${index})">Delete</button>
+        `;
+        gameList.appendChild(div);
+      });
     }
 
-    let highlightsList = "";
-    if (Array.isArray(game.highlights) && game.highlights.length > 0) {
-      highlightsList = "<ul>" + game.highlights.map(h => `<li>${h}</li>`).join("") + "</ul>";
-    } else {
-      highlightsList = "<p>No highlights yet</p>";
+    // Join game
+    function joinGame(index) {
+      const name = prompt("Enter your first name:");
+      if (!name) return;
+      const email = prompt("Enter your email:");
+      if (!email) return;
+
+      if (!games[index].attendees) games[index].attendees = [];
+      games[index].attendees.push({ name, email: email.trim().toLowerCase() });
+      localStorage.setItem("games", JSON.stringify(games));
+      renderGames();
     }
 
-    const div = document.createElement("div");
-    div.classList.add("event");
+    // Add highlight
+    function addHighlight(index) {
+      const name = prompt("Enter your first name:");
+      if (!name) return;
+      const email = prompt("Enter your email:");
+      if (!email) return;
 
-    div.innerHTML = `
-      <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
-      ${game.details ? `<em>${game.details}</em><br>` : ""}
-      <strong>Attendees (${game.attendees.length}):</strong> ${attendeeList}<br><br>
-      <strong>Highlights:</strong> ${highlightsList}<br>
-      <input type="text" id="highlightInput${index}" placeholder="Add a highlight or photo/video URL" />
-      <button class="join-btn" onclick="addHighlight(${index})">Add Highlight</button><br><br>
-      <button class="join-btn" onclick="joinGame(${index})">Join</button>
-      <button class="join-btn" style="background:#f77;" onclick="editGame(${index})">Edit</button>
-      <button class="join-btn" style="background:#c92f3f;" onclick="deleteGame(${index})">Delete</button>
-    `;
+      const game = games[index];
+      const inputEmail = email.trim().toLowerCase();
+      const creatorEmail = game.creator?.email?.trim().toLowerCase();
 
-    gameList.appendChild(div);
-  });
-}
+      const isAttendee = game.attendees.some(a => a.email === inputEmail);
+      if (!isAttendee && inputEmail !== creatorEmail && inputEmail !== adminEmail) {
+        alert("Only attendees or the creator/admin can add highlights.");
+        return;
+      }
 
-// Add highlight per game
-function addHighlight(index) {
-  const name = prompt("Enter your first name:");
-  if (!name) return;
-  const email = prompt("Enter your email:");
-  if (!email) return;
+      const text = document.getElementById(`highlightText${index}`).value.trim();
+      const fileInput = document.getElementById(`highlightImage${index}`);
+      const file = fileInput.files[0];
 
-  const game = games[index];
-  const inputEmail = email.trim().toLowerCase();
-  const admin = adminEmail.trim().toLowerCase();
-  const creatorEmail = game.creator?.email?.trim().toLowerCase();
+      const addAndSave = (imageData) => {
+        if (!Array.isArray(game.highlights)) game.highlights = [];
+        game.highlights.push({
+          name,
+          text: text || "",
+          image: imageData || null,
+          video: (text && text.startsWith("http")) ? text : null
+        });
+        localStorage.setItem("games", JSON.stringify(games));
+        document.getElementById(`highlightText${index}`).value = "";
+        fileInput.value = "";
+        renderGames();
+      };
 
-  const isAttendee = game.attendees.some(a => a.email === inputEmail);
-  if (!isAttendee && inputEmail !== creatorEmail && inputEmail !== admin) {
-    alert("Only attendees or the creator/admin can add highlights for this game.");
-    return;
-  }
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => addAndSave(reader.result);
+        reader.readAsDataURL(file);
+      } else {
+        addAndSave(null);
+      }
+    }
 
-  const input = document.getElementById(`highlightInput${index}`);
-  if (!input || !input.value.trim()) return;
-
-  if (!Array.isArray(game.highlights)) game.highlights = [];
-  game.highlights.push(`${name}: ${input.value.trim()}`);
-  localStorage.setItem("games", JSON.stringify(games));
-  input.value = "";
-  renderGames();
-}
-
-// Add a new game
-gameForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const creatorName = prompt("Enter your first name:");
-  if (!creatorName) return;
-  const creatorEmail = prompt("Enter your email:");
-  if (!creatorEmail) return;
-
-  const newGame = {
-    location: document.getElementById("location").value,
-    date: document.getElementById("date").value,
-    time: document.getElementById("time").value,
-    details: document.getElementById("details").value,
-    attendees: [],
-    creator: { name: creatorName, email: creatorEmail.trim().toLowerCase() },
-    highlights: []
-  };
-
-  games.push(newGame);
-  localStorage.setItem("games", JSON.stringify(games));
-  gameForm.reset();
-  renderGames();
-});
-
-// Join a game
-function joinGame(index) {
-  const name = prompt("Enter your first name:");
-  if (!name) return;
-  const email = prompt("Enter your email:");
-  if (!email) return;
-
-  if (!Array.isArray(games[index].attendees)) games[index].attendees = [];
-  games[index].attendees.push({ name, email: email.trim().toLowerCase() });
-  localStorage.setItem("games", JSON.stringify(games));
-  renderGames();
-}
-
-// Delete game
-function deleteGame(index) {
-  const email = prompt("Enter your email to confirm deletion:");
-  if (!email) return;
-
-  const inputEmail = email.trim().toLowerCase();
-  const game = games[index];
-  const creatorEmail = game.creator?.email?.trim().toLowerCase();
-  const admin = adminEmail.trim().toLowerCase();
-
-  if (inputEmail === admin || inputEmail === creatorEmail) {
-    if (confirm("Are you sure you want to delete this game?")) {
+    // Placeholder edit and delete
+    function editGame(index) { alert("Edit game feature not yet implemented."); }
+    function deleteGame(index) {
+      if (!confirm("Delete this game?")) return;
       games.splice(index, 1);
       localStorage.setItem("games", JSON.stringify(games));
       renderGames();
-      alert("Game deleted successfully.");
     }
-  } else {
-    alert(`You are not authorized to delete this game.\nEntered: ${inputEmail}\nCreator: ${creatorEmail || "N/A"}`);
-  }
-}
 
-// Edit game
-function editGame(index) {
-  const email = prompt("Enter your email to edit this game:");
-  if (!email) return;
-
-  const inputEmail = email.trim().toLowerCase();
-  const game = games[index];
-  const creatorEmail = game.creator?.email?.trim().toLowerCase();
-  const admin = adminEmail.trim().toLowerCase();
-
-  if ((creatorEmail && inputEmail === creatorEmail) || inputEmail === admin || (!creatorEmail && inputEmail === admin)) {
-    const newLocation = prompt("Update location:", game.location);
-    if (!newLocation) return;
-    const newDate = prompt("Update date (YYYY-MM-DD):", game.date);
-    if (!newDate) return;
-    const newTime = prompt("Update time (HH:MM):", game.time);
-    if (!newTime) return;
-    const newDetails = prompt("Update details:", game.details);
-
-    game.location = newLocation;
-    game.date = newDate;
-    game.time = newTime;
-    game.details = newDetails;
-
-    localStorage.setItem("games", JSON.stringify(games));
     renderGames();
-  } else {
-    alert(`You are not authorized to edit this game.\nEntered: ${inputEmail}\nCreator: ${creatorEmail || "N/A"}`);
-  }
-}
-
-// Initialize
-renderGames();
-</script>
+  </script>
 </body>
 </html>
