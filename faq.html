@@ -84,19 +84,33 @@ function renderGames() {
     let options = { year: 'numeric', month: 'long', day: 'numeric' };
     let formattedDate = dateObj.toLocaleDateString(undefined, options);
 
-let attendeeList = "";
-if (Array.isArray(game.attendees) && game.attendees.length > 0) {
-  // filter out "test" and empty/whitespace names
-  const cleanAttendees = game.attendees.filter(a => a && a.name && a.name.trim().toLowerCase() !== "test");
+// Clean up attendees list (ignore blank or "test")
+let validAttendees = Array.isArray(game.attendees)
+  ? game.attendees.filter(a => a && a.name && a.name.trim().toLowerCase() !== "test")
+  : [];
 
-  if (cleanAttendees.length > 0) {
-    attendeeList = "<ul>" + cleanAttendees.map(a => `<li>${a.name}</li>`).join("") + "</ul>";
-  } else {
-    attendeeList = "<p>No one joined yet</p>";
-  }
+let attendeeList = "";
+if (validAttendees.length > 0) {
+  attendeeList =
+    "<ul>" +
+    validAttendees.map(a => `<li>${a.name}</li>`).join("") +
+    "</ul>";
 } else {
   attendeeList = "<p>No one joined yet</p>";
 }
+
+// Use validAttendees.length for the count
+div.innerHTML = `
+  <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
+  ${game.details ? `<em>${game.details}</em><br>` : ""}
+  <strong>Attendees (${validAttendees.length}):</strong> ${attendeeList}<br><br>
+  <strong>Highlights:</strong> ${highlightsList}<br>
+  <input type="text" id="highlightInput${index}" placeholder="Add a highlight or photo/video URL" />
+  <button class="join-btn" onclick="addHighlight(${index})">Add Highlight</button><br><br>
+  <button class="join-btn" onclick="joinGame(${index})">Join</button>
+  <button class="join-btn" style="background:#f77;" onclick="editGame(${index})">Edit</button>
+  <button class="join-btn" style="background:#c92f3f;" onclick="deleteGame(${index})">Delete</button>
+`;
 
 
     let highlightsList = "";
