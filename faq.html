@@ -84,14 +84,29 @@ function renderGames() {
 let highlightsList = "";
 if (Array.isArray(game.highlights) && game.highlights.length > 0) {
   highlightsList = "<ul>" + game.highlights.map(h => {
-    let item = `<li><strong>${h.name}:</strong> ${h.text || ""}`;
-    if (h.type === "image") {
-      item += `<br><img src="${h.media}" alt="highlight image" style="max-width:200px; border-radius:6px; margin-top:5px;">`;
-    } else if (h.type === "video") {
-      item += `<br><video src="${h.media}" controls style="max-width:200px; border-radius:6px; margin-top:5px;"></video>`;
+    let text = h;  // assuming h is something like "My highlight or https://youtu.be/... "
+    let content = `<strong>${h.name || "Someone"}:</strong> `;
+
+    // Detect YouTube URL: supports both youtube.com/watch?v=... and youtu.be/...
+    let ytEmbed = null;
+    const youTubeReg = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/;
+    const match = text.match(youTubeReg);
+    if (match && match[1]) {
+      const videoId = match[1];
+      ytEmbed = `<iframe width="300" height="169" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
     }
-    item += "</li>";
-    return item;
+
+    if (ytEmbed) {
+      content += `<br>${ytEmbed}`;
+    } else if (text.startsWith("https://") || text.startsWith("http://")) {
+      // if it's another kind of link, show clickable
+      content += `<a href="${text}" target="_blank">${text}</a>`;
+    } else {
+      // just text
+      content += text;
+    }
+
+    return `<li>${content}</li>`;
   }).join("") + "</ul>";
 } else {
   highlightsList = "<p>No highlights yet</p>";
