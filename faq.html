@@ -69,9 +69,9 @@ function renderGames() {
   const today = new Date();
   today.setHours(0, 0, 0, 0); // normalize time to midnight
 
-  gameList.innerHTML = "";
-  const previousGameList = document.getElementById("previousGameList");
-  previousGameList.innerHTML = "";
+gameList.innerHTML = "";
+const previousGameList = document.getElementById("previous-games-list");
+previousGameList.innerHTML = "";
 
   games.forEach((game, index) => {
     let [hour, minute] = game.time.split(":");
