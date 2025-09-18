@@ -1797,3 +1797,11 @@ button:hover {
 main h2 {
   text-align: center;
 }
+.event {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 8px;
+  max-width: 450px;
+  text-align: center;
+}
