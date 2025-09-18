@@ -73,99 +73,100 @@ function renderGames() {
   const previousGameList = document.getElementById("previousGameList");
   previousGameList.innerHTML = "";
 
-games.forEach((game, index) => {
-  let [hour, minute] = game.time.split(":");
-  hour = parseInt(hour);
-  let ampm = hour >= 12 ? "PM" : "AM";
-  hour = hour % 12 || 12;
-  let formattedTime = hour + ":" + minute + " " + ampm;
+  games.forEach((game, index) => {
+    let [hour, minute] = game.time.split(":");
+    hour = parseInt(hour);
+    let ampm = hour >= 12 ? "PM" : "AM";
+    hour = hour % 12 || 12;
+    let formattedTime = hour + ":" + minute + " " + ampm;
 
-  let dateObj = new Date(game.date);
-  let options = { year: "numeric", month: "long", day: "numeric" };
-  let formattedDate = dateObj.toLocaleDateString(undefined, options);
+    let dateObj = new Date(game.date);
+    let options = { year: "numeric", month: "long", day: "numeric" };
+    let formattedDate = dateObj.toLocaleDateString(undefined, options);
 
-  // Clean up attendees list (ignore blank or "test")
-  let validAttendees = Array.isArray(game.attendees)
-    ? game.attendees.filter(
-        (a) => a && a.name && a.name.trim().toLowerCase() !== "test"
-      )
-    : [];
+    // Clean up attendees list (ignore blank or "test")
+    let validAttendees = Array.isArray(game.attendees)
+      ? game.attendees.filter(
+          (a) => a && a.name && a.name.trim().toLowerCase() !== "test"
+        )
+      : [];
 
-  let attendeeList = "";
-  if (validAttendees.length > 0) {
-    attendeeList =
-      "<ul>" +
-      validAttendees.map((a) => `<li>${a.name}</li>`).join("") +
-      "</ul>";
-  } else {
-    attendeeList = "<p>No one joined yet</p>";
-  }
+    let attendeeList = "";
+    if (validAttendees.length > 0) {
+      attendeeList =
+        "<ul>" +
+        validAttendees.map((a) => `<li>${a.name}</li>`).join("") +
+        "</ul>";
+    } else {
+      attendeeList = "<p>No one joined yet</p>";
+    }
 
-  // Build highlights list BEFORE using it in div.innerHTML
-  let highlightsList = "";
-  if (Array.isArray(game.highlights) && game.highlights.length > 0) {
-    highlightsList =
-      "<ul>" +
-      game.highlights
-        .map((h) => {
-          let content = `<strong>${h.name || "Someone"}:</strong> `;
+    // Build highlights list BEFORE using it in div.innerHTML
+    let highlightsList = "";
+    if (Array.isArray(game.highlights) && game.highlights.length > 0) {
+      highlightsList =
+        "<ul>" +
+        game.highlights
+          .map((h) => {
+            let content = `<strong>${h.name || "Someone"}:</strong> `;
 
-          if (h.media && h.type === "image") {
-            content += `<br><img src="${h.media}" alt="highlight image" style="max-width:200px;border-radius:8px;">`;
-          } else if (h.media && h.type === "video") {
-            content += `<br><video controls style="max-width:300px;border-radius:8px;">
-                          <source src="${h.media}" type="video/mp4">
-                          Your browser does not support video.
-                        </video>`;
-          }
-
-          if (h.text) {
-            const youTubeReg =
-              /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/;
-            const match = h.text.match(youTubeReg);
-            if (match && match[1]) {
-              content += `<br><iframe width="300" height="169"
-                            src="https://www.youtube.com/embed/${match[1]}"
-                            frameborder="0" allowfullscreen></iframe>`;
-            } else if (/^https?:\/\//.test(h.text)) {
-              content += `<br><a href="${h.text}" target="_blank">${h.text}</a>`;
-            } else {
-              content += `<br>${h.text}`;
+            if (h.media && h.type === "image") {
+              content += `<br><img src="${h.media}" alt="highlight image" style="max-width:200px;border-radius:8px;">`;
+            } else if (h.media && h.type === "video") {
+              content += `<br><video controls style="max-width:300px;border-radius:8px;">
+                            <source src="${h.media}" type="video/mp4">
+                            Your browser does not support video.
+                          </video>`;
             }
-          }
 
-          return `<li>${content}</li>`;
-        })
-        .join("") +
-      "</ul>";
-  } else {
-    highlightsList = "<p>No highlights yet</p>";
-  }
+            if (h.text) {
+              const youTubeReg =
+                /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/;
+              const match = h.text.match(youTubeReg);
+              if (match && match[1]) {
+                content += `<br><iframe width="300" height="169"
+                              src="https://www.youtube.com/embed/${match[1]}"
+                              frameborder="0" allowfullscreen></iframe>`;
+              } else if (/^https?:\/\//.test(h.text)) {
+                content += `<br><a href="${h.text}" target="_blank">${h.text}</a>`;
+              } else {
+                content += `<br>${h.text}`;
+              }
+            }
 
-  // ✅ NOW create div
-  const div = document.createElement("div");
-  div.classList.add("event");
+            return `<li>${content}</li>`;
+          })
+          .join("") +
+        "</ul>";
+    } else {
+      highlightsList = "<p>No highlights yet</p>";
+    }
 
-  div.innerHTML = `
-    <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
-    ${game.details ? `<em>${game.details}</em><br>` : ""}
-    <strong>Attendees (${validAttendees.length}):</strong> ${attendeeList}<br><br>
-    <strong>Highlights:</strong> ${highlightsList}<br>
-    <input type="text" id="highlightInput${index}" placeholder="Add a highlight or video URL" />
-    <input type="file" id="highlightFile${index}" accept="image/*,video/*" /><br>
-    <button class="join-btn" onclick="addHighlight(${index})">Add Highlight</button><br><br>
-    <button class="join-btn" onclick="joinGame(${index})">Join</button>
-    <button class="join-btn" style="background:#f77;" onclick="editGame(${index})">Edit</button>
-    <button class="join-btn" style="background:#c92f3f;" onclick="deleteGame(${index})">Delete</button>
-  `;
+    // ✅ Create div for game
+    const div = document.createElement("div");
+    div.classList.add("event");
 
-  // Put game in the correct section
-  if (dateObj >= today) {
-    gameList.appendChild(div);
-  } else {
-    previousGameList.appendChild(div);
-  }
-});
+    div.innerHTML = `
+      <strong>${game.location}</strong> — ${formattedDate} at ${formattedTime}<br>
+      ${game.details ? `<em>${game.details}</em><br>` : ""}
+      <strong>Attendees (${validAttendees.length}):</strong> ${attendeeList}<br><br>
+      <strong>Highlights:</strong> ${highlightsList}<br>
+      <input type="text" id="highlightInput${index}" placeholder="Add a highlight or video URL" />
+      <input type="file" id="highlightFile${index}" accept="image/*,video/*" /><br>
+      <button class="join-btn" onclick="addHighlight(${index})">Add Highlight</button><br><br>
+      <button class="join-btn" onclick="joinGame(${index})">Join</button>
+      <button class="join-btn" style="background:#f77;" onclick="editGame(${index})">Edit</button>
+      <button class="join-btn" style="background:#c92f3f;" onclick="deleteGame(${index})">Delete</button>
+    `;
+
+    // Put game in the correct section
+    if (dateObj >= today) {
+      gameList.appendChild(div);
+    } else {
+      previousGameList.appendChild(div);
+    }
+  });
+}
 
 // Add highlight per game
 function addHighlight(index) {
