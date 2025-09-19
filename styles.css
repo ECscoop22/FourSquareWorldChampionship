@@ -1805,3 +1805,12 @@ main h2 {
   max-width: 450px;
   text-align: center;
 }
+#previous-games {
+  text-align: center; /* centers all text inside */
+}
+
+#previous-games .game {
+  display: inline-block; /* makes each game card shrink-wrap */
+  text-align: left;      /* keeps the card content left-aligned inside */
+  margin: 0 auto 20px;   /* centers the card block itself */
+}
