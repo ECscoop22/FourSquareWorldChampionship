@@ -1793,35 +1793,13 @@ button:hover {
   text-align: center;
 }
 
-/* Center section headings like "Host a Game" */
-main h2 {
-  text-align: center;
-}
-.event {
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin: 10px auto;
-  border-radius: 8px;
-  max-width: 450px;
-  text-align: center;
-}
 #previous-games {
   text-align: center; /* centers all text inside */
 }
 
 #previous-games .game {
-  display: inline-block; /* makes each game card shrink-wrap */
-  text-align: left;      /* keeps the card content left-aligned inside */
-  margin: 0 auto 20px;   /* centers the card block itself */
-}
-/* Center the PREVIOUS GAMES section */
-.previous-games {
-  text-align: center;
-}
-
-.previous-games h2,
-.previous-games p,
-.previous-games img {
-  margin-left: auto;
-  margin-right: auto;
+  display: inline-block;   /* makes each game card shrink-wrap */
+  margin: 0 auto 20px;     /* centers the card block itself */
+  text-align: left;        /* keeps text inside the card left-aligned */
+  max-width: 450px;        /* optional: keeps card from being too wide */
 }
