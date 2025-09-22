@@ -1803,3 +1803,25 @@ button:hover {
   text-align: left;        /* keeps text inside the card left-aligned */
   max-width: 450px;        /* optional: keeps card from being too wide */
 }
+.collapsible-header {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 8px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  transition: background 0.2s;
+}
+
+.collapsible-header:hover {
+  background: #e0e0e0;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 15px;
+  background: #fff;
+}
