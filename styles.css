@@ -1814,3 +1814,14 @@ main h2 {
   text-align: left;      /* keeps the card content left-aligned inside */
   margin: 0 auto 20px;   /* centers the card block itself */
 }
+/* Center the PREVIOUS GAMES section */
+.previous-games {
+  text-align: center;
+}
+
+.previous-games h2,
+.previous-games p,
+.previous-games img {
+  margin-left: auto;
+  margin-right: auto;
+}
