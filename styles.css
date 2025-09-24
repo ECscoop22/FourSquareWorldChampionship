@@ -1861,3 +1861,16 @@ button:hover {
   margin-top: 5px;
   text-align: left; /* keep details aligned inside */
 }
+/* Center content inside the PREVIOUS GAMES section */
+.previous-games {
+  text-align: center;
+}
+
+.previous-games .champions-grid {
+  justify-content: center;
+}
+
+.previous-games details {
+  display: inline-block;
+  text-align: left;
+}
