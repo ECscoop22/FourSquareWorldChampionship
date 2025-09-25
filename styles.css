@@ -2019,3 +2019,109 @@ button:hover {
 .join-button:hover {
   background: #8b1a1a;
 }
+/* === Game Hub Page Consistency === */
+
+/* Section container styling */
+.hub-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0;
+}
+
+/* Card wrapper for each section */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border-top: 6px solid #b22222; /* maroon accent */
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: #b22222; /* maroon heading */
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card p {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Form fields */
+#gameForm input,
+#gameForm textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Primary button */
+#gameForm button,
+button.join-btn {
+  background: #b22222; /* maroon primary */
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+#gameForm button:hover,
+button.join-btn:hover {
+  background: #8b1a1a;
+}
+
+/* Teal secondary button */
+button.join-btn {
+  background: #2a9d8f; /* teal */
+}
+
+button.join-btn:hover {
+  background: #1f7d72;
+}
+
+/* Game event blocks */
+.event {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Collapsible header */
+.collapsible-header {
+  background: #2a9d8f; /* teal header */
+  color: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 12px 12px 0 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.collapsible-content {
+  padding: 1.2rem;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5rem;
+  }
+  .card h2 {
+    font-size: 1.6rem;
+  }
+}
