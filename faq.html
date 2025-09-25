@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* === Game Hub Enhanced Styles === */
+    /* === Game Hub Refined Styles === */
     body {
       background: #f8f9fa;
       font-family: 'Fredoka', sans-serif;
@@ -15,22 +15,12 @@
       padding: 0;
     }
 
-    .page-header {
+    .page-title {
       text-align: center;
       margin: 2.5em 0 1.5em;
-    }
-
-    .page-header h1 {
       font-size: 3rem;
-      color: #e63946;
+      color: #800000; /* maroon */
       text-transform: uppercase;
-      margin-bottom: 0.3em;
-    }
-
-    .page-header p {
-      color: #555;
-      font-size: 1.2rem;
-      margin-top: 0;
     }
 
     .hub-section {
@@ -41,31 +31,33 @@
 
     .card {
       background: #ffffff;
+      border: 2px solid #00808020; /* subtle teal border */
       border-radius: 16px;
       padding: 2em;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
       margin-bottom: 2em;
       text-align: center;
     }
 
     .card h2 {
       font-size: 1.8rem;
-      color: #e63946;
+      color: #800000; /* maroon */
       margin-bottom: 0.5em;
       text-transform: uppercase;
     }
 
     .card p {
-      color: #555;
+      color: #333;
       margin-bottom: 1.5em;
       font-size: 1rem;
     }
 
-    form input, form textarea {
+    form input,
+    form textarea {
       width: 100%;
       padding: 0.8em;
       margin: 0.5em 0;
-      border: 2px solid #ddd;
+      border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 1rem;
     }
@@ -76,28 +68,28 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      background: #e63946;
+      background: #008080; /* teal */
       color: white;
       font-size: 1rem;
       transition: background 0.2s;
     }
 
     button:hover {
-      background: #c92f3f;
+      background: #800000; /* maroon hover */
     }
 
     .join-btn {
-      background: #457b9d;
+      background: #008080;
       margin: 0.3em;
     }
 
     .join-btn:hover {
-      background: #35607a;
+      background: #800000;
     }
 
     .event {
       background: #fff;
-      border: 2px solid #eee;
+      border: 1px solid #ddd;
       border-radius: 12px;
       margin: 1.2em 0;
       text-align: left;
@@ -105,7 +97,7 @@
     }
 
     .collapsible-header {
-      background: #457b9d;
+      background: #800000;
       color: #fff;
       padding: 0.9em 1.2em;
       border-radius: 12px 12px 0 0;
@@ -147,40 +139,39 @@
   <a href="media.html">Media</a>
 </nav>
 
-<header class="page-header">
-  <h1 class="glow-title">Game Hub</h1>
-  <p>Host, join, and relive four square games from around the world.</p>
-</header>
+<main>
+  <h1 class="page-title">Game Hub</h1>
 
-<section class="hub-section">
-  <div class="card">
-    <h2>Host a Game</h2>
-    <p>Organize a new four square match. Fill out the details below and share with others!</p>
-    <form id="gameForm">
-      <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-      <input type="date" id="date" required />
-      <input type="time" id="time" required />
-      <textarea id="details" placeholder="Extra details (optional)"></textarea>
-      <button type="submit">Post Game</button>
-    </form>
-  </div>
-</section>
+  <section class="hub-section">
+    <div class="card">
+      <h2>Host a Game</h2>
+      <p>Organize a new four square match. Fill out the details below and share with others!</p>
+      <form id="gameForm">
+        <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
+        <input type="date" id="date" required />
+        <input type="time" id="time" required />
+        <textarea id="details" placeholder="Extra details (optional)"></textarea>
+        <button type="submit">Post Game</button>
+      </form>
+    </div>
+  </section>
 
-<section class="hub-section">
-  <div class="card">
-    <h2>Upcoming Games</h2>
-    <p>Join a scheduled match near you and test your skills against other players.</p>
-    <div id="gameList"></div>
-  </div>
-</section>
+  <section class="hub-section">
+    <div class="card">
+      <h2>Upcoming Games</h2>
+      <p>Join a scheduled match near you and test your skills against other players.</p>
+      <div id="gameList"></div>
+    </div>
+  </section>
 
-<section class="hub-section">
-  <div class="card">
-    <h2>Previous Games</h2>
-    <p>Explore past events, highlights, and memories from the community.</p>
-    <div id="previous-games-list"></div>
-  </div>
-</section>
+  <section class="hub-section">
+    <div class="card">
+      <h2>Previous Games</h2>
+      <p>Explore past events, highlights, and memories from the community.</p>
+      <div id="previous-games-list"></div>
+    </div>
+  </section>
+</main>
 
 <footer>
   <p class="site-tagline">The nation's finest resource for all things four square.</p>
