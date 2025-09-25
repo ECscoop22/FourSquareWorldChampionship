@@ -1907,3 +1907,115 @@ button:hover {
 #previous-games-list .collapsible-content {
   text-align: center;
 }
+/* === Game Hub Page Styles === */
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: var(--primary-color, #b22222); /* matches site red */
+  color: #fff;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Section container */
+.hub-section {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hub-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.hub-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color, #b22222);
+}
+
+/* Form styling */
+#gameForm label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+#gameForm input,
+#gameForm textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#gameForm button {
+  margin-top: 1.5rem;
+  background: var(--primary-color, #b22222);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#gameForm button:hover {
+  background: #8b1a1a;
+}
+
+/* Game list styling */
+#gameList,
+#previous-games-list {
+  list-style: none;
+  padding: 0;
+}
+
+#gameList li,
+#previous-games-list li {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+#gameList li:hover,
+#previous-games-list li:hover {
+  background: #fff5f5;
+}
+
+.join-button {
+  background: var(--primary-color, #b22222);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  float: right;
+}
+
+.join-button:hover {
+  background: #8b1a1a;
+}
