@@ -7,18 +7,136 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .card { margin: 1em 0; padding: 1em; border-radius: 12px; background: #fff; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
-    form input, form textarea { width: 100%; padding: 8px; margin: 6px 0; border: 1px solid #ccc; border-radius: 6px; }
-    button { padding: 8px 16px; margin-top: 8px; border: none; border-radius: 6px; cursor: pointer; background: #e63946; color: white; }
-    button:hover { background: #c92f3f; }
-    .join-btn { background: #457b9d; margin-left: 5px; }
-    .join-btn:hover { background: #35607a; }
-    .event { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 8px; }
-    ul { margin: 5px 0 0 20px; padding: 0; }
-    li { margin: 2px 0; }
+    /* === Game Hub Enhanced Styles === */
+    body {
+      background: #f8f9fa;
+      font-family: 'Fredoka', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-header {
+      text-align: center;
+      margin: 2.5em 0 1.5em;
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      color: #e63946;
+      text-transform: uppercase;
+      margin-bottom: 0.3em;
+    }
+
+    .page-header p {
+      color: #555;
+      font-size: 1.2rem;
+      margin-top: 0;
+    }
+
+    .hub-section {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 0 1.5em;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2em;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2em;
+      text-align: center;
+    }
+
+    .card h2 {
+      font-size: 1.8rem;
+      color: #e63946;
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+    }
+
+    .card p {
+      color: #555;
+      margin-bottom: 1.5em;
+      font-size: 1rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8em;
+      margin: 0.5em 0;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.8em 2em;
+      margin-top: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #e63946;
+      color: white;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #c92f3f;
+    }
+
+    .join-btn {
+      background: #457b9d;
+      margin: 0.3em;
+    }
+
+    .join-btn:hover {
+      background: #35607a;
+    }
+
+    .event {
+      background: #fff;
+      border: 2px solid #eee;
+      border-radius: 12px;
+      margin: 1.2em 0;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .collapsible-header {
+      background: #457b9d;
+      color: #fff;
+      padding: 0.9em 1.2em;
+      border-radius: 12px 12px 0 0;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .collapsible-content {
+      padding: 1.2em;
+      display: none;
+      line-height: 1.6;
+    }
+
+    .site-tagline {
+      text-align: center;
+      padding: 2em 1em;
+      font-size: 0.95rem;
+      background: #f1f1f1;
+      color: #444;
+      margin-top: 3em;
+    }
+
+    footer {
+      background: #f8f9fa;
+      margin-top: 2em;
+    }
   </style>
 </head>
 <body>
+
 <nav>
   <a href="index.html">Home</a>
   <a href="rules.html">Rules</a>
@@ -29,35 +147,47 @@
   <a href="media.html">Media</a>
 </nav>
 
-<h1 class="glow-title" style="text-align:center;">GAME HUB</h1>
+<header class="page-header">
+  <h1 class="glow-title">Game Hub</h1>
+  <p>Host, join, and relive four square games from around the world.</p>
+</header>
 
-<section class="card" style="max-width:500px;margin:0 auto;text-align:center;">
-  <h2>Host a Game</h2>
-  <form id="gameForm">
-    <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-    <input type="date" id="date" required />
-    <input type="time" id="time" required />
-    <textarea id="details" placeholder="Extra details (optional)"></textarea>
-    <button type="submit">Post Game</button>
-  </form>
+<section class="hub-section">
+  <div class="card">
+    <h2>Host a Game</h2>
+    <p>Organize a new four square match. Fill out the details below and share with others!</p>
+    <form id="gameForm">
+      <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
+      <input type="date" id="date" required />
+      <input type="time" id="time" required />
+      <textarea id="details" placeholder="Extra details (optional)"></textarea>
+      <button type="submit">Post Game</button>
+    </form>
+  </div>
 </section>
 
-<section class="card" style="max-width:600px;margin:0 auto;text-align:center;">
-  <h2>Upcoming Games</h2>
-  <div id="gameList"></div>
+<section class="hub-section">
+  <div class="card">
+    <h2>Upcoming Games</h2>
+    <p>Join a scheduled match near you and test your skills against other players.</p>
+    <div id="gameList"></div>
+  </div>
 </section>
 
-<section class="card" style="max-width:600px;margin:40px auto 0 auto;text-align:center;">
-  <h2>PREVIOUS GAMES</h2>
-  <div id="previous-games-list"></div>
+<section class="hub-section">
+  <div class="card">
+    <h2>Previous Games</h2>
+    <p>Explore past events, highlights, and memories from the community.</p>
+    <div id="previous-games-list"></div>
+  </div>
 </section>
-  
+
 <footer>
   <p class="site-tagline">The nation's finest resource for all things four square.</p>
 </footer>
 
 <script>
-/* ===== Game Hub script - replace your existing <script> block with this ===== */
+/* ===== Game Hub script - unchanged ===== */
 const adminEmail = "ericcostanza@yahoo.com";
 const gameForm = document.getElementById("gameForm");
 const gameList = document.getElementById("gameList");
@@ -73,7 +203,6 @@ function renderGames() {
   previousGameList.innerHTML = "";
 
   games.forEach((game, index) => {
-    // --- safe time formatting ---
     let formattedTime = "TBD";
     if (game.time) {
       const parts = (game.time || "0:00").split(":");
@@ -84,16 +213,13 @@ function renderGames() {
       formattedTime = `${hour}:${minute} ${ampm}`;
     }
 
-    // ensure local-midnight date to avoid timezone drift
     const dateObj = new Date((game.date || "") + "T00:00:00");
     const options = { year: "numeric", month: "long", day: "numeric" };
     const formattedDate = isNaN(dateObj.getTime()) ? (game.date || "Unknown date") : dateObj.toLocaleDateString(undefined, options);
 
-    // attendees
     const validAttendees = Array.isArray(game.attendees) ? game.attendees.filter(a => a && a.name && a.name.trim().toLowerCase() !== "test") : [];
     const attendeeList = validAttendees.length ? `<ul>${validAttendees.map(a => `<li>${a.name}</li>`).join("")}</ul>` : "<p>No one joined yet</p>";
 
-    // highlights
     let highlightsList = "";
     if (Array.isArray(game.highlights) && game.highlights.length > 0) {
       highlightsList = "<ul>" + game.highlights.map(h => {
@@ -113,7 +239,6 @@ function renderGames() {
       highlightsList = "<p>No highlights yet</p>";
     }
 
-    // DOM building
     const div = document.createElement("div");
     div.className = "event";
 
@@ -135,7 +260,6 @@ function renderGames() {
       <button type="button" id="deleteBtn${index}" class="join-btn" style="background:#c92f3f;">Delete</button>
     `;
 
-    // toggle
     header.addEventListener("click", () => {
       content.style.display = content.style.display === "block" ? "none" : "block";
     });
@@ -143,13 +267,10 @@ function renderGames() {
     div.appendChild(header);
     div.appendChild(content);
 
-    // isPast? use normalized dateObj
     const isPast = !isNaN(dateObj.getTime()) && (dateObj.setHours(0,0,0,0) < today.getTime());
     if (isPast) previousGameList.appendChild(div);
     else gameList.appendChild(div);
 
-    // attach listeners to the newly created buttons
-    // use try/catch - elements should exist immediately after append
     try {
       document.getElementById(`addHighlightBtn${index}`).addEventListener("click", () => addHighlight(index));
       document.getElementById(`joinBtn${index}`).addEventListener("click", () => joinGame(index));
@@ -161,7 +282,6 @@ function renderGames() {
   });
 }
 
-/* ===== Global functions (kept outside renderGames) ===== */
 function addHighlight(index) {
   const name = prompt("Enter your first name:");
   if (!name) return;
@@ -297,8 +417,8 @@ function editGame(index) {
   }
 }
 
-/* ===== init ===== */
 renderGames();
 </script>
+
 </body>
 </html>
