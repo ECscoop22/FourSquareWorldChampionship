@@ -1874,3 +1874,15 @@ button:hover {
   display: inline-block;
   text-align: left;
 }
+#previous-games {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#previous-games .event {
+  width: 100%;
+  max-width: 800px; /* adjust as needed */
+  margin: 0 auto 20px;
+}
