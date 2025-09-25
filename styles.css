@@ -2125,3 +2125,48 @@ button.join-btn:hover {
     font-size: 1.6rem;
   }
 }
+.event {
+  background: #fff;
+  border-left: 6px solid #800000; /* maroon accent like sections */
+  border-radius: 12px;
+  margin: 1.2em 0;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.collapsible-header {
+  background: #800000; /* maroon header */
+  color: #fff;
+  padding: 1em 1.2em;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.15rem;
+  transition: background 0.2s;
+}
+
+.collapsible-header:hover {
+  background: #660000; /* slightly darker on hover */
+}
+
+.collapsible-content {
+  padding: 1.2em;
+  display: none;
+  background: #f0f8f8; /* very light teal tint to match buttons */
+  border-radius: 0 0 12px 12px;
+  line-height: 1.6;
+}
+
+.join-btn {
+  background: #008080; /* teal like other buttons */
+  color: white;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  margin: 0.3em 0.2em;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.join-btn:hover {
+  background: #006666; /* darker teal on hover */
+}
