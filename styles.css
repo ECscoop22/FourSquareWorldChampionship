@@ -2170,32 +2170,3 @@ button.join-btn:hover {
 .join-btn:hover {
   background: #006666; /* darker teal on hover */
 }
-.host-game-bg {
-    background: linear-gradient(135deg, #800000, #008080); /* maroon to teal */
-    color: white; /* text color */
-    padding: 2em;
-    border-radius: 12px; /* optional, to match card style */
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-/* Form inputs inside host game */
-.host-game-bg input,
-.host-game-bg textarea,
-.host-game-bg button {
-    background-color: white; /* make inputs/buttons white */
-    color: #222; /* dark text for readability */
-    border: none;
-    border-radius: 6px;
-    padding: 0.5em;
-    margin: 0.5em 0;
-    width: 80%;
-    box-sizing: border-box;
-}
-
-/* Button hover effect */
-.host-game-bg button:hover {
-    background-color: #f0f0f0;
-    cursor: pointer;
-}
