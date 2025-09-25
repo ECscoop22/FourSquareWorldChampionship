@@ -7,146 +7,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ===== Game Hub - Match Site Styles ===== */
-    body {
-      font-family: 'Fredoka', sans-serif;
-      background: #f8f9fa;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      margin: 0 1em;
-      color: #333;
-      font-weight: bold;
-    }
-    
-    nav a:hover {
-      color: #800000;
-    }
-
-    /* GAME HUB header matching Rules / World Championship pages */
-    .page-header {
-      text-align: center;
-      margin: 2em 0 1em;
-    }
-
-    .page-header h1 {
-      font-size: 3rem;
-      color: #e63946; /* maroon */
-      text-transform: uppercase;
-      text-shadow: 0 0 8px #e63946, 0 0 16px #f77f00; /* glow effect */
-      margin: 0.3em 0;
-    }
-
-    .page-header p {
-      font-size: 1.2rem;
-      color: #444;
-      margin: 0;
-    }
-
-    /* Sections matching other page style */
-    .hub-section {
-      max-width: 800px;
-      margin: 2em auto;
-      padding: 0 1.5em;
-    }
-
-    .card {
-      background: #fff; /* keep light background */
-      border-left: 6px solid #800000; /* maroon accent line to match site */
-      border-radius: 12px;
-      padding: 2em;
-      margin-bottom: 2em;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    .card h2 {
-      font-size: 1.8rem;
-      color: #800000; /* maroon to match other pages */
-      margin-bottom: 0.5em;
-      text-transform: uppercase;
-    }
-
-    .card p {
-      color: #444;
-      margin-bottom: 1.5em;
-      font-size: 1rem;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 0.8em;
-      margin: 0.5em 0;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
-    button {
-      padding: 0.8em 2em;
-      margin-top: 1em;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background: #008080; /* teal to match other pages */
-      color: white;
-      font-size: 1rem;
-      transition: background 0.2s;
-    }
-
-    button:hover {
-      background: #006666; /* darker teal on hover */
-    }
-
-    .join-btn {
-      margin: 0.3em;
-    }
-
-    .event {
-      background: #f9f9f9;
-      border: 2px solid #eee;
-      border-radius: 12px;
-      margin: 1.2em 0;
-      text-align: left;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .collapsible-header {
-      background: #800000; /* maroon header to match sections */
-      color: #fff;
-      padding: 0.9em 1.2em;
-      border-radius: 12px 12px 0 0;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-
-    .collapsible-content {
-      padding: 1.2em;
-      display: none;
-      line-height: 1.6;
-    }
-
-    .site-tagline {
-      text-align: center;
-      padding: 2em 1em;
-      font-size: 0.95rem;
-      background: #f1f1f1;
-      color: #444;
-      margin-top: 3em;
-    }
-
-    footer {
-      background: #f8f9fa;
-      margin-top: 2em;
-    }
+    .card { margin: 1em 0; padding: 1em; border-radius: 12px; background: #fff; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
+    form input, form textarea { width: 100%; padding: 8px; margin: 6px 0; border: 1px solid #ccc; border-radius: 6px; }
+    button { padding: 8px 16px; margin-top: 8px; border: none; border-radius: 6px; cursor: pointer; background: #e63946; color: white; }
+    button:hover { background: #c92f3f; }
+    .join-btn { background: #457b9d; margin-left: 5px; }
+    .join-btn:hover { background: #35607a; }
+    .event { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 8px; }
+    ul { margin: 5px 0 0 20px; padding: 0; }
+    li { margin: 2px 0; }
   </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html">Home</a>
   <a href="rules.html">Rules</a>
@@ -157,48 +29,35 @@
   <a href="media.html">Media</a>
 </nav>
 
-<header class="page-header">
-  <h1>Game Hub</h1>
-  <p>Host, join, and relive four square games from around the world.</p>
-</header>
+<h1 class="glow-title" style="text-align:center;">GAME HUB</h1>
 
-<section class="hub-section">
-  <div class="card">
-    <h2>Host a Game</h2>
-    <p>Organize a new four square match. Fill out the details below and share with others!</p>
-    <form id="gameForm">
-      <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-      <input type="date" id="date" required />
-      <input type="time" id="time" required />
-      <textarea id="details" placeholder="Extra details (optional)"></textarea>
-      <button type="submit">Post Game</button>
-    </form>
-  </div>
+<section class="card" style="max-width:500px;margin:0 auto;text-align:center;">
+  <h2>Host a Game</h2>
+  <form id="gameForm">
+    <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
+    <input type="date" id="date" required />
+    <input type="time" id="time" required />
+    <textarea id="details" placeholder="Extra details (optional)"></textarea>
+    <button type="submit">Post Game</button>
+  </form>
 </section>
 
-<section class="hub-section">
-  <div class="card">
-    <h2>Upcoming Games</h2>
-    <p>Join a scheduled match near you and test your skills against other players.</p>
-    <div id="gameList"></div>
-  </div>
+<section class="card" style="max-width:600px;margin:0 auto;text-align:center;">
+  <h2>Upcoming Games</h2>
+  <div id="gameList"></div>
 </section>
 
-<section class="hub-section">
-  <div class="card">
-    <h2>Previous Games</h2>
-    <p>Explore past events, highlights, and memories from the community.</p>
-    <div id="previous-games-list"></div>
-  </div>
+<section class="card" style="max-width:600px;margin:40px auto 0 auto;text-align:center;">
+  <h2>PREVIOUS GAMES</h2>
+  <div id="previous-games-list"></div>
 </section>
-
+  
 <footer>
   <p class="site-tagline">The nation's finest resource for all things four square.</p>
 </footer>
 
 <script>
-/* ===== Game Hub script - unchanged ===== */
-// (Your existing JS code goes here; no changes)
+/* ===== Game Hub script - replace your existing <script> block with this ===== */
 const adminEmail = "ericcostanza@yahoo.com";
 const gameForm = document.getElementById("gameForm");
 const gameList = document.getElementById("gameList");
@@ -206,9 +65,240 @@ const previousGameList = document.getElementById("previous-games-list");
 
 let games = JSON.parse(localStorage.getItem("games")) || [];
 
-// ...rest of your JS code remains identical...
+function renderGames() {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  gameList.innerHTML = "";
+  previousGameList.innerHTML = "";
+
+  games.forEach((game, index) => {
+    // --- safe time formatting ---
+    let formattedTime = "TBD";
+    if (game.time) {
+      const parts = (game.time || "0:00").split(":");
+      let hour = parseInt(parts[0], 10) || 0;
+      const minute = parts[1] || "00";
+      const ampm = hour >= 12 ? "PM" : "AM";
+      hour = hour % 12 || 12;
+      formattedTime = `${hour}:${minute} ${ampm}`;
+    }
+
+    // ensure local-midnight date to avoid timezone drift
+    const dateObj = new Date((game.date || "") + "T00:00:00");
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formattedDate = isNaN(dateObj.getTime()) ? (game.date || "Unknown date") : dateObj.toLocaleDateString(undefined, options);
+
+    // attendees
+    const validAttendees = Array.isArray(game.attendees) ? game.attendees.filter(a => a && a.name && a.name.trim().toLowerCase() !== "test") : [];
+    const attendeeList = validAttendees.length ? `<ul>${validAttendees.map(a => `<li>${a.name}</li>`).join("")}</ul>` : "<p>No one joined yet</p>";
+
+    // highlights
+    let highlightsList = "";
+    if (Array.isArray(game.highlights) && game.highlights.length > 0) {
+      highlightsList = "<ul>" + game.highlights.map(h => {
+        let content = `<strong>${h.name || "Someone"}:</strong> `;
+        if (h.media && h.type === "image") content += `<br><img src="${h.media}" alt="highlight image" style="max-width:200px;border-radius:8px;">`;
+        else if (h.media && h.type === "video") content += `<br><video controls style="max-width:300px;border-radius:8px;"><source src="${h.media}" type="video/mp4">Your browser does not support video.</video>`;
+        if (h.text) {
+          const youTubeReg = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/;
+          const match = h.text.match(youTubeReg);
+          if (match && match[1]) content += `<br><iframe width="300" height="169" src="https://www.youtube.com/embed/${match[1]}" frameborder="0" allowfullscreen></iframe>`;
+          else if (/^https?:\/\//.test(h.text)) content += `<br><a href="${h.text}" target="_blank">${h.text}</a>`;
+          else content += `<br>${h.text}`;
+        }
+        return `<li>${content}</li>`;
+      }).join("") + "</ul>";
+    } else {
+      highlightsList = "<p>No highlights yet</p>";
+    }
+
+    // DOM building
+    const div = document.createElement("div");
+    div.className = "event";
+
+    const header = document.createElement("div");
+    header.className = "collapsible-header";
+    header.textContent = `${game.location} — ${formattedDate} at ${formattedTime}`;
+
+    const content = document.createElement("div");
+    content.className = "collapsible-content";
+    content.innerHTML = `
+      ${game.details ? `<em>${game.details}</em><br>` : ""}
+      <strong>Attendees (${validAttendees.length}):</strong> ${attendeeList}<br><br>
+      <strong>Highlights:</strong> ${highlightsList}<br>
+      <input type="text" id="highlightInput${index}" placeholder="Add a highlight or video URL" />
+      <input type="file" id="highlightFile${index}" accept="image/*,video/*" /><br>
+      <button type="button" id="addHighlightBtn${index}" class="join-btn">Add Highlight</button><br><br>
+      <button type="button" id="joinBtn${index}" class="join-btn">Join</button>
+      <button type="button" id="editBtn${index}" class="join-btn" style="background:#f77;">Edit</button>
+      <button type="button" id="deleteBtn${index}" class="join-btn" style="background:#c92f3f;">Delete</button>
+    `;
+
+    // toggle
+    header.addEventListener("click", () => {
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+
+    div.appendChild(header);
+    div.appendChild(content);
+
+    // isPast? use normalized dateObj
+    const isPast = !isNaN(dateObj.getTime()) && (dateObj.setHours(0,0,0,0) < today.getTime());
+    if (isPast) previousGameList.appendChild(div);
+    else gameList.appendChild(div);
+
+    // attach listeners to the newly created buttons
+    // use try/catch - elements should exist immediately after append
+    try {
+      document.getElementById(`addHighlightBtn${index}`).addEventListener("click", () => addHighlight(index));
+      document.getElementById(`joinBtn${index}`).addEventListener("click", () => joinGame(index));
+      document.getElementById(`editBtn${index}`).addEventListener("click", () => editGame(index));
+      document.getElementById(`deleteBtn${index}`).addEventListener("click", () => deleteGame(index));
+    } catch (err) {
+      console.error("Failed to attach listeners for game index", index, err);
+    }
+  });
+}
+
+/* ===== Global functions (kept outside renderGames) ===== */
+function addHighlight(index) {
+  const name = prompt("Enter your first name:");
+  if (!name) return;
+  const email = prompt("Enter your email:");
+  if (!email) return;
+
+  const game = games[index];
+  const inputEmail = email.trim().toLowerCase();
+  const admin = adminEmail.trim().toLowerCase();
+  const creatorEmail = game.creator?.email?.trim().toLowerCase();
+
+  const isAttendee = Array.isArray(game.attendees) && game.attendees.some(a => a.email === inputEmail);
+  if (!isAttendee && inputEmail !== creatorEmail && inputEmail !== admin) {
+    alert("Only attendees or the creator/admin can add highlights for this game.");
+    return;
+  }
+
+  const textInput = document.getElementById(`highlightInput${index}`);
+  const fileInput = document.getElementById(`highlightFile${index}`);
+  const textValue = textInput ? textInput.value.trim() : "";
+  const file = fileInput ? fileInput.files[0] : null;
+
+  if (!Array.isArray(game.highlights)) game.highlights = [];
+
+  const saveHighlight = (mediaData, mediaType) => {
+    game.highlights.push({
+      name,
+      text: textValue || "",
+      media: mediaData || null,
+      type: mediaType || null
+    });
+    localStorage.setItem("games", JSON.stringify(games));
+    renderGames();
+  };
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const mediaType = file.type.startsWith("video") ? "video" : "image";
+      saveHighlight(reader.result, mediaType);
+    };
+    reader.readAsDataURL(file);
+  } else if (textValue) {
+    saveHighlight(null, null);
+  } else {
+    alert("Please enter highlight text or choose a file.");
+  }
+}
+
+gameForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const creatorName = prompt("Enter your first name:");
+  if (!creatorName) return;
+  const creatorEmail = prompt("Enter your email:");
+  if (!creatorEmail) return;
+
+  const newGame = {
+    location: document.getElementById("location").value,
+    date: document.getElementById("date").value,
+    time: document.getElementById("time").value,
+    details: document.getElementById("details").value,
+    attendees: [],
+    creator: { name: creatorName, email: creatorEmail.trim().toLowerCase() },
+    highlights: []
+  };
+
+  games.push(newGame);
+  localStorage.setItem("games", JSON.stringify(games));
+  gameForm.reset();
+  renderGames();
+});
+
+function joinGame(index) {
+  const name = prompt("Enter your first name:");
+  if (!name) return;
+  const email = prompt("Enter your email:");
+  if (!email) return;
+
+  if (!Array.isArray(games[index].attendees)) games[index].attendees = [];
+  games[index].attendees.push({ name, email: email.trim().toLowerCase() });
+  localStorage.setItem("games", JSON.stringify(games));
+  renderGames();
+}
+
+function deleteGame(index) {
+  const email = prompt("Enter your email to confirm deletion:");
+  if (!email) return;
+
+  const inputEmail = email.trim().toLowerCase();
+  const game = games[index];
+  const creatorEmail = game.creator?.email?.trim().toLowerCase();
+  const admin = adminEmail.trim().toLowerCase();
+
+  if (inputEmail === admin || inputEmail === creatorEmail) {
+    if (confirm("Are you sure you want to delete this game?")) {
+      games.splice(index, 1);
+      localStorage.setItem("games", JSON.stringify(games));
+      renderGames();
+      alert("Game deleted successfully.");
+    }
+  } else {
+    alert(`You are not authorized to delete this game.\nEntered: ${inputEmail}\nCreator: ${creatorEmail || "N/A"}`);
+  }
+}
+
+function editGame(index) {
+  const email = prompt("Enter your email to edit this game:");
+  if (!email) return;
+
+  const inputEmail = email.trim().toLowerCase();
+  const game = games[index];
+  const creatorEmail = game.creator?.email?.trim().toLowerCase();
+  const admin = adminEmail.trim().toLowerCase();
+
+  if ((creatorEmail && inputEmail === creatorEmail) || inputEmail === admin || (!creatorEmail && inputEmail === admin)) {
+    const newLocation = prompt("Update location:", game.location);
+    if (!newLocation) return;
+    const newDate = prompt("Update date (YYYY-MM-DD):", game.date);
+    if (!newDate) return;
+    const newTime = prompt("Update time (HH:MM):", game.time);
+    if (!newTime) return;
+    const newDetails = prompt("Update details:", game.details);
+
+    game.location = newLocation;
+    game.date = newDate;
+    game.time = newTime;
+    game.details = newDetails;
+
+    localStorage.setItem("games", JSON.stringify(games));
+    renderGames();
+  } else {
+    alert(`You are not authorized to edit this game.\nEntered: ${inputEmail}\nCreator: ${creatorEmail || "N/A"}`);
+  }
+}
+
+/* ===== init ===== */
 renderGames();
 </script>
-
 </body>
 </html>
