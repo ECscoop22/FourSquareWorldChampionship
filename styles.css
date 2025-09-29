@@ -2170,3 +2170,10 @@ button.join-btn:hover {
 .join-btn:hover {
   background: #006666; /* darker teal on hover */
 }
+#upcoming-games-list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
