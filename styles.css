@@ -2198,3 +2198,9 @@ button.join-btn:hover {
 #gameList .collapsible-content {
   text-align: center;
 }
+/* Match Upcoming Games background to Previous Games */
+#upcoming-games {
+  background: linear-gradient(135deg, #800000, #008080);
+  padding: 20px;
+  border-radius: 12px;
+}
