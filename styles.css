@@ -2204,3 +2204,11 @@ button.join-btn:hover {
   padding: 20px;
   border-radius: 12px;
 }
+/* === Make Upcoming Games background match Host A Game (only the background) === */
+/* Place this at the END of styles.css so it overrides earlier .card rules */
+.card.upcoming-gradient {
+  background: linear-gradient(135deg, #800000, #008080) !important;
+  /* do NOT set color here — we must NOT change text/input/button colors */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08); /* optional: match other cards' shadow */
+  border-top: 6px solid #b22222; /* optional: match your card style if you use this */
+}
