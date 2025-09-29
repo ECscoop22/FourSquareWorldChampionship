@@ -2177,3 +2177,24 @@ button.join-btn:hover {
   align-items: center;
   justify-content: center;
 }
+/* === Center Upcoming Games (match Previous Games) === */
+#gameList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Make each event a centered card with a max width */
+#gameList .event {
+  width: 100%;
+  max-width: 500px;    /* same sizing used for previous games */
+  margin: 0 auto 20px; /* center horizontally and space between */
+  text-align: center;  /* center text inside each event card */
+}
+
+/* Ensure the collapsible header & content are centered too */
+#gameList .collapsible-header,
+#gameList .collapsible-content {
+  text-align: center;
+}
