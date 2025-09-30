@@ -2245,3 +2245,6 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+.previous-gradient {
+  background: linear-gradient(135deg, #800000, #008080);
+}
