@@ -131,8 +131,8 @@ function renderGames() {
 
     const header = document.createElement("div");
     header.className = "collapsible-header";
-    header.textContent = `${game.location} — ${formattedDate} at ${formattedTime}`;
-
+    header.innerHTML = `<div><strong>${game.location}</strong></div><div>${formattedDate} at ${formattedTime}</div>`;
+    
 const header = document.createElement("div");
 header.className = "collapsible-header";
 header.innerHTML = `
