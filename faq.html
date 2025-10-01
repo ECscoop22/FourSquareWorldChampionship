@@ -125,38 +125,30 @@ function renderGames() {
       highlightsList = "<p>No highlights yet</p>";
     }
 
-    // DOM building
-    const div = document.createElement("div");
-    div.className = "event";
+// DOM building
+const div = document.createElement("div");
+div.className = "event";
 
-    const header = document.createElement("div");
-    header.className = "collapsible-header";
-    header.innerHTML = `<div><strong>${game.location}</strong></div><div>${formattedDate} at ${formattedTime}</div>`;
-    
 const header = document.createElement("div");
 header.className = "collapsible-header";
-header.innerHTML = `
-  <strong style="font-size:1.2rem;">${game.location}</strong><br>
-  <span style="font-size:1rem;">${formattedDate} at ${formattedTime}</span>
+header.innerHTML = `<div><strong>${game.location}</strong></div><div>${formattedDate} at ${formattedTime}</div>`;
+
+const content = document.createElement("div");
+content.className = "collapsible-content";
+content.innerHTML = `
+  ${game.details ? `<em>${game.details}</em><br>` : ""}
+  <strong>Attendees (${validAttendees.length}):</strong> ${attendeeList}<br><br>
+  <strong>Highlights:</strong> ${highlightsList}<br>
+  <input type="text" id="highlightInput${index}" placeholder="Add a highlight or video URL" />
+  <input type="file" id="highlightFile${index}" accept="image/*,video/*" /><br>
+  <button type="button" id="addHighlightBtn${index}" class="join-btn">Add Highlight</button><br><br>
+  <button type="button" id="joinBtn${index}" class="join-btn">Join</button>
+  <button type="button" id="editBtn${index}" class="join-btn" style="background:#f77;">Edit</button>
+  <button type="button" id="deleteBtn${index}" class="join-btn" style="background:#c92f3f;">Delete</button>
 `;
-      ${game.details ? `<em>${game.details}</em><br>` : ""}
-      <strong>Attendees (${validAttendees.length}):</strong> ${attendeeList}<br><br>
-      <strong>Highlights:</strong> ${highlightsList}<br>
-      <input type="text" id="highlightInput${index}" placeholder="Add a highlight or video URL" />
-      <input type="file" id="highlightFile${index}" accept="image/*,video/*" /><br>
-      <button type="button" id="addHighlightBtn${index}" class="join-btn">Add Highlight</button><br><br>
-      <button type="button" id="joinBtn${index}" class="join-btn">Join</button>
-      <button type="button" id="editBtn${index}" class="join-btn" style="background:#f77;">Edit</button>
-      <button type="button" id="deleteBtn${index}" class="join-btn" style="background:#c92f3f;">Delete</button>
-    `;
 
-    // toggle
-    header.addEventListener("click", () => {
-      content.style.display = content.style.display === "block" ? "none" : "block";
-    });
-
-    div.appendChild(header);
-    div.appendChild(content);
+div.appendChild(header);
+div.appendChild(content);
 
     // isPast? use normalized dateObj
     const isPast = !isNaN(dateObj.getTime()) && (dateObj.setHours(0,0,0,0) < today.getTime());
