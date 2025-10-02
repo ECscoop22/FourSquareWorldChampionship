@@ -149,6 +149,11 @@ content.innerHTML = `
 
 div.appendChild(header);
 div.appendChild(content);
+    
+    // ✅ Add toggle so clicking header opens/closes details
+header.addEventListener("click", () => {
+  content.classList.toggle("active");
+});
 
     // isPast? use normalized dateObj
     const isPast = !isNaN(dateObj.getTime()) && (dateObj.setHours(0,0,0,0) < today.getTime());
