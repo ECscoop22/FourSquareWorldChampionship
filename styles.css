@@ -2272,14 +2272,32 @@ body {
   }
 }
 .register-note {
+  background: linear-gradient(135deg, #800000, #008080);
+  color: white;
   font-size: 1.2em;
-  max-width: 800px;
-  margin: 20px auto;
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 16px;
   text-align: center;
   line-height: 1.6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+  /* Animation */
   opacity: 0;
   transform: translateY(15px);
   animation: fadeSlideIn 1.2s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeSlideIn {
