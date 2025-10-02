@@ -2245,3 +2245,10 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+.collapsible-content {
+  display: none;
+}
+
+.collapsible-content.active {
+  display: block;
+}
