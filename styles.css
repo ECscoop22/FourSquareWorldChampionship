@@ -2311,3 +2311,38 @@ body {
     transform: translateY(0);
   }
 }
+/* === Force Register note to match Game Hub intro (safe override) === */
+.register-note {
+  position: relative !important;
+  overflow: visible !important;
+  max-width: 900px !important;
+  margin: 30px auto !important;
+  padding: 0 !important;               /* inner padding provided by .register-note::after */
+  border-radius: 16px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18) !important;
+  background: linear-gradient(135deg, #800000 0%, #008080 100%) !important; /* gradient frame */
+  color: #fff !important;
+}
+
+/* inner light panel to match Game Hub intro content area */
+.register-note::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(255,255,255,0.92) !important;   /* light panel */
+  border-radius: 12px !important;
+  z-index: 0;
+}
+
+/* make the text sit on top of the inner panel */
+.register-note * {
+  position: relative;
+  z-index: 1;
+  color: #111 !important;           /* dark text on the light inner panel */
+  padding: 20px 22px !important;
+  display: block;
+  box-sizing: border-box;
+}
