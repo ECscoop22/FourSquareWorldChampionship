@@ -2272,7 +2272,8 @@ body {
   }
 }
 .register-note {
-  background: linear-gradient(135deg, #800000, #008080);
+  background: rgba(255, 255, 255, 0.1); /* subtle transparent white, like Game Hub */
+  backdrop-filter: blur(6px);
   color: white;
   font-size: 1.2em;
   max-width: 850px;
