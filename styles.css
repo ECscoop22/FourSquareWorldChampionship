@@ -2439,5 +2439,5 @@ body.register-page {
 }
 
 body.blog-page {
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #800000, #008080); /* same maroon to teal as RULES */
 }
