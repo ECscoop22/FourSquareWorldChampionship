@@ -6,6 +6,67 @@
   <title>Blog - Four Square World Championship</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Additional inline styles for the sidebar and scrolling */
+    .blog-container {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2em;
+    }
+
+    .blog-content {
+      flex: 3;
+    }
+
+    .blog-sidebar {
+      flex: 1;
+      background: #222;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      height: max-content;
+      position: sticky;
+      top: 1em;
+    }
+
+    .blog-sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .blog-sidebar a {
+      color: #ffcc00;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    .blog-sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .blog-post-card {
+      background: linear-gradient(135deg, #800000, #008080);
+      color: white;
+      padding: 1.5em;
+      border-radius: 12px;
+      margin-bottom: 2em;
+    }
+
+    .blog-post-card h2 {
+      margin-top: 0;
+    }
+
+    .published-date {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    /* Smooth scrolling for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body class="blog-page">
   <nav>
@@ -27,6 +88,7 @@
       Updates, Stories, and News from the Four Square World
     </div>
 
+    <!-- Blog Intro -->
     <section class="blog-intro-card" style="background: linear-gradient(135deg, #800000, #008080); text-align:center; padding:2em; border-radius:12px; color:white;">
       <p>
         This blog is dedicated to exploring all the coolest questions that come into FourSquareWorldChampionship.com from around the globe. Have a question or idea? Send it our way — we’ll dive in and get you an answer!
@@ -50,31 +112,41 @@
       </form>
     </section>
 
-    <div class="blog-container" style="display:flex; gap:2rem; margin-top:2em;">
+    <!-- Blog Posts + Sidebar -->
+    <div class="blog-container">
       <!-- Main blog posts -->
-      <main class="blog-content" style="flex:3;">
-        <!-- Sample latest post -->
-        <article class="blog-post-card">
-          <h2><a href="post1.html">Can a player hit the ball twice?</a></h2>
+      <main class="blog-content">
+        <!-- Sample Post 1 -->
+        <article class="blog-post-card" id="post1">
+          <h2>Can a player hit the ball twice?</h2>
+          <p><strong>From:</strong> Alex – New York, NY</p>
           <p><strong>Question:</strong> Is it allowed to hit the ball twice during a turn?</p>
           <p><strong>Answer:</strong> Great question! Players may only hit the ball once per turn. Hitting twice results in an out.</p>
-          <p class="published-date" style="font-size:0.9em; color:#aaa;">Published: October 7, 2025</p>
+          <p class="published-date">Published: October 7, 2025</p>
         </article>
 
-        <!-- Add more posts here (up to 10 latest) -->
+        <!-- Sample Post 2 -->
+        <article class="blog-post-card" id="post2">
+          <h2>What’s the official Four Square ball size?</h2>
+          <p><strong>From:</strong> Sam – Boston, MA</p>
+          <p><strong>Question:</strong> I’m curious about the official ball size for tournaments.</p>
+          <p><strong>Answer:</strong> The official ball for championship play is a standard playground rubber ball, size 5. This ensures consistent bounce and gameplay.</p>
+          <p class="published-date">Published: October 1, 2025</p>
+        </article>
+
+        <!-- Add more posts here -->
       </main>
 
       <!-- Sidebar Blog Archive -->
-      <aside class="blog-sidebar" style="flex:1; background:#222; color:white; padding:1rem; border-radius:8px; height:max-content;">
+      <aside class="blog-sidebar">
         <h3>Blog Archive</h3>
-        <ul style="list-style:none; padding-left:0;">
-          <li><a href="post1.html" style="color:#ffcc00; text-decoration:none;">Can a player hit the ball twice?</a></li>
-          <li><a href="post2.html" style="color:#ffcc00; text-decoration:none;">Another Blog Post Title</a></li>
-          <!-- Add more links to individual posts here -->
+        <ul>
+          <li><a href="#post1">Can a player hit the ball twice?</a></li>
+          <li><a href="#post2">What’s the official Four Square ball size?</a></li>
+          <!-- Add more links here, make sure href matches the post ID -->
         </ul>
       </aside>
     </div>
-
   </main>
 
   <footer>
