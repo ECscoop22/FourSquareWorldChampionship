@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="rules-page">
+<body class="blog-page">
   <nav>
     <a href="index.html">Home</a>
     <a href="rules.html">Rules</a>
@@ -19,47 +19,61 @@
   </nav>
 
   <main>
-    <h1 class="glow-title" style="width:100%; text-align:center; margin:0.2em 0;">
+    <h1 class="glow-title" style="text-align:center; margin:0.2em 0;">
       BLOG
     </h1>
 
-    <div class="site-tagline">Updates, Stories, and News from the Four Square World</div>
+    <div class="site-tagline" style="text-align:center; margin-bottom:2em;">
+      Updates, Stories, and News from the Four Square World
+    </div>
 
-    <!-- Intro section -->
-<section class="blog-intro-card" style="background: linear-gradient(135deg, #800000, #008080);">
-  <p>
-    This blog is dedicated to exploring all the coolest questions that come into FourSquareWorldChampionship.com from around the globe. Have a question or idea? Send it our way — we’ll dive in and get you an answer!
-  </p>
-</section> <!-- ✅ properly close this section here -->
+    <section class="blog-intro-card" style="background: linear-gradient(135deg, #800000, #008080); text-align:center; padding:2em; border-radius:12px; color:white;">
+      <p>
+        This blog is dedicated to exploring all the coolest questions that come into FourSquareWorldChampionship.com from around the globe. Have a question or idea? Send it our way — we’ll dive in and get you an answer!
+      </p>
+    </section>
 
-<section class="submit-question" style="background: linear-gradient(135deg, #800000, #008080); text-align: center; padding: 2em; border-radius: 12px; color: white;">
-  <h2>Submit a Question to the Blog</h2>
-  <p>Have a question about rules, idea to enhance the game, or topic you’d love to see covered? Send it our way — we’d love to hear from you!</p>
-  
-  <form action="https://formspree.io/f/mdkwdqda" method="POST" style="max-width: 600px; margin: 0 auto; text-align: left;">
-    <label for="name">Your Name (optional):</label>
-    <input type="text" id="name" name="name" placeholder="Enter your name">
+    <!-- Submit Question Form -->
+    <section class="submit-question" style="background: linear-gradient(135deg, #800000, #008080); text-align:center; padding:2em; border-radius:12px; color:white; margin-top:2em;">
+      <h2>Submit a Question to the Blog</h2>
+      <p>Have a question about rules, idea to enhance the game, or topic you’d love to see covered? Send it our way — we’d love to hear from you!</p>
+      <form action="https://formspree.io/f/mdkwdqda" method="POST">
+        <label for="name">Your Name (optional):</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <label for="email">Your Email (optional):</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+        <label for="location">Your Location (optional):</label>
+        <input type="text" id="location" name="location" placeholder="Enter your location">
+        <label for="question">Your Question or Idea:</label>
+        <textarea id="question" name="question" rows="5" placeholder="Write your question here..." required></textarea>
+        <button type="submit">Submit Question</button>
+      </form>
+    </section>
 
-    <label for="email">Your Email (optional):</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email">
+    <div class="blog-container" style="display:flex; gap:2rem; margin-top:2em;">
+      <!-- Main blog posts -->
+      <main class="blog-content" style="flex:3;">
+        <!-- Sample latest post -->
+        <article class="blog-post-card">
+          <h2><a href="post1.html">Can a player hit the ball twice?</a></h2>
+          <p><strong>Question:</strong> Is it allowed to hit the ball twice during a turn?</p>
+          <p><strong>Answer:</strong> Great question! Players may only hit the ball once per turn. Hitting twice results in an out.</p>
+          <p class="published-date" style="font-size:0.9em; color:#aaa;">Published: October 7, 2025</p>
+        </article>
 
-    <label for="location">Your Location (optional):</label>
-    <input type="text" id="location" name="location" placeholder="City, State or Country">
+        <!-- Add more posts here (up to 10 latest) -->
+      </main>
 
-    <label for="question">Your Question or Idea:</label>
-    <textarea id="question" name="question" rows="5" placeholder="Write your question here..." required></textarea>
-
-    <button type="submit">Submit Question</button>
-  </form>
-</section>
-
- <section class="blog-posts">
-  <!-- Existing posts go here -->
-  <article class="blog-post-card">
-    <h2>Question from Alex – New York, NY</h2>
-    <p><strong>Question:</strong> How many players can participate in a single match of Four Square?</p>
-    <p><strong>Answer:</strong> Great question! A standard game of Four Square is played with 4 players on the court at a time — one in each of the four squares. When a player is out, they leave the court and go to the back of the line, while a new player steps into the lowest-ranked square (usually Square 1), and everyone rotates up as the game continues. This rotation means that any number of people can participate over the course of a game. That said, there are also fun variations! Some players use “Tag Team” rules, with two players sharing each square. Others create larger courts with 6 or even 8 squares, allowing more players to participate in each round. And at major events like the Four Square World Championships, multiple courts often run simultaneously to make room for all the players.</p>
-  </article>
+      <!-- Sidebar Blog Archive -->
+      <aside class="blog-sidebar" style="flex:1; background:#222; color:white; padding:1rem; border-radius:8px; height:max-content;">
+        <h3>Blog Archive</h3>
+        <ul style="list-style:none; padding-left:0;">
+          <li><a href="post1.html" style="color:#ffcc00; text-decoration:none;">Can a player hit the ball twice?</a></li>
+          <li><a href="post2.html" style="color:#ffcc00; text-decoration:none;">Another Blog Post Title</a></li>
+          <!-- Add more links to individual posts here -->
+        </ul>
+      </aside>
+    </div>
 
   </main>
 
