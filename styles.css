@@ -2481,12 +2481,12 @@ body.register-page {
   margin: 0;
   box-sizing: border-box;
 }
-/* Typing effect */
 .typing-text {
-  display: inline-block;
-  overflow: hidden;            /* Ensures text is hidden until "typed" */
-  white-space: nowrap;         /* Keeps the text on one line */
-  border-right: 3px solid #111; /* Cursor */
+  display: block;               /* full width so it wraps inside the container */
+  overflow: hidden;             /* hide overflow */
+  white-space: normal;          /* allow wrapping so text doesn't go off the edge */
+  border-right: 3px solid #111; /* cursor */
+  box-sizing: border-box;
   animation: typing 6s steps(120, end), blinkCursor 0.75s step-end infinite;
 }
 
