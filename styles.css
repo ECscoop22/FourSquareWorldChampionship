@@ -2512,7 +2512,7 @@ body.register-page {
 
 .blog-icon {
   display: inline-block;
-  font-size: 1.6em; /* about same size as rulebook icons */
+  font-size: 1.3em; /* slightly smaller size */
   transform-origin: center;
   animation: pencilWiggle 2.5s ease-in-out infinite;
 }
