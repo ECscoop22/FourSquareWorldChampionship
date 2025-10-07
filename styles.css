@@ -2443,3 +2443,38 @@ body.register-page {
     background-color: #f5f5f5; /* same as other sections */
     padding: 2em 0; /* optional: adds top/bottom spacing to match other sections */
 }
+/* Blog intro card matching Game Hub intro card */
+.blog-intro-note {
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  margin: 2em auto;
+  padding: 2em 2.5em;
+  background: linear-gradient(135deg, #800000 0%, #008080 100%); /* gradient frame */
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  color: #fff;
+  text-align: center;
+  font-size: 1.15em;
+  line-height: 1.6;
+}
+
+/* inner light panel */
+.blog-intro-note::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(255,255,255,0.92); /* light panel */
+  border-radius: 12px;
+  z-index: 0;
+}
+
+/* make text sit above the inner panel */
+.blog-intro-note * {
+  position: relative;
+  z-index: 1;
+  color: #111; /* dark text on light panel */
+}
