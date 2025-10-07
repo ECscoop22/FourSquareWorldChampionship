@@ -2458,3 +2458,10 @@ body.blog-page {
   margin-bottom: 1.5em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+/* Blog Archive Section Background */
+#blog-archive, .blog-archive {
+  background: linear-gradient(135deg, #008080, #800000); /* match other sections */
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
