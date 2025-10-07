@@ -2501,3 +2501,42 @@ body.register-page {
   0%, 100% { border-color: transparent; }
   50% { border-color: #111; }
 }
+/* Blog title icon styling */
+.blog-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  position: relative;
+}
+
+.blog-icon {
+  display: inline-block;
+  font-size: 1.6em; /* about same size as rulebook icons */
+  transform-origin: center;
+  animation: pencilWiggle 2.5s ease-in-out infinite;
+}
+
+/* Optional: make left and right alternate slightly for natural feel */
+.blog-icon.left {
+  animation-delay: 0s;
+}
+.blog-icon.right {
+  animation-delay: 1.25s;
+}
+
+/* Wiggle animation */
+@keyframes pencilWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
