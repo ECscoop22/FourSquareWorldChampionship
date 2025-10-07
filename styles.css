@@ -2481,3 +2481,23 @@ body.register-page {
   margin: 0;
   box-sizing: border-box;
 }
+/* Typing effect */
+.typing-text {
+  display: inline-block;
+  overflow: hidden;            /* Ensures text is hidden until "typed" */
+  white-space: nowrap;         /* Keeps the text on one line */
+  border-right: 3px solid #111; /* Cursor */
+  animation: typing 6s steps(120, end), blinkCursor 0.75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Cursor blink */
+@keyframes blinkCursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #111; }
+}
