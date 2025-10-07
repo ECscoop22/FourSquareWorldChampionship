@@ -2441,3 +2441,20 @@ body.register-page {
 body.blog-page {
   background: linear-gradient(135deg, #800000, #008080); /* same maroon to teal as RULES */
 }
+/* Blog Archive Section Background */
+.blog-posts {
+  background: linear-gradient(135deg, #008080, #800000); /* teal → maroon, matches other sections */
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Optional: ensure individual blog cards still stand out */
+.blog-post-card {
+  background-color: rgba(255,255,255,0.9); /* light panel inside the gradient */
+  color: #111;
+  padding: 1.5em 2em;
+  border-radius: 10px;
+  margin-bottom: 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
