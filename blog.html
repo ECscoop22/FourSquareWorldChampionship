@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Additional inline styles for the sidebar and scrolling */
+    /* Blog layout */
     .blog-container {
       display: flex;
       gap: 2rem;
@@ -62,9 +62,24 @@
       color: #ccc;
     }
 
-    /* Smooth scrolling for anchor links */
     html {
       scroll-behavior: smooth;
+    }
+
+    .submit-question input, .submit-question textarea, .submit-question button {
+      display: block;
+      width: 100%;
+      margin: 0.5em 0 1em 0;
+      padding: 0.5em;
+      border-radius: 6px;
+      border: none;
+    }
+
+    .submit-question button {
+      background: #ffcc00;
+      color: #222;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -116,34 +131,23 @@
     <div class="blog-container">
       <!-- Main blog posts -->
       <main class="blog-content">
-        <!-- Sample Post 1 -->
+        <!-- Original Post -->
         <article class="blog-post-card" id="post1">
-          <h2>Can a player hit the ball twice?</h2>
-          <p><strong>From:</strong> Alex – New York, NY</p>
-          <p><strong>Question:</strong> Is it allowed to hit the ball twice during a turn?</p>
-          <p><strong>Answer:</strong> Great question! Players may only hit the ball once per turn. Hitting twice results in an out.</p>
+          <h2>How many players can play at the same time?</h2>
+          <p><strong>From:</strong> Alex – Rochester, NY</p>
+          <p><strong>Question:</strong> How many people can play in a game of Four Square at the same time?</p>
+          <p><strong>Answer:</strong> Great question! A standard game of Four Square is played with 4 players on the court at a time — one in each of the four squares. When a player is out, they leave the court and go to the back of the line, while a new player steps into Square 1 (the lowest-ranked square), and everyone rotates up as the game continues. This rotation means that any number of people can participate over the course of a game.  
+
+          That said, there are also fun variations! Some players use “Tag Team” rules, with two players sharing each square. Others create larger courts with 6 or even 8 squares, allowing more players to participate in each round. And at major events like the Four Square World Championships, multiple courts often run simultaneously to make room for all the players.</p>
           <p class="published-date">Published: October 7, 2025</p>
         </article>
-
-        <!-- Sample Post 2 -->
-        <article class="blog-post-card" id="post2">
-          <h2>What’s the official Four Square ball size?</h2>
-          <p><strong>From:</strong> Sam – Boston, MA</p>
-          <p><strong>Question:</strong> I’m curious about the official ball size for tournaments.</p>
-          <p><strong>Answer:</strong> The official ball for championship play is a standard playground rubber ball, size 5. This ensures consistent bounce and gameplay.</p>
-          <p class="published-date">Published: October 1, 2025</p>
-        </article>
-
-        <!-- Add more posts here -->
       </main>
 
       <!-- Sidebar Blog Archive -->
       <aside class="blog-sidebar">
         <h3>Blog Archive</h3>
         <ul>
-          <li><a href="#post1">Can a player hit the ball twice?</a></li>
-          <li><a href="#post2">What’s the official Four Square ball size?</a></li>
-          <!-- Add more links here, make sure href matches the post ID -->
+          <li><a href="#post1">How many players can play at the same time?</a></li>
         </ul>
       </aside>
     </div>
