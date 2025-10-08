@@ -2624,34 +2624,49 @@ body.media-page {
   margin: 0.8em 0;
   font-size: 1.1em;
 }
-/* Flashing camera icon */
+/* Flashing camera icon with subtle tilt */
 .camera-flash {
-  width: 42px;
-  height: 42px;
+  width: 36px;                  /* slightly smaller than before */
+  height: auto;
   vertical-align: middle;
-  margin: 0 12px;
+  margin: 0 10px;
   display: inline-block;
-  animation: flashEffect 4s infinite ease-in-out;
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0));
+  animation: flashEffect 3s infinite ease-in-out, tilt 3s infinite alternate;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
   transition: filter 0.3s ease;
+}
+
+/* Tilt / wiggle effect */
+@keyframes tilt {
+  0% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
 }
 
 /* Camera flash animation */
 @keyframes flashEffect {
   0%, 90%, 100% {
-    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
     transform: scale(1);
   }
   92% {
     filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.9));
-    transform: scale(1.15);
+    transform: scale(1.1);
   }
   94% {
     filter: drop-shadow(0 0 22px rgba(255, 255, 255, 1));
-    transform: scale(1.05);
+    transform: scale(1.15);
   }
   96% {
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
     transform: scale(1);
   }
+}
+
+/* Optional: mirror left/right tilt slightly */
+.camera-flash.left {
+  transform: rotate(-5deg);
+}
+.camera-flash.right {
+  transform: rotate(5deg);
 }
