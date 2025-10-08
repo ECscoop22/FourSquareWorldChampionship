@@ -2494,15 +2494,16 @@ body.register-page {
 /* Typing effect container */
 .typing-text {
   display: block;
-  overflow: hidden;             /* hides text until "typed" */
-  white-space: pre-wrap;        /* preserves line breaks */
-  border-right: 3px solid #111; /* cursor */
+  overflow: hidden;
+  border-right: 2px solid #111; /* cursor */
+  white-space: pre-wrap;         /* handles multiline text */
   box-sizing: border-box;
-  animation: typing 12s steps(250, end), blinkCursor 0.75s step-end infinite;
+  font-family: inherit;
+  animation: typingSmooth 4s forwards, blinkCursor 0.75s step-end infinite;
 }
 
-/* Typing animation */
-@keyframes typing {
+/* Smooth typing animation */
+@keyframes typingSmooth {
   from { width: 0; }
   to { width: 100%; }
 }
