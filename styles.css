@@ -2643,30 +2643,31 @@ body.media-page {
   100% { transform: rotate(-5deg); }
 }
 
-/* Camera flash animation */
-@keyframes flashEffect {
-  0%, 90%, 100% {
-    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
-    transform: scale(1);
-  }
-  92% {
-    filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.9));
-    transform: scale(1.1);
-  }
-  94% {
-    filter: drop-shadow(0 0 22px rgba(255, 255, 255, 1));
-    transform: scale(1.15);
-  }
-  96% {
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
-    transform: scale(1);
-  }
+.camera-flash {
+  width: 42px;
+  height: 42px;
+  vertical-align: middle;
+  margin: 0 12px;
+  display: inline-block;
+  animation: snapFlash 3s infinite ease-in-out;
+  transform-origin: center center;
 }
 
-/* Optional: mirror left/right tilt slightly */
-.camera-flash.left {
-  transform: rotate(-5deg);
-}
-.camera-flash.right {
-  transform: rotate(5deg);
+@keyframes snapFlash {
+  0%, 80%, 100% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+  }
+  82% {
+    transform: rotate(-5deg) scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
+  }
+  84% {
+    transform: rotate(5deg) scale(1.1);
+    filter: drop-shadow(0 0 25px rgba(255,255,255,1));
+  }
+  86% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+  }
 }
