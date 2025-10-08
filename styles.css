@@ -2660,11 +2660,11 @@ body.media-page {
   }
   82% {
     transform: rotate(-5deg) scale(1.1);
-    filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
+    filter: drop-shadow(0 0 30px rgba(255,255,255,0.9));
   }
   84% {
     transform: rotate(5deg) scale(1.1);
-    filter: drop-shadow(0 0 25px rgba(255,255,255,1));
+    filter: drop-shadow(0 0 40px rgba(255,255,255,1));
   }
   86% {
     transform: rotate(0deg) scale(1);
