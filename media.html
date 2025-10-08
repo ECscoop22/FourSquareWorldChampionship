@@ -4,10 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Media Coverage | Four Square World Championship</title>
-  <!-- ✅ Add Google Font import -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- ✅ Link to your main stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Apply system font to all content on MEDIA page only */
+    body.media-page, 
+    body.media-page h1, 
+    body.media-page h2, 
+    body.media-page h3, 
+    body.media-page p, 
+    body.media-page a, 
+    body.media-page li {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* Optional: make headings bold like other pages */
+    body.media-page h1, 
+    body.media-page h2 {
+      font-weight: 700;
+    }
+
+    /* Optional spacing for Press Mentions */
+    .media-press-card {
+      background: linear-gradient(135deg, #800000, #008080);
+      padding: 1.5em;
+      border-radius: 12px;
+      margin-bottom: 2em;
+      color: white;
+    }
+
+    .media-press-card h2 {
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+
+    .media-press-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .media-press-card li {
+      margin-bottom: 0.5em;
+    }
+  </style>
 </head>
 
 <body class="media-page">
@@ -21,67 +60,67 @@
     <a href="media.html" class="active">Media</a>
   </nav>
 
-<main>
-  <!-- Page Title -->
-  <h1 class="glow-title">
-    <!-- Left camera -->
-    <div class="camera-wrapper">
-      <svg class="camera-flash left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="42" height="42">
-        <rect x="8" y="16" width="48" height="32" rx="4" ry="4" fill="#222"/>
-        <circle cx="32" cy="32" r="10" fill="#fff"/>
-        <circle cx="32" cy="32" r="6" fill="#222"/>
-        <rect x="12" y="12" width="8" height="4" fill="#222"/>
-      </svg>
-    </div>
+  <main>
+    <!-- Page Title -->
+    <h1 class="glow-title">
+      <!-- Left camera -->
+      <div class="camera-wrapper">
+        <svg class="camera-flash left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="42" height="42">
+          <rect x="8" y="16" width="48" height="32" rx="4" ry="4" fill="#222"/>
+          <circle cx="32" cy="32" r="10" fill="#fff"/>
+          <circle cx="32" cy="32" r="6" fill="#222"/>
+          <rect x="12" y="12" width="8" height="4" fill="#222"/>
+        </svg>
+      </div>
 
-    MEDIA COVERAGE
+      MEDIA COVERAGE
 
-    <!-- Right camera -->
-    <div class="camera-wrapper">
-      <svg class="camera-flash right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="42" height="42">
-        <rect x="8" y="16" width="48" height="32" rx="4" ry="4" fill="#222"/>
-        <circle cx="32" cy="32" r="10" fill="#fff"/>
-        <circle cx="32" cy="32" r="6" fill="#222"/>
-        <rect x="12" y="12" width="8" height="4" fill="#222"/>
-      </svg>
-    </div>
-  </h1>
+      <!-- Right camera -->
+      <div class="camera-wrapper">
+        <svg class="camera-flash right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="42" height="42">
+          <rect x="8" y="16" width="48" height="32" rx="4" ry="4" fill="#222"/>
+          <circle cx="32" cy="32" r="10" fill="#fff"/>
+          <circle cx="32" cy="32" r="6" fill="#222"/>
+          <rect x="12" y="12" width="8" height="4" fill="#222"/>
+        </svg>
+      </div>
+    </h1>
 
-  <!-- Intro Section -->
-  <section class="media-intro-card">
-    <p>
-      From local newspapers to national broadcasts, the <strong>Four Square World Championship</strong> continues to capture the spotlight, drawing attention wherever it’s played. While most coverage focuses on this marquee event, this page also highlights stories, features, and moments from across the Four Square world — all celebrating the game and the vibrant community behind it.
-    </p>
-  </section>
-
-  <!-- Press Mentions (moved above video) -->
-  <section class="media-press-card">
-    <h2>Press Mentions</h2>
-    <ul>
-      <li><strong>Portland Press Herald:</strong> “A magical type of event...”</li>
-      <li><strong>Maine Sun Journal:</strong> “A game we now share as a family.”</li>
-      <li><strong>Uxbridge Times:</strong> Coverage in 2023 and 2024 editions</li>
-    </ul>
-  </section>
-
-  <!-- Featured Video -->
-  <section class="media-section">
-    <div class="media-video-card">
-      <iframe
-        width="100%"
-        height="400"
-        src="https://www.youtube.com/embed/27955Dk-9bk"
-        title="Four Square World Championship Video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-      <p class="video-caption">
-        This video highlights the excitement of the Four Square World Championship.
+    <!-- Intro Section -->
+    <section class="media-intro-card">
+      <p>
+        From local newspapers to national broadcasts, the <strong>Four Square World Championship</strong> continues to capture the spotlight, drawing attention wherever it’s played. While most coverage focuses on this marquee event, this page also highlights stories, features, and moments from across the Four Square world — all celebrating the game and the vibrant community behind it.
       </p>
-    </div>
-  </section>
-</main>
+    </section>
+
+    <!-- Press Mentions (above video) -->
+    <section class="media-press-card">
+      <h2>Press Mentions</h2>
+      <ul>
+        <li><strong>Portland Press Herald:</strong> “A magical type of event...”</li>
+        <li><strong>Maine Sun Journal:</strong> “A game we now share as a family.”</li>
+        <li><strong>Uxbridge Times:</strong> Coverage in 2023 and 2024 editions</li>
+      </ul>
+    </section>
+
+    <!-- Featured Video -->
+    <section class="media-section">
+      <div class="media-video-card">
+        <iframe
+          width="100%"
+          height="400"
+          src="https://www.youtube.com/embed/27955Dk-9bk"
+          title="Four Square World Championship Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <p class="video-caption">
+          This video highlights the excitement of the Four Square World Championship.
+        </p>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p class="site-tagline">The nation's finest resource for all things four square.</p>
