@@ -6,6 +6,13 @@
   <title>Blog - Four Square World Championship</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
   <style>
     /* Blog layout */
     .blog-container {
@@ -113,9 +120,9 @@
 
   <main>
     <h1 class="glow-title blog-title">
-  <span class="blog-icon left">✏️📓</span>
-  BLOG
-  <span class="blog-icon right">📓✏️</span>
+      <span class="blog-icon left">✏️📓</span>
+      BLOG
+      <span class="blog-icon right">📓✏️</span>
     </h1>
 
     <div class="site-tagline" style="text-align:center; margin-bottom:2em;">
@@ -123,11 +130,11 @@
     </div>
 
     <!-- Blog Intro -->
-<section class="blog-intro-note">
-  <p class="typing-text">
-    This blog is dedicated to exploring all the coolest questions that come into FourSquareWorldChampionship.com from around the globe. We'll be glad to hear from you.
-  </p>
-</section>
+    <section class="blog-intro-note">
+      <p class="typing-text">
+        This blog is dedicated to exploring all the coolest questions that come into FourSquareWorldChampionship.com from around the globe. We'll be glad to hear from you.
+      </p>
+    </section>
 
     <!-- Submit Question Form -->
     <section class="submit-question">
@@ -144,6 +151,13 @@
         <textarea id="question" name="question" rows="5" placeholder="Write your question here..." required></textarea>
         <button type="submit">Submit Question</button>
       </form>
+    </section>
+
+    <!-- 🌍 Map Section -->
+    <section style="text-align:center; margin: 2em 0;">
+      <h2>Where Our Questions Come From</h2>
+      <p>Explore the map below to see where people around the world are writing from!</p>
+      <div id="questions-map" style="height: 400px; width: 100%; margin-top: 1.5em;"></div>
     </section>
 
     <!-- Blog Posts + Sidebar -->
@@ -175,5 +189,23 @@
   <footer>
     <p class="site-tagline">The nation's finest resource for all things four square.</p>
   </footer>
+
+  <!-- Leaflet JS + Map Script -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('questions-map').setView([39.8283, -98.5795], 4);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const questions = [
+      { coords: [43.1566, -77.6088], label: 'Question received from Rochester, NY' }
+    ];
+
+    questions.forEach(q => {
+      L.marker(q.coords).addTo(map).bindPopup(q.label);
+    });
+  </script>
 </body>
 </html>
