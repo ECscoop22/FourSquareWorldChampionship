@@ -105,6 +105,12 @@
       color: white;
       margin-bottom: 2em;
     }
+
+    /* Small map styling */
+    #questions-map {
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
   </style>
 </head>
 <body class="blog-page">
@@ -153,13 +159,6 @@
       </form>
     </section>
 
-    <!-- 🌍 Map Section -->
-    <section style="text-align:center; margin: 2em 0;">
-      <h2>Where Our Questions Come From</h2>
-      <p>Explore the map below to see where people around the world are writing from!</p>
-      <div id="questions-map" style="height: 400px; width: 100%; margin-top: 1.5em;"></div>
-    </section>
-
     <!-- Blog Posts + Sidebar -->
     <div class="blog-container">
       <!-- Main blog posts -->
@@ -184,6 +183,14 @@
         </ul>
       </aside>
     </div>
+
+    <!-- MAP SECTION: moved here to be the last thing before the footer -->
+    <section style="text-align:center; margin: 2em 0;">
+      <h2>Where Our Questions Come From</h2>
+      <p>Explore the map below to see where people around the world are writing from!</p>
+      <div id="questions-map" style="height: 400px; width: 100%; margin-top: 1.5em;"></div>
+    </section>
+
   </main>
 
   <footer>
@@ -193,19 +200,22 @@
   <!-- Leaflet JS + Map Script -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const map = L.map('questions-map').setView([39.8283, -98.5795], 4);
+    // Only initialize the map if the container exists (defensive)
+    if (document.getElementById('questions-map')) {
+      const map = L.map('questions-map').setView([39.8283, -98.5795], 4);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
 
-    const questions = [
-      { coords: [43.1566, -77.6088], label: 'Question received from Rochester, NY' }
-    ];
+      const questions = [
+        { coords: [43.1566, -77.6088], label: 'Question received from Rochester, NY' }
+      ];
 
-    questions.forEach(q => {
-      L.marker(q.coords).addTo(map).bindPopup(q.label);
-    });
+      questions.forEach(q => {
+        L.marker(q.coords).addTo(map).bindPopup(q.label);
+      });
+    }
   </script>
 </body>
 </html>
