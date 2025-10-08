@@ -2482,16 +2482,17 @@ body.register-page {
   box-sizing: border-box;
 }
 .typing-text {
-  display: block;               /* full width so it wraps inside the container */
-  overflow: hidden;             /* hide overflow */
-  white-space: normal;          /* allow wrapping so text doesn't go off the edge */
-  border-right: 3px solid #111; /* cursor */
+  display: block;
+  overflow: hidden;
+  border-right: 2px solid #111; /* cursor */
+  white-space: pre-wrap;         /* handles multiline text */
   box-sizing: border-box;
-  animation: typing 6s steps(120, end), blinkCursor 0.75s step-end infinite;
+  font-family: inherit;
+  animation: typingSmooth 4s forwards, blinkCursor 0.75s step-end infinite;
 }
 
-/* Typing animation */
-@keyframes typing {
+/* Smooth typing animation */
+@keyframes typingSmooth {
   from { width: 0; }
   to { width: 100%; }
 }
