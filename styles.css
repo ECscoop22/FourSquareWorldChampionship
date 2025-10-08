@@ -2495,20 +2495,19 @@ body.register-page {
 .typing-text {
   display: block;
   overflow: hidden;
-  border-right: 2px solid #111; /* cursor */
-  white-space: pre-wrap;         /* handles multiline text */
+  border-right: 2px solid #111;  /* cursor */
+  white-space: pre-wrap;          /* handles line breaks naturally */
+  word-wrap: break-word;          /* wraps long words */
   box-sizing: border-box;
   font-family: inherit;
-  animation: typingSmooth 4s forwards, blinkCursor 0.75s step-end infinite;
+  animation: typingSmooth 6s steps(80, end) forwards, blinkCursor 0.75s step-end infinite;
 }
 
-/* Smooth typing animation */
 @keyframes typingSmooth {
   from { width: 0; }
   to { width: 100%; }
 }
 
-/* Cursor blink */
 @keyframes blinkCursor {
   0%, 100% { border-color: transparent; }
   50% { border-color: #111; }
