@@ -2624,50 +2624,46 @@ body.media-page {
   margin: 0.8em 0;
   font-size: 1.1em;
 }
-/* Flashing camera icon with subtle tilt */
+/* Camera icon animation with flash burst */
 .camera-flash {
-  width: 36px; /* adjust size if needed */
-  height: auto;
-  vertical-align: middle;
-  margin: 0 10px;
-  display: inline-block;
-  animation: flashEffect 3s infinite ease-in-out, tilt 3s infinite alternate;
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
-  transition: filter 0.3s ease;
-}
-
-/* Tilt / wiggle effect */
-@keyframes tilt {
-  0% { transform: rotate(-5deg); }
-  50% { transform: rotate(5deg); }
-  100% { transform: rotate(-5deg); }
-}
-
-.camera-flash {
-  width: 42px;
-  height: 42px;
+  position: relative;
+  width: 40px;
+  height: 40px;
   vertical-align: middle;
   margin: 0 12px;
   display: inline-block;
-  animation: snapFlash 3s infinite ease-in-out;
+  animation: shakeCamera 3s infinite ease-in-out;
   transform-origin: center center;
 }
 
-@keyframes snapFlash {
-  0%, 80%, 100% {
-    transform: rotate(0deg) scale(1);
-    filter: drop-shadow(0 0 0 rgba(255,255,255,0));
-  }
-  82% {
-    transform: rotate(-5deg) scale(1.1);
-    filter: drop-shadow(0 0 30px rgba(255,255,255,0.9));
-  }
-  84% {
-    transform: rotate(5deg) scale(1.1);
-    filter: drop-shadow(0 0 40px rgba(255,255,255,1));
-  }
-  86% {
-    transform: rotate(0deg) scale(1);
-    filter: drop-shadow(0 0 0 rgba(255,255,255,0));
-  }
+/* Bright flash burst behind camera */
+.camera-flash::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  z-index: -1;
+  animation: cameraFlash 3s infinite ease-in-out;
+}
+
+/* Wiggle/tilt effect */
+@keyframes shakeCamera {
+  0%, 80%, 100% { transform: rotate(0deg) scale(1); }
+  82% { transform: rotate(-8deg) scale(1.1); }
+  84% { transform: rotate(8deg) scale(1.1); }
+  86% { transform: rotate(0deg) scale(1); }
+}
+
+/* Flash animation effect */
+@keyframes cameraFlash {
+  0%, 80%, 100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  83% { transform: translate(-50%, -50%) scale(2.5); opacity: 0.9; }
+  84% { transform: translate(-50%, -50%) scale(3); opacity: 1; }
+  85% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
 }
