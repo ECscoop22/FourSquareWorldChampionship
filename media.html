@@ -7,25 +7,22 @@
   <link rel="stylesheet" href="styles.css" />
 
 <style>
-  /* Apply system font to all content on MEDIA page only */
-  body.media-page,
-  body.media-page nav,          /* ensures nav uses the same font */
-  body.media-page h1,
-  body.media-page h2,
-  body.media-page h3,
-  body.media-page p,
-  body.media-page a,
+  /* Page-specific font for all content except nav (nav inherits from global CSS) */
+  body.media-page, 
+  body.media-page h1, 
+  body.media-page h2, 
+  body.media-page h3, 
+  body.media-page p, 
+  body.media-page a, 
   body.media-page li {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Fredoka', sans-serif;
   }
 
-  /* Optional: make headings bold like other pages */
-  body.media-page h1,
+  body.media-page h1, 
   body.media-page h2 {
     font-weight: 700;
   }
 
-  /* Optional spacing for Press Mentions */
   .media-press-card {
     background: linear-gradient(135deg, #800000, #008080);
     padding: 1.5em;
