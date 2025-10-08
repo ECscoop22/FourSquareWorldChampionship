@@ -2643,7 +2643,7 @@ body.media-page {
 
 /* Animate the SVG camera itself */
 .camera-flash {
-  animation: cameraSnap 3s infinite ease-in-out;
+  animation: cameraSnap 0.5s infinite ease-in-out; /* faster flash */;
   transform-origin: center;
   display: inline-block;
   position: relative;
