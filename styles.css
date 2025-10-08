@@ -2626,7 +2626,7 @@ body.media-page {
 }
 /* Flashing camera icon with subtle tilt */
 .camera-flash {
-  width: 36px;                  /* slightly smaller than before */
+  width: 36px; /* adjust size if needed */
   height: auto;
   vertical-align: middle;
   margin: 0 10px;
