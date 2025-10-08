@@ -2481,18 +2481,28 @@ body.register-page {
   margin: 0;
   box-sizing: border-box;
 }
-.typing-text {
-  display: block;
-  overflow: hidden;
-  border-right: 2px solid #111; /* cursor */
-  white-space: pre-wrap;         /* handles multiline text */
+/* Make text sit on top of inner panel */
+.blog-intro-note p {
+  position: relative;
+  z-index: 1;
+  color: #111;
+  padding: 0; /* removed extra padding from individual paragraphs */
+  margin: 0.5em 0; /* tighter spacing between paragraphs */
   box-sizing: border-box;
-  font-family: inherit;
-  animation: typingSmooth 4s forwards, blinkCursor 0.75s step-end infinite;
 }
 
-/* Smooth typing animation */
-@keyframes typingSmooth {
+/* Typing effect container */
+.typing-text {
+  display: block;
+  overflow: hidden;             /* hides text until "typed" */
+  white-space: pre-wrap;        /* preserves line breaks */
+  border-right: 3px solid #111; /* cursor */
+  box-sizing: border-box;
+  animation: typing 12s steps(250, end), blinkCursor 0.75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
