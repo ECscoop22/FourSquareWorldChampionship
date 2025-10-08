@@ -2500,7 +2500,7 @@ body.register-page {
   box-sizing: border-box;
   font-family: inherit;
   height: 7em; /* roughly the height of the full paragraph */
-  animation: typingSmooth 12s steps(150, end) forwards, blinkCursor 0.75s step-end infinite; 
+ animation: typingSmooth 6s steps(150, end) forwards, blinkCursor 0.75s step-end infinite; 
 }
 
 @keyframes typingSmooth {
