@@ -3,66 +3,209 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Four Square World Championship - Blog</title>
+  <title>Blog - Four Square World Championship</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Leaflet CSS (for the map) -->
+  <!-- Leaflet CSS -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
-</head>
-<body>
 
-  <header>
-    <h1>Four Square Blog</h1>
-    <p>Updates, stories, and community Q&A from around the world.</p>
-  </header>
+  <style>
+    /* Blog layout */
+    .blog-container {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2em;
+    }
+
+    .blog-content {
+      flex: 3;
+    }
+
+    .blog-sidebar {
+      flex: 1;
+      background: #222;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      height: max-content;
+      position: sticky;
+      top: 1em;
+    }
+
+    .blog-sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .blog-sidebar a {
+      color: #ffcc00;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    .blog-sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .blog-post-card {
+      background: linear-gradient(135deg, #800000, #008080);
+      color: white;
+      padding: 1.5em;
+      border-radius: 12px;
+      margin-bottom: 2em;
+    }
+
+    .blog-post-card h2 {
+      margin-top: 0;
+    }
+
+    .published-date {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .submit-question input, 
+    .submit-question textarea, 
+    .submit-question button {
+      display: block;
+      width: 100%;
+      margin: 0.5em 0 1em 0;
+      padding: 0.5em;
+      border-radius: 6px;
+      border: none;
+    }
+
+    .submit-question button {
+      background: #ffcc00;
+      color: #222;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Ensure page background matches other pages */
+    body.blog-page {
+      background: #f5f5f5; /* or the exact gradient/color your other pages use */
+    }
+
+    /* Section styles for intro and form */
+    .blog-intro-card, .submit-question {
+      background: linear-gradient(135deg, #800000, #008080);
+      text-align: center;
+      padding: 2em;
+      border-radius: 12px;
+      color: white;
+      margin-bottom: 2em;
+    }
+  </style>
+</head>
+<body class="blog-page">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="rules.html">Rules</a>
+    <a href="world-championship.html">World Championship</a>
+    <a href="register.html">Register</a>
+    <a href="faq.html">Game Hub</a>
+    <a href="blog.html">Blog</a>
+    <a href="media.html">Media</a>
+  </nav>
 
   <main>
-    <section id="blog-posts">
-      <h2>Recent Posts</h2>
-      <p>Here’s where your blog posts and Q&A content will go.</p>
-      <!-- Add your actual blog entries here -->
+    <h1 class="glow-title blog-title">
+      <span class="blog-icon left">✏️📓</span>
+      BLOG
+      <span class="blog-icon right">📓✏️</span>
+    </h1>
+
+    <div class="site-tagline" style="text-align:center; margin-bottom:2em;">
+      Updates, Stories, and News from the Four Square World
+    </div>
+
+    <!-- Blog Intro -->
+    <section class="blog-intro-note">
+      <p class="typing-text">
+        This blog is dedicated to exploring all the coolest questions that come into FourSquareWorldChampionship.com from around the globe. We'll be glad to hear from you.
+      </p>
     </section>
 
-    <!-- 🌍 MAP SECTION: now placed just above the footer -->
-    <section id="map-section">
-      <h2>Where Our Questions Come From 🌍</h2>
-      <p>Check out the map below to see where fans have submitted questions from.</p>
-      <div id="questions-map" style="height: 400px; width: 100%; margin: 30px 0; border-radius: 12px;"></div>
+    <!-- Submit Question Form -->
+    <section class="submit-question">
+      <h2>Submit a Question to the Blog</h2>
+      <p>You may ask about rule clarifications, advice for games, ideas for tournaments, enhancements to the World Championships or anything else! We're glad this website is the go-to resource for four square players all over the world. We'll be glad to hear from you!</p>
+      <form action="https://formspree.io/f/mdkwdqda" method="POST">
+        <label for="name">Your Name (optional):</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <label for="email">Your Email (optional):</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+        <label for="location">Your Location (optional):</label>
+        <input type="text" id="location" name="location" placeholder="Enter your location">
+        <label for="question">Your Question or Idea:</label>
+        <textarea id="question" name="question" rows="5" placeholder="Write your question here..." required></textarea>
+        <button type="submit">Submit Question</button>
+      </form>
     </section>
+
+    <!-- 🌍 Map Section -->
+    <section style="text-align:center; margin: 2em 0;">
+      <h2>Where Our Questions Come From</h2>
+      <p>Explore the map below to see where people around the world are writing from!</p>
+      <div id="questions-map" style="height: 400px; width: 100%; margin-top: 1.5em;"></div>
+    </section>
+
+    <!-- Blog Posts + Sidebar -->
+    <div class="blog-container">
+      <!-- Main blog posts -->
+      <div class="blog-content">
+        <!-- Original Post -->
+        <article class="blog-post-card" id="post1">
+          <h2>How many players can play at the same time?</h2>
+          <p><strong>From:</strong> Alex – Rochester, NY</p>
+          <p><strong>Question:</strong> How many people can play in a game of Four Square at the same time?</p>
+          <p><strong>Answer:</strong> Great question! A standard game of Four Square is played with 4 players on the court at a time — one in each of the four squares. When a player is out, they leave the court and go to the back of the line, while a new player steps into Square 1 (the lowest-ranked square), and everyone rotates up as the game continues. This rotation means that any number of people can participate over the course of a game.  
+
+          That said, there are also fun variations! Some players use “Tag Team” rules, with two players sharing each square. Others create larger courts with 6 or even 8 squares, allowing more players to participate in each round. At major events like the Four Square World Championships, multiple courts often run simultaneously to make room for all the players.</p>
+          <p class="published-date">Published: October 7, 2025</p>
+        </article>
+      </div>
+
+      <!-- Sidebar Blog Archive -->
+      <aside class="blog-sidebar">
+        <h3>Blog Archive</h3>
+        <ul>
+          <li><a href="#post1">How many players can play at the same time?</a></li>
+        </ul>
+      </aside>
+    </div>
   </main>
 
   <footer>
     <p class="site-tagline">The nation's finest resource for all things four square.</p>
   </footer>
 
-  <!-- Leaflet JS -->
+  <!-- Leaflet JS + Map Script -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <!-- Map Script -->
   <script>
-    // Create the map and center it on the U.S.
     const map = L.map('questions-map').setView([39.8283, -98.5795], 4);
 
-    // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Add markers for questions received
     const questions = [
       { coords: [43.1566, -77.6088], label: 'Question received from Rochester, NY' }
-      // Add more locations here like:
-      // { coords: [40.7128, -74.0060], label: 'Question from New York, NY' }
     ];
 
-    // Add each marker to the map
     questions.forEach(q => {
       L.marker(q.coords).addTo(map).bindPopup(q.label);
     });
   </script>
-
 </body>
 </html>
