@@ -2706,6 +2706,11 @@ body.media-page {
     opacity: 0;
   }
 }
+/* Nav links consistency across all pages */
 nav a {
   font-family: 'Fredoka', sans-serif !important;
+  font-weight: 600;          /* same as other pages */
+  text-transform: uppercase; /* same as other pages */
+  letter-spacing: 1px;       /* same as other pages */
+  color: inherit;            /* inherit from nav (optional) */
 }
