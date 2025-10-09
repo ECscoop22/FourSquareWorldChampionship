@@ -2706,3 +2706,6 @@ body.media-page {
     opacity: 0;
   }
 }
+nav a {
+  font-family: 'Fredoka', sans-serif !important;
+}
