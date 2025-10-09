@@ -7,43 +7,47 @@
   <link rel="stylesheet" href="styles.css" />
 
 <style>
-  /* Page-specific font for all content except nav (nav inherits from global CSS) */
-  body.media-page, 
-  body.media-page h1, 
-  body.media-page h2, 
-  body.media-page h3, 
-  body.media-page p, 
-  body.media-page a, 
-  body.media-page li {
-    font-family: 'Fredoka', sans-serif;
-  }
+/* Page-specific font for all MEDIA content (but not nav) */
+body.media-page h1, 
+body.media-page h2, 
+body.media-page h3, 
+body.media-page p, 
+body.media-page li {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-  body.media-page h1, 
-  body.media-page h2 {
-    font-weight: 700;
-  }
+/* Keep NAV consistent with the rest of the site */
+body.media-page nav a {
+  font-family: 'Fredoka', sans-serif !important;
+}
 
-  .media-press-card {
-    background: linear-gradient(135deg, #800000, #008080);
-    padding: 1.5em;
-    border-radius: 12px;
-    margin-bottom: 2em;
-    color: white;
-  }
+body.media-page h1, 
+body.media-page h2 {
+  font-weight: 700;
+}
 
-  .media-press-card h2 {
-    margin-top: 0;
-    margin-bottom: 1em;
-  }
+/* Press mentions card */
+.media-press-card {
+  background: linear-gradient(135deg, #800000, #008080);
+  padding: 1.5em;
+  border-radius: 12px;
+  margin-bottom: 2em;
+  color: white;
+}
 
-  .media-press-card ul {
-    list-style: none;
-    padding-left: 0;
-  }
+.media-press-card h2 {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
 
-  .media-press-card li {
-    margin-bottom: 0.5em;
-  }
+.media-press-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.media-press-card li {
+  margin-bottom: 0.5em;
+}
 </style>
 </head>
 
