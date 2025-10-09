@@ -11,49 +11,52 @@
   <!-- Your site stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
-<style>
-/* Page-specific font for all MEDIA content (but not nav) */
-body.media-page h1, 
-body.media-page h2, 
-body.media-page h3, 
-body.media-page p, 
-body.media-page li {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
+  <style>
+    /* Page-specific font for all MEDIA content (but not nav) */
+    body.media-page h1, 
+    body.media-page h2, 
+    body.media-page h3, 
+    body.media-page p, 
+    body.media-page li {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-/* Keep NAV consistent with the rest of the site */
-body.media-page nav a {
-  font-family: 'Fredoka', sans-serif !important;
-}
+    body.media-page h1, 
+    body.media-page h2 {
+      font-weight: 700;
+    }
 
-body.media-page h1, 
-body.media-page h2 {
-  font-weight: 700;
-}
+    /* Press mentions card */
+    .media-press-card {
+      background: linear-gradient(135deg, #800000, #008080);
+      padding: 1.5em;
+      border-radius: 12px;
+      margin-bottom: 2em;
+      color: white;
+    }
 
-/* Press mentions card */
-.media-press-card {
-  background: linear-gradient(135deg, #800000, #008080);
-  padding: 1.5em;
-  border-radius: 12px;
-  margin-bottom: 2em;
-  color: white;
-}
+    .media-press-card h2 {
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
 
-.media-press-card h2 {
-  margin-top: 0;
-  margin-bottom: 1em;
-}
+    .media-press-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-.media-press-card ul {
-  list-style: none;
-  padding-left: 0;
-}
+    .media-press-card li {
+      margin-bottom: 0.5em;
+    }
 
-.media-press-card li {
-  margin-bottom: 0.5em;
-}
-</style>
+    /* ✅ Fix nav font to match other pages */
+    body.media-page nav a {
+      font-family: 'Fredoka', sans-serif !important;
+      font-weight: 600;           /* matches semi-bold on other pages */
+      text-transform: uppercase;  /* matches uppercase style on other pages */
+      letter-spacing: 0.5px;      /* optional: subtle spacing like other nav links */
+    }
+  </style>
 </head>
 
 <body class="media-page">
