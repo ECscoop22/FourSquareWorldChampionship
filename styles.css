@@ -2722,3 +2722,10 @@ nav a {
   letter-spacing: 1px;
   color: inherit; /* ensures text color remains consistent */
 }
+/* Fix header nav font and color */
+nav a {
+    color: #800000;           /* original maroon color */
+    font-family: 'Fredoka', sans-serif; /* original font */
+    font-weight: normal;      /* adjust to match original style */
+    text-decoration: none;    /* optional: removes underlines if present */
+}
