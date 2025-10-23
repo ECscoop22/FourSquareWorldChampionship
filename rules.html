@@ -481,6 +481,19 @@ Last player standing is crowned champion.</p>
   </div>
 </details>
 <script>
+function toggleUniqueSpecialGameplay() {
+  const content = document.getElementById("uniqueSpecialGameplayContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[9]; // adjust index based on position
+  if (content.style.display === "none" || content.style.display === "") {
+    content.style.display = "block";
+    button.textContent = "➖ UNIQUE SPECIAL GAMEPLAY RULES";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ UNIQUE SPECIAL GAMEPLAY RULES";
+  }
+}
+</script>
+<script>
   function toggleOtherRules() {
     const content = document.getElementById("otherRulesContent");
     const button = document.querySelector(".collapsible-toggle");
