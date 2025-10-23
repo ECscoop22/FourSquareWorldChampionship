@@ -2781,10 +2781,10 @@ nav a {
   flex-wrap: wrap;
 }
 .main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 11em; /* bigger space between links */
-  flex-wrap: wrap;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 8em !important; /* adjust number to increase/decrease spacing */
+  flex-wrap: wrap; /* keeps links wrapping nicely on small screens */
 }
 
 .main-nav a {
