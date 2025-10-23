@@ -2780,4 +2780,14 @@ nav a {
   gap: 12px;
   flex-wrap: wrap;
 }
+/* Add borders between champion images */
+.champions-section .champion-img {
+  border-right: 4px solid #8B0000; /* maroon */
+  padding-right: 0.5em; /* space before next image */
+  margin-right: 0.5em;
+}
 
+/* Remove border on last image of each champions-grid */
+.champions-section .champions-grid .champion-img:last-child {
+  border-right: none;
+}
