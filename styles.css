@@ -12,7 +12,7 @@ nav {
   padding: 1.2em 2em;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.2em;
+  gap: 3em;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -2780,16 +2780,4 @@ nav a {
   gap: 12px;
   flex-wrap: wrap;
 }
-.main-nav {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 8em !important; /* adjust number to increase/decrease spacing */
-  flex-wrap: wrap; /* keeps links wrapping nicely on small screens */
-}
 
-.main-nav a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  padding: 0 0.5em;
-}
