@@ -2783,7 +2783,7 @@ nav a {
 .main-nav {
   display: flex;
   justify-content: center;
-  gap: 8em; /* bigger space between links */
+  gap: 11em; /* bigger space between links */
   flex-wrap: wrap;
 }
 
