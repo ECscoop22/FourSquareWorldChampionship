@@ -2783,11 +2783,13 @@ nav a {
 .main-nav {
   display: flex;
   justify-content: center;
-  gap: 50em; /* increased space between links */
+  gap: 5em; /* more reasonable space between links */
+  flex-wrap: wrap; /* ensures links wrap on smaller screens */
 }
 
 .main-nav a {
   text-decoration: none;
   color: inherit;
   font-weight: bold;
+  padding: 0 0.5em; /* optional: extra horizontal padding for more breathing room */
 }
