@@ -437,9 +437,11 @@ Last player standing is crowned champion.</p>
 </div> <!-- closes #otherRulesContent -->
 </section> <!-- closes the OTHER RULES card -->
 <!-- Unique Special Gameplay Rules -->
-<details>
-  <summary><strong>Unique Special Gameplay Rules</strong></summary>
-  <section id="unique-special-gameplay-rules" class="rules-section">
+<button class="collapsible-toggle" onclick="toggleUniqueSpecialGameplay()" 
+  style="font-size: 1.5rem; font-weight: bold; background-color: #eee; color: #000; border: none; padding: 10px 20px; width: 100%; text-align: left; cursor: pointer; border-radius: 6px; margin-top: 20px;">
+  ➕ UNIQUE SPECIAL GAMEPLAY RULES
+</button>
+<div id="uniqueSpecialGameplayContent" style="display: none; margin-top: 15px; text-align: left;">
   <div class="rule-text">
     <p><strong>7-Up</strong> – Each player must call out a number one higher than the previous hit, starting with one. The player striking the ball on “7” or any number ending in “7” must skip that number. Failure to skip correctly results in the player being out.</p>
 
