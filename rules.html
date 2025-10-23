@@ -437,72 +437,161 @@ Last player standing is crowned champion.</p>
 </div> <!-- closes #otherRulesContent -->
 </section> <!-- closes the OTHER RULES card -->
 <!-- Unique Special Gameplay Rules -->
-<button class="collapsible-toggle" onclick="toggleCollapsible(this)" 
+<button class="collapsible-toggle" onclick="toggleUniqueSpecialGameplay()" 
   style="font-size: 1.5rem; font-weight: bold; background-color: #eee; color: #000; border: none; padding: 10px 20px; width: 100%; text-align: left; cursor: pointer; border-radius: 6px; margin-top: 20px;">
   ➕ UNIQUE SPECIAL GAMEPLAY RULES
 </button>
-
-<div class="collapsible-content" style="display: none; margin-top: 15px; padding-left: 0; text-align: left;">
+<div id="uniqueSpecialGameplayContent" style="display: none; margin-top: 15px; padding-left: 0; text-align: left;">
   <div class="rule-text">
     <p><strong>7-Up</strong> – Each player must call out a number one higher than the previous hit, starting with one. The player striking the ball on “7” or any number ending in “7” must skip that number. Failure to skip correctly results in the player being out.</p>
+
     <p><strong>Around the World</strong> – Any player in possession of the ball may call “Around the World” at any time. Once called, play continues by hitting the ball to the next adjacent square in sequence until it returns to the caller. The game then resumes as normal. A “permanent” version may be declared, requiring the rotation to continue until a player is out, even after the ball reaches the caller.</p>
+
     <p><strong>Bottle Caps</strong> – The server may declare another player “bottle capped” at any time. The capped player must squat and remain frozen for the rest of the round (or until uncapped by the server). That player’s square becomes temporarily out-of-bounds.</p>
+
     <p><strong>Bomb</strong> – The server places the ball in the center of the court and calls “Bomb!” All players must touch the ball; the last one to do so is out.</p>
+
     <p><strong>Body Hits / Body Parts</strong> – Players may use specific body parts (e.g., head, foot) or their entire body to strike the ball if this variation is in effect.</p>
+
     <p><strong>Categories</strong> – The server names a category (e.g., “types of drinks” or “girls’ names”) before play starts. Each player must say a new, valid example within that category when hitting the ball. Failure to name a correct or unique item results in elimination.</p>
+
     <p><strong>Cherry Bomb</strong> – A player may grab the ball and throw it forcefully into any square, shouting “Cherry Bomb!” when doing so.</p>
+
     <p><strong>Corners</strong> – When declared by the server, all players must quickly move to the outer corner of their square. The last player to reach their corner is out.</p>
+
     <p><strong>Double Bounces</strong> – The ball must bounce exactly twice in a player’s square before being returned. If it bounces any other number of times, that player is out.</p>
+
     <p><strong>Dot to Dot</strong> – When called, all players must touch the center corner, then their back corner, then return to the center corner. The last to finish the sequence is out.</p>
+
     <p><strong>Holding / Carrying</strong> – Normally players must hit the ball cleanly, but in this variation, a player may briefly hold the ball (less than half a second) if using a special move.</p>
+
     <p><strong>Lumberjacks / Battle Royale</strong> – When many players are present, extra players circle the court as “lumberjacks.” If the ball is hit out, the lumberjacks hit it back in to keep play going. Eliminated players remain out until one of the original four is declared champion.</p>
+
     <p><strong>Off-Serve</strong> – The player receiving the serve must return the ball directly to the server.</p>
+
     <p><strong>Passback</strong> – When “Passback” is called, the next player to hit the ball must return it to the player who called it.</p>
+
     <p><strong>Popcorn (Baubling, Bubbles, Double Touches, Juggling)</strong> – A technique where a player lightly bounces the ball between their hands before hitting it to another square, allowing quick control without holding.</p>
+
     <p><strong>Rolling / Bowling</strong> – A player hits the ball so low that it rolls along the ground; this results in the roller being out.</p>
+
     <p><strong>Sentences</strong> – The server begins a sentence with one word. Each subsequent player adds one word to continue it logically, or may end it by saying “period.” A nonsensical continuation results in the player being out.</p>
+
     <p><strong>Tapping / Babies / Tiny Tims</strong> – The ball is hit gently so it barely bounces and travels only a short distance across the court.</p>
   </div>
-</div>
-
-<!-- Other collapsible rules -->
-<button class="collapsible-toggle" onclick="toggleCollapsible(this)">➕ OTHER RULES</button>
-<div id="otherRulesContent" class="collapsible-content" style="display: none;"> ... </div>
-
-<button class="collapsible-toggle" onclick="toggleCollapsible(this)">➕ Object of the Game</button>
-<div id="objectOfGameContent" class="collapsible-content" style="display: none;"> ... </div>
-
-<button class="collapsible-toggle" onclick="toggleCollapsible(this)">➕ Equipment</button>
-<div id="otherEquipmentContent" class="collapsible-content" style="display: none;"> ... </div>
-
-<button class="collapsible-toggle" onclick="toggleCollapsible(this)">➕ Court Specifications</button>
-<div id="otherCourtSpecsContent" class="collapsible-content" style="display: none;"> ... </div>
-
-<button class="collapsible-toggle" onclick="toggleCollapsible(this)">➕ Player Positioning</button>
-<div id="otherPlayerPositioningContent" class="collapsible-content" style="display: none;"> ... </div>
-
-<button class="collapsible-toggle" onclick="toggleCollapsible(this)">➕ Serving the Ball</button>
-<div id="otherServingContent" class="collapsible-content" style="display: none;"> ... </div>
-
-<button class="collapsible-toggle" onclick="toggleCollapsible(this)">➕ Ball Striking</button>
-<div id="otherStrikingContent" class="collapsible-content" style="display: none;"> ... </div>
-
-<button class="collapsible-toggle" onclick="toggleCollapsible(this)">➕ Interference & Poaching</button>
-<div id="otherInterferenceContent" class="collapsible-content" style="display: none;"> ... </div>
-
-<button class="collapsible-toggle" onclick="toggleCollapsible(this)">➕ Court Environment & House Rules</button>
-<div id="otherEnvironmentContent" class="collapsible-content" style="display: none;"> ... </div>
-
+</details>
 <script>
-function toggleCollapsible(button) {
-  const content = button.nextElementSibling;
-  if (!content) return;
+function toggleUniqueSpecialGameplay() {
+  const content = document.getElementById("uniqueSpecialGameplayContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[9]; // adjust index based on position
   if (content.style.display === "none" || content.style.display === "") {
     content.style.display = "block";
-    button.textContent = button.textContent.replace("➕", "➖");
+    button.textContent = "➖ UNIQUE SPECIAL GAMEPLAY RULES";
   } else {
     content.style.display = "none";
-    button.textContent = button.textContent.replace("➖", "➕");
+    button.textContent = "➕ UNIQUE SPECIAL GAMEPLAY RULES";
+  }
+}
+</script>
+<script>
+  function toggleOtherRules() {
+    const content = document.getElementById("otherRulesContent");
+    const button = document.querySelector(".collapsible-toggle");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+      button.textContent = "➖ OTHER RULES";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ OTHER RULES";
+    }
+  }
+function toggleObjectOfGame() {
+  const content = document.getElementById("objectOfGameContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[1]; // 2nd button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Object of the Game";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Object of the Game";
+  }
+}
+
+function toggleOtherEquipment() {
+  const content = document.getElementById("otherEquipmentContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[2]; // 3rd button under OTHER RULES
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Equipment";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Equipment";
+  }
+}
+  function toggleOtherCourtSpecs() {
+  const content = document.getElementById("otherCourtSpecsContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[3]; // 4th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Court Specifications";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Court Specifications";
+  }
+}
+  function toggleOtherPlayerPositioning() {
+  const content = document.getElementById("otherPlayerPositioningContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[4]; // 5th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Player Positioning";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Player Positioning";
+  }
+}
+  function toggleOtherServing() {
+  const content = document.getElementById("otherServingContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[5]; // 6th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Serving the Ball";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Serving the Ball";
+  }
+}
+  function toggleOtherStriking() {
+  const content = document.getElementById("otherStrikingContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[6]; // 7th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Ball Striking";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Ball Striking";
+  }
+}
+  function toggleOtherInterference() {
+  const content = document.getElementById("otherInterferenceContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[7]; // 8th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Interference & Poaching";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Interference & Poaching";
+  }
+}
+  function toggleOtherEnvironment() {
+  const content = document.getElementById("otherEnvironmentContent");
+  const button = document.querySelectorAll(".collapsible-toggle")[8]; // 9th button
+  if (content.style.display === "none") {
+    content.style.display = "block";
+    button.textContent = "➖ Court Environment & House Rules";
+  } else {
+    content.style.display = "none";
+    button.textContent = "➕ Court Environment & House Rules";
   }
 }
 </script>
@@ -512,3 +601,4 @@ function toggleCollapsible(button) {
 </footer>
 </body>
 </html>
+
