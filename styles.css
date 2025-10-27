@@ -2788,6 +2788,4 @@ nav a {
   padding: 2px;               /* optional: inner padding for border */
   display: block;             /* ensures spacing works inside flex/grid */
 }
-.white-text {
-  color: white;
-}
+
