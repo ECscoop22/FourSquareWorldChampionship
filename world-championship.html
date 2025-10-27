@@ -221,25 +221,28 @@
 </main>
   
 <script>
-  const targetDate = new Date("April 25, 2026");
+  const targetDate = new Date("April 25, 2026 00:00:00").getTime();
 
   function updateCountdown() {
-    const now = new Date();
+    const now = new Date().getTime();
     const timeDiff = targetDate - now;
 
     if (timeDiff > 0) {
-      const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
       document.getElementById("countdown").innerHTML =
-        `${daysLeft} day${daysLeft !== 1 ? 's' : ''} left`;
+        `${days}d ${hours}h ${minutes}m ${seconds}s left`;
     } else {
       document.getElementById("countdown").textContent = `It's World Championship Day!`;
     }
   }
 
   updateCountdown();
-  setInterval(updateCountdown, 86400000); // Update once per day
+  setInterval(updateCountdown, 1000); // Update every second
 </script>
-</body>
 
 
 
