@@ -159,9 +159,17 @@ header.addEventListener("click", () => {
 });
 
     // isPast? use normalized dateObj
-    const isPast = !isNaN(dateObj.getTime()) && (dateObj.setHours(0,0,0,0) < today.getTime());
-    if (isPast) previousGameList.appendChild(div);
-    else gameList.appendChild(div);
+// Create a safe copy for comparison
+const gameDate = new Date(dateObj);
+gameDate.setHours(0,0,0,0);
+
+const isPast = !isNaN(gameDate.getTime()) && gameDate < today;
+
+if (isPast) {
+  previousGameList.appendChild(div);
+} else {
+  gameList.appendChild(div);
+}
 
     // attach listeners to the newly created buttons
     // use try/catch - elements should exist immediately after append
