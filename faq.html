@@ -158,12 +158,16 @@ header.addEventListener("click", () => {
   content.classList.toggle("active");
 });
 
-    // isPast? use normalized dateObj
-// Create a safe copy for comparison
-const gameDate = new Date(dateObj);
-gameDate.setHours(0,0,0,0);
+// --- Determine if the game is in the past ---
+const gameDate = new Date(game.date + "T00:00:00");
 
-const isPast = !isNaN(gameDate.getTime()) && gameDate < today;
+// Fallback if invalid date
+if (isNaN(gameDate.getTime())) {
+  console.warn("Invalid date for game:", game.date);
+}
+
+gameDate.setHours(0,0,0,0);
+const isPast = !isNaN(gameDate.getTime()) && gameDate.getTime() < today.getTime();
 
 if (isPast) {
   previousGameList.appendChild(div);
