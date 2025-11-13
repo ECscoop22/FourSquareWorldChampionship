@@ -72,89 +72,96 @@
 </footer>
 
 <script>
-/* ===== Google Sheets–Connected Game Hub ===== */
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzlaISSBOLFmhE_z_9AXhTlyuVfqOHjb5addwPtBJPHDhv3cXNafzsvv3Bs56kfBMj9/exec";
-const adminEmail = "ericcostanza@yahoo.com";
-const gameForm = document.getElementById("gameForm");
-const gameList = document.getElementById("gameList");
-const previousGameList = document.getElementById("previous-games-list");
+// ⭐ Your Google Apps Script Web App URL
+const API_URL = "https://script.google.com/macros/s/AKfycbzlaISSBOLFmhE_z_9AXhTlyuVfqOHjb5addwPtBJPHDhv3cXNafzsvv3Bs56kfBMj9/exec";
 
-/* --- Fetch all games from Google Sheet --- */
+// =========================
+//  FETCH & DISPLAY GAMES
+// =========================
 async function loadGames() {
-  gameList.innerHTML = "<p>Loading games...</p>";
-  previousGameList.innerHTML = "";
   try {
-    const res = await fetch(WEB_APP_URL);
-    const data = await res.json();
-    renderGames(data);
+    const res = await fetch(API_URL);
+    const games = await res.json();
+
+    const upcomingContainer = document.getElementById("upcomingGames");
+    const previousContainer = document.getElementById("previousGames");
+
+    upcomingContainer.innerHTML = "";
+    previousContainer.innerHTML = "";
+
+    const today = new Date();
+
+    games.forEach(game => {
+      const gameDate = new Date(game.Date);
+
+      const card = `
+        <div class="game-card">
+          <h3>${game.Title}</h3>
+          <p><strong>Date:</strong> ${game.Date}</p>
+          <p><strong>Location:</strong> ${game.Location}</p>
+          <p><strong>Highlights:</strong> ${game.Highlights || "None"}</p>
+          ${game.MediaURL ? `<p><a href="${game.MediaURL}" target="_blank">View Media</a></p>` : ""}
+          <p><em>Submitted by ${game.SubmittedBy || "Unknown"}</em></p>
+        </div>
+      `;
+
+      if (gameDate >= today) {
+        upcomingContainer.innerHTML += card;
+      } else {
+        previousContainer.innerHTML += card;
+      }
+    });
   } catch (err) {
     console.error("Error loading games:", err);
-    gameList.innerHTML = "<p>Error loading games. Please try again later.</p>";
   }
 }
 
-/* --- Render games into Upcoming & Previous --- */
-function renderGames(games) {
-  gameList.innerHTML = "";
-  previousGameList.innerHTML = "";
-  const today = new Date();
-  today.setHours(0,0,0,0);
+loadGames();
 
-  games.forEach((game, index) => {
-    const dateObj = new Date(game.Date);
-    const formattedDate = dateObj.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
-    const formattedTime = game.Time ? game.Time : "TBD";
+// =========================
+//  SUBMIT NEW GAME
+// =========================
+async function submitGame(event) {
+  event.preventDefault();
 
-    const div = document.createElement("div");
-    div.className = "event";
-    div.innerHTML = `
-      <h3>${game.Title || game.Location}</h3>
-      <p><strong>Date:</strong> ${formattedDate} ${formattedTime ? "at " + formattedTime : ""}</p>
-      <p><strong>Location:</strong> ${game.Location}</p>
-      ${game.Highlights ? `<p><strong>Highlights:</strong> ${game.Highlights}</p>` : ""}
-      ${game.MediaURL ? `<p><a href="${game.MediaURL}" target="_blank">View Media</a></p>` : ""}
-      <p><em>Submitted by ${game.SubmittedBy || "Unknown"}</em></p>
-    `;
+  const title = document.getElementById("title").value;
+  const date = document.getElementById("date").value;
+  const location = document.getElementById("location").value;
+  const highlights = document.getElementById("highlights").value;
+  const mediaUrl = document.getElementById("mediaUrl").value;
+  const submittedBy = document.getElementById("submittedBy").value;
 
-    const isPast = dateObj < today;
-    (isPast ? previousGameList : gameList).appendChild(div);
-  });
-}
-
-/* --- Handle new game submission --- */
-gameForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const title = prompt("Enter a title for your game (optional):") || "";
-  const name = prompt("Enter your first name:") || "";
-  const email = prompt("Enter your email:") || "";
   const newGame = {
-    Title: title,
-    Date: document.getElementById("date").value,
-    Location: document.getElementById("location").value,
-    Time: document.getElementById("time").value,
-    Highlights: document.getElementById("details").value,
-    MediaURL: "",
-    SubmittedBy: `${name} (${email})`
+    title,
+    date,
+    location,
+    highlights,
+    mediaUrl,
+    submittedBy
   };
 
   try {
-    const res = await fetch(WEB_APP_URL, {
+    const res = await fetch(API_URL, {
       method: "POST",
-      body: JSON.stringify(newGame),
-      headers: { "Content-Type": "application/json" }
+      body: JSON.stringify(newGame)
     });
-    const result = await res.json();
-    alert(result.message || "Game added!");
-    gameForm.reset();
-    loadGames();
-  } catch (err) {
-    console.error("Error submitting game:", err);
-    alert("There was an error posting your game.");
-  }
-});
 
-/* --- Initialize --- */
-loadGames();
+    const text = await res.text();
+
+    if (text.includes("Success")) {
+      alert("Game added successfully!");
+      document.getElementById("gameForm").reset();
+      loadGames(); // reload list
+    } else {
+      alert("Error: " + text);
+    }
+  } catch (err) {
+    alert("Submission failed.");
+    console.error(err);
+  }
+}
+
+document.getElementById("gameForm").addEventListener("submit", submitGame);
 </script>
 </body>
 </html>
