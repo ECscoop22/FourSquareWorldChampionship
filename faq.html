@@ -46,23 +46,25 @@
   
 <section class="card" style="max-width:720px; margin:0 auto 40px auto; text-align:center; background: linear-gradient(135deg, #800000, #008080);">
   <h2 style="color: white;">Host a Game</h2>
-  <form id="gameForm">
-    <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-    <input type="date" id="date" required />
-    <input type="time" id="time" required />
-    <textarea id="details" placeholder="Extra details (optional)"></textarea>
-    <button type="submit">Post Game</button>
-  </form>
+<form id="gameForm">
+  <input type="text" id="title" placeholder="Game Title" required />
+  <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
+  <input type="date" id="date" required />
+  <textarea id="highlights" placeholder="Highlights / Details (optional)"></textarea>
+  <input type="text" id="mediaUrl" placeholder="Media URL (optional)" />
+  <input type="text" id="submittedBy" placeholder="Your Name" required />
+  <button type="submit">Post Game</button>
+</form>
 </section>
 
 <section class="card upcoming-gradient" style="max-width:720px; margin:0 auto 40px auto; text-align:center;">
   <h2 style="color: white;">Upcoming Games</h2>
-  <div id="gameList"></div>
+  <div id="upcomingGames"></div>
 </section>
 
 <section class="card" style="max-width:720px; margin:40px auto 0 auto; text-align:center; background: linear-gradient(135deg, #800000, #008080);">
   <h2 style="color: white;">Previous Games</h2>
-  <div id="previous-games-list"></div>
+  <div id="previousGames"></div>
 </section>
   
 <footer>
