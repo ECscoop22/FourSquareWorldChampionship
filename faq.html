@@ -96,16 +96,24 @@ async function loadGames() {
     games.forEach(game => {
       const gameDate = new Date(game.Date);
 
-      const card = `
-        <div class="game-card">
-          <h3>${game.Title}</h3>
-          <p><strong>Date:</strong> ${game.Date}</p>
-          <p><strong>Location:</strong> ${game.Location}</p>
-          <p><strong>Highlights:</strong> ${game.Highlights || "None"}</p>
-          ${game.MediaURL ? `<p><a href="${game.MediaURL}" target="_blank">View Media</a></p>` : ""}
-          <p><em>Submitted by ${game.SubmittedBy || "Unknown"}</em></p>
-        </div>
-      `;
+const card = `
+  <div class="game-card" style="
+      background:white;
+      color:#333;
+      padding:20px;
+      margin:20px 0;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      text-align:left;
+  ">
+    <h3>${game.Title}</h3>
+    <p><strong>Date:</strong> ${new Date(game.Date).toLocaleDateString()}</p>
+    <p><strong>Location:</strong> ${game.Location}</p>
+    <p><strong>Highlights:</strong> ${game.Highlights || "None"}</p>
+    ${game.MediaURL ? `<p><a href="${game.MediaURL}" target="_blank" style="font-weight:bold; text-decoration:underline;">View Media</a></p>` : ""}
+    <p><em>Submitted by ${game.SubmittedBy || "Unknown"}</em></p>
+  </div>
+`;
 
       if (gameDate >= today) {
         upcomingContainer.innerHTML += card;
