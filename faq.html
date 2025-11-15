@@ -141,14 +141,14 @@ async function submitGame(event) {
   const mediaUrl = document.getElementById("mediaUrl").value;
   const submittedBy = document.getElementById("submittedBy").value;
 
-  const newGame = {
-    title,
-    date,
-    location,
-    highlights,
-    mediaUrl,
-    submittedBy
-  };
+const newGame = {
+  Title: title,
+  Date: date,
+  Location: location,
+  Highlights: highlights,
+  MediaURL: mediaUrl,
+  SubmittedBy: submittedBy
+};
 
   try {
     const res = await fetch(API_URL, {
