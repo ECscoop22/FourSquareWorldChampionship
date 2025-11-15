@@ -47,9 +47,13 @@
 <section class="card" style="max-width:720px; margin:0 auto 40px auto; text-align:center; background: linear-gradient(135deg, #800000, #008080);">
   <h2 style="color: white;">Host a Game</h2>
 <form id="gameForm">
-  <input type="text" id="title" placeholder="Game Title" required />
-  <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-  <input type="date" id="date" required />
+<input type="text" id="title" placeholder="Game Title" required />
+
+<!-- DATE MUST BE SECOND -->
+<input type="date" id="date" required />
+
+<!-- LOCATION MUST BE THIRD -->
+<input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
   <textarea id="highlights" placeholder="Highlights / Details (optional)"></textarea>
   <input type="text" id="mediaUrl" placeholder="Media URL (optional)" />
   <input type="text" id="submittedBy" placeholder="Your Name" required />
