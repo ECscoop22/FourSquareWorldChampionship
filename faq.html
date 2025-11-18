@@ -78,15 +78,15 @@
 </footer>
 
 <script>
-// ⭐ Your Google Apps Script Web App URL
+const ADMIN_EMAIL = "ericcostanza@yahoo.com";
 const API_URL = "https://script.google.com/macros/s/AKfycbxexJIlzu7R6lY2WgzkaAMTXKdh0x0h0nhUfl4q_WKyHY4zNgsfL4RObTDVFFb785pY/exec";
 
-// =========================
-//  FETCH & DISPLAY GAMES
-// =========================
+// =====================================================
+//  LOAD & DISPLAY GAMES (with Edit/Delete for Admin)
+// =====================================================
 async function loadGames() {
   try {
-    const res = await fetch(API_URL);
+    const res = await fetch(API_URL + "?action=get");
     const games = await res.json();
 
     const upcomingContainer = document.getElementById("upcomingGames");
@@ -99,25 +99,39 @@ async function loadGames() {
 
     games.forEach(game => {
       const gameDate = new Date(game.Date);
+      const isAdmin = (game.SubmittedBy === ADMIN_EMAIL);
 
-const card = `
-  <div class="game-card" style="
-      background:white;
-      color:#333;
-      padding:20px;
-      margin:20px 0;
-      border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      text-align:center;
-  ">
-    <h3>${game.Title}</h3>
-    <p><strong>Date:</strong> ${new Date(game.Date).toLocaleDateString()}</p>
-    <p><strong>Location:</strong> ${game.Location}</p>
-    <p><strong>Highlights:</strong> ${game.Highlights || "None"}</p>
-    ${game.MediaURL ? `<p><a href="${game.MediaURL}" target="_blank" style="font-weight:bold; text-decoration:underline;">View Media</a></p>` : ""}
-    <p><em>Submitted by ${game.SubmittedBy || "Unknown"}</em></p>
-  </div>
-`;
+      const card = `
+        <div class="game-card" style="
+          background:white;
+          color:#333;
+          padding:20px;
+          margin:20px 0;
+          border-radius:12px;
+          box-shadow:0 4px 10px rgba(0,0,0,0.1);
+          text-align:center;
+        ">
+          <h3>${game.Title}</h3>
+          <p><strong>Date:</strong> ${new Date(game.Date).toLocaleDateString()}</p>
+          <p><strong>Location:</strong> ${game.Location}</p>
+          <p><strong>Highlights:</strong> ${game.Highlights || "None"}</p>
+          ${game.MediaURL ? `<p><a href="${game.MediaURL}" target="_blank" style="font-weight:bold;">View Media</a></p>` : ""}
+          <p><em>Submitted by ${game.SubmittedBy}</em></p>
+
+          ${isAdmin ? `
+            <div style="margin-top:15px;">
+              <button onclick="editEntry('${game.ID}')" 
+                style="padding:8px 14px; border-radius:8px; margin-right:10px;">
+                Edit
+              </button>
+              <button onclick="deleteEntry('${game.ID}')"
+                style="padding:8px 14px; border-radius:8px; background:#ff4d4d; color:white;">
+                Delete
+              </button>
+            </div>
+          ` : ""}
+        </div>
+      `;
 
       if (gameDate >= today) {
         upcomingContainer.innerHTML += card;
@@ -132,27 +146,56 @@ const card = `
 
 loadGames();
 
-// =========================
-//  SUBMIT NEW GAME
-// =========================
+// =====================================================
+//  DELETE A GAME
+// =====================================================
+function deleteEntry(id) {
+  if (!confirm("Are you sure you want to delete this game?")) return;
+
+  fetch(API_URL, {
+    method: "POST",
+    body: JSON.stringify({
+      action: "delete",
+      id: id
+    })
+  })
+    .then(res => res.text())
+    .then(() => loadGames());
+}
+
+// =====================================================
+//  EDIT GAME (title only for now)
+// =====================================================
+function editEntry(id) {
+  const newTitle = prompt("New title:");
+  if (!newTitle) return;
+
+  fetch(API_URL, {
+    method: "POST",
+    body: JSON.stringify({
+      action: "edit",
+      id: id,
+      newTitle: newTitle
+    })
+  })
+    .then(res => res.text())
+    .then(() => loadGames());
+}
+
+// =====================================================
+//  SUBMIT A NEW GAME
+// =====================================================
 async function submitGame(event) {
   event.preventDefault();
 
-  const title = document.getElementById("title").value;
-  const date = document.getElementById("date").value;
-  const location = document.getElementById("location").value;
-  const highlights = document.getElementById("highlights").value;
-  const mediaUrl = document.getElementById("mediaUrl").value;
-  const submittedBy = document.getElementById("submittedBy").value;
-
-const newGame = {
-  Title: title,
-  Date: date,
-  Location: location,
-  Highlights: highlights,
-  MediaURL: mediaUrl,
-  SubmittedBy: submittedBy
-};
+  const newGame = {
+    Title: document.getElementById("title").value,
+    Date: document.getElementById("date").value,
+    Location: document.getElementById("location").value,
+    Highlights: document.getElementById("highlights").value,
+    MediaURL: document.getElementById("mediaUrl").value,
+    SubmittedBy: document.getElementById("submittedBy").value
+  };
 
   try {
     const res = await fetch(API_URL, {
@@ -165,13 +208,12 @@ const newGame = {
     if (text.includes("Success")) {
       alert("Game added successfully!");
       document.getElementById("gameForm").reset();
-      loadGames(); // reload list
+      loadGames();
     } else {
       alert("Error: " + text);
     }
   } catch (err) {
     alert("Submission failed.");
-    console.error(err);
   }
 }
 
