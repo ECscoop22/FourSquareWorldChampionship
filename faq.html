@@ -99,7 +99,7 @@ async function loadGames() {
 
     games.forEach(game => {
       const gameDate = new Date(game.Date);
-      const isAdmin = (game.SubmittedBy === ADMIN_EMAIL);
+      const isAdmin = (ADMIN_EMAIL === "ericcostanza@yahoo.com");
 
       const card = `
         <div class="game-card" style="
