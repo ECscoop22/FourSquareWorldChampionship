@@ -78,7 +78,7 @@
 </footer>
 
 <script>
-const ADMIN_EMAIL = "ericcostanza@yahoo.com";
+const isAdmin = true; // YOU are the admin
 const API_URL = "https://script.google.com/macros/s/AKfycbxexJIlzu7R6lY2WgzkaAMTXKdh0x0h0nhUfl4q_WKyHY4zNgsfL4RObTDVFFb785pY/exec";
 
 // =====================================================
@@ -99,7 +99,6 @@ async function loadGames() {
 
     games.forEach(game => {
       const gameDate = new Date(game.Date);
-      const isAdmin = (ADMIN_EMAIL === "ericcostanza@yahoo.com");
 
       const card = `
         <div class="game-card" style="
@@ -120,7 +119,7 @@ async function loadGames() {
 
           ${isAdmin ? `
             <div style="margin-top:15px;">
-              <button onclick="editEntry('${game.ID}')" 
+              <button onclick="editEntry('${game.ID}')"
                 style="padding:8px 14px; border-radius:8px; margin-right:10px;">
                 Edit
               </button>
