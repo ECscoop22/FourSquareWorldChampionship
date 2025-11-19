@@ -201,14 +201,15 @@ function editEntry(id) {
 async function submitGame(event) {
   event.preventDefault();
 
-  const newGame = {
+const newGame = {
+    action: "add",
     Title: document.getElementById("title").value,
     Date: document.getElementById("date").value,
     Location: document.getElementById("location").value,
     Highlights: document.getElementById("highlights").value,
     MediaURL: document.getElementById("mediaUrl").value,
     SubmittedBy: document.getElementById("submittedBy").value
-  };
+};
 
   try {
     const res = await fetch(API_URL, {
