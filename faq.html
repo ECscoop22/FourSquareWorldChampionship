@@ -11,14 +11,11 @@
     form input, form textarea { width: 100%; padding: 8px; margin: 6px 0; border: 1px solid #ccc; border-radius: 6px; }
     button { padding: 8px 16px; margin-top: 8px; border: none; border-radius: 6px; cursor: pointer; background: #e63946; color: white; }
     button:hover { background: #c92f3f; }
-    .join-btn { background: #457b9d; margin-left: 5px; }
-    .join-btn:hover { background: #35607a; }
     .event { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 8px; }
-    ul { margin: 5px 0 0 20px; padding: 0; }
-    li { margin: 2px 0; }
   </style>
 </head>
 <body>
+
 <nav> 
   <a href="index.html">Home</a>
   <a href="rules.html">Rules</a>
@@ -35,30 +32,26 @@
 </h1>
 <p class="site-tagline" style="text-align:center;">Connect. Play. Share the Fun.</p>
 
-<!-- NEW INTRO PARAGRAPH -->
 <section class="gamehub-intro" style="max-width:900px; margin: 0 auto 50px auto; text-align:center;">
   <p style="font-size:1.1rem; line-height:1.6;">
-    One of the biggest challenges in playing Four Square is finding people to play with. The Game Hub was created to change that. 
-    This space is designed to connect players, organize matches, and make it easier than ever to bring people together for a fun, fast-paced game. 
-    Whether you’re hosting a match or looking to join one, this is where the Four Square community comes to play.
+    One of the biggest challenges in playing Four Square is finding people to play with.
+    The Game Hub was created to change that. Whether you're hosting a match or looking to join one,
+    this is where the Four Square community comes to play.
   </p>
 </section>
-  
+
 <section class="card" style="max-width:720px; margin:0 auto 40px auto; text-align:center; background: linear-gradient(135deg, #800000, #008080);">
   <h2 style="color: white;">Host a Game</h2>
-<form id="gameForm">
-<input type="text" id="title" placeholder="Game Title" required />
 
-<!-- DATE MUST BE SECOND -->
-<input type="date" id="date" required />
-
-<!-- LOCATION MUST BE THIRD -->
-<input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-  <textarea id="highlights" placeholder="Highlights / Details (optional)"></textarea>
-  <input type="text" id="mediaUrl" placeholder="Media URL (optional)" />
-  <input type="text" id="submittedBy" placeholder="Your Name" required />
-  <button type="submit">Post Game</button>
-</form>
+  <form id="gameForm">
+    <input type="text" id="title" placeholder="Game Title" required />
+    <input type="date" id="date" required />
+    <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
+    <textarea id="highlights" placeholder="Highlights / Details (optional)"></textarea>
+    <input type="text" id="mediaUrl" placeholder="Media URL (optional)" />
+    <input type="text" id="submittedBy" placeholder="Your Name" required />
+    <button type="submit">Post Game</button>
+  </form>
 </section>
 
 <section class="card upcoming-gradient" style="max-width:720px; margin:0 auto 40px auto; text-align:center;">
@@ -70,20 +63,23 @@
   <h2 style="color: white;">Previous Games</h2>
   <div id="previousGames"></div>
 </section>
-  
+
 <footer>
   <p style="text-align: center; font-weight: bold; margin-top: 3em;">
     The nation's finest resource for all things four square.
   </p>
 </footer>
 
+
+<!-- ========================================================= -->
+<!-- ===============  MAIN GAME HUB SCRIPT  ================== -->
+<!-- ========================================================= -->
 <script>
-const isAdmin = true; // YOU are the admin
 const API_URL = "https://script.google.com/macros/s/AKfycbxexJIlzu7R6lY2WgzkaAMTXKdh0x0h0nhUfl4q_WKyHY4zNgsfL4RObTDVFFb785pY/exec";
 
-// =====================================================
-//  LOAD & DISPLAY GAMES (with Edit/Delete for Admin)
-// =====================================================
+/* -----------------------------
+   LOAD & DISPLAY GAMES
+----------------------------- */
 async function loadGames() {
   try {
     const res = await fetch(API_URL + "?action=get");
@@ -117,16 +113,10 @@ async function loadGames() {
           ${game.MediaURL ? `<p><a href="${game.MediaURL}" target="_blank" style="font-weight:bold;">View Media</a></p>` : ""}
           <p><em>Submitted by ${game.SubmittedBy}</em></p>
 
-          ${isAdmin ? `
+          ${isAdminMode() ? `
             <div style="margin-top:15px;">
-              <button onclick="editEntry('${game.ID}')"
-                style="padding:8px 14px; border-radius:8px; margin-right:10px;">
-                Edit
-              </button>
-              <button onclick="deleteEntry('${game.ID}')"
-                style="padding:8px 14px; border-radius:8px; background:#ff4d4d; color:white;">
-                Delete
-              </button>
+              <button onclick="editEntry('${game.ID}')" style="padding:8px 14px; border-radius:8px; margin-right:10px;">Edit</button>
+              <button onclick="deleteEntry('${game.ID}')" style="padding:8px 14px; border-radius:8px; background:#ff4d4d; color:white;">Delete</button>
             </div>
           ` : ""}
         </div>
@@ -139,51 +129,75 @@ async function loadGames() {
       }
     });
   } catch (err) {
-    console.error("Error loading games:", err);
+    console.error("Error Loading Games:", err);
   }
 }
 
 loadGames();
 
-// =====================================================
-//  DELETE A GAME
-// =====================================================
+
+/* -----------------------------
+   DELETE ENTRY
+----------------------------- */
 function deleteEntry(id) {
+  if (!isAdminMode()) return alert("Admin only.");
+
   if (!confirm("Are you sure you want to delete this game?")) return;
 
   fetch(API_URL, {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       action: "delete",
-      id: id
+      id: id,
+      adminKey: "TDC1981ec"
     })
   })
     .then(res => res.text())
-    .then(() => loadGames());
+    .then(t => {
+      if (t.includes("Success")) {
+        alert("Deleted!");
+        loadGames();
+      } else {
+        alert("Error: " + t);
+      }
+    });
 }
 
-// =====================================================
-//  EDIT GAME (title only for now)
-// =====================================================
+
+/* -----------------------------
+   EDIT ENTRY (title only)
+----------------------------- */
 function editEntry(id) {
+  if (!isAdminMode()) return alert("Admin only.");
+
   const newTitle = prompt("New title:");
   if (!newTitle) return;
 
   fetch(API_URL, {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       action: "edit",
       id: id,
-      newTitle: newTitle
+      newTitle: newTitle,
+      adminKey: "TDC1981ec"
     })
   })
     .then(res => res.text())
-    .then(() => loadGames());
+    .then(text => {
+      if (text.includes("Success")) {
+        loadGames();
+      } else {
+        alert("Edit failed: " + text);
+      }
+    });
 }
 
-// =====================================================
-//  SUBMIT A NEW GAME
-// =====================================================
+
+/* -----------------------------
+   SUBMIT NEW GAME
+----------------------------- */
 async function submitGame(event) {
   event.preventDefault();
 
@@ -218,6 +232,48 @@ async function submitGame(event) {
 
 document.getElementById("gameForm").addEventListener("submit", submitGame);
 </script>
+
+
+<!-- ========================================================= -->
+<!-- ===============  HIDDEN ADMIN PASSCODE SYSTEM  ========== -->
+<!-- ========================================================= -->
+<script>
+const ADMIN_PASSCODE = "TDC1981ec";
+
+// Load stored admin mode
+let isAdmin = localStorage.getItem("isAdmin") === "true";
+
+// Hidden corner click area
+document.addEventListener("DOMContentLoaded", () => {
+  const trigger = document.createElement("div");
+  trigger.style.position = "fixed";
+  trigger.style.bottom = "0";
+  trigger.style.right = "0";
+  trigger.style.width = "40px";
+  trigger.style.height = "40px";
+  trigger.style.opacity = "0";
+  trigger.style.zIndex = "9999";
+  document.body.appendChild(trigger);
+
+  trigger.addEventListener("click", () => {
+    const entered = prompt("Admin access – enter passcode:");
+    if (entered === ADMIN_PASSCODE) {
+      localStorage.setItem("isAdmin", "true");
+      isAdmin = true;
+      alert("Admin mode unlocked.");
+      loadGames();
+    } else {
+      alert("Incorrect passcode.");
+    }
+  });
+});
+
+// Globally accessible check
+function isAdminMode() {
+  return isAdmin;
+}
+</script>
+
 </body>
 </html>
 
