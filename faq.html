@@ -155,7 +155,7 @@ function deleteEntry(id) {
   })
     .then(res => res.text())
     .then(t => {
-      if (t.includes("Success")) {
+      if (t.includes("SUCCESS")) {
         alert("Deleted!");
         loadGames();
       } else {
@@ -186,7 +186,7 @@ function editEntry(id) {
   })
     .then(res => res.text())
     .then(text => {
-      if (text.includes("Success")) {
+      if (text.includes("SUCCESS")) {
         loadGames();
       } else {
         alert("Edit failed: " + text);
@@ -219,7 +219,7 @@ const newGame = {
 
     const text = await res.text();
 
-    if (text.includes("Success")) {
+    if (text.includes("SUCCESS")) {
       alert("Game added successfully!");
       document.getElementById("gameForm").reset();
       loadGames();
