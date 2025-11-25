@@ -94,6 +94,7 @@ async function loadGames() {
     const today = new Date();
 
     games.forEach(game => {
+      console.log("Game loaded:", game);
       const gameDate = new Date(game.Date);
 
       const card = `
