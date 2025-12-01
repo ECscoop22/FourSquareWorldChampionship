@@ -70,16 +70,9 @@
   </p>
 </footer>
 
-
-<!-- ========================================================= -->
-<!-- ===============  MAIN GAME HUB SCRIPT  ================== -->
-<!-- ========================================================= -->
 <script>
 const API_URL = "https://script.google.com/macros/s/AKfycbxjYQt5b6ZfHKCLPDvtK_-DxSelcRu5ion4ePKYZeSCeDrhhStO3Hz0YF7w9FiwR0SM/exec";
 
-/* -----------------------------
-   LOAD & DISPLAY GAMES
------------------------------ */
 async function loadGames() {
   try {
     const res = await fetch(API_URL + "?action=get");
@@ -111,7 +104,13 @@ async function loadGames() {
           <p><strong>Date:</strong> ${new Date(game.Date).toLocaleDateString()}</p>
           <p><strong>Location:</strong> ${game.Location}</p>
           <p><strong>Highlights:</strong> ${game.Highlights || "None"}</p>
-          ${game.MediaURL ? `<p><a href="${game.MediaURL}" target="_blank" style="font-weight:bold;">View Media</a></p>` : ""}
+
+          ${
+            game.MediaUrl
+              ? `<p><a href="${game.MediaUrl}" target="_blank" style="font-weight:bold;">View Media</a></p>`
+              : ""
+          }
+
           <p><em>Submitted by ${game.SubmittedBy}</em></p>
 
           ${isAdminMode() ? `
@@ -136,10 +135,6 @@ async function loadGames() {
 
 loadGames();
 
-
-/* -----------------------------
-   DELETE ENTRY
------------------------------ */
 function deleteEntry(id) {
   if (!isAdminMode()) return alert("Admin only.");
 
@@ -165,10 +160,6 @@ function deleteEntry(id) {
     });
 }
 
-
-/* -----------------------------
-   EDIT ENTRY (title only)
------------------------------ */
 function editEntry(id) {
   if (!isAdminMode()) return alert("Admin only.");
 
@@ -195,14 +186,10 @@ function editEntry(id) {
     });
 }
 
-
-/* -----------------------------
-   SUBMIT NEW GAME
------------------------------ */
 async function submitGame(event) {
   event.preventDefault();
 
-const newGame = {
+  const newGame = {
     action: "add",
     title: document.getElementById("title").value,
     date: document.getElementById("date").value,
@@ -210,7 +197,7 @@ const newGame = {
     highlights: document.getElementById("highlights").value,
     mediaUrl: document.getElementById("mediaUrl").value,
     submittedBy: document.getElementById("submittedBy").value
-};
+  };
 
   try {
     const res = await fetch(API_URL, {
@@ -235,17 +222,11 @@ const newGame = {
 document.getElementById("gameForm").addEventListener("submit", submitGame);
 </script>
 
-
-<!-- ========================================================= -->
-<!-- ===============  HIDDEN ADMIN PASSCODE SYSTEM  ========== -->
-<!-- ========================================================= -->
 <script>
 const ADMIN_PASSCODE = "TDC1981ec";
 
-// Load stored admin mode
 let isAdmin = localStorage.getItem("isAdmin") === "true";
 
-// Hidden corner click area
 document.addEventListener("DOMContentLoaded", () => {
   const trigger = document.createElement("div");
   trigger.style.position = "fixed";
@@ -270,7 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Globally accessible check
 function isAdminMode() {
   return isAdmin;
 }
