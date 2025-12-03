@@ -13,13 +13,11 @@
 
   <style>
     /* Page-specific font for MEDIA content only (not nav) */
-    body.media-page main h1,
-    body.media-page main h2,
-    body.media-page main h3,
-    body.media-page main p,
-    body.media-page main li {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+/* Apply system font to all regular text in the Media page */
+body.media-page main,
+body.media-page main *:not(nav a) {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
 
     /* NAV uses the site’s Fredoka branding */
     body.media-page nav a {
