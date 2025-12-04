@@ -12,26 +12,36 @@
   <link rel="stylesheet" href="styles.css" />
 
 <style>
-  /* Apply system UI font to everything on Media page except navigation links */
+  /* ---- FORCE system font everywhere on this page ---- */
+  /* Use very broad selectors + !important to override external stylesheet */
+  html body.media-page,
   body.media-page,
   body.media-page * {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
   }
 
-  /* Keep nav links using Fredoka (override the previous rule for nav links) */
-  body.media-page nav a {
-    font-family: 'Fredoka', sans-serif !important;
+  /* ---- Keep the nav links using Fredoka (explicit override) ---- */
+  /* make this selector more specific so it beats the broad rule above */
+  body.media-page nav, 
+  body.media-page nav a,
+  body.media-page header nav a,
+  body.media-page nav a:link,
+  body.media-page nav a:visited {
+    font-family: 'Fredoka', "Fredoka One", Arial, sans-serif !important;
   }
 
-  /* Stronger heading weight for titles on this page */
+  /* ---- Ensure page titles remain bold/heavy ---- */
   body.media-page h1,
-  body.media-page h2 {
+  body.media-page h2,
+  body.media-page .glow-title {
     font-weight: 700 !important;
   }
 
-  /* Press Mentions Card */
+  /* ---- Media-specific card styles (kept from before) ---- */
   .media-press-card {
-    background: linear-gradient(135deg, #800000, #008080);
+    background: linear-gradient(135deg, #800000, #008080) !important;
     padding: 1.5em;
     border-radius: 12px;
     margin-bottom: 2em;
