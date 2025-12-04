@@ -11,9 +11,11 @@
   <!-- Global stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
+  <!-- Favicon (THIS was missing) -->
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
 <style>
   /* ---- FORCE system font everywhere on this page ---- */
-  /* Use very broad selectors + !important to override external stylesheet */
   html body.media-page,
   body.media-page,
   body.media-page * {
@@ -22,24 +24,20 @@
     -moz-osx-font-smoothing: grayscale !important;
   }
 
-  /* ---- Keep the nav links using Fredoka (explicit override) ---- */
-  /* make this selector more specific so it beats the broad rule above */
   body.media-page nav, 
   body.media-page nav a,
   body.media-page header nav a,
   body.media-page nav a:link,
   body.media-page nav a:visited {
-    font-family: 'Fredoka', "Fredoka One", Arial, sans-serif !important;
+    font-family: 'Fredoka', 'Fredoka One', Arial, sans-serif !important;
   }
 
-  /* ---- Ensure page titles remain bold/heavy ---- */
   body.media-page h1,
   body.media-page h2,
   body.media-page .glow-title {
     font-weight: 700 !important;
   }
 
-  /* ---- Media-specific card styles (kept from before) ---- */
   .media-press-card {
     background: linear-gradient(135deg, #800000, #008080) !important;
     padding: 1.5em;
