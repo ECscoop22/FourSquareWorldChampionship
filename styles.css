@@ -2904,3 +2904,35 @@ nav a {
   }
 }
 }
+/* ---------------------------------------- */
+/* MOBILE FIXES FOR NAV LAYOUT AND SPACING */
+/* ---------------------------------------- */
+@media (max-width: 768px) {
+
+    /* Fix huge blue nav container */
+    nav {
+        height: auto !important;
+        padding: 15px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: #d2f4fa; /* keeps your light blue */
+    }
+
+    /* Fix link spacing */
+    nav a {
+        margin: 6px 0 !important; /* reduces giant spacing */
+        font-size: 20px !important;
+    }
+
+    /* Prevent any wrapper from forcing full height */
+    .nav-container, .header, .menu-container {
+        height: auto !important;
+    }
+
+    /* Prevent horizontal scrolling */
+    body, html {
+        overflow-x: hidden;
+    }
+}
