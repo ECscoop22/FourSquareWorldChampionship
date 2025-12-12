@@ -2788,4 +2788,95 @@ nav a {
   padding: 2px;               /* optional: inner padding for border */
   display: block;             /* ensures spacing works inside flex/grid */
 }
+/* ================================
+   MOBILE RESPONSIVE FIXES
+   ================================ */
+@media (max-width: 768px) {
 
+  /* --- NAV WRAPS INSTEAD OF OVERFLOWING --- */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7em;
+    padding: 1em 0;
+  }
+
+  nav a {
+    display: block;
+    padding: 0.6em 1em;
+    font-size: 1.1em;
+  }
+
+  /* --- TITLE ROW FIX --- */
+  .title-row {
+    flex-direction: column;
+    gap: 0.3em;
+    text-align: center;
+  }
+
+  .bouncing-icon {
+    display: none; /* optional: hide icons on phones */
+  }
+
+  .glow-title {
+    font-size: 2.2rem;
+  }
+
+  /* --- WELCOME SECTION FIX --- */
+  .welcome-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+  }
+
+  .welcome-image {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .welcome-text {
+    padding: 0;
+    margin-top: 1em;
+  }
+
+  /* --- BANNERS FIX --- */
+  .follow-banner,
+  .youtube-banner,
+  .blog-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+  }
+
+  .follow-buttons {
+    flex-direction: column;
+    gap: 0.6em;
+  }
+
+  .youtube-banner img,
+  .blog-banner img {
+    height: 40px !important;
+  }
+
+  /* --- CARD FIXES (WC, Blog, Game Hub, etc.) --- */
+  .card {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.2em;
+  }
+
+  /* --- PREVIOUS GAMES FIX --- */
+  #previous-games-list .event {
+    max-width: 90%;
+  }
+
+  /* --- GENERAL IMAGE FIX: make everything responsive --- */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+}
