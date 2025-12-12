@@ -2878,5 +2878,29 @@ nav a {
     max-width: 100%;
     height: auto;
   }
+/* ==== MOBILE NAV FIX ==== */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #e0f8ff;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
+  nav a {
+    margin: 6px 0 !important;
+    font-size: 1.1rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  nav a {
+    font-size: 1rem !important;
+  }
+}
 }
