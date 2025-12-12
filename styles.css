@@ -2793,23 +2793,27 @@ nav a {
    ================================ */
 @media (max-width: 768px) {
 
-  /* --- NAV WRAPS INSTEAD OF OVERFLOWING --- */
+  /* --- NAV FIX --- */
   nav {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    align-items: center;
-    gap: 0.7em;
-    padding: 1em 0;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    width: 100%;
+    background-color: #d2f4fa;
+    padding: 15px;
+    box-sizing: border-box;
   }
 
   nav a {
     display: block;
-    padding: 0.6em 1em;
-    font-size: 1.1em;
+    margin: 6px 0 !important;
+    padding: 0.4em 0;
+    font-size: 1.1rem !important;
+    line-height: 1.2 !important;
   }
 
-  /* --- TITLE ROW FIX --- */
+  /* --- TITLE ROW --- */
   .title-row {
     flex-direction: column;
     gap: 0.3em;
@@ -2817,14 +2821,14 @@ nav a {
   }
 
   .bouncing-icon {
-    display: none; /* optional: hide icons on phones */
+    display: none;
   }
 
   .glow-title {
     font-size: 2.2rem;
   }
 
-  /* --- WELCOME SECTION FIX --- */
+  /* --- WELCOME SECTION --- */
   .welcome-container {
     flex-direction: column;
     text-align: center;
@@ -2837,11 +2841,11 @@ nav a {
   }
 
   .welcome-text {
-    padding: 0;
     margin-top: 1em;
+    padding: 0;
   }
 
-  /* --- BANNERS FIX --- */
+  /* --- BANNERS --- */
   .follow-banner,
   .youtube-banner,
   .blog-banner {
@@ -2860,40 +2864,27 @@ nav a {
     height: 40px !important;
   }
 
-  /* --- CARD FIXES (WC, Blog, Game Hub, etc.) --- */
+  /* --- CARDS --- */
   .card {
     width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     padding: 1.2em;
   }
 
-  /* --- PREVIOUS GAMES FIX --- */
+  /* --- PREVIOUS GAMES --- */
   #previous-games-list .event {
     max-width: 90%;
   }
 
-  /* --- GENERAL IMAGE FIX: make everything responsive --- */
+  /* --- GENERAL IMAGE FIX --- */
   img {
     max-width: 100%;
     height: auto;
   }
-/* ==== MOBILE NAV FIX ==== */
-@media (max-width: 768px) {
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #e0f8ff;
-    padding: 10px 15px;
-    width: 100%;
-    box-sizing: border-box;
-  }
 
-  nav a {
-    margin: 6px 0 !important;
-    font-size: 1.1rem !important;
-    line-height: 1.2 !important;
+  /* --- Prevent horizontal scrolling --- */
+  html, body {
+    overflow-x: hidden;
   }
 }
 
@@ -2902,37 +2893,4 @@ nav a {
   nav a {
     font-size: 1rem !important;
   }
-}
-}
-/* ---------------------------------------- */
-/* MOBILE FIXES FOR NAV LAYOUT AND SPACING */
-/* ---------------------------------------- */
-@media (max-width: 768px) {
-
-    /* Fix huge blue nav container */
-    nav {
-        height: auto !important;
-        padding: 15px !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        background-color: #d2f4fa; /* keeps your light blue */
-    }
-
-    /* Fix link spacing */
-    nav a {
-        margin: 6px 0 !important; /* reduces giant spacing */
-        font-size: 20px !important;
-    }
-
-    /* Prevent any wrapper from forcing full height */
-    .nav-container, .header, .menu-container {
-        height: auto !important;
-    }
-
-    /* Prevent horizontal scrolling */
-    body, html {
-        overflow-x: hidden;
-    }
 }
