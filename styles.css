@@ -2822,3 +2822,33 @@ nav a {
     font-size: 1rem;
   }
 }
+/* ================================
+   FORCE MOBILE NAV TO CONTENT HEIGHT
+   ================================ */
+@media (max-width: 768px) {
+
+  header,
+  .header,
+  .nav-container,
+  nav {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  header,
+  .header,
+  .nav-container {
+    position: relative !important;
+  }
+
+  nav {
+    display: block !important;
+    padding: 16px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
