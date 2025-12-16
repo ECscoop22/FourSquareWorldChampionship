@@ -181,14 +181,32 @@
           That said, there are also fun variations! Some players use “Tag Team” rules, with two players sharing each square. Others create larger courts with 6 or even 8 squares, allowing more players to participate in each round. At major events like the Four Square World Championships, multiple courts often run simultaneously to make room for all the players.</p>
           <p class="published-date">Published: October 7, 2025</p>
         </article>
+        <article class="blog-post-card" id="post2">
+  <h2>Could we host a casual Four Square event or try 9-square?</h2>
+  <p><strong>From:</strong> Joe - Lisbon, Maine</p>
+  <p><strong>Question:</strong> Do you think we could create a Four Square event — not a championship, but more of a get-together — and attempt 9-square if there are enough people?</p>
+
+  <p><strong>Answer:</strong><br>
+  That’s a great idea — and it’s exactly the kind of thinking we love to see. One of the biggest challenges with enjoying Four Square today is simply finding others to play. That’s why we created the <strong>Game Hub</strong> page on this site — be sure to check it out. The intent of the Game Hub is to help players connect, share ideas, organize casual meetups, and build local Four Square communities beyond the World Championship itself.
+  <br><br>
+  Informal events and get-togethers, including experimenting with larger and more unique formats like <strong>9-square</strong>, are absolutely possible if there’s enough interest and space. The Game Hub already highlights some of these ideas, including our experiment with <strong>8-square (Hardcore Rules)</strong>.
+  <br><br>
+  Being based in Maine, there’s naturally a strong following of Four Square enthusiasts in the region, especially with the World Championship taking place nearby in Bridgton each year. That said, Four Square isn’t limited to one location. For example, where I’m located in <strong>central Massachusetts</strong>, we plan to host <strong>at least one open Four Square event every summer</strong>, welcoming anyone who wants to play.
+  <br><br>
+  Events like these are exactly how the game continues to grow, evolve, and bring people together. If you’re interested in organizing something similar in your area, the <strong>Game Hub</strong> is a great place to start — or try social media — and we’d love to hear about it.
+  </p>
+
+  <p class="published-date">Published: December 15, 2025</p>
+</article>
       </div>
 
       <!-- Sidebar Blog Archive -->
       <aside class="blog-sidebar">
         <h3>Blog Archive</h3>
-        <ul>
-          <li><a href="#post1">How many players can play at the same time?</a></li>
-        </ul>
+       <ul>
+  <li><a href="#post2">Could we host a casual Four Square event or try 9-square?</a></li>
+  <li><a href="#post1">How many players can play at the same time?</a></li>
+</ul>
       </aside>
     </div>
 
@@ -219,8 +237,9 @@
       }).addTo(map);
 
       const questions = [
-        { coords: [43.1566, -77.6088], label: 'Question received from Rochester, NY' }
-      ];
+  { coords: [43.1566, -77.6088], label: 'Question received from Rochester, NY' },
+  { coords: [44.0312, -70.1042], label: 'Question received from Lisbon, ME' }
+];
 
       questions.forEach(q => {
         L.marker(q.coords).addTo(map).bindPopup(q.label);
