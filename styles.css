@@ -2820,3 +2820,13 @@ nav a {
     font-size: 1.05rem;
   }
 }
+@media (max-width: 768px) {
+
+  nav {
+    height: auto !important;
+    min-height: unset !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+}
