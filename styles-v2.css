@@ -2865,3 +2865,23 @@ nav a {
     line-height: 1.2 !important;
   }
 }
+/* === MOBILE NAV FIX (SAFARI SAFE) === */
+@media (max-width: 768px) {
+  nav {
+    position: relative !important;   /* disables sticky on mobile */
+    padding: 12px 16px !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: unset !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    background: #d60000 !important;  /* temp red for confirmation */
+  }
+
+  nav a {
+    display: block;
+    padding: 6px 0 !important;
+    font-size: 1rem !important;
+  }
+}
