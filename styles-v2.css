@@ -2829,3 +2829,39 @@ nav a {
     background: red !important;
   }
 }
+/* === MOBILE NAV FIX === */
+@media (max-width: 768px) {
+
+  nav {
+    background: red !important;
+    padding: 12px 16px !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  nav ul,
+  .nav-links {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  nav ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  nav li {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  nav a {
+    display: inline-block !important;
+    padding: 6px 0 !important;
+    font-size: 1.05rem !important;
+    line-height: 1.2 !important;
+  }
+}
