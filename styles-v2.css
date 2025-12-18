@@ -2885,3 +2885,21 @@ nav a {
     font-size: 1rem !important;
   }
 }
+.site-header {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    background: transparent;
+  }
+
+  nav {
+    background: #d60000;
+  }
+
+  main {
+    margin-top: 0;
+  }
+}
