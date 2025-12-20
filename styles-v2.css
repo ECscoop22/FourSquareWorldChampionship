@@ -2979,3 +2979,38 @@ nav a {
     list-style-position: inside;
   }
 }
+/* =========================
+   MOBILE NAV HARD RESET
+   ========================= */
+@media (max-width: 768px) {
+
+  header,
+  .site-header {
+    height: auto !important;
+    min-height: 0 !important;
+    position: static !important;
+  }
+
+  nav {
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    padding: 10px 12px !important;
+    background: #dff4f7 !important; /* matches your screenshot */
+  }
+
+  nav a {
+    display: inline-block !important;
+    padding: 6px 10px !important;
+    font-size: 0.95rem !important;
+    white-space: nowrap !important;
+  }
+}
