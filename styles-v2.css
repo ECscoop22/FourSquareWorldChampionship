@@ -2788,229 +2788,46 @@ nav a {
   padding: 2px;               /* optional: inner padding for border */
   display: block;             /* ensures spacing works inside flex/grid */
 }
-/* ================================
-   MOBILE NAV — HARD OVERRIDE (FINAL)
-   ================================ */
-@media (max-width: 768px) {
-
-  html, body {
-    overflow-x: hidden;
-  }
-
-  nav {
-    display: flex !important;
-    flex-direction: column !important;
-
-    height: auto !important;
-    min-height: unset !important;
-
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-
-    gap: 0.75em !important;
-    padding: 12px 16px !important;
-    width: 100% !important;
-
-    background-color: #d2f4fa;
-    box-sizing: border-box;
-  }
-
-  nav a {
-    display: block !important;
-    margin: 0 !important;
-    padding: 6px 0 !important;
-    line-height: 1.3 !important;
-    font-size: 1.05rem !important;
-  }
-
-}
-@media (max-width: 768px) {
-  body {
-    background: red !important;
-  }
-}
-/* === MOBILE NAV FIX === */
-@media (max-width: 768px) {
-
-  nav {
-    background: red !important;
-    padding: 12px 16px !important;
-    height: auto !important;
-    min-height: 0 !important;
-  }
-
-  nav ul,
-  .nav-links {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-    min-height: 0 !important;
-  }
-
-  nav ul {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-  }
-
-  nav li {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  nav a {
-    display: inline-block !important;
-    padding: 6px 0 !important;
-    font-size: 1.05rem !important;
-    line-height: 1.2 !important;
-  }
-}
-/* === MOBILE NAV FIX (SAFARI SAFE) === */
-@media (max-width: 768px) {
-  nav {
-    position: relative !important;   /* disables sticky on mobile */
-    padding: 12px 16px !important;
-    margin: 0 !important;
-    height: auto !important;
-    min-height: unset !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    background: #d60000 !important;  /* temp red for confirmation */
-  }
-
-  nav a {
-    display: block;
-    padding: 6px 0 !important;
-    font-size: 1rem !important;
-  }
-}
-.site-header {
-  margin: 0;
-  padding: 0;
-}
-
-@media (max-width: 768px) {
-  .site-header {
-    background: transparent;
-  }
-
-  nav {
-    background: #d60000;
-  }
-
-  main {
-    margin-top: 0;
-  }
-}
 /* =========================
-   MOBILE LAYOUT FIXES
-   ========================= */
-@media (max-width: 768px) {
-
-  /* HEADER / NAV */
-  .site-header {
-    padding: 0;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    background: #fff;
-  }
-
-  nav a {
-    font-size: 0.95rem;
-    padding: 6px 8px;
-    white-space: nowrap;
-  }
-
-  /* TITLE ROW */
-  .title-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-top: 20px;
-  }
-
-  .glow-title {
-    font-size: 2.2rem;
-    text-align: center;
-    margin: 0;
-  }
-
-  /* ICONS */
-  .bouncing-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .bouncing-icon svg {
-    width: 40px;
-    height: 40px;
-  }
-
-  /* TAGLINE */
-  .wc-tagline {
-    text-align: center;
-    font-size: 1rem;
-    margin: 10px 16px 20px;
-  }
-
-  /* WELCOME SECTION */
-  .welcome-container {
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .welcome-image {
-    max-width: 200px;
-    margin-bottom: 16px;
-  }
-
-  .welcome-text ul {
-    padding-left: 0;
-    list-style-position: inside;
-  }
-}
-/* =========================
-   MOBILE NAV HARD RESET
+   MOBILE NAV — CLEAN FIX
    ========================= */
 @media (max-width: 768px) {
 
   header,
   .site-header {
-    height: auto !important;
-    min-height: 0 !important;
-    position: static !important;
+    position: static;
+    height: auto;
   }
 
   nav {
-    position: static !important;
-    height: auto !important;
-    min-height: 0 !important;
-    width: 100% !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-
-    padding: 10px 12px !important;
-    background: #dff4f7 !important; /* matches your screenshot */
+    padding: 12px 14px;
+    background: #dff4f7; /* light blue like your screenshot */
   }
 
   nav a {
-    display: inline-block !important;
-    padding: 6px 10px !important;
-    font-size: 0.95rem !important;
-    white-space: nowrap !important;
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  /* Title + tagline stay stacked nicely */
+  .title-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  .wc-tagline {
+    text-align: center;
+    font-size: 1rem;
+    margin: 8px 16px 20px;
   }
 }
