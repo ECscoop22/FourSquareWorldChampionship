@@ -1,3 +1,7 @@
+/* Global fix: prevent sticky nav from covering content */
+body > *:not(nav) {
+  scroll-margin-top: 110px;
+}
 /* Base page styles */
 body {
   font-family: 'Fredoka', sans-serif;
@@ -31,10 +35,6 @@ nav a:hover {
   padding: 0.3em 0.6em;
   border-radius: 8px;
   transition: all 0.2s ease-in-out;
-}
-main {
-  padding: 1em;
-  padding-top: 100px; /* space for sticky nav */
 }
 /* Card layout for content sections */
 section.card {
