@@ -1,7 +1,3 @@
-/* Global fix: prevent sticky nav from covering content */
-body > *:not(nav) {
-  scroll-margin-top: 110px;
-}
 /* Base page styles */
 body {
   font-family: 'Fredoka', sans-serif;
@@ -23,6 +19,21 @@ nav {
   min-height: 88px;
 }
 
+/* ========================= */
+/* MOBILE FIX — MUST BE LAST */
+/* ========================= */
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  body {
+    padding-top: 120px;
+  }
+}
 nav a {
   text-decoration: none;
   color: #d60000;
