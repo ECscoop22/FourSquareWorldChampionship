@@ -2848,26 +2848,6 @@ nav a {
   }
 }
 /* =========================
-   MOBILE HEADER OVERLAP FIX
-   ========================= */
-@media (max-width: 768px) {
-
-  header,
-  .site-header {
-    position: static !important;
-    height: auto !important;
-    min-height: 0 !important;
-  }
-
-  main,
-  .page-content,
-  .content,
-  section {
-    position: relative;
-    z-index: 1;
-  }
-}
-/* =========================
    MOBILE PAGE HEADER FIX
    ========================= */
 @media (max-width: 768px) {
