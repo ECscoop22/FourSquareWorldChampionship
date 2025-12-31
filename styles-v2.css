@@ -13,26 +13,8 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 3em;
-  position: sticky;
-  top: 0;
   z-index: 1000;
   min-height: 88px;
-}
-
-/* ========================= */
-/* MOBILE FIX — MUST BE LAST */
-/* ========================= */
-@media (max-width: 768px) {
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  body {
-    padding-top: 120px;
-  }
 }
 nav a {
   text-decoration: none;
@@ -157,7 +139,21 @@ li {
   height: 60px;
   width: auto;
 }
+@media (max-width: 768px) {
+  .glow-title {
+    font-size: 2.1rem;
+    text-align: center;
+  }
 
+  .blog-banner {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .blog-banner img {
+    height: 48px;
+  }
+}
 /* YouTube promo section */
 .youtube-banner {
   background-color: #d0f0f4;
@@ -276,6 +272,28 @@ li {
 
 .site-ball:hover {
   transform: rotate(-10deg) scale(1.1);
+}
+@media (max-width: 768px) {
+  .youtube-banner {
+    flex-direction: column;
+    gap: 0.75em;
+  }
+
+  .youtube-banner img {
+    height: 48px;
+  }
+
+  .blog-banner p,
+  .youtube-banner p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .title-row {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 /* Responsive layout for mobile */
 @media (max-width: 768px) {
@@ -432,12 +450,6 @@ details summary strong {
   border-radius: 8px;
   margin-top: 0.5em;
 }
-
-.champ-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
 .champ-card p {
   margin: 0;
   font-size: 1.05em;
@@ -449,11 +461,6 @@ details summary strong {
   font-size: 0.95em;
   color: #444;
 }
-
-.champion-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
 .champions-grid {
   display: flex;
   flex-wrap: wrap;
@@ -462,12 +469,12 @@ details summary strong {
   margin-top: 1em;
 }
 
-.champion-card:hover {
+.champ-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
 }
 
-.champion-card img {
+.champ-card img {
   width: 100%;
   height: auto;
   max-height: 300px;
@@ -476,7 +483,7 @@ details summary strong {
   margin-top: 0.75em;
 }
 
-.champion-card .crown {
+.champ-card .crown {
   font-size: 2em;
   color: #d60000;
   margin-bottom: 0.25em;
@@ -554,6 +561,7 @@ details summary strong {
     width: 350px;
     height: auto;
   }
+}
 .home-logo {
   display: block;
   margin: 1em auto;
@@ -831,28 +839,6 @@ details summary strong {
     text-align: center;
   }
 }
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.bouncing-ball {
-  animation: bounce 1.5s ease-in-out infinite;
-  transform-origin: center bottom;
-}
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
 .bouncing-ball {
   animation: bounce 1.5s ease-in-out infinite;
   transform-origin: center bottom;
@@ -862,12 +848,6 @@ details summary strong {
   align-items: center;
   justify-content: center;
 }
-
-.moving-ball {
-  animation: bounce 1s ease-in-out infinite;
-  transform-origin: center bottom;
-}
-
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
@@ -1376,18 +1356,6 @@ details summary strong {
   margin-top: 0.3em;    /* slightly closer to the title */
 }
 /* Form styling */
-form {
-  max-width: 500px;
-  margin: 20px auto; /* centers + adds top/bottom spacing */
-  padding: 20px; /* space inside the form */
-  background: #111; /* dark background for contrast */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* a little more breathing room */
-}
-
 form label {
   font-weight: 600;
   margin-bottom: 6px;
@@ -1518,30 +1486,6 @@ form button:hover {
 /* ===== Register page overrides (paste at end of file) ===== */
 
 /* Make the tagline on the Register page match the other pages */
-.register-page .site-tagline {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 500;
-  font-size: 1.05rem;     /* slightly smaller */
-  color: #b22222;         /* maroon used sitewide */
-  text-align: center;
-  margin-top: 0.2em;      /* tight spacing like the Home page */
-  font-style: italic;
-}
-
-/* Subtle highlighted box (non-white) for the registration note */
-.register-note {
-  max-width: 760px;
-  margin: 1rem auto;
-  padding: 14px 20px;
-  background: rgba(255,255,255,0.06); /* subtle light overlay over the gradient */
-  border-left: 4px solid #b22222;     /* maroon accent bar */
-  color: #ffffff;                     /* text white for contrast */
-  border-radius: 10px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.22);
-  text-align: center;
-  font-style: italic;
-  line-height: 1.45;
-}
 
 /* Keep the section background (register-intro) as your gradient,
    but style the form *inside* it so the form itself looks like the mockup */
@@ -1552,18 +1496,6 @@ form button:hover {
 }
 
 /* Form inside the register-intro gets a subtle dark panel */
-.register-intro form {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 20px;
-  background: rgba(0,0,0,0.18); /* subtle dark panel inside gradient */
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  box-sizing: border-box;
-}
 
 /* Ensure inputs inside that panel keep dark style and do not overflow */
 .register-intro form input,
@@ -1584,60 +1516,7 @@ form button:hover {
   padding: 10px 18px;
 }
 /* Registration Form Styling */
-form {
-  max-width: 600px;
-  margin: 2em auto;
-  padding: 2em;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
 
-form label {
-  display: block;
-  margin-bottom: 0.5em;
-  font-weight: bold;
-  color: #a10000;
-}
-
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 0.75em;
-  margin-bottom: 1.2em;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1em;
-  font-family: inherit;
-  box-sizing: border-box;
-}
-
-form input:focus,
-form select:focus,
-form textarea:focus {
-  border-color: #a10000;
-  outline: none;
-  box-shadow: 0 0 6px rgba(166,0,0,0.3);
-}
-
-form button,
-form input[type="submit"] {
-  background-color: #d60000;
-  color: #fff;
-  padding: 0.8em 1.5em;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-form button:hover,
-form input[type="submit"]:hover {
-  background-color: #a10000;
-  transform: scale(1.03);
-}
 /* ✅ Fix tagline on Register page */
 .register-page .site-tagline {
   font-size: 1.1em;
@@ -1767,25 +1646,6 @@ form input[type="submit"]:hover {
   background: #fff; 
   box-shadow: 0 3px 6px rgba(0,0,0,0.1); 
 }
-form input, form textarea { 
-  width: 100%; 
-  padding: 8px; 
-  margin: 6px 0; 
-  border: 1px solid #ccc; 
-  border-radius: 6px; 
-}
-button { 
-  padding: 8px 16px; 
-  margin-top: 8px; 
-  border: none; 
-  border-radius: 6px; 
-  cursor: pointer; 
-  background: #e63946; 
-  color: white; 
-}
-button:hover { 
-  background: #c92f3f; 
-}
 .event { 
   border: 1px solid #ddd; 
   padding: 10px; 
@@ -1818,46 +1678,6 @@ button:hover {
   margin: 0 auto 20px;     /* centers the card block itself */
   text-align: left;        /* keeps text inside the card left-aligned */
   max-width: 450px;        /* optional: keeps card from being too wide */
-}
-.collapsible-header {
-  cursor: pointer;
-  font-weight: bold;
-  padding: 8px;
-  background: #f4f4f4;
-  border-radius: 6px;
-  margin-bottom: 5px;
-  transition: background 0.2s;
-}
-
-.collapsible-header:hover {
-  background: #e0e0e0;
-}
-
-.collapsible-content {
-  display: none;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 0 0 8px 8px;
-  margin-bottom: 15px;
-  background: #fff;
-}
-/* Collapsible game content */
-.collapsible-header {
-  cursor: pointer;
-  font-weight: bold;
-  padding: 8px;
-  background: #f5f5f5;
-  border-radius: 6px;
-  margin-bottom: 6px;
-}
-
-.collapsible-content {
-  display: none; /* hidden by default */
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-top: 5px;
-  text-align: left; /* keep details aligned inside */
 }
 /* Collapsible game content */
 .collapsible-header {
@@ -2035,14 +1855,6 @@ button:hover {
 .join-button:hover {
   background: #8b1a1a;
 }
-/* === Game Hub Page Consistency === */
-
-/* Section container styling */
-.hub-section {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0;
-}
 
 /* Card wrapper for each section */
 .card {
@@ -2107,31 +1919,6 @@ button.join-btn:hover {
   background: #1f7d72;
 }
 
-/* Game event blocks */
-.event {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  margin: 1.5rem 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-/* Collapsible header */
-.collapsible-header {
-  background: #2a9d8f; /* teal header */
-  color: #fff;
-  padding: 1rem 1.2rem;
-  border-radius: 12px 12px 0 0;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.collapsible-content {
-  padding: 1.2rem;
-  text-align: left;
-  line-height: 1.6;
-}
-
 /* Responsive tweaks */
 @media (max-width: 600px) {
   .card {
@@ -2141,15 +1928,6 @@ button.join-btn:hover {
     font-size: 1.6rem;
   }
 }
-.event {
-  background: #fff;
-  border-left: 6px solid #800000; /* maroon accent like sections */
-  border-radius: 12px;
-  margin: 1.2em 0;
-  text-align: left;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
 .collapsible-header {
   background: #800000; /* maroon header */
   color: #fff;
@@ -2164,27 +1942,12 @@ button.join-btn:hover {
 .collapsible-header:hover {
   background: #660000; /* slightly darker on hover */
 }
-
 .collapsible-content {
   padding: 1.2em;
-  display: none;
-  background: #f0f8f8; /* very light teal tint to match buttons */
+  display: none;              /* REQUIRED for collapse behavior */
+  background: #f0f8f8;        /* light neutral background */
   border-radius: 0 0 12px 12px;
   line-height: 1.6;
-}
-
-.join-btn {
-  background: #008080; /* teal like other buttons */
-  color: white;
-  border-radius: 8px;
-  padding: 0.6em 1.2em;
-  margin: 0.3em 0.2em;
-  font-size: 0.95rem;
-  transition: background 0.2s;
-}
-
-.join-btn:hover {
-  background: #006666; /* darker teal on hover */
 }
 #upcoming-games-list {
   text-align: center;
@@ -2260,14 +2023,7 @@ body {
   background: linear-gradient(to right, rgba(128, 0, 0, 0.1), rgba(0, 128, 128, 0.1));
   background-size: 100% 100%;
   background-repeat: no-repeat;
-}
-.collapsible-content {
-  display: none;
-}
 
-.collapsible-content.active {
-  display: block;
-}
 .gamehub-intro p {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -2287,24 +2043,6 @@ body {
     transform: translateY(0);
   }
 }
-.register-note {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(6px);
-  color: white;
-  font-size: 1.2em;
-  max-width: 850px;
-  margin: 30px auto;
-  padding: 25px;
-  border-radius: 16px;
-  text-align: center;
-  line-height: 1.6;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-
-  /* Animation */
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeSlideIn 1.2s ease forwards;
-}
 
 @keyframes fadeSlideIn {
   from {
@@ -2315,64 +2053,18 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* === Force Register note to match Game Hub intro (safe override) === */
-.register-note {
-  position: relative !important;
-  overflow: visible !important;
-  max-width: 900px !important;
-  margin: 30px auto !important;
-  padding: 0 !important;               /* inner padding provided by .register-note::after */
-  border-radius: 16px !important;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18) !important;
-  background: linear-gradient(135deg, #800000 0%, #008080 100%) !important; /* gradient frame */
-  color: #fff !important;
-}
-
-/* inner light panel to match Game Hub intro content area */
-.register-note::after {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
-  background: rgba(255,255,255,0.92) !important;   /* light panel */
-  border-radius: 12px !important;
-  z-index: 0;
-}
-
-/* make the text sit on top of the inner panel */
-.register-note * {
-  position: relative;
-  z-index: 1;
-  color: #111 !important;           /* dark text on the light inner panel */
-  padding: 20px 22px !important;
-  display: block;
-  box-sizing: border-box;
 }
 /* Register note styled to exactly match Game Hub intro box */
 .register-note {
-  max-width: 800px;               /* keeps the box from stretching too wide */
-  width: 90%;                      /* ensures it scales on smaller screens */
-  margin: 2em auto;                /* vertical spacing, centered horizontally */
-  padding: 2em 2.5em;              /* inner padding — slightly larger for Game Hub feel */
-  background-color: #222;          /* dark background */
-  color: #f5f5f5;                  /* light text color */
+  max-width: 800px;
+  width: 90%;
+  margin: 2em auto;
+  padding: 2em 2.5em;
+  background-color: #222;
+  color: #f5f5f5;
   border-radius: 12px;
   text-align: center;
-  font-size: 1.15em;               /* slightly larger font */
+  font-size: 1.15em;
   line-height: 1.6;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -2386,13 +2078,14 @@ body {
 .register-intro {
   margin-top: 2em;
 }
+
 /* Wrapper for register note to match Game Hub card exactly */
 .register-intro-card {
   max-width: 800px;
   width: 90%;
   margin: 2em auto;
   padding: 2em 2.5em;
-  background-color: #2b2b2b;  /* soft dark gray like Game Hub */
+  background-color: #2b2b2b;
   color: #f5f5f5;
   border-radius: 12px;
   text-align: center;
@@ -2724,26 +2417,12 @@ body.media-page {
 }
 /* Nav links consistency across all pages */
 nav a {
-  font-family: 'Fredoka', sans-serif !important;
-  font-weight: 600;          /* same as other pages */
-  text-transform: uppercase; /* same as other pages */
-  letter-spacing: 1px;       /* same as other pages */
-  color: inherit;            /* inherit from nav (optional) */
-}
-/* Nav links consistency across all pages */
-nav a {
-  font-family: 'Fredoka', sans-serif !important;
+  font-family: 'Fredoka', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: inherit; /* ensures text color remains consistent */
-}
-/* Fix header nav font and color */
-nav a {
-    color: #800000;           /* original maroon color */
-    font-family: 'Fredoka', sans-serif; /* original font */
-    font-weight: normal;      /* adjust to match original style */
-    text-decoration: none;    /* optional: removes underlines if present */
+  color: #800000;
+  text-decoration: none;
 }
 /* --- Press Mentions Grid --- */
 .press-grid {
