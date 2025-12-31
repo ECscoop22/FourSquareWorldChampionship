@@ -9,12 +9,12 @@ body {
 
 nav {
   background-color: #d0f0f4;
-  padding: 1.2em 2em;
+  padding: 0.8em 2em;   /* was 1.2em */
   display: flex;
   flex-wrap: wrap;
   gap: 3em;
   z-index: 1000;
-  min-height: 88px;
+  min-height: unset;   /* IMPORTANT */
 }
 nav a:hover {
   color: #000;
