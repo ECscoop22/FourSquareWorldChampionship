@@ -22,6 +22,7 @@
     .event { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 8px; }
   </style>
 </head>
+
 <body>
 
 <nav> 
@@ -35,45 +36,49 @@
   <a href="merch.html">Merch</a>
 </nav>
 
-<h1 class="glow-title" style="text-align:center; margin-bottom: 8px;">
-  <span class="pulse-ball">🔴</span> GAME HUB <span class="pulse-ball">🔴</span>
-</h1>
+<main>
 
-<p class="site-tagline" style="text-align:center; margin: 0 0 10px 0;">
-  Connect. Play. Share the Fun.
-</p>
+  <h1 class="glow-title" style="text-align:center; margin-bottom: 8px;">
+    <span class="pulse-ball">🔴</span> GAME HUB <span class="pulse-ball">🔴</span>
+  </h1>
 
-<section class="gamehub-intro" style="max-width:900px; margin: 0 auto 10px auto; text-align:center;">
-  <p style="font-size:1.1rem; line-height:1.6;">
-    One of the biggest challenges in playing Four Square is finding people to play with.
-    The Game Hub was created to change that. Whether you're hosting a match or looking to join one,
-    this is where the Four Square community comes to play.
+  <p class="site-tagline" style="text-align:center; margin: 0 0 10px 0;">
+    Connect. Play. Share the Fun.
   </p>
-</section>
 
-<section class="card" style="max-width:720px; margin:0 auto 40px auto; text-align:center; background: linear-gradient(135deg, #800000, #008080);">
-  <h2 style="color: white;">Host a Game</h2>
+  <section class="gamehub-intro" style="max-width:900px; margin: 0 auto 10px auto; text-align:center;">
+    <p style="font-size:1.1rem; line-height:1.6;">
+      One of the biggest challenges in playing Four Square is finding people to play with.
+      The Game Hub was created to change that. Whether you're hosting a match or looking to join one,
+      this is where the Four Square community comes to play.
+    </p>
+  </section>
 
-  <form id="gameForm">
-    <input type="text" id="title" placeholder="Game Title" required />
-    <input type="date" id="date" required />
-    <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-    <textarea id="highlights" placeholder="Highlights / Details (optional)"></textarea>
-    <input type="text" id="mediaUrl" placeholder="Media URL (optional)" />
-    <input type="text" id="submittedBy" placeholder="Your Name" required />
-    <button type="submit">Post Game</button>
-  </form>
-</section>
+  <section class="card" style="max-width:720px; margin:0 auto 40px auto; text-align:center; background: linear-gradient(135deg, #800000, #008080);">
+    <h2 style="color: white;">Host a Game</h2>
 
-<section class="card upcoming-gradient" style="max-width:720px; margin:0 auto 40px auto; text-align:center;">
-  <h2 style="color: white;">Upcoming Games</h2>
-  <div id="upcomingGames"></div>
-</section>
+    <form id="gameForm">
+      <input type="text" id="title" placeholder="Game Title" required />
+      <input type="date" id="date" required />
+      <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
+      <textarea id="highlights" placeholder="Highlights / Details (optional)"></textarea>
+      <input type="text" id="mediaUrl" placeholder="Media URL (optional)" />
+      <input type="text" id="submittedBy" placeholder="Your Name" required />
+      <button type="submit">Post Game</button>
+    </form>
+  </section>
 
-<section class="card" style="max-width:720px; margin:40px auto 0 auto; text-align:center; background: linear-gradient(135deg, #800000, #008080);">
-  <h2 style="color: white;">Previous Games</h2>
-  <div id="previousGames"></div>
-</section>
+  <section class="card upcoming-gradient" style="max-width:720px; margin:0 auto 40px auto; text-align:center;">
+    <h2 style="color: white;">Upcoming Games</h2>
+    <div id="upcomingGames"></div>
+  </section>
+
+  <section class="card" style="max-width:720px; margin:40px auto 0 auto; text-align:center; background: linear-gradient(135deg, #800000, #008080);">
+    <h2 style="color: white;">Previous Games</h2>
+    <div id="previousGames"></div>
+  </section>
+
+</main>
 
 <footer>
   <p style="text-align: center; font-weight: bold; margin-top: 3em;">
@@ -83,7 +88,6 @@
 
 <script>
 const API_URL = "https://script.google.com/macros/s/AKfycbzix8U_lib9XEsih0iDQR3GrRJIqhhjZdRuqlmjU5Guzh-n6hHwO6ypdXbCOwLwS3zt/exec";
-
 async function loadGames() {
   try {
     const res = await fetch(API_URL + "?action=get");
@@ -98,173 +102,24 @@ async function loadGames() {
     const today = new Date();
 
     games.forEach(game => {
-      console.log("Game loaded:", game);
       const gameDate = new Date(game.Date);
-
       const card = `
-        <div class="game-card" style="
-          background:white;
-          color:#333;
-          padding:20px;
-          margin:20px 0;
-          border-radius:12px;
-          box-shadow:0 4px 10px rgba(0,0,0,0.1);
-          text-align:center;
-        ">
+        <div class="game-card" style="background:white;color:#333;padding:20px;margin:20px 0;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);text-align:center;">
           <h3>${game.Title}</h3>
           <p><strong>Date:</strong> ${new Date(game.Date).toLocaleDateString()}</p>
           <p><strong>Location:</strong> ${game.Location}</p>
           <p><strong>Highlights:</strong> ${game.Highlights || "None"}</p>
-
-          ${
-            game.MediaUrl
-              ? `<p><a href="${game.MediaUrl}" target="_blank" style="font-weight:bold;">View Media</a></p>`
-              : ""
-          }
-
+          ${game.MediaUrl ? `<p><a href="${game.MediaUrl}" target="_blank" style="font-weight:bold;">View Media</a></p>` : ""}
           <p><em>Submitted by ${game.SubmittedBy}</em></p>
-
-          ${isAdminMode() ? `
-            <div style="margin-top:15px;">
-              <button onclick="editEntry('${game.ID}')" style="padding:8px 14px; border-radius:8px; margin-right:10px;">Edit</button>
-              <button onclick="deleteEntry('${game.ID}')" style="padding:8px 14px; border-radius:8px; background:#ff4d4d; color:white;">Delete</button>
-            </div>
-          ` : ""}
-        </div>
-      `;
-
-      if (gameDate >= today) {
-        upcomingContainer.innerHTML += card;
-      } else {
-        previousContainer.innerHTML += card;
-      }
+        </div>`;
+      if (gameDate >= today) upcomingContainer.innerHTML += card;
+      else previousContainer.innerHTML += card;
     });
   } catch (err) {
-    console.error("Error Loading Games:", err);
+    console.error(err);
   }
 }
-
 loadGames();
-
-function deleteEntry(id) {
-  if (!isAdminMode()) return alert("Admin only.");
-
-  if (!confirm("Are you sure you want to delete this game?")) return;
-
-  fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      action: "delete",
-      id: id,
-      adminKey: "TDC1981ec"
-    })
-  })
-    .then(res => res.text())
-    .then(t => {
-      if (t.includes("SUCCESS")) {
-        alert("Deleted!");
-        loadGames();
-      } else {
-        alert("Error: " + t);
-      }
-    });
-}
-
-function editEntry(id) {
-  if (!isAdminMode()) return alert("Admin only.");
-
-  const newTitle = prompt("New title:");
-  if (!newTitle) return;
-
-  fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      action: "edit",
-      id: id,
-      newTitle: newTitle,
-      adminKey: "TDC1981ec"
-    })
-  })
-    .then(res => res.text())
-    .then(text => {
-      if (text.includes("SUCCESS")) {
-        loadGames();
-      } else {
-        alert("Edit failed: " + text);
-      }
-    });
-}
-
-async function submitGame(event) {
-  event.preventDefault();
-
-  const newGame = {
-    action: "add",
-    title: document.getElementById("title").value,
-    date: document.getElementById("date").value,
-    location: document.getElementById("location").value,
-    highlights: document.getElementById("highlights").value,
-    mediaUrl: document.getElementById("mediaUrl").value,
-    submittedBy: document.getElementById("submittedBy").value
-  };
-
-  try {
-    const res = await fetch(API_URL, {
-      method: "POST",
-      body: JSON.stringify(newGame)
-    });
-
-    const text = await res.text();
-
-    if (text.includes("SUCCESS")) {
-      alert("Game added successfully!");
-      document.getElementById("gameForm").reset();
-      loadGames();
-    } else {
-      alert("Error: " + text);
-    }
-  } catch (err) {
-    alert("Submission failed.");
-  }
-}
-
-document.getElementById("gameForm").addEventListener("submit", submitGame);
-</script>
-
-<script>
-const ADMIN_PASSCODE = "TDC1981ec";
-
-let isAdmin = localStorage.getItem("isAdmin") === "true";
-
-document.addEventListener("DOMContentLoaded", () => {
-  const trigger = document.createElement("div");
-  trigger.style.position = "fixed";
-  trigger.style.bottom = "0";
-  trigger.style.right = "0";
-  trigger.style.width = "40px";
-  trigger.style.height = "40px";
-  trigger.style.opacity = "0";
-  trigger.style.zIndex = "9999";
-  document.body.appendChild(trigger);
-
-  trigger.addEventListener("click", () => {
-    const entered = prompt("Admin access – enter passcode:");
-    if (entered === ADMIN_PASSCODE) {
-      localStorage.setItem("isAdmin", "true");
-      isAdmin = true;
-      alert("Admin mode unlocked.");
-      loadGames();
-    } else {
-      alert("Incorrect passcode.");
-    }
-  });
-});
-
-function isAdminMode() {
-  return isAdmin;
-}
 </script>
 
 </body>
