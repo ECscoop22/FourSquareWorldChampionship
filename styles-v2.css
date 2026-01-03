@@ -2543,3 +2543,7 @@ nav a {
     margin: 0.5rem 0 0 !important;
   }
 }
+/* GAME HUB — remove intro-to-card gap */
+body:has(h1.glow-title:contains("GAME HUB")) .card:first-of-type {
+  margin-top: 0 !important;
+}
