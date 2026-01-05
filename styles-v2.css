@@ -2547,3 +2547,7 @@ nav a {
 .game-hub-page main {
   padding-top: 0 !important;
 }
+/* GAME HUB — REMOVE HEADER OFFSET GAP (REAL FIX) */
+.game-hub-page .site-header + main {
+  margin-top: 0 !important;
+}
