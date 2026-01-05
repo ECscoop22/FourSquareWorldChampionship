@@ -2547,3 +2547,15 @@ nav a {
 .game-hub-page .card:first-of-type {
   margin-top: 0 !important;
 }
+/* GAME HUB — FIX INTRO GAP (ACTUAL CAUSE) */
+.game-hub-page .gamehub-intro {
+  margin-bottom: 0 !important;
+}
+
+.game-hub-page .gamehub-intro p {
+  margin-bottom: 0 !important;
+}
+/* GAME HUB — OVERRIDE GLOBAL MAIN SPACING */
+.game-hub-page main > * {
+  margin-top: 0 !important;
+}
