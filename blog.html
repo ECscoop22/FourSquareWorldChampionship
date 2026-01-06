@@ -147,9 +147,9 @@
 
     <!-- Blog Intro -->
     <section class="blog-intro-note">
-      <p class="typing-text">
-        This blog is dedicated to exploring all the coolest questions that come into FourSquareWorldChampionship.com from around the globe. We'll be glad to hear from you.
-      </p>
+      <p class="typing-text"
+   data-text="This blog is dedicated to exploring all the coolest questions that come into FourSquareWorldChampionship.com from around the globe. We'll be glad to hear from you.">
+</p>
     </section>
 
     <!-- Submit Question Form -->
@@ -248,5 +248,25 @@
       });
     }
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.querySelector(".typing-text");
+  if (!el) return;
+
+  const text = el.getAttribute("data-text");
+  let index = 0;
+  el.textContent = "";
+
+  function typeChar() {
+    if (index < text.length) {
+      el.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeChar, 35);
+    }
+  }
+
+  typeChar();
+});
+</script>
 </body>
 </html>
