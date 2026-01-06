@@ -2557,3 +2557,18 @@ nav a {
   display: block;
   white-space: normal;
 }
+/* BLOG — FIX INTRO CARD ALIGNMENT */
+.blog-intro-note {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* BLOG — FIX TYPING TEXT POSITION */
+.blog-intro-note .typing-text {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.5;
+  display: block;
+}
