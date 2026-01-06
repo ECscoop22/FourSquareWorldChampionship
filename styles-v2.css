@@ -2551,3 +2551,9 @@ nav a {
 .game-hub-page .site-header + main {
   margin-top: 0 !important;
 }
+/* Typing intro fix */
+.typing-text {
+  min-height: 3em;
+  display: block;
+  white-space: normal;
+}
