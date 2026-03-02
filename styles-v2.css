@@ -2618,3 +2618,19 @@ nav a {
   padding-left: 0;
   margin-left: 0;
 }
+.poster-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.event-poster {
+  max-width: 100%;
+  width: 650px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.event-poster:hover {
+  transform: scale(1.02);
+}
