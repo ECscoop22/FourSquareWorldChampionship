@@ -173,53 +173,6 @@
     <!-- Blog Posts + Sidebar -->
     <div class="blog-container">
       <!-- Main blog posts -->
- 
-2️⃣ Update the Sidebar Archive
-
-Find this section:
-
-<ul>
-  <li><a href="#post2">Could we host a casual Four Square event or try 9-square?</a></li>
-  <li><a href="#post1">How many players can play at the same time?</a></li>
-</ul>
-
-Change it to:
-
-<ul>
-  <li><a href="#post3">How do you prevent players from “gaming the system”?</a></li>
-  <li><a href="#post2">Could we host a casual Four Square event or try 9-square?</a></li>
-  <li><a href="#post1">How many players can play at the same time?</a></li>
-</ul>
-3️⃣ Add Houston to the Map
-
-Find this section:
-
-const questions = [
-  { coords: [43.1566, -77.6088], label: 'Question received from Rochester, NY' },
-  { coords: [44.0312, -70.1042], label: 'Question received from Lisbon, ME' }
-];
-
-Replace it with:
-
-const questions = [
-  { coords: [29.7604, -95.3698], label: 'Question received from Houston, TX' },
-  { coords: [44.0312, -70.1042], label: 'Question received from Lisbon, ME' },
-  { coords: [43.1566, -77.6088], label: 'Question received from Rochester, NY' }
-];
-✅ Result
-
-Your page will now:
-
-Show Dan’s question as the newest blog post
-
-Add it to the archive sidebar
-
-Display Houston on the world map
-
-💡 Small suggestion (optional but powerful):
-Your blog will get a lot easier to manage if we add automatic newest-first sorting and a reusable blog template. That way each new question takes ~20 seconds to add and you avoid breaking layout.
-
-If you'd like, I can also show you a much cleaner blog structure for GitHub Pages that will make this scale as the blog grows.
       <div class="blog-content">
         <!-- Original Post -->
         <article class="blog-post-card" id="post1">
@@ -253,8 +206,7 @@ If you'd like, I can also show you a much cleaner blog structure for GitHub Page
       <!-- Sidebar Blog Archive -->
       <aside class="blog-sidebar">
         <h3>Blog Archive</h3>
-<ul>
-  <li><a href="#post3">How do you prevent players from “gaming the system”?</a></li>
+       <ul>
   <li><a href="#post2">Could we host a casual Four Square event or try 9-square?</a></li>
   <li><a href="#post1">How many players can play at the same time?</a></li>
 </ul>
@@ -287,10 +239,9 @@ If you'd like, I can also show you a much cleaner blog structure for GitHub Page
         attribution: '&copy; OpenStreetMap contributors'
       }).addTo(map);
 
-const questions = [
-  { coords: [29.7604, -95.3698], label: 'Question received from Houston, TX' },
-  { coords: [44.0312, -70.1042], label: 'Question received from Lisbon, ME' },
-  { coords: [43.1566, -77.6088], label: 'Question received from Rochester, NY' }
+      const questions = [
+  { coords: [43.1566, -77.6088], label: 'Question received from Rochester, NY' },
+  { coords: [44.0312, -70.1042], label: 'Question received from Lisbon, ME' }
 ];
 
       questions.forEach(q => {
