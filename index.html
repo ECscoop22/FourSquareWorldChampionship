@@ -3,11 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Four Square Game – Official Rules, History & World Championship</title>
+
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="styles-v2.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
+
 <body>
 
 <header class="site-header">
@@ -21,14 +34,16 @@
   ">
 
     <!-- NFSL Logo -->
-    <a href="index.html"
-       style="
-         display: flex;
-         align-items: center;
-         margin-right: 18px;
-         text-decoration: none;
-         flex: 0 0 auto;
-       ">
+    <a
+      href="index.html"
+      style="
+        display: flex;
+        align-items: center;
+        margin-right: 18px;
+        text-decoration: none;
+        flex: 0 0 auto;
+      "
+    >
       <img
         src="images/NFSL logo.png"
         alt="National Four Square League"
@@ -68,147 +83,258 @@
 
 </header>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <main>
 
-  <!-- Title Row -->
-  <div class="title-row" style="display: flex; justify-content: center; align-items: center; gap: 1em;">
+  <!-- ========================================================= -->
+  <!-- FOUR SQUARE TITLE -->
+  <!-- ========================================================= -->
+
+  <div
+    class="title-row"
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+    "
+  >
 
     <!-- Left bouncing court + ball -->
     <div class="bouncing-icon">
-      <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
 
-        <!-- Court square -->
-        <rect x="5" y="5" width="40" height="40" stroke="#b22222" stroke-width="2" fill="#fff"/>
+      <svg
+        width="50"
+        height="50"
+        viewBox="0 0 50 50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
 
-        <!-- Court lines -->
-        <line x1="5" y1="25" x2="45" y2="25" stroke="#b22222" stroke-width="2"/>
-        <line x1="25" y1="5" x2="25" y2="45" stroke="#b22222" stroke-width="2"/>
+        <rect
+          x="5"
+          y="5"
+          width="40"
+          height="40"
+          stroke="#b22222"
+          stroke-width="2"
+          fill="#fff"
+        />
 
-        <!-- Bouncing ball -->
-        <circle class="bouncing-ball" cx="25" cy="15" r="5" fill="#b22222"/>
+        <line
+          x1="5"
+          y1="25"
+          x2="45"
+          y2="25"
+          stroke="#b22222"
+          stroke-width="2"
+        />
+
+        <line
+          x1="25"
+          y1="5"
+          x2="25"
+          y2="45"
+          stroke="#b22222"
+          stroke-width="2"
+        />
+
+        <circle
+          class="bouncing-ball"
+          cx="25"
+          cy="15"
+          r="5"
+          fill="#b22222"
+        />
 
       </svg>
+
     </div>
+
 
     <!-- Centered Four Square Title + Tagline -->
     <div style="text-align: center;">
+
       <h1 class="glow-title">FOUR SQUARE</h1>
-      <h2 class="sr-only">The Official Home of the Four Square Game</h2>
-      <div class="wc-tagline">The game that never gets old.</div>
+
+      <h2 class="sr-only">
+        The Official Home of the Four Square Game
+      </h2>
+
+      <div class="wc-tagline">
+        The game that never gets old.
+      </div>
+
     </div>
+
 
     <!-- Right bouncing court + ball -->
     <div class="bouncing-icon">
-      <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
 
-        <!-- Court square -->
-        <rect x="5" y="5" width="40" height="40" stroke="#b22222" stroke-width="2" fill="#fff"/>
+      <svg
+        width="50"
+        height="50"
+        viewBox="0 0 50 50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
 
-        <!-- Court lines -->
-        <line x1="5" y1="25" x2="45" y2="25" stroke="#b22222" stroke-width="2"/>
-        <line x1="25" y1="5" x2="25" y2="45" stroke="#b22222" stroke-width="2"/>
+        <rect
+          x="5"
+          y="5"
+          width="40"
+          height="40"
+          stroke="#b22222"
+          stroke-width="2"
+          fill="#fff"
+        />
 
-        <!-- Bouncing ball -->
-        <circle class="bouncing-ball" cx="25" cy="15" r="5" fill="#b22222"/>
+        <line
+          x1="5"
+          y1="25"
+          x2="45"
+          y2="25"
+          stroke="#b22222"
+          stroke-width="2"
+        />
+
+        <line
+          x1="25"
+          y1="5"
+          x2="25"
+          y2="45"
+          stroke="#b22222"
+          stroke-width="2"
+        />
+
+        <circle
+          class="bouncing-ball"
+          cx="25"
+          cy="15"
+          r="5"
+          fill="#b22222"
+        />
 
       </svg>
+
     </div>
 
   </div>
 
 
-  <!-- National Four Square League - Main Identity -->
-  <section style="
-    max-width: 1100px;
-    margin: 1.5em auto 2.5em;
-    padding: 2em 2.5em;
-    background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(245,248,252,0.92));
-    border: 2px solid rgba(0, 45, 100, 0.18);
-    border-radius: 18px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  ">
+  <!-- ========================================================= -->
+  <!-- NATIONAL FOUR SQUARE LEAGUE -->
+  <!-- ========================================================= -->
 
-    <div style="display: flex; align-items: center; justify-content: center; gap: 3em;">
+  <section
+    style="
+      max-width: 1100px;
+      margin: 1.5em auto 2em;
+      padding: 2em 2.5em;
+      background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.97),
+        rgba(239,244,250,0.97)
+      );
+      border: 3px solid #003b73;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    "
+  >
+
+    <!-- Blue accent bar -->
+    <div
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 7px;
+        background: #003b73;
+      "
+    ></div>
+
+
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3em;
+      "
+    >
 
       <!-- NFSL Introduction -->
-      <div style="flex: 1; text-align: left; max-width: 500px;">
+      <div
+        style="
+          flex: 1;
+          text-align: left;
+          max-width: 500px;
+        "
+      >
 
-        <h1 style="
-          margin: 0 0 0.15em;
-          font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
-          font-size: 2.4em;
-        ">
-          The National Four Square League
+        <div
+          style="
+            color: #003b73;
+            font-size: 0.95em;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.35em;
+          "
+        >
+          National Four Square League
+        </div>
+
+        <h1
+          style="
+            margin: 0 0 0.5em;
+            font-family: 'Fredoka',
+            'Comic Sans MS',
+            cursive,
+            sans-serif;
+            font-size: 2.4em;
+            color: #b22222;
+          "
+        >
+          The Home of Four Square
         </h1>
 
-        <h2 style="
-          margin: 0 0 0.75em;
-          font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
-          font-size: 1.65em;
-          font-weight: normal;
-          color: #b22222;
-        ">
-          The Home of Four Square
-        </h2>
-
-        <p style="
-          margin: 0;
-          font-size: 1.2em;
-          line-height: 1.6;
-        ">
-          The National Four Square League is the epicenter of all things Four Square —
-          from learning the game and finding people to play with, to tournaments,
-          championships, and everything in between.
+        <p
+          style="
+            margin: 0;
+            font-size: 1.2em;
+            line-height: 1.6;
+          "
+        >
+          The National Four Square League is the epicenter of all things
+          Four Square — from learning the game and finding people to play
+          with, to tournaments, championships, and everything in between.
         </p>
-
-        <!-- Primary Action Buttons -->
-        <div style="
-          margin-top: 1.5em;
-          display: flex;
-          gap: 1em;
-          flex-wrap: wrap;
-        ">
-
-          <a href="what-is-four-square.html"
-             style="
-               display: inline-block;
-               padding: 0.75em 1.4em;
-               background: #b22222;
-               color: white;
-               text-decoration: none;
-               border-radius: 8px;
-               font-weight: bold;
-             ">
-            LEARN TO PLAY
-          </a>
-
-          <a href="world-championship.html"
-             style="
-               display: inline-block;
-               padding: 0.75em 1.4em;
-               background: #002d64;
-               color: white;
-               text-decoration: none;
-               border-radius: 8px;
-               font-weight: bold;
-             ">
-            WORLD CHAMPIONSHIP
-          </a>
-
-        </div>
 
       </div>
 
 
       <!-- NFSL Logo -->
-      <div style="flex: 1; text-align: center;">
+      <div
+        style="
+          flex: 1;
+          text-align: center;
+        "
+      >
+
         <img
           src="images/NFSL logo.png"
           alt="National Four Square League"
-          style="max-width: 450px; width: 100%; height: auto;"
+          style="
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+          "
         />
+
       </div>
 
     </div>
@@ -216,140 +342,177 @@
   </section>
 
 
-  <!-- Welcome / About Four Square Section -->
-  <div class="welcome-container">
+  <!-- ========================================================= -->
+  <!-- WORLD CHAMPIONSHIP / WELCOME -->
+  <!-- ========================================================= -->
 
-    <img
-      src="images/costanza silhouette logo.png"
-      alt="Four Square"
-      class="welcome-image"
+  <section
+    style="
+      max-width: 1100px;
+      margin: 0 auto 2.5em;
+      padding: 0;
+      background: #b22222;
+      border: 3px solid #8f1b1b;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+      overflow: hidden;
+    "
+  >
+
+    <!-- Section Header -->
+    <div
+      style="
+        background: #003b73;
+        color: white;
+        text-align: center;
+        padding: 1em 1.5em;
+      "
     >
 
-    <div class="welcome-text">
+      <div
+        style="
+          font-size: 0.9em;
+          font-weight: bold;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          margin-bottom: 0.2em;
+        "
+      >
+        Four Square World Championship™
+      </div>
 
-      <h2 style="
-        font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
-        font-size: 2em;
-        margin-bottom: 0.6em;
-      ">
-        Everything You Need to Get Into the Game
+      <h2
+        style="
+          margin: 0;
+          font-family: 'Fredoka',
+          'Comic Sans MS',
+          cursive,
+          sans-serif;
+          font-size: 2em;
+          color: white;
+        "
+      >
+        Where Four Square Reaches Its Highest Level
       </h2>
-
-      <p>
-        Welcome to the epicenter of all things Four Square — the quirky, competitive, endlessly fun playground classic.
-        New to the game? Start with our beginner-friendly guide:
-        <a href="what-is-four-square.html" class="white-link">What Is Four Square?</a>
-      </p>
-
-      <p>
-        Home to the legendary Four Square World Championship™, this site is your ultimate hub for:
-      </p>
-
-      <ul>
-        <li>🏆 Rules to master the game</li>
-        <li>📝 Easy registration for players of all ages</li>
-        <li>👑 Past champs and proud winners</li>
-        <li>🎁 Prizes, highlights, and press buzz</li>
-        <li>📺 Plus, videos, blogs, and plenty of bounces in between</li>
-      </ul>
-
-      <p>
-        Whether you're a casual baller, a seasoned king of the square, or just here for the laughs—
-        you’re in the right place to
-        <strong>learn how to play Four Square</strong>
-        and experience the game at its highest level.
-      </p>
 
     </div>
 
-  </div>
+
+    <!-- Main Welcome Content -->
+    <div
+      class="welcome-container"
+      style="
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      "
+    >
+
+      <img
+        src="images/costanza silhouette logo.png"
+        alt="Four Square"
+        class="welcome-image"
+      >
 
 
-  <!-- World Championship Feature -->
-  <section style="
-    max-width: 1100px;
-    margin: 2.5em auto;
-    padding: 2.5em 2em;
-    text-align: center;
-    background: linear-gradient(135deg, #002d64, #063f82);
-    color: white;
-    border-radius: 18px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  ">
+      <div class="welcome-text">
 
-    <h2 style="
-      margin: 0 0 0.4em;
-      font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
-      font-size: 2.2em;
-    ">
-      🏆 FOUR SQUARE WORLD CHAMPIONSHIP
-    </h2>
+        <p>
+          Welcome to the epicenter of all things Four Square — the quirky,
+          competitive, endlessly fun playground classic.
+          New to the game? Start with our beginner-friendly guide:
+          <a
+            href="what-is-four-square.html"
+            class="white-link"
+          >
+            What Is Four Square?
+          </a>
+        </p>
 
-    <p style="
-      margin: 0.5em 0;
-      font-size: 1.35em;
-      font-weight: bold;
-    ">
-      March 13, 2027
-    </p>
 
-    <p style="
-      margin: 0.5em 0 1.2em;
-      font-size: 1.15em;
-    ">
-      Naples, Maine — Lake Region High School
-    </p>
+        <p>
+          Home to the legendary Four Square World Championship™,
+          this site is your ultimate hub:
+        </p>
 
-    <p style="
-      max-width: 700px;
-      margin: 0 auto 1.5em;
-      font-size: 1.15em;
-      line-height: 1.6;
-    ">
-      The world's premier Four Square competition returns March 13, 2027.
-      Come compete, watch the action, and experience Four Square at its highest level.
-    </p>
 
-    <a href="register.html"
-       style="
-         display: inline-block;
-         padding: 0.85em 1.8em;
-         background: #ffffff;
-         color: #002d64;
-         text-decoration: none;
-         border-radius: 8px;
-         font-weight: bold;
-         font-size: 1.05em;
-       ">
-      REGISTER NOW
-    </a>
+        <ul>
+
+          <li>
+            🏆 Rules to master the game
+          </li>
+
+          <li>
+            📝 Easy registration for players of all ages
+          </li>
+
+          <li>
+            👑 Past champs and proud winners
+          </li>
+
+          <li>
+            🎁 Prizes, highlights, and press buzz
+          </li>
+
+          <li>
+            📺 Plus, videos, blogs, and plenty of bounces in between
+          </li>
+
+        </ul>
+
+
+        <p>
+          Whether you're a casual baller, a seasoned king of the square,
+          or just here for the laughs—you’re in the right place to
+          <strong>learn how to play Four Square</strong>
+          and experience the game at its highest level.
+        </p>
+
+      </div>
+
+    </div>
 
   </section>
 
 
-  <!-- Social Media -->
+  <!-- ========================================================= -->
+  <!-- FOLLOW US -->
+  <!-- ========================================================= -->
+
   <section class="follow-banner">
-    <h2>📲 Follow Us for More Four Square Fun</h2>
+
+    <h2>
+      📲 Follow Us for More Four Square Fun
+    </h2>
 
     <div class="follow-buttons">
 
-      <a href="https://x.com/4SQUAREWC"
-         class="btn btn-x"
-         target="_blank">
-        <i class="fab fa-x-twitter"></i> X
+      <a
+        href="https://x.com/4SQUAREWC"
+        class="btn btn-x"
+        target="_blank"
+      >
+        <i class="fab fa-x-twitter"></i>
+        X
       </a>
 
-      <a href="https://instagram.com/4squareworldchampionship"
-         class="btn btn-instagram"
-         target="_blank">
-        <i class="fab fa-instagram"></i> Instagram
+      <a
+        href="https://instagram.com/4squareworldchampionship"
+        class="btn btn-instagram"
+        target="_blank"
+      >
+        <i class="fab fa-instagram"></i>
+        Instagram
       </a>
 
-      <a href="https://www.facebook.com/groups/765781625012921"
-         class="btn btn-facebook"
-         target="_blank"
-         rel="noopener">
-        <i class="fab fa-facebook"></i> Facebook
+      <a
+        href="https://www.facebook.com/groups/765781625012921"
+        class="btn btn-facebook"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fab fa-facebook"></i>
+        Facebook
       </a>
 
     </div>
@@ -361,9 +524,14 @@
   </section>
 
 
-  <!-- YouTube Banner -->
-  <a href="https://www.youtube.com/@FourSquareWorldChampionships"
-     style="text-decoration: none;">
+  <!-- ========================================================= -->
+  <!-- YOUTUBE BANNER -->
+  <!-- ========================================================= -->
+
+  <a
+    href="https://www.youtube.com/@FourSquareWorldChampionships"
+    style="text-decoration: none;"
+  >
 
     <section class="youtube-banner">
 
@@ -386,8 +554,14 @@
   </a>
 
 
-  <!-- Blog Banner -->
-  <a href="blog.html" style="text-decoration: none;">
+  <!-- ========================================================= -->
+  <!-- BLOG BANNER -->
+  <!-- ========================================================= -->
+
+  <a
+    href="blog.html"
+    style="text-decoration: none;"
+  >
 
     <section
       class="blog-banner"
@@ -403,22 +577,34 @@
       <img
         src="images/4sqicon.png"
         alt="Four Square Icon"
-        style="height: 60px; width: auto;"
+        style="
+          height: 60px;
+          width: auto;
+        "
       />
 
-      <p style="
-        margin: 0;
-        font-size: 1.5em;
-        font-family: 'Comic Sans MS', 'Fredoka', cursive, sans-serif;
-        color: #d60000;
-      ">
+      <p
+        style="
+          margin: 0;
+          font-size: 1.5em;
+          font-family:
+            'Comic Sans MS',
+            'Fredoka',
+            cursive,
+            sans-serif;
+          color: #d60000;
+        "
+      >
         Visit the Blog for all Four Square questions
       </p>
 
       <img
         src="images/4sqicon.png"
         alt="Four Square Icon"
-        style="height: 60px; width: auto;"
+        style="
+          height: 60px;
+          width: auto;
+        "
       />
 
     </section>
@@ -426,33 +612,43 @@
   </a>
 
 
-  <!-- New to Four Square Card -->
+  <!-- ========================================================= -->
+  <!-- NEW TO FOUR SQUARE -->
+  <!-- ========================================================= -->
+
   <section class="card light">
 
-    <h3>New to Four Square?</h3>
+    <h3>
+      New to Four Square?
+    </h3>
 
     <p>
       If you’ve never played before, start with our
       <a href="what-is-four-square.html">
         What Is Four Square?
       </a>
-      guide —
-      a quick, beginner-friendly explanation of how the game works.
+      guide — a quick, beginner-friendly explanation of how the game works.
     </p>
 
   </section>
 
 
-  <!-- Footer Tagline -->
-  <p style="
-    text-align: center;
-    font-weight: bold;
-    margin-top: 3em;
-  ">
-    The nation's finest resource for all things Four Square.
-    © 2026 National Four Square League™ & Four Square World Championship™.
+  <!-- ========================================================= -->
+  <!-- FOOTER TAGLINE -->
+  <!-- ========================================================= -->
+
+  <p
+    style="
+      text-align: center;
+      font-weight: bold;
+      margin-top: 3em;
+    "
+  >
+    The nation's finest resource for all things four square.
+    © 2026 National Four Square League and Four Square World Championship™
     All Rights Reserved.
   </p>
+
 
 </main>
 
