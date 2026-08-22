@@ -364,22 +364,24 @@
 
     <section
       style="
-        padding: 1.6em 2em;
+        padding: 1.5em 2em;
         background: linear-gradient(
           135deg,
-          #0f7775 0%,
-          #245b5b 48%,
-          #7d1d22 100%
+          #ffffff 0%,
+          #f5f8fc 100%
         );
         border: 3px solid #b22222;
         border-radius: 18px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
         position: relative;
         overflow: hidden;
-        color: white;
+        color: #0b3558;
         text-align: center;
         cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       "
+      onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(0,0,0,0.16)'"
+      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 18px rgba(0,0,0,0.12)'"
     >
 
       <!-- Subtle top accent -->
@@ -395,8 +397,22 @@
       ></div>
 
 
-      <!-- Championship Identity -->
+      <!-- Animated Trophy -->
+      <div
+        style="
+          font-size: 2.4em;
+          line-height: 1;
+          margin: 0.15em 0 0.25em;
+          animation: trophyBounce 1.8s ease-in-out infinite;
+          display: inline-block;
+        "
+        aria-hidden="true"
+      >
+        🏆
+      </div>
 
+
+      <!-- Championship Identity -->
       <div
         style="
           font-size: 0.9em;
@@ -404,7 +420,7 @@
           letter-spacing: 1.5px;
           text-transform: uppercase;
           margin-bottom: 0.2em;
-          color: white;
+          color: #0b3558;
         "
       >
         Four Square World Championship™
@@ -419,7 +435,7 @@
           cursive,
           sans-serif;
           font-size: 2em;
-          color: white;
+          color: #b22222;
         "
       >
         Where Four Square Reaches Its Highest Level
@@ -431,7 +447,7 @@
           margin-top: 0.7em;
           font-size: 1em;
           font-weight: bold;
-          color: white;
+          color: #0b3558;
           letter-spacing: 0.3px;
         "
       >
@@ -439,6 +455,30 @@
       </div>
 
     </section>
+
+  </a>
+
+
+  <!-- Animated Trophy -->
+  <style>
+    @keyframes trophyBounce {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      25% {
+        transform: translateY(-5px) rotate(-4deg);
+      }
+
+      50% {
+        transform: translateY(-8px) rotate(0deg);
+      }
+
+      75% {
+        transform: translateY(-5px) rotate(4deg);
+      }
+    }
+  </style>
 
   </a>
 
