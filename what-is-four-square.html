@@ -24,9 +24,168 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
+
+  <style>
+
+    /* ========================================================= */
+    /* WHAT IS FOUR SQUARE - PAGE-SPECIFIC STYLES */
+    /* ========================================================= */
+
+    .what-is-intro {
+      display: flex;
+      align-items: center;
+      gap: 2.5em;
+    }
+
+    .what-is-intro-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .what-is-intro-image {
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+    }
+
+    .what-is-intro-image img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 3px solid #b22222;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+    }
+
+    /* Animated red Four Square ball */
+    .red-ball-icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-left: 0.35em;
+      vertical-align: middle;
+      border-radius: 50%;
+      background: #b22222;
+      border: 2px solid #8f1818;
+      box-shadow:
+        inset -4px -4px 6px rgba(0, 0, 0, 0.18),
+        inset 4px 4px 5px rgba(255, 255, 255, 0.28),
+        0 3px 6px rgba(0, 0, 0, 0.18);
+      animation: fourSquareBallBounce 1.8s ease-in-out infinite;
+    }
+
+    @keyframes fourSquareBallBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    /* Game Basics icon grid */
+    .game-basics-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1em;
+      margin-top: 1.5em;
+    }
+
+    .game-basic-item {
+      text-align: center;
+      padding: 1.2em 0.7em;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(178, 34, 34, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .game-basic-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .game-basic-icon {
+      font-size: 2em;
+      color: #b22222;
+      margin-bottom: 0.35em;
+      display: block;
+    }
+
+    .game-basic-item strong {
+      display: block;
+      color: #003b70;
+      font-size: 1.05em;
+      margin-bottom: 0.25em;
+    }
+
+    .game-basic-item span {
+      font-size: 0.9em;
+    }
+
+    /* Custom red ball icon inside the basics grid */
+    .basic-ball {
+      width: 38px;
+      height: 38px;
+      margin: 0 auto 0.35em;
+      border-radius: 50%;
+      background: #b22222;
+      border: 2px solid #8f1818;
+      box-shadow:
+        inset -6px -6px 9px rgba(0, 0, 0, 0.18),
+        inset 5px 5px 7px rgba(255, 255, 255, 0.3),
+        0 3px 6px rgba(0, 0, 0, 0.16);
+    }
+
+    /* Subtle section accent */
+    .section-heading-accent {
+      color: #b22222;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 800px) {
+
+      .what-is-intro {
+        flex-direction: column;
+        gap: 1.5em;
+      }
+
+      .what-is-intro-text {
+        width: 100%;
+      }
+
+      .what-is-intro-image {
+        width: 100%;
+      }
+
+      .game-basics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .game-basics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .red-ball-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
+
 
 <header class="site-header">
 
@@ -91,28 +250,52 @@
 
 <main>
 
+
   <!-- ========================================================= -->
   <!-- WHAT IS FOUR SQUARE -->
   <!-- ========================================================= -->
 
   <section class="card light">
 
-    <h1>What Is Four Square?</h1>
+    <div class="what-is-intro">
 
-    <p>
-      Four Square is a classic playground ball game played by four players
-      on a court divided into four equal squares. Popular in schools, camps,
-      and neighborhoods around the world, the four square game is easy to learn,
-      fast-paced, and competitive. Players use their hands to hit a ball between
-      squares with the goal of eliminating opponents and advancing to the
-      highest-ranked square.
-    </p>
+      <!-- Intro Text -->
+      <div class="what-is-intro-text">
 
-    <p>
-      If you’re looking for official rules, competitive standards, or World
-      Championship gameplay, you’ll want to visit our
-      <a href="rules.html">Rules of Four Square</a> page, which goes into full detail.
-    </p>
+        <h1>
+          What Is Four Square?
+          <span class="red-ball-icon" aria-hidden="true"></span>
+        </h1>
+
+        <p>
+          Four Square is a classic playground ball game played by four players
+          on a court divided into four equal squares. Popular in schools, camps,
+          and neighborhoods around the world, the four square game is easy to learn,
+          fast-paced, and competitive. Players use their hands to hit a ball between
+          squares with the goal of eliminating opponents and advancing to the
+          highest-ranked square.
+        </p>
+
+        <p>
+          If you’re looking for official rules, competitive standards, or World
+          Championship gameplay, you’ll want to visit our
+          <a href="rules.html">Rules of Four Square</a> page, which goes into full detail.
+        </p>
+
+      </div>
+
+
+      <!-- Gameplay Image -->
+      <div class="what-is-intro-image">
+
+        <img
+          src="images/kids.JPG"
+          alt="Kids playing Four Square"
+        />
+
+      </div>
+
+    </div>
 
   </section>
 
@@ -123,15 +306,48 @@
 
   <section class="card light">
 
-    <h2>Four Square Game Basics</h2>
+    <h2 class="section-heading-accent">
+      Four Square Game Basics
+    </h2>
 
-    <ul>
-      <li><strong>Players:</strong> 4 players per game</li>
-      <li><strong>Court:</strong> Four equal squares</li>
-      <li><strong>Ball:</strong> Rubber playground ball</li>
-      <li><strong>Objective:</strong> Stay in play and advance in rank</li>
-      <li><strong>Ages:</strong> Kids, teens, and adults</li>
-    </ul>
+    <div class="game-basics-grid">
+
+      <!-- Players -->
+      <div class="game-basic-item">
+        <i class="fa-solid fa-users game-basic-icon" aria-hidden="true"></i>
+        <strong>Players</strong>
+        <span>4 players per game</span>
+      </div>
+
+      <!-- Court -->
+      <div class="game-basic-item">
+        <i class="fa-solid fa-table-cells-large game-basic-icon" aria-hidden="true"></i>
+        <strong>Court</strong>
+        <span>Four equal squares</span>
+      </div>
+
+      <!-- Ball -->
+      <div class="game-basic-item">
+        <div class="basic-ball" aria-hidden="true"></div>
+        <strong>Ball</strong>
+        <span>Rubber playground ball</span>
+      </div>
+
+      <!-- Objective -->
+      <div class="game-basic-item">
+        <i class="fa-solid fa-trophy game-basic-icon" aria-hidden="true"></i>
+        <strong>Objective</strong>
+        <span>Stay in play and advance in rank</span>
+      </div>
+
+      <!-- Ages -->
+      <div class="game-basic-item">
+        <i class="fa-solid fa-people-group game-basic-icon" aria-hidden="true"></i>
+        <strong>Ages</strong>
+        <span>Kids, teens, and adults</span>
+      </div>
+
+    </div>
 
   </section>
 
@@ -179,7 +395,8 @@
 
     <p>
       Players who want a deeper understanding of gameplay and official standards
-      should visit the <a href="rules.html">official Four Square Rules</a> page.
+      should visit the
+      <a href="rules.html">official Four Square Rules</a> page.
     </p>
 
   </section>
@@ -253,6 +470,7 @@
     </p>
 
   </section>
+
 
 </main>
 
