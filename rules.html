@@ -24,108 +24,6 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
-
-  <!-- Four Square Game Basics Legend -->
-  <style>
-    .rules-basics-section {
-      background: #fff;
-      border-top: 5px solid #b51f29;
-      border-radius: 10px;
-      padding: 38px 24px 24px;
-      margin: 40px 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-    }
-
-    .rules-basics-title {
-      text-align: center;
-      color: #b51f29;
-      font-size: 2rem;
-      margin: 0 0 24px;
-      font-weight: bold;
-    }
-
-    .rules-basics-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-    }
-
-    .rules-basic-card {
-      border: 1px solid #f0cccc;
-      border-radius: 12px;
-      padding: 18px 12px 20px;
-      text-align: center;
-      background: #fff;
-      min-height: 130px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-
-    .rules-basic-icon {
-      color: #b51f29;
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .rules-basic-card h3 {
-      margin: 0 0 7px;
-      font-size: 1.05rem;
-      color: #003b70;
-      font-weight: bold;
-    }
-
-    .rules-basic-card p {
-      margin: 0;
-      font-size: 0.92rem;
-      line-height: 1.35;
-      color: #111;
-    }
-
-    @media (max-width: 900px) {
-      .rules-basics-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .rules-basics-section {
-        padding: 30px 14px 18px;
-      }
-
-      .rules-basics-title {
-        font-size: 1.6rem;
-      }
-
-      .rules-basics-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
-
-      .rules-basic-card {
-        min-height: 120px;
-        padding: 15px 8px;
-      }
-
-      .rules-basic-icon {
-        font-size: 1.7rem;
-      }
-
-      .rules-basic-card h3 {
-        font-size: 0.98rem;
-      }
-
-      .rules-basic-card p {
-        font-size: 0.85rem;
-      }
-
-      .rules-basic-card:last-child {
-        grid-column: 1 / -1;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -192,1020 +90,1790 @@
 
 <main>
 
-<div class="rules-title">
-  <img
-    src="images/rulebook-icon.png"
-    class="rulebook-icon"
-    alt="Rule Icon Left"
-  >
+  <!-- Rules Title -->
+  <div class="rules-title">
+    <img
+      src="images/rulebook-icon.png"
+      class="rulebook-icon"
+      alt="Rule Icon Left"
+    >
 
-  <div class="rules-text">
-    <h1 class="glow-title">RULES OF FOUR SQUARE</h1>
-    <div class="wc-tagline">Play fair. Play fast. Play Four Square.</div>
-  </div>
-
-  <img
-    src="images/rulebook-icon.png"
-    class="rulebook-icon"
-    alt="Rule Icon Right"
-  >
-</div>
-
-<!-- Rules Intro Section -->
-<div class="rules-intro">
-
-  <!-- Column 1: Intro Text -->
-  <div class="rules-column">
-
-    <h2>Welcome to the Official Rules</h2>
-
-    <p>
-      Whether you're a seasoned pro or just starting out, this guide walks you
-      through how to play, host, or judge Four Square at any level—from recess
-      to the national championships all the way to the world championships.
-    </p>
-
-  </div>
-
-  <!-- Column 2: Image -->
-  <div class="rules-column">
-    <img src="images/ref2.jpg" alt="Referee with Four Square World Championship ball" class="rules-image" />
-  </div>
-
-  <!-- Column 3: Table of Contents -->
-  <div class="rules-column">
-    <h2>📘 Table of Contents</h2>
-    <ul class="rules-toc">
-      <li><a href="#equipment">🔴 Equipment</a></li>
-      <li><a href="#court-specs">🟦 Court Specifications</a></li>
-      <li><a href="#out-of-play">🚫 Out-of-Play Zone</a></li>
-      <li><a href="#objective">🎯 Objective</a></li>
-      <li><a href="#positioning">👣 Player Positioning</a></li>
-      <li><a href="#serving">🎾 Serving</a></li>
-      <li><a href="#hitting">✋ Ball Striking/Hitting</a></li>
-      <li><a href="#interference">⚠️ Interference & Poaching</a></li>
-      <li><a href="#elimination">❌ Elimination</a></li>
-      <li><a href="#environment">🏟️ Environment</a></li>
-      <li><a href="#showdown">⚔️ Showdown</a></li>
-      <li><a href="#prohibited">⛔ Prohibited Moves</a></li>
-      <li><a href="#divisions">👥 Divisions</a></li>
-      <li><a href="#tournament">🏆 Tournament Structure</a></li>
-      <li><a href="#other-rules">📌 Other Rules</a></li>
-      <li><a href="#unique-special-gameplay-rules">⚡ Unique Special Gameplay Rules</a></li>
-    </ul>
-  </div>
-</div>
-
-<div style="height: 4px; background-color: #8b0000; width: 100%; margin: 40px 0;"></div>
-
-<section class="card light fade-in">
-  <p>
-    <strong>New to Four Square?</strong><br>
-    If this is your first time learning the game, we recommend starting with our
-    <a href="what-is-four-square.html">What Is Four Square?</a> page —
-    a simple, beginner-friendly overview designed for players who are brand new.
-  </p>
-</section>
-
-
-<!-- ========================================================= -->
-<!-- FOUR SQUARE GAME BASICS LEGEND -->
-<!-- ========================================================= -->
-
-<section class="rules-basics-section fade-in">
-
-  <h2 class="rules-basics-title">FOUR SQUARE GAME BASICS</h2>
-
-  <div class="rules-basics-grid">
-
-    <!-- Players -->
-    <div class="rules-basic-card">
-      <div class="rules-basic-icon">
-        <i class="fa-solid fa-users"></i>
-      </div>
-      <h3>Players</h3>
-      <p>4 players per game</p>
+    <div class="rules-text">
+      <h1 class="glow-title">RULES OF FOUR SQUARE</h1>
+      <div class="wc-tagline">Play fair. Play fast. Play Four Square.</div>
     </div>
 
-    <!-- Court -->
-    <div class="rules-basic-card">
-      <div class="rules-basic-icon">
-        <i class="fa-solid fa-table-cells-large"></i>
-      </div>
-      <h3>Court</h3>
-      <p>Four equal squares</p>
-    </div>
-
-    <!-- Ball -->
-    <div class="rules-basic-card">
-      <div class="rules-basic-icon">
-        <i class="fa-solid fa-circle"></i>
-      </div>
-      <h3>Ball</h3>
-      <p>Rubber playground ball</p>
-    </div>
-
-    <!-- Objective -->
-    <div class="rules-basic-card">
-      <div class="rules-basic-icon">
-        <i class="fa-solid fa-trophy"></i>
-      </div>
-      <h3>Objective</h3>
-      <p>Stay in play and advance in rank</p>
-    </div>
-
-    <!-- Ages -->
-    <div class="rules-basic-card">
-      <div class="rules-basic-icon">
-        <i class="fa-solid fa-people-group"></i>
-      </div>
-      <h3>Ages</h3>
-      <p>Kids, teens, and adults</p>
-    </div>
-
+    <img
+      src="images/rulebook-icon.png"
+      class="rulebook-icon"
+      alt="Rule Icon Right"
+    >
   </div>
 
-</section>
 
+  <!-- Rules Intro Section -->
+  <div class="rules-intro">
 
-<section class="card light fade-in">
-  <h2 class="section-header red" style="color: white">📜 Introduction</h2>
+    <!-- Column 1: Intro Text -->
+    <div class="rules-column">
 
-  <div class="rule-intro">
-    <p>
-      <strong>
-        The rules below represent the official standards used at both the
-        Four Square National Championships™ and the
-        <a href="world-championship.html">Four Square World Championships™</a>,
-        held annually
-      </strong>
-    </p>
+      <h2>Welcome to the Official Rules</h2>
 
-    <p>
-      For those interested in alternate styles or playground adaptations,
-      we invite you to explore the
-      <a href="#other-rules">"Other Rules"</a> section at the bottom of this page.
-    </p>
-  </div>
-</section>
+      <p>
+        Whether you're a seasoned pro or just starting out, this guide walks you
+        through how to play, host, or judge Four Square at any level—from recess
+        to the national championships all the way to the world championships.
+      </p>
 
+    </div>
 
-<section class="card dark fade-in">
-  <h2 id="equipment" class="section-header teal">🔴 Equipment</h2>
-  <p><strong>Ball:</strong> An 8.5-inch rubber playground ball inflated to 2 lbs.</p>
+    <!-- Column 2: Image -->
+    <div class="rules-column">
+      <img
+        src="images/ref2.jpg"
+        alt="Referee with Four Square World Championship ball"
+        class="rules-image"
+      />
+    </div>
 
-  <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
-    <li>Four Square requires minimal equipment, making it easy to play almost anywhere.</li>
-    <li>Games can take place on any flat surface—chalk-drawn courts, taped-off indoor/outdoor floors, or professionally painted courts.</li>
-    <li>Any ball that reliably bounces can be used, though a standard playground ball (8.5-inch rubber) is typically preferred for consistency and control.</li>
-  </ul>
-</section>
+    <!-- Column 3: Table of Contents -->
+    <div class="rules-column">
 
+      <h2>📘 Table of Contents</h2>
 
-<section class="card light fade-in">
-  <h2 id="court-specs" class="section-header teal">🟦 Court Specifications</h2>
-
-  <p>
-    Dimensions: A 16 x 16-foot square divided into four equal 8 x 8-foot squares,
-    numbered 1–4 with 4 and 1 diagonal from each other.
-  </p>
-
-  <img
-    src="images/court layout.png"
-    alt="Four Square Court Layout"
-    class="fade-in"
-    style="max-width: 100%; border-radius: 8px;"
-  />
-
-  <p><strong>Lines:</strong></p>
-
-  <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
-    <li>All court lines are 1-2 inches wide.</li>
-    <li>Outside lines are in-bounds; a ball landing on these remains in play.</li>
-    <li>Inside lines (dividing squares) are out-of-bounds; a ball landing on these results in an "out."</li>
-  </ul>
-</section>
-
-
-<section class="card dark fade-in">
-  <h2 id="out-of-play" class="section-header teal">🚫 Out-of-Play Zone</h2>
-
-  <p>
-    To ensure fairness and promote returnable gameplay—and since overhand and
-    closed-fist strikes are allowed where some Four Square rules allow only
-    underhand hits—an Out-of-Play Zone is used to discourage unreturnable shots
-    and to ensure safety for all.
-  </p>
-
-  <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
-    <li>The Out-of-Play Zone extends 10 feet beyond each boundary line of the Four Square court.</li>
-    <li>If a ball is legally hit into another player’s square and then bounces and lands into the Out-of-Play Zone, the player who struck the ball is out.</li>
-    <li>The out-of-play zone line is in-play.</li>
-    <li>This rule is designed to encourage all hits to maintain a level of reasonable and possible returnability. This also encourages safety for competitors and spectators.</li>
-  </ul>
-
-  <img
-    src="images/out%20of%20play%20zone.png"
-    alt="Out of Play Zone"
-    class="fade-in"
-    style="max-width: 100%; border-radius: 8px;"
-  />
-</section>
-
-
-<section class="card light fade-in">
-  <h2 id="objective" class="section-header teal">🎯 Objective</h2>
-
-  <p>
-    Be the last player standing! The goal is to be the last player remaining
-    after all other players have been eliminated.
-    When play begins, each square contains a player along with the players
-    waiting in line. The player in square 4 serves the ball to square 1 who
-    then hits the ball into a square other than their own. The hits go on
-    until someone gets “out”.
-  </p>
-</section>
-
-
-<section class="card dark fade-in">
-  <h2 id="positioning" class="section-header teal">👣 Player Positioning</h2>
-
-  <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
-    <li>Players may move freely but must not interfere with other players’ ability to play the ball.</li>
-  </ul>
-</section>
-
-
-<section class="card light fade-in">
-  <h2 id="serving" class="section-header teal">🎾 Serving</h2>
-
-  <ul>
-    <li>The server (in Square 4) must be within the back-half or outside of Square 4</li>
-    <li>The serve must be made underhand</li>
-    <li>The server must bounce the ball once and then hit it with one or both hands into Square 1</li>
-    <li>The serve must be non-aggressive at a reasonable speed, with standard rotation, and must not rise above head height at any point as serves are meant to place the ball fairly into play</li>
-
-    <li>
-      The receiving player (Square 1) is allowed one do-over by calling “one bad”
-      <ul>
-        <li>The receiving player may announce “one bad” before hitting the ball or after hitting the ball if it resulted in an out.</li>
+      <ul class="rules-toc">
+        <li><a href="#equipment">🔴 Equipment</a></li>
+        <li><a href="#court-specs">🟦 Court Specifications</a></li>
+        <li><a href="#out-of-play">🚫 Out-of-Play Zone</a></li>
+        <li><a href="#objective">🎯 Objective</a></li>
+        <li><a href="#positioning">👣 Player Positioning</a></li>
+        <li><a href="#serving">🎾 Serving</a></li>
+        <li><a href="#hitting">✋ Ball Striking/Hitting</a></li>
+        <li><a href="#interference">⚠️ Interference & Poaching</a></li>
+        <li><a href="#elimination">❌ Elimination</a></li>
+        <li><a href="#environment">🏟️ Environment</a></li>
+        <li><a href="#showdown">⚔️ Showdown</a></li>
+        <li><a href="#prohibited">⛔ Prohibited Moves</a></li>
+        <li><a href="#divisions">👥 Divisions</a></li>
+        <li><a href="#tournament">🏆 Tournament Structure</a></li>
+        <li><a href="#other-rules">📌 Other Rules</a></li>
+        <li><a href="#unique-special-gameplay-rules">⚡ Unique Special Gameplay Rules</a></li>
       </ul>
-    </li>
 
-    <li>
-      If the serve is illegal/results in an out (e.g., lands outside Square 1,
-      hits an interior line), the server is allowed one "one bad".
-    </li>
-  </ul>
-</section>
+    </div>
+  </div>
 
 
-<section class="card dark fade-in">
-  <h2 id="hitting" class="section-header teal">🖐️ Ball Striking/Hitting</h2>
+  <!-- Divider -->
+  <div style="
+    height: 4px;
+    background-color: #8b0000;
+    width: 100%;
+    margin: 40px 0;
+  "></div>
 
-  <ul>
-    <div style="margin-bottom: 6px;">
-      Only hands and wrists may strike the ball. “Hands” are defined as the area
-      from the wrist to the fingertips, including the backs of the hands.
+
+  <!-- New to Four Square -->
+  <section class="card light fade-in">
+
+    <p>
+      <strong>New to Four Square?</strong><br>
+      If this is your first time learning the game, we recommend starting with our
+      <a href="what-is-four-square.html">What Is Four Square?</a> page —
+      a simple, beginner-friendly overview designed for players who are brand new.
+    </p>
+
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- FOUR SQUARE GAME BASICS - VISUAL QUICK REFERENCE -->
+  <!-- ========================================================= -->
+
+  <section
+    class="card light fade-in"
+    style="
+      border-top: 6px solid #b51e23;
+      padding: 38px 24px 28px;
+      margin-top: 30px;
+      margin-bottom: 35px;
+      text-align: center;
+    "
+  >
+
+    <h2
+      style="
+        color: #b51e23;
+        font-size: 2rem;
+        margin: 0 0 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      "
+    >
+      FOUR SQUARE GAME BASICS
+    </h2>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 16px;
+        width: 100%;
+      "
+    >
+
+      <!-- Players -->
+      <a
+        href="#positioning"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 125px;
+          padding: 18px 12px;
+          border: 1px solid #f0cccc;
+          border-radius: 14px;
+          background: #fff;
+          text-decoration: none;
+          color: inherit;
+          box-sizing: border-box;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        "
+        onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 5px 12px rgba(0,0,0,0.12)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+      >
+        <i
+          class="fa-solid fa-users"
+          style="
+            font-size: 2rem;
+            color: #b51e23;
+            margin-bottom: 10px;
+          "
+        ></i>
+
+        <strong
+          style="
+            font-size: 1.05rem;
+            color: #003b73;
+            margin-bottom: 6px;
+          "
+        >
+          Players
+        </strong>
+
+        <span style="font-size: 0.95rem;">
+          4 players per game
+        </span>
+      </a>
+
+
+      <!-- Court -->
+      <a
+        href="#court-specs"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 125px;
+          padding: 18px 12px;
+          border: 1px solid #f0cccc;
+          border-radius: 14px;
+          background: #fff;
+          text-decoration: none;
+          color: inherit;
+          box-sizing: border-box;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        "
+        onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 5px 12px rgba(0,0,0,0.12)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+      >
+        <i
+          class="fa-solid fa-table-cells-large"
+          style="
+            font-size: 2rem;
+            color: #b51e23;
+            margin-bottom: 10px;
+          "
+        ></i>
+
+        <strong
+          style="
+            font-size: 1.05rem;
+            color: #003b73;
+            margin-bottom: 6px;
+          "
+        >
+          Court
+        </strong>
+
+        <span style="font-size: 0.95rem;">
+          16 × 16 feet
+        </span>
+      </a>
+
+
+      <!-- Ball -->
+      <a
+        href="#equipment"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 125px;
+          padding: 18px 12px;
+          border: 1px solid #f0cccc;
+          border-radius: 14px;
+          background: #fff;
+          text-decoration: none;
+          color: inherit;
+          box-sizing: border-box;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        "
+        onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 5px 12px rgba(0,0,0,0.12)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+      >
+        <i
+          class="fa-solid fa-basketball"
+          style="
+            font-size: 2rem;
+            color: #b51e23;
+            margin-bottom: 10px;
+          "
+        ></i>
+
+        <strong
+          style="
+            font-size: 1.05rem;
+            color: #003b73;
+            margin-bottom: 6px;
+          "
+        >
+          Ball
+        </strong>
+
+        <span style="font-size: 0.95rem;">
+          8.5-inch rubber playground ball
+        </span>
+      </a>
+
+
+      <!-- Objective -->
+      <a
+        href="#objective"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 125px;
+          padding: 18px 12px;
+          border: 1px solid #f0cccc;
+          border-radius: 14px;
+          background: #fff;
+          text-decoration: none;
+          color: inherit;
+          box-sizing: border-box;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        "
+        onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 5px 12px rgba(0,0,0,0.12)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+      >
+        <i
+          class="fa-solid fa-trophy"
+          style="
+            font-size: 2rem;
+            color: #b51e23;
+            margin-bottom: 10px;
+          "
+        ></i>
+
+        <strong
+          style="
+            font-size: 1.05rem;
+            color: #003b73;
+            margin-bottom: 6px;
+          "
+        >
+          Objective
+        </strong>
+
+        <span style="font-size: 0.95rem;">
+          Be the last player standing
+        </span>
+      </a>
+
+
+      <!-- Divisions -->
+      <a
+        href="#divisions"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 125px;
+          padding: 18px 12px;
+          border: 1px solid #f0cccc;
+          border-radius: 14px;
+          background: #fff;
+          text-decoration: none;
+          color: inherit;
+          box-sizing: border-box;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        "
+        onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 5px 12px rgba(0,0,0,0.12)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+      >
+        <i
+          class="fa-solid fa-people-group"
+          style="
+            font-size: 2rem;
+            color: #b51e23;
+            margin-bottom: 10px;
+          "
+        ></i>
+
+        <strong
+          style="
+            font-size: 1.05rem;
+            color: #003b73;
+            margin-bottom: 6px;
+          "
+        >
+          Divisions
+        </strong>
+
+        <span style="font-size: 0.95rem;">
+          Kids, adults &amp; senior divisions
+        </span>
+      </a>
+
     </div>
 
-    <div style="margin-bottom: 6px;">
-      The ball may be struck with one or both hands, using either open palms or
-      closed fists, as long as it is one deliberate and clean hit.
+  </section>
+
+
+  <!-- Introduction -->
+  <section class="card light fade-in">
+
+    <h2 class="section-header red" style="color: white">
+      📜 Introduction
+    </h2>
+
+    <div class="rule-intro">
+
+      <p>
+        <strong>
+          The rules below represent the official standards used at both the
+          Four Square National Championships™ and the
+          <a href="world-championship.html">
+            Four Square World Championships™
+          </a>, held annually.
+        </strong>
+      </p>
+
+      <p>
+        For those interested in alternate styles or playground adaptations,
+        we invite you to explore the
+        <a href="#other-rules">"Other Rules"</a>
+        section at the bottom of this page.
+      </p>
+
     </div>
 
-    <div style="margin-bottom: 6px;">
-      No carrying, catching, holding, or double-hits are allowed at any time.
+  </section>
+
+
+  <!-- Equipment -->
+  <section class="card dark fade-in">
+
+    <h2 id="equipment" class="section-header teal">
+      🔴 Equipment
+    </h2>
+
+    <p>
+      <strong>Ball:</strong> An 8.5-inch rubber playground ball inflated to 2 lbs.
+    </p>
+
+    <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
+      <li>
+        Four Square requires minimal equipment, making it easy to play almost anywhere.
+      </li>
+
+      <li>
+        Games can take place on any flat surface—chalk-drawn courts,
+        taped-off indoor/outdoor floors, or professionally painted courts.
+      </li>
+
+      <li>
+        Any ball that reliably bounces can be used, though a standard playground
+        ball (8.5-inch rubber) is typically preferred for consistency and control.
+      </li>
+    </ul>
+
+  </section>
+
+
+  <!-- Court Specifications -->
+  <section class="card light fade-in">
+
+    <h2 id="court-specs" class="section-header teal">
+      🟦 Court Specifications
+    </h2>
+
+    <p>
+      Dimensions: A 16 x 16-foot square divided into four equal 8 x 8-foot
+      squares, numbered 1–4 with 4 and 1 diagonal from each other.
+    </p>
+
+    <img
+      src="images/court layout.png"
+      alt="Four Square Court Layout"
+      class="fade-in"
+      style="max-width: 100%; border-radius: 8px;"
+    />
+
+    <p><strong>Lines:</strong></p>
+
+    <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
+      <li>All court lines are 1-2 inches wide.</li>
+      <li>
+        Outside lines are in-bounds; a ball landing on these remains in play.
+      </li>
+      <li>
+        Inside lines (dividing squares) are out-of-bounds; a ball landing on
+        these results in an "out."
+      </li>
+    </ul>
+
+  </section>
+
+
+  <!-- Out-of-Play Zone -->
+  <section class="card dark fade-in">
+
+    <h2 id="out-of-play" class="section-header teal">
+      🚫 Out-of-Play Zone
+    </h2>
+
+    <p>
+      To ensure fairness and promote returnable gameplay—and since overhand
+      and closed-fist strikes are allowed where some Four Square rules allow
+      only underhand hits—an Out-of-Play Zone is used to discourage unreturnable
+      shots and to ensure safety for all.
+    </p>
+
+    <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
+
+      <li>
+        The Out-of-Play Zone extends 10 feet beyond each boundary line of the
+        Four Square court.
+      </li>
+
+      <li>
+        If a ball is legally hit into another player’s square and then bounces
+        and lands into the Out-of-Play Zone, the player who struck the ball is out.
+      </li>
+
+      <li>
+        The out-of-play zone line is in-play.
+      </li>
+
+      <li>
+        This rule is designed to encourage all hits to maintain a level of
+        reasonable and possible returnability. This also encourages safety
+        for competitors and spectators.
+      </li>
+
+    </ul>
+
+    <img
+      src="images/out%20of%20play%20zone.png"
+      alt="Out of Play Zone"
+      class="fade-in"
+      style="max-width: 100%; border-radius: 8px;"
+    />
+
+  </section>
+
+
+  <!-- Objective -->
+  <section class="card light fade-in">
+
+    <h2 id="objective" class="section-header teal">
+      🎯 Objective
+    </h2>
+
+    <p>
+      Be the last player standing! The goal is to be the last player remaining
+      after all other players have been eliminated. When play begins, each
+      square contains a player along with the players waiting in line. The
+      player in square 4 serves the ball to square 1 who then hits the ball
+      into a square other than their own. The hits go on until someone gets “out”.
+    </p>
+
+  </section>
+
+
+  <!-- Player Positioning -->
+  <section class="card dark fade-in">
+
+    <h2 id="positioning" class="section-header teal">
+      👣 Player Positioning
+    </h2>
+
+    <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
+      <li>
+        Players may move freely but must not interfere with other players’
+        ability to play the ball.
+      </li>
+    </ul>
+
+  </section>
+
+
+  <!-- Serving -->
+  <section class="card light fade-in">
+
+    <h2 id="serving" class="section-header teal">
+      🎾 Serving
+    </h2>
+
+    <ul>
+
+      <li>
+        The server (in Square 4) must be within the back-half or outside of Square 4
+      </li>
+
+      <li>
+        The serve must be made underhand
+      </li>
+
+      <li>
+        The server must bounce the ball once and then hit it with one or both
+        hands into Square 1
+      </li>
+
+      <li>
+        The serve must be non-aggressive at a reasonable speed, with standard
+        rotation, and must not rise above head height at any point as serves
+        are meant to place the ball fairly into play
+      </li>
+
+      <li>
+        The receiving player (Square 1) is allowed one do-over by calling
+        “one bad”
+
+        <ul>
+          <li>
+            The receiving player may announce “one bad” before hitting the
+            ball or after hitting the ball if it resulted in an out.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        If the serve is illegal/results in an out (e.g., lands outside Square 1,
+        hits an interior line), the server is allowed one "one bad".
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- Ball Striking -->
+  <section class="card dark fade-in">
+
+    <h2 id="hitting" class="section-header teal">
+      🖐️ Ball Striking/Hitting
+    </h2>
+
+    <ul>
+
+      <div style="margin-bottom: 6px;">
+        Only hands and wrists may strike the ball. “Hands” are defined as the
+        area from the wrist to the fingertips, including the backs of the hands.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        The ball may be struck with one or both hands, using either open palms
+        or closed fists, as long as it is one deliberate and clean hit.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        No carrying, catching, holding, or double-hits are allowed at any time.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        Other than the serve, spinning the ball is allowed as long as the hit
+        that produces the spin is not a carry or other illegal hit.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        Kids' divisions require a bounce before hitting (no air balls).
+      </div>
+
+      <div>
+        Any player who strikes the ball illegally is considered out.
+      </div>
+
+    </ul>
+
+  </section>
+
+
+  <!-- Interference & Poaching -->
+  <section class="card light fade-in">
+
+    <h2 id="interference" class="section-header teal">
+      ⚠️ Interference &amp; Poaching
+    </h2>
+
+    <ul>
+
+      <div style="margin-bottom: 6px;">
+        Once the ball bounces in a square, only that player may hit it.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        If the ball bounces in a square and another player makes contact with
+        the ball (deliberately or not), and the player whose square the ball
+        bounced in makes an attempt to play the ball and had a realistic chance
+        of getting it, the player who made contact with the ball is out.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        If the player whose square the ball bounced in does not make a legitimate
+        attempt to play the ball and another player makes contact with the ball
+        (deliberate or not), the player whose square the ball bounced in is “out”.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        Boys + Girls/Children’s Divisions: The ball must bounce in a square for
+        a player to hit the ball (no air balls).
+      </div>
+
+      <div>
+        Players are not able to physically impede another player from the ball.
+        Impeding another player from getting the ball is another form of
+        “interference” and results in an out.
+      </div>
+
+    </ul>
+
+  </section>
+
+
+  <!-- Elimination -->
+  <section class="card dark fade-in">
+
+    <h2 id="elimination" class="section-header teal">
+      ❌ Elimination
+    </h2>
+
+    <p>
+      Each time a player is out, that player leaves the court and enters the
+      line and, if applicable, all players advance to the higher numbered
+      square. Square 1 is then filled with a new player.
+    </p>
+
+    <ul>
+
+      <div style="margin-bottom: 6px;">
+        Ways to get out:
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        Ball bounces more than once in your square.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        Hitting the ball out-of-bounds, the inside lines, your own square or
+        the out-of-play zone.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        Carrying, poaching, interfering.
+      </div>
+
+      <div>
+        Ball hits you not in hands.
+      </div>
+
+    </ul>
+
+  </section>
+
+
+  <!-- Environment -->
+  <section class="card">
+
+    <h2 id="environment" class="section-header teal">
+      🏟️ Environment
+    </h2>
+
+    <ul>
+
+      <div style="margin-bottom: 6px;">
+        If the ball bounces in a square and an obstacle impedes the player
+        from returning the ball (e.g., person, chair, object):
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        If the player made an attempt and had a realistic chance of legally
+        returning the ball, the round is declared “dead” and will restart.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        If the player did not attempt or had no realistic chance of returning
+        the ball, that player is out.
+      </div>
+
+    </ul>
+
+  </section>
+
+
+  <!-- Showdown -->
+  <section class="card dark fade-in">
+
+    <h2 id="showdown" class="section-header teal">
+      ⚔️ Showdown
+    </h2>
+
+    <p>
+      Disputes? Lets have the Four Square Gods settle it with a 1-on-1 showdown
+      using just 2 squares. Higher square serves.
+    </p>
+
+  </section>
+
+
+  <!-- Prohibited Moves -->
+  <section class="card light fade-in">
+
+    <h2 id="prohibited" class="section-header teal">
+      ⛔ Prohibited Moves
+    </h2>
+
+    <ul>
+
+      <div style="margin-bottom: 6px;">
+        Blackjack: Catching the ball outside the squares.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        Spinzies: Using two hands to spin.
+      </div>
+
+      <div style="margin-bottom: 6px;">
+        Short-stopping: Hitting ball to self.
+      </div>
+
+      <div>
+        Body Parts/Language: Using body parts other than hands.
+      </div>
+
+    </ul>
+
+  </section>
+
+
+  <!-- Divisions -->
+  <section class="card dark fade-in">
+
+    <h2 id="divisions" class="section-header teal">
+      👥 Divisions
+    </h2>
+
+    <ul>
+
+      <div style="margin-bottom: 4px;">
+        Boys 14 &amp; under
+      </div>
+
+      <div style="margin-bottom: 4px;">
+        Girls 14 &amp; under
+      </div>
+
+      <div style="margin-bottom: 4px;">
+        Men 15+ with Sub-division: Senior Men 45+
+      </div>
+
+      <div style="margin-bottom: 4px;">
+        Women 15+ with Sub-division: Senior Women 45+
+      </div>
+
+    </ul>
+
+  </section>
+
+
+  <!-- Tournament Structure -->
+  <section class="card light fade-in">
+
+    <h2 id="tournament" class="section-header teal">
+      🏆 Tournament Structure
+    </h2>
+
+    <p><strong>Round 1:</strong></p>
+
+    <p>
+      Kids Divisions (Boys + Girls) play together; Adults Divisions
+      (Men + Women) play together.<br>
+      45 minutes of play across multiple courts.<br>
+      Each "out" is tallied.
+    </p>
+
+    <p><strong>Round 2 (Semifinals):</strong></p>
+
+    <p>
+      Players return to where they left off in Round 1 — 25 minutes of play.<br>
+      Kids Divisions (Boys + Girls) play together; Adults Divisions
+      (Men + Women) play together.<br>
+      “Outs” continue/carry-over from Round 1.<br>
+      Top 8 players/least amount of 'outs' per division advance.
+      (if ties occur: all tied competitors advance)
+    </p>
+
+    <p><strong>Championship Round:</strong></p>
+
+    <p>
+      Finalists compete in a “10-out” untimed tournament.<br>
+      Pick-from-hat method to determine where players begin in squares/lines.<br>
+      Square 2 is vacated when 3 players left.<br>
+      When two remaining players: 1v1 in adjacent squares.<br>
+      Last player standing is crowned champion.
+    </p>
+
+  </section>
+
+
+  <!-- Divider -->
+  <hr
+    style="
+      border: none;
+      border-top: 4px solid #5a1e1e;
+      margin: 40px 0;
+    "
+  />
+
+
+  <!-- ========================================================= -->
+  <!-- OTHER RULES -->
+  <!-- ========================================================= -->
+
+  <section class="card light fade-in" id="other-rules">
+
+    <button
+      class="collapsible-toggle"
+      onclick="toggleOtherRules()"
+      style="
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: #eee;
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        border-radius: 6px;
+      "
+    >
+      ➕ OTHER RULES
+    </button>
+
+    <div
+      id="otherRulesContent"
+      style="display: none; margin-top: 15px;"
+    >
+
+      <p>
+        While the rules above reflect the standards used at the Four Square
+        World Championships, we recognize that many versions of the game exist.
+        These “Other Rules” are accounted for below.
+      </p>
+
+      <p>
+        These variations are popular in schools, local tournaments, and backyard
+        play. While some of these are not used at the World Championships,
+        they reflect the creativity and fun of the game!
+      </p>
+
+
+      <!-- Object of the Game -->
+      <button
+        class="collapsible-toggle"
+        onclick="toggleObjectOfGame()"
+        style="
+          font-size: 1.2rem;
+          font-weight: bold;
+          background-color: #f5f5f5;
+          color: #000;
+          border: none;
+          padding: 8px 16px;
+          width: 100%;
+          text-align: left;
+          cursor: pointer;
+          border-radius: 4px;
+          margin-top: 0;
+        "
+      >
+        ➕ Object of the Game
+      </button>
+
+      <div
+        id="objectOfGameContent"
+        style="
+          display: none;
+          margin-top: 10px;
+          text-align: left;
+        "
+      >
+
+        <p><strong>Points Per Serve</strong></p>
+        <p>
+          In competitive games, the player in Square 4 earns 1 point per serve.
+        </p>
+        <p>
+          At the end of a timed game, the player with the most points wins.
+        </p>
+
+        <p><strong>Just for Fun</strong></p>
+        <p>
+          Many Four Square games—especially among children—are played
+          recreationally, without tracking points or determining a winner.
+        </p>
+        <p>
+          These games can still be competitive but emphasize fun, participation
+          and sportsmanship over declaring a winner.
+        </p>
+
+      </div>
+
+
+      <!-- Equipment -->
+      <button
+        id="other-equipment"
+        class="collapsible-toggle"
+        onclick="toggleOtherEquipment()"
+        style="
+          font-size: 1.2rem;
+          font-weight: bold;
+          background-color: #f5f5f5;
+          color: #000;
+          border: none;
+          padding: 8px 16px;
+          width: 100%;
+          text-align: left;
+          cursor: pointer;
+          border-radius: 4px;
+          margin-top: 20px;
+        "
+      >
+        ➕ Equipment
+      </button>
+
+      <div
+        id="otherEquipmentContent"
+        style="
+          display: none;
+          margin-top: 10px;
+          text-align: left;
+        "
+      >
+
+        <p><strong>Ball Type</strong></p>
+        <p>Use any ball that bounces well.</p>
+        <p><strong>Preferred:</strong> Four Square ball.</p>
+        <p>
+          <strong>Acceptable alternatives:</strong> volleyball, basketball,
+          soccer ball, tennis ball, etc.
+        </p>
+        <p>
+          The ball should rebound to at least 50% of the height from which
+          it was dropped.
+        </p>
+
+      </div>
+
+
+      <!-- Court Specifications -->
+      <button
+        class="collapsible-toggle"
+        onclick="toggleOtherCourtSpecs()"
+        style="
+          font-size: 1.2rem;
+          font-weight: bold;
+          background-color: #f5f5f5;
+          color: #000;
+          border: none;
+          padding: 8px 16px;
+          width: 100%;
+          text-align: left;
+          cursor: pointer;
+          border-radius: 4px;
+          margin-top: 20px;
+        "
+      >
+        ➕ Court Specifications
+      </button>
+
+      <div
+        id="otherCourtSpecsContent"
+        style="
+          display: none;
+          margin-top: 10px;
+          text-align: left;
+        "
+      >
+
+        <p><strong>Court Size</strong></p>
+
+        <p>
+          <strong>Standard recreational courts:</strong> 10' x 10'
+          (divided into four 5' x 5' squares).
+        </p>
+
+        <p>
+          <strong>World Championship courts:</strong> 16' x 16'
+          (divided into four 8' x 8' squares).
+        </p>
+
+        <p><strong>Court Setup</strong></p>
+
+        <p>
+          Requires only a flat surface, a ball, and at least 2 players.
+        </p>
+
+        <p>
+          Temporary courts can be marked with chalk or tape; permanent ones
+          may be painted.
+        </p>
+
+        <p>
+          Common surfaces: asphalt, concrete, gym floors, grass, dirt, carpet.
+        </p>
+
+        <p>
+          Common locations: playgrounds, driveways, sidewalks, parking lots, gyms.
+        </p>
+
+        <p><strong>Square Designations</strong></p>
+
+        <p>
+          Most common naming system: Numbers (4, 3, 2, 1).
+        </p>
+
+        <p>
+          Alternatives: Letters (A, B, C, D), or titles
+          (King, Queen, Jack, Pawn).
+        </p>
+
+        <p>Some use colors.</p>
+
+        <p><strong>Square Orientation</strong></p>
+
+        <p>
+          <strong>Recreational courts:</strong> often have Squares 4 and 2
+          diagonal from each other.
+        </p>
+
+        <p>
+          <strong>World Championship format:</strong> Square 4 and 1 are
+          diagonal, with serves required to go to Square 1.
+        </p>
+
+        <p>
+          This setup helps prevent teaming and ensures new players touch the ball.
+        </p>
+
+        <p><strong>Line Rules</strong></p>
+
+        <p>
+          In some games, all lines are out—hitting any line results in an out.
+        </p>
+
+        <p>This is up to house rules.</p>
+
+        <p><strong>Out-of-Play Zone</strong></p>
+
+        <p>
+          Ideally, courts should have a 10-foot clearance surrounding them.
+        </p>
+
+        <p>
+          This area is referred to as the “out-of-play” zone in competitive settings.
+        </p>
+
+      </div>
+
+
+      <!-- Player Positioning -->
+      <button
+        class="collapsible-toggle"
+        onclick="toggleOtherPlayerPositioning()"
+        style="
+          font-size: 1.2rem;
+          font-weight: bold;
+          background-color: #f5f5f5;
+          color: #000;
+          border: none;
+          padding: 8px 16px;
+          width: 100%;
+          text-align: left;
+          cursor: pointer;
+          border-radius: 4px;
+          margin-top: 20px;
+        "
+      >
+        ➕ Player Positioning
+      </button>
+
+      <div
+        id="otherPlayerPositioningContent"
+        style="
+          display: none;
+          margin-top: 10px;
+          text-align: left;
+        "
+      >
+
+        <ul>
+          <li>
+            Players typically must stay in their own square or within a
+            reasonable proximity.
+          </li>
+          <li>
+            Specific movement restrictions may vary depending on house rules.
+          </li>
+        </ul>
+
+      </div>
+
+
+      <!-- Serving the Ball -->
+      <button
+        class="collapsible-toggle"
+        onclick="toggleOtherServing()"
+        style="
+          font-size: 1.2rem;
+          font-weight: bold;
+          background-color: #f5f5f5;
+          color: #000;
+          border: none;
+          padding: 8px;
+          width: 100%;
+          text-align: left;
+          cursor: pointer;
+          border-radius: 4px;
+          margin-top: 20px;
+        "
+      >
+        ➕ Serving the Ball
+      </button>
+
+      <div
+        id="otherServingContent"
+        style="
+          display: none;
+          margin-top: 10px;
+          text-align: left;
+        "
+      >
+
+        <p><strong>Serving Styles</strong></p>
+
+        <ul>
+
+          <li>Rules vary widely:</li>
+
+          <ul>
+            <li>
+              Some games have no serving rules.
+            </li>
+
+            <li>
+              Others enforce strict rules: serve with one or two hands,
+              from outside the square, to a specific square, at a certain
+              height, or with a specific spin.
+            </li>
+          </ul>
+
+        </ul>
+
+        <p><strong>Serve Target</strong></p>
+
+        <ul>
+          <li>
+            In World Championship play, the serve must go to Square 1.
+          </li>
+          <li>
+            Other games may allow serves to any square.
+          </li>
+        </ul>
+
+        <p><strong>“One Bad” / Do-Overs</strong></p>
+
+        <ul>
+          <li>Also called “first serve” or “do-over.”</li>
+          <li>
+            Some games allow unlimited retries until a fair serve is made.
+          </li>
+          <li>
+            Others limit the number of “bad” serves allowed.
+          </li>
+        </ul>
+
+      </div>
+
+
+      <!-- Ball Striking -->
+      <button
+        class="collapsible-toggle"
+        onclick="toggleOtherStriking()"
+        style="
+          font-size: 1.2rem;
+          font-weight: bold;
+          background-color: #f5f5f5;
+          color: #000;
+          border: none;
+          padding: 8px;
+          width: 100%;
+          text-align: left;
+          cursor: pointer;
+          border-radius: 4px;
+          margin-top: 20px;
+        "
+      >
+        ➕ Ball Striking
+      </button>
+
+      <div
+        id="otherStrikingContent"
+        style="
+          display: none;
+          margin-top: 10px;
+          text-align: left;
+        "
+      >
+
+        <p><strong>Legal Hits</strong></p>
+
+        <ul>
+
+          <li>Rules differ by game:</li>
+
+          <ul>
+            <li>
+              Some allow any kind of hit (overhand, underhand).
+            </li>
+
+            <li>
+              Others ban overhand hits (“palmsies down”) and require
+              underhand only.
+            </li>
+
+            <li>
+              Some allow or prohibit spins (“spinzies”).
+            </li>
+          </ul>
+
+        </ul>
+
+        <p><strong>Server's Rule-Setting</strong></p>
+
+        <ul>
+          <li>
+            In casual games, the player in Square 4 may set rules until
+            they are eliminated (e.g., “underhands only,” “no spins”).
+          </li>
+        </ul>
+
+        <p><strong>Air Balls</strong></p>
+
+        <ul>
+          <li>
+            Defined as hitting the ball into another square before it bounces.
+          </li>
+          <li>
+            Some games ban air balls entirely.
+          </li>
+          <li>
+            Others allow them, except when returning a serve.
+          </li>
+        </ul>
+
+      </div>
+
+
+      <!-- Interference & Poaching -->
+      <button
+        class="collapsible-toggle"
+        onclick="toggleOtherInterference()"
+        style="
+          font-size: 1.2rem;
+          font-weight: bold;
+          background-color: #f5f5f5;
+          color: #000;
+          border: none;
+          padding: 8px;
+          width: 100%;
+          text-align: left;
+          cursor: pointer;
+          border-radius: 4px;
+          margin-top: 20px;
+        "
+      >
+        ➕ Interference &amp; Poaching
+      </button>
+
+      <div
+        id="otherInterferenceContent"
+        style="
+          display: none;
+          margin-top: 10px;
+          text-align: left;
+        "
+      >
+
+        <p><strong>Ball Ownership</strong></p>
+
+        <ul>
+
+          <li>
+            Once a ball bounces in a square, only the occupying player may hit it.
+          </li>
+
+          <li>
+            If another player hits the ball:
+
+            <ul>
+              <li>
+                <strong>And</strong> the rightful player attempted to play
+                the ball: the interfering player is out.
+              </li>
+
+              <li>
+                <strong>If</strong> the rightful player did not attempt to play:
+                the rightful player is out.
+              </li>
+            </ul>
+
+          </li>
+
+        </ul>
+
+        <p><strong>Interference Determination</strong></p>
+
+        <ul>
+          <li>
+            Situational, especially in recreational games.
+          </li>
+          <li>
+            Judgment is made by officials or fellow players in competitive games.
+          </li>
+        </ul>
+
+        <p><strong>Physical Interference</strong></p>
+
+        <ul>
+          <li>
+            Players may not physically impede others from reaching the ball.
+          </li>
+          <li>
+            This form of interference typically results in an out.
+          </li>
+        </ul>
+
+        <p><strong>Air Ball Caution</strong></p>
+
+        <ul>
+          <li>
+            Air balls often increase risk of interference due to players
+            crossing into other squares.
+          </li>
+          <li>
+            Most games allow this if no interference occurs.
+          </li>
+        </ul>
+
+      </div>
+
+
+      <!-- Court Environment & House Rules -->
+      <button
+        class="collapsible-toggle"
+        onclick="toggleOtherEnvironment()"
+        style="
+          font-size: 1.2rem;
+          font-weight: bold;
+          background-color: #f5f5f5;
+          color: #000;
+          border: none;
+          padding: 8px;
+          width: 100%;
+          text-align: left;
+          cursor: pointer;
+          border-radius: 4px;
+          margin-top: 20px;
+        "
+      >
+        ➕ Court Environment &amp; House Rules
+      </button>
+
+      <div
+        id="otherEnvironmentContent"
+        style="
+          display: none;
+          margin-top: 10px;
+          text-align: left;
+        "
+      >
+
+        <p>
+          Four Square can be played in varied environments, so it’s important
+          to set house rules before playing.
+        </p>
+
+        <p><strong>Examples:</strong></p>
+
+        <ul>
+          <li>
+            If playing in a garage, agree on what happens if the ball hits
+            the ceiling or a wall.
+          </li>
+
+          <li>
+            Determine how obstacles, surfaces, or boundaries affect play.
+          </li>
+        </ul>
+
+      </div>
+
     </div>
 
-    <div style="margin-bottom: 6px;">
-      Other than the serve, spinning the ball is allowed as long as the hit that
-      produces the spin is not a carry or other illegal hit.
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- UNIQUE SPECIAL GAMEPLAY RULES -->
+  <!-- ========================================================= -->
+
+  <section
+    class="card light fade-in"
+    id="unique-special-gameplay-rules"
+  >
+
+    <button
+      class="collapsible-toggle"
+      onclick="toggleUniqueSpecialGameplay()"
+      style="
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: #eee;
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        border-radius: 6px;
+        margin-top: 20px;
+      "
+    >
+      ➕ UNIQUE SPECIAL GAMEPLAY RULES
+    </button>
+
+    <div
+      id="uniqueSpecialGameplayContent"
+      style="
+        display: none;
+        margin-top: 15px;
+        text-align: left;
+      "
+    >
+
+      <div class="rule-text">
+
+        <p>
+          <strong>7-Up</strong> – Each player must call out a number one higher
+          than the previous hit, starting with one. The player striking the
+          ball on “7” or any number ending in “7” must skip that number.
+          Failure to skip correctly results in the player being out.
+        </p>
+
+        <p>
+          <strong>Around the World</strong> – Any player in possession of the
+          ball may call “Around the World” at any time. Once called, play
+          continues by hitting the ball to the next adjacent square in sequence
+          until it returns to the caller. The game then resumes as normal.
+          A “permanent” version may be declared, requiring the rotation to
+          continue until a player is out, even after the ball reaches the caller.
+        </p>
+
+        <p>
+          <strong>Bottle Caps</strong> – The server may declare another player
+          “bottle capped” at any time. The capped player must squat and remain
+          frozen for the rest of the round (or until uncapped by the server).
+          That player’s square becomes temporarily out-of-bounds.
+        </p>
+
+        <p>
+          <strong>Bomb</strong> – The server places the ball in the center of
+          the court and calls “Bomb!” All players must touch the ball; the last
+          one to do so is out.
+        </p>
+
+        <p>
+          <strong>Body Hits / Body Parts</strong> – Players may use specific
+          body parts (e.g., head, foot) or their entire body to strike the ball
+          if this variation is in effect.
+        </p>
+
+        <p>
+          <strong>Categories</strong> – The server names a category
+          (e.g., “types of drinks” or “girls’ names”) before play starts.
+          Each player must say a new, valid example within that category when
+          hitting the ball. Failure to name a correct or unique item results
+          in elimination.
+        </p>
+
+        <p>
+          <strong>Cherry Bomb</strong> – A player may grab the ball and throw
+          it forcefully into any square, shouting “Cherry Bomb!” when doing so.
+        </p>
+
+        <p>
+          <strong>Corners</strong> – When declared by the server, all players
+          must quickly move to the outer corner of their square. The last
+          player to reach their corner is out.
+        </p>
+
+        <p>
+          <strong>Double Bounces</strong> – The ball must bounce exactly twice
+          in a player’s square before being returned. If it bounces any other
+          number of times, that player is out.
+        </p>
+
+        <p>
+          <strong>Dot to Dot</strong> – When called, all players must touch the
+          center corner, then their back corner, then return to the center
+          corner. The last to finish the sequence is out.
+        </p>
+
+        <p>
+          <strong>Holding / Carrying</strong> – Normally players must hit the
+          ball cleanly, but in this variation, a player may briefly hold the
+          ball (less than half a second) if using a special move.
+        </p>
+
+        <p>
+          <strong>Lumberjacks / Battle Royale</strong> – When many players are
+          present, extra players circle the court as “lumberjacks.” If the ball
+          is hit out, the lumberjacks hit it back in to keep play going.
+          Eliminated players remain out until one of the original four is
+          declared champion.
+        </p>
+
+        <p>
+          <strong>Off-Serve</strong> – The player receiving the serve must
+          return the ball directly to the server.
+        </p>
+
+        <p>
+          <strong>Passback</strong> – When “Passback” is called, the next
+          player to hit the ball must return it to the player who called it.
+        </p>
+
+        <p>
+          <strong>Popcorn (Baubling, Bubbles, Double Touches, Juggling)</strong>
+          – A technique where a player lightly bounces the ball between their
+          hands before hitting it to another square, allowing quick control
+          without holding.
+        </p>
+
+        <p>
+          <strong>Rolling / Bowling</strong> – A player hits the ball so low
+          that it rolls along the ground; this results in the roller being out.
+        </p>
+
+        <p>
+          <strong>Sentences</strong> – The server begins a sentence with one
+          word. Each subsequent player adds one word to continue it logically,
+          or may end it by saying “period.” A nonsensical continuation results
+          in the player being out.
+        </p>
+
+        <p>
+          <strong>Tapping / Babies / Tiny Tims</strong> – The ball is hit
+          gently so it barely bounces and travels only a short distance
+          across the court.
+        </p>
+
+      </div>
+
     </div>
 
-    <div style="margin-bottom: 6px;">
-      Kids' divisions require a bounce before hitting (no air balls).
-    </div>
-
-    <div>
-      Any player who strikes the ball illegally is considered out.
-    </div>
-  </ul>
-</section>
-
-
-<section class="card light fade-in">
-  <h2 id="interference" class="section-header teal">⚠️ Interference & Poaching</h2>
-
-  <ul>
-    <div style="margin-bottom: 6px;">
-      Once the ball bounces in a square, only that player may hit it.
-    </div>
-
-    <div style="margin-bottom: 6px;">
-      If the ball bounces in a square and another player makes contact with the
-      ball (deliberately or not), and the player whose square the ball bounced
-      in makes an attempt to play the ball and had a realistic chance of getting
-      it, the player who made contact with the ball is out.
-    </div>
-
-    <div style="margin-bottom: 6px;">
-      If the player whose square the ball bounced in does not make a legitimate
-      attempt to play the ball and another player makes contact with the ball
-      (deliberate or not), the player whose square the ball bounced in is “out”.
-    </div>
-
-    <div style="margin-bottom: 6px;">
-      Boys + Girls/Children’s Divisions: The ball must bounce in a square for a
-      player to hit the ball (no air balls).
-    </div>
-
-    <div>
-      Players are not able to physically impede another player from the ball.
-      Impeding another player from getting the ball is another form of
-      “interference” and results in an out.
-    </div>
-  </ul>
-</section>
-
-
-<section class="card dark fade-in">
-  <h2 id="elimination" class="section-header teal">❌ Elimination</h2>
-
-  <p>
-    Each time a player is out, that player leaves the court and enters the line
-    and, if applicable, all players advance to the higher numbered square.
-    Square 1 is then filled with a new player.
-  </p>
-
-  <ul>
-    <div style="margin-bottom: 6px;">Ways to get out:</div>
-    <div style="margin-bottom: 6px;">Ball bounces more than once in your square.</div>
-    <div style="margin-bottom: 6px;">Hitting the ball out-of-bounds, the inside lines, your own square or the out-of-play zone.</div>
-    <div style="margin-bottom: 6px;">Carrying, poaching, interfering.</div>
-    <div>Ball hits you not in hands.</div>
-  </ul>
-</section>
-
-
-<section class="card">
-  <h2 id="environment" class="section-header teal">🏟️ Environment</h2>
-
-  <ul>
-    <div style="margin-bottom: 6px;">
-      If the ball bounces in a square and an obstacle impedes the player from
-      returning the ball (e.g., person, chair, object):
-    </div>
-
-    <div style="margin-bottom: 6px;">
-      If the player made an attempt and had a realistic chance of legally
-      returning the ball, the round is declared “dead” and will restart.
-    </div>
-
-    <div style="margin-bottom: 6px;">
-      If the player did not attempt or had no realistic chance of returning the
-      ball, that player is out.
-    </div>
-  </ul>
-</section>
-
-
-<section class="card dark fade-in">
-  <h2 id="showdown" class="section-header teal">⚔️ Showdown</h2>
-
-  <p>
-    Disputes? Lets have the Four Square Gods settle it with a 1-on-1 showdown
-    using just 2 squares. Higher square serves.
-  </p>
-</section>
-
-
-<section class="card light fade-in">
-  <h2 id="prohibited" class="section-header teal">⛔ Prohibited Moves</h2>
-
-  <ul>
-    <div style="margin-bottom: 6px;">Blackjack: Catching the ball outside the squares.</div>
-    <div style="margin-bottom: 6px;">Spinzies: Using two hands to spin.</div>
-    <div style="margin-bottom: 6px;">Short-stopping: Hitting ball to self.</div>
-    <div>Body Parts/Language: Using body parts other than hands.</div>
-  </ul>
-</section>
-
-
-<section class="card dark fade-in">
-  <h2 id="divisions" class="section-header teal">👥 Divisions</h2>
-
-  <ul>
-    <div style="margin-bottom: 4px;">Boys 14 & under</div>
-    <div style="margin-bottom: 4px;">Girls 14 & under</div>
-    <div style="margin-bottom: 4px;">Men 15+ with Sub-division: Senior Men 45+</div>
-    <div style="margin-bottom: 4px;">Women 15+ with Sub-division: Senior Women 45+</div>
-  </ul>
-</section>
-
-
-<section class="card light fade-in">
-  <h2 id="tournament" class="section-header teal">🏆 Tournament Structure</h2>
-
-  <p><strong>Round 1:</strong></p>
-
-  <p>
-    Kids Divisions (Boys + Girls) play together; Adults Divisions (Men + Women)
-    play together.<br>
-    45 minutes of play across multiple courts.<br>
-    Each "out" is tallied.
-  </p>
-
-  <p><strong>Round 2 (Semifinals):</strong></p>
-
-  <p>
-    Players return to where they left off in Round 1 — 25 minutes of play.<br>
-    Kids Divisions (Boys + Girls) play together; Adults Divisions (Men + Women)
-    play together.<br>
-    “Outs” continue/carry-over from Round 1.<br>
-    Top 8 players/least amount of 'outs' per division advance.
-    (if ties occur: all tied competitors advance)
-  </p>
-
-  <p><strong>Championship Round:</strong></p>
-
-  <p>
-    Finalists compete in a “10-out” untimed tournament.<br>
-    Pick-from-hat method to determine where players begin in squares/lines.<br>
-    Square 2 is vacated when 3 players left.<br>
-    When two remaining players: 1v1 in adjacent squares.<br>
-    Last player standing is crowned champion.
-  </p>
-</section>
+  </section>
 
 </main>
 
 
-<!-- Divider -->
-<hr style="border: none; border-top: 4px solid #5a1e1e; margin: 40px 0;" />
-
-
-<!-- Collapsible OTHER RULES Section -->
-<section class="card light fade-in" id="other-rules">
-
-  <button
-    class="collapsible-toggle"
-    onclick="toggleOtherRules()"
-    style="font-size: 1.5rem; font-weight: bold; background-color: #eee; color: #000; border: none; padding: 10px 20px; width: 100%; text-align: left; cursor: pointer; border-radius: 6px;"
-  >
-    ➕ OTHER RULES
-  </button>
-
-  <div id="otherRulesContent" style="display: none; margin-top: 15px;">
-
-    <p>
-      While the rules above reflect the standards used at the Four Square World
-      Championships, we recognize that many versions of the game exist.
-      These “Other Rules” are accounted for below.
-    </p>
-
-    <p>
-      These variations are popular in schools, local tournaments, and backyard
-      play. While some of these are not used at the World Championships, they
-      reflect the creativity and fun of the game!
-    </p>
-
-
-    <!-- Object of the Game -->
-    <button
-      class="collapsible-toggle"
-      onclick="toggleObjectOfGame()"
-      style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; color: #000; border: none; padding: 8px 16px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 0;"
-    >
-      ➕ Object of the Game
-    </button>
-
-    <div id="objectOfGameContent" style="display: none; margin-top: 10px; text-align: left;">
-
-      <p><strong>Points Per Serve</strong></p>
-      <p>In competitive games, the player in Square 4 earns 1 point per serve.</p>
-      <p>At the end of a timed game, the player with the most points wins.</p>
-
-      <p><strong>Just for Fun</strong></p>
-      <p>
-        Many Four Square games—especially among children—are played recreationally,
-        without tracking points or determining a winner.
-      </p>
-      <p>
-        These games can still be competitive but emphasize fun, participation
-        and sportsmanship over declaring a winner.
-      </p>
-
-    </div>
-
-
-    <!-- Equipment -->
-    <button
-      id="other-equipment"
-      class="collapsible-toggle"
-      onclick="toggleOtherEquipment()"
-      style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; color: #000; border: none; padding: 8px 16px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;"
-    >
-      ➕ Equipment
-    </button>
-
-    <div id="otherEquipmentContent" style="display: none; margin-top: 10px; text-align: left;">
-
-      <p><strong>Ball Type</strong></p>
-      <p>Use any ball that bounces well.</p>
-      <p><strong>Preferred:</strong> Four Square ball.</p>
-      <p><strong>Acceptable alternatives:</strong> volleyball, basketball, soccer ball, tennis ball, etc.</p>
-      <p>The ball should rebound to at least 50% of the height from which it was dropped.</p>
-
-    </div>
-
-
-    <!-- Court Specifications -->
-    <button
-      class="collapsible-toggle"
-      onclick="toggleOtherCourtSpecs()"
-      style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; color: #000; border: none; padding: 8px 16px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;"
-    >
-      ➕ Court Specifications
-    </button>
-
-    <div id="otherCourtSpecsContent" style="display: none; margin-top: 10px; text-align: left;">
-
-      <p><strong>Court Size</strong></p>
-      <p><strong>Standard recreational courts:</strong> 10' x 10' (divided into four 5' x 5' squares).</p>
-      <p><strong>World Championship courts:</strong> 16' x 16' (divided into four 8' x 8' squares).</p>
-
-      <p><strong>Court Setup</strong></p>
-      <p>Requires only a flat surface, a ball, and at least 2 players.</p>
-      <p>Temporary courts can be marked with chalk or tape; permanent ones may be painted.</p>
-      <p>Common surfaces: asphalt, concrete, gym floors, grass, dirt, carpet.</p>
-      <p>Common locations: playgrounds, driveways, sidewalks, parking lots, gyms.</p>
-
-      <p><strong>Square Designations</strong></p>
-      <p>Most common naming system: Numbers (4, 3, 2, 1).</p>
-      <p>Alternatives: Letters (A, B, C, D), or titles (King, Queen, Jack, Pawn).</p>
-      <p>Some use colors.</p>
-
-      <p><strong>Square Orientation</strong></p>
-      <p><strong>Recreational courts:</strong> often have Squares 4 and 2 diagonal from each other.</p>
-      <p><strong>World Championship format:</strong> Square 4 and 1 are diagonal, with serves required to go to Square 1.</p>
-      <p>This setup helps prevent teaming and ensures new players touch the ball.</p>
-
-      <p><strong>Line Rules</strong></p>
-      <p>In some games, all lines are out—hitting any line results in an out.</p>
-      <p>This is up to house rules.</p>
-
-      <p><strong>Out-of-Play Zone</strong></p>
-      <p>Ideally, courts should have a 10-foot clearance surrounding them.</p>
-      <p>This area is referred to as the “out-of-play” zone in competitive settings.</p>
-
-    </div>
-
-
-    <!-- Player Positioning -->
-    <button
-      class="collapsible-toggle"
-      onclick="toggleOtherPlayerPositioning()"
-      style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; color: #000; border: none; padding: 8px 16px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;"
-    >
-      ➕ Player Positioning
-    </button>
-
-    <div id="otherPlayerPositioningContent" style="display: none; margin-top: 10px; text-align: left;">
-
-      <ul>
-        <li>Players typically must stay in their own square or within a reasonable proximity.</li>
-        <li>Specific movement restrictions may vary depending on house rules.</li>
-      </ul>
-
-    </div>
-
-
-    <!-- Serving the Ball -->
-    <button
-      class="collapsible-toggle"
-      onclick="toggleOtherServing()"
-      style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; color: #000; border: none; padding: 8px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;"
-    >
-      ➕ Serving the Ball
-    </button>
-
-    <div id="otherServingContent" style="display: none; margin-top: 10px; text-align: left;">
-
-      <p><strong>Serving Styles</strong></p>
-
-      <ul>
-        <li>Rules vary widely:</li>
-        <ul>
-          <li>Some games have no serving rules.</li>
-          <li>Others enforce strict rules: serve with one or two hands, from outside the square, to a specific square, at a certain height, or with a specific spin.</li>
-        </ul>
-      </ul>
-
-      <p><strong>Serve Target</strong></p>
-
-      <ul>
-        <li>In World Championship play, the serve must go to Square 1.</li>
-        <li>Other games may allow serves to any square.</li>
-      </ul>
-
-      <p><strong>“One Bad” / Do-Overs</strong></p>
-
-      <ul>
-        <li>Also called “first serve” or “do-over.”</li>
-        <li>Some games allow unlimited retries until a fair serve is made.</li>
-        <li>Others limit the number of “bad” serves allowed.</li>
-      </ul>
-
-    </div>
-
-
-    <!-- Ball Striking -->
-    <button
-      class="collapsible-toggle"
-      onclick="toggleOtherStriking()"
-      style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; color: #000; border: none; padding: 8px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;"
-    >
-      ➕ Ball Striking
-    </button>
-
-    <div id="otherStrikingContent" style="display: none; margin-top: 10px; text-align: left;">
-
-      <p><strong>Legal Hits</strong></p>
-
-      <ul>
-        <li>Rules differ by game:</li>
-        <ul>
-          <li>Some allow any kind of hit (overhand, underhand).</li>
-          <li>Others ban overhand hits (“palmsies down”) and require underhand only.</li>
-          <li>Some allow or prohibit spins (“spinzies”).</li>
-        </ul>
-      </ul>
-
-      <p><strong>Server's Rule-Setting</strong></p>
-
-      <ul>
-        <li>
-          In casual games, the player in Square 4 may set rules until they are
-          eliminated (e.g., “underhands only,” “no spins”).
-        </li>
-      </ul>
-
-      <p><strong>Air Balls</strong></p>
-
-      <ul>
-        <li>Defined as hitting the ball into another square before it bounces.</li>
-        <li>Some games ban air balls entirely.</li>
-        <li>Others allow them, except when returning a serve.</li>
-      </ul>
-
-    </div>
-
-
-    <!-- Interference & Poaching -->
-    <button
-      class="collapsible-toggle"
-      onclick="toggleOtherInterference()"
-      style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; color: #000; border: none; padding: 8px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;"
-    >
-      ➕ Interference & Poaching
-    </button>
-
-    <div id="otherInterferenceContent" style="display: none; margin-top: 10px; text-align: left;">
-
-      <p><strong>Ball Ownership</strong></p>
-
-      <ul>
-        <li>Once a ball bounces in a square, only the occupying player may hit it.</li>
-        <li>
-          If another player hits the ball:
-          <ul>
-            <li><strong>And</strong> the rightful player attempted to play the ball: the interfering player is out.</li>
-            <li><strong>If</strong> the rightful player did not attempt to play: the rightful player is out.</li>
-          </ul>
-        </li>
-      </ul>
-
-      <p><strong>Interference Determination</strong></p>
-
-      <ul>
-        <li>Situational, especially in recreational games.</li>
-        <li>Judgment is made by officials or fellow players in competitive games.</li>
-      </ul>
-
-      <p><strong>Physical Interference</strong></p>
-
-      <ul>
-        <li>Players may not physically impede others from reaching the ball.</li>
-        <li>This form of interference typically results in an out.</li>
-      </ul>
-
-      <p><strong>Air Ball Caution</strong></p>
-
-      <ul>
-        <li>Air balls often increase risk of interference due to players crossing into other squares.</li>
-        <li>Most games allow this if no interference occurs.</li>
-      </ul>
-
-    </div>
-
-
-    <!-- Court Environment & House Rules -->
-    <button
-      class="collapsible-toggle"
-      onclick="toggleOtherEnvironment()"
-      style="font-size: 1.2rem; font-weight: bold; background-color: #f5f5f5; color: #000; border: none; padding: 8px; width: 100%; text-align: left; cursor: pointer; border-radius: 4px; margin-top: 20px;"
-    >
-      ➕ Court Environment & House Rules
-    </button>
-
-    <div id="otherEnvironmentContent" style="display: none; margin-top: 10px; text-align: left;">
-
-      <p>
-        Four Square can be played in varied environments, so it’s important to
-        set house rules before playing.
-      </p>
-
-      <p><strong>Examples:</strong></p>
-
-      <ul>
-        <li>If playing in a garage, agree on what happens if the ball hits the ceiling or a wall.</li>
-        <li>Determine how obstacles, surfaces, or boundaries affect play.</li>
-      </ul>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Unique Special Gameplay Rules -->
-<section class="card light fade-in" id="unique-special-gameplay-rules">
-
-  <button
-    class="collapsible-toggle"
-    onclick="toggleUniqueSpecialGameplay()"
-    style="font-size: 1.5rem; font-weight: bold; background-color: #eee; color: #000; border: none; padding: 10px 20px; width: 100%; text-align: left; cursor: pointer; border-radius: 6px; margin-top: 20px;"
-  >
-    ➕ UNIQUE SPECIAL GAMEPLAY RULES
-  </button>
-
-  <div id="uniqueSpecialGameplayContent" style="display: none; margin-top: 15px; text-align: left;">
-
-    <div class="rule-text">
-
-      <p>
-        <strong>7-Up</strong> – Each player must call out a number one higher than
-        the previous hit, starting with one. The player striking the ball on “7”
-        or any number ending in “7” must skip that number. Failure to skip
-        correctly results in the player being out.
-      </p>
-
-      <p>
-        <strong>Around the World</strong> – Any player in possession of the ball
-        may call “Around the World” at any time. Once called, play continues by
-        hitting the ball to the next adjacent square in sequence until it returns
-        to the caller. The game then resumes as normal. A “permanent” version may
-        be declared, requiring the rotation to continue until a player is out,
-        even after the ball reaches the caller.
-      </p>
-
-      <p>
-        <strong>Bottle Caps</strong> – The server may declare another player
-        “bottle capped” at any time. The capped player must squat and remain
-        frozen for the rest of the round (or until uncapped by the server).
-        That player’s square becomes temporarily out-of-bounds.
-      </p>
-
-      <p>
-        <strong>Bomb</strong> – The server places the ball in the center of the
-        court and calls “Bomb!” All players must touch the ball; the last one to
-        do so is out.
-      </p>
-
-      <p>
-        <strong>Body Hits / Body Parts</strong> – Players may use specific body
-        parts (e.g., head, foot) or their entire body to strike the ball if this
-        variation is in effect.
-      </p>
-
-      <p>
-        <strong>Categories</strong> – The server names a category (e.g., “types
-        of drinks” or “girls’ names”) before play starts. Each player must say a
-        new, valid example within that category when hitting the ball. Failure
-        to name a correct or unique item results in elimination.
-      </p>
-
-      <p>
-        <strong>Cherry Bomb</strong> – A player may grab the ball and throw it
-        forcefully into any square, shouting “Cherry Bomb!” when doing so.
-      </p>
-
-      <p>
-        <strong>Corners</strong> – When declared by the server, all players must
-        quickly move to the outer corner of their square. The last player to
-        reach their corner is out.
-      </p>
-
-      <p>
-        <strong>Double Bounces</strong> – The ball must bounce exactly twice in a
-        player’s square before being returned. If it bounces any other number of
-        times, that player is out.
-      </p>
-
-      <p>
-        <strong>Dot to Dot</strong> – When called, all players must touch the
-        center corner, then their back corner, then return to the center corner.
-        The last to finish the sequence is out.
-      </p>
-
-      <p>
-        <strong>Holding / Carrying</strong> – Normally players must hit the ball
-        cleanly, but in this variation, a player may briefly hold the ball
-        (less than half a second) if using a special move.
-      </p>
-
-      <p>
-        <strong>Lumberjacks / Battle Royale</strong> – When many players are
-        present, extra players circle the court as “lumberjacks.” If the ball is
-        hit out, the lumberjacks hit it back in to keep play going. Eliminated
-        players remain out until one of the original four is declared champion.
-      </p>
-
-      <p>
-        <strong>Off-Serve</strong> – The player receiving the serve must return
-        the ball directly to the server.
-      </p>
-
-      <p>
-        <strong>Passback</strong> – When “Passback” is called, the next player to
-        hit the ball must return it to the player who called it.
-      </p>
-
-      <p>
-        <strong>Popcorn (Baubling, Bubbles, Double Touches, Juggling)</strong> –
-        A technique where a player lightly bounces the ball between their hands
-        before hitting it to another square, allowing quick control without holding.
-      </p>
-
-      <p>
-        <strong>Rolling / Bowling</strong> – A player hits the ball so low that
-        it rolls along the ground; this results in the roller being out.
-      </p>
-
-      <p>
-        <strong>Sentences</strong> – The server begins a sentence with one word.
-        Each subsequent player adds one word to continue it logically, or may
-        end it by saying “period.” A nonsensical continuation results in the
-        player being out.
-      </p>
-
-      <p>
-        <strong>Tapping / Babies / Tiny Tims</strong> – The ball is hit gently so
-        it barely bounces and travels only a short distance across the court.
-      </p>
-
-    </div>
-  </div>
-</section>
-
+<!-- ========================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================================= -->
 
 <script>
-function toggleUniqueSpecialGameplay() {
-  const content = document.getElementById("uniqueSpecialGameplayContent");
-  const button = document.querySelectorAll(".collapsible-toggle")[9];
 
-  if (content.style.display === "none" || content.style.display === "") {
-    content.style.display = "block";
-    button.textContent = "➖ UNIQUE SPECIAL GAMEPLAY RULES";
-  } else {
-    content.style.display = "none";
-    button.textContent = "➕ UNIQUE SPECIAL GAMEPLAY RULES";
+  function toggleOtherRules() {
+    const content = document.getElementById("otherRulesContent");
+    const button = document.querySelector(".collapsible-toggle");
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.textContent = "➖ OTHER RULES";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ OTHER RULES";
+    }
   }
-}
+
+
+  function toggleObjectOfGame() {
+    const content = document.getElementById("objectOfGameContent");
+    const button = document.querySelectorAll(".collapsible-toggle")[1];
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.textContent = "➖ Object of the Game";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ Object of the Game";
+    }
+  }
+
+
+  function toggleOtherEquipment() {
+    const content = document.getElementById("otherEquipmentContent");
+    const button = document.querySelectorAll(".collapsible-toggle")[2];
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.textContent = "➖ Equipment";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ Equipment";
+    }
+  }
+
+
+  function toggleOtherCourtSpecs() {
+    const content = document.getElementById("otherCourtSpecsContent");
+    const button = document.querySelectorAll(".collapsible-toggle")[3];
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.textContent = "➖ Court Specifications";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ Court Specifications";
+    }
+  }
+
+
+  function toggleOtherPlayerPositioning() {
+    const content = document.getElementById("otherPlayerPositioningContent");
+    const button = document.querySelectorAll(".collapsible-toggle")[4];
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.textContent = "➖ Player Positioning";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ Player Positioning";
+    }
+  }
+
+
+  function toggleOtherServing() {
+    const content = document.getElementById("otherServingContent");
+    const button = document.querySelectorAll(".collapsible-toggle")[5];
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.textContent = "➖ Serving the Ball";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ Serving the Ball";
+    }
+  }
+
+
+  function toggleOtherStriking() {
+    const content = document.getElementById("otherStrikingContent");
+    const button = document.querySelectorAll(".collapsible-toggle")[6];
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.textContent = "➖ Ball Striking";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ Ball Striking";
+    }
+  }
+
+
+  function toggleOtherInterference() {
+    const content = document.getElementById("otherInterferenceContent");
+    const button = document.querySelectorAll(".collapsible-toggle")[7];
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.textContent = "➖ Interference & Poaching";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ Interference & Poaching";
+    }
+  }
+
+
+  function toggleOtherEnvironment() {
+    const content = document.getElementById("otherEnvironmentContent");
+    const button = document.querySelectorAll(".collapsible-toggle")[8];
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.textContent = "➖ Court Environment & House Rules";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ Court Environment & House Rules";
+    }
+  }
+
+
+  function toggleUniqueSpecialGameplay() {
+    const content = document.getElementById("uniqueSpecialGameplayContent");
+    const button = document.querySelectorAll(".collapsible-toggle")[9];
+
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      button.textContent = "➖ UNIQUE SPECIAL GAMEPLAY RULES";
+    } else {
+      content.style.display = "none";
+      button.textContent = "➕ UNIQUE SPECIAL GAMEPLAY RULES";
+    }
+  }
+
 </script>
 
 
-<script>
-function toggleOtherRules() {
-  const content = document.getElementById("otherRulesContent");
-  const button = document.querySelector(".collapsible-toggle");
-
-  if (content.style.display === "none") {
-    content.style.display = "block";
-    button.textContent = "➖ OTHER RULES";
-  } else {
-    content.style.display = "none";
-    button.textContent = "➕ OTHER RULES";
-  }
-}
-
-function toggleObjectOfGame() {
-  const content = document.getElementById("objectOfGameContent");
-  const button = document.querySelectorAll(".collapsible-toggle")[1];
-
-  if (content.style.display === "none") {
-    content.style.display = "block";
-    button.textContent = "➖ Object of the Game";
-  } else {
-    content.style.display = "none";
-    button.textContent = "➕ Object of the Game";
-  }
-}
-
-function toggleOtherEquipment() {
-  const content = document.getElementById("otherEquipmentContent");
-  const button = document.querySelectorAll(".collapsible-toggle")[2];
-
-  if (content.style.display === "none") {
-    content.style.display = "block";
-    button.textContent = "➖ Equipment";
-  } else {
-    content.style.display = "none";
-    button.textContent = "➕ Equipment";
-  }
-}
-
-function toggleOtherCourtSpecs() {
-  const content = document.getElementById("otherCourtSpecsContent");
-  const button = document.querySelectorAll(".collapsible-toggle")[3];
-
-  if (content.style.display === "none") {
-    content.style.display = "block";
-    button.textContent = "➖ Court Specifications";
-  } else {
-    content.style.display = "none";
-    button.textContent = "➕ Court Specifications";
-  }
-}
-
-function toggleOtherPlayerPositioning() {
-  const content = document.getElementById("otherPlayerPositioningContent");
-  const button = document.querySelectorAll(".collapsible-toggle")[4];
-
-  if (content.style.display === "none") {
-    content.style.display = "block";
-    button.textContent = "➖ Player Positioning";
-  } else {
-    content.style.display = "none";
-    button.textContent = "➕ Player Positioning";
-  }
-}
-
-function toggleOtherServing() {
-  const content = document.getElementById("otherServingContent");
-  const button = document.querySelectorAll(".collapsible-toggle")[5];
-
-  if (content.style.display === "none") {
-    content.style.display = "block";
-    button.textContent = "➖ Serving the Ball";
-  } else {
-    content.style.display = "none";
-    button.textContent = "➕ Serving the Ball";
-  }
-}
-
-function toggleOtherStriking() {
-  const content = document.getElementById("otherStrikingContent");
-  const button = document.querySelectorAll(".collapsible-toggle")[6];
-
-  if (content.style.display === "none") {
-    content.style.display = "block";
-    button.textContent = "➖ Ball Striking";
-  } else {
-    content.style.display = "none";
-    button.textContent = "➕ Ball Striking";
-  }
-}
-
-function toggleOtherInterference() {
-  const content = document.getElementById("otherInterferenceContent");
-  const button = document.querySelectorAll(".collapsible-toggle")[7];
-
-  if (content.style.display === "none") {
-    content.style.display = "block";
-    button.textContent = "➖ Interference & Poaching";
-  } else {
-    content.style.display = "none";
-    button.textContent = "➕ Interference & Poaching";
-  }
-}
-
-function toggleOtherEnvironment() {
-  const content = document.getElementById("otherEnvironmentContent");
-  const button = document.querySelectorAll(".collapsible-toggle")[8];
-
-  if (content.style.display === "none") {
-    content.style.display = "block";
-    button.textContent = "➖ Court Environment & House Rules";
-  } else {
-    content.style.display = "none";
-    button.textContent = "➕ Court Environment & House Rules";
-  }
-}
-</script>
-
-
+<!-- Footer -->
 <footer>
   <p style="text-align: center; font-weight: bold; margin-top: 3em;">
     The nation's finest resource for all things four square.<br>
