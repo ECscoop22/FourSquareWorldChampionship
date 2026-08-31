@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register – Four Square World Championship</title>
+
+  <title>Register – Four Square National & World Championships</title>
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
@@ -13,6 +14,10 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body class="register-page">
+
 <header class="site-header">
 
   <div style="
@@ -72,72 +77,181 @@
   </div>
 
 </header>
+
 <main>
+
+  <!-- Page Heading -->
   <h1 class="glow-title" style="width:100%; text-align:center; margin:0.2em 0;">
-    REGISTER FOR 2027 WORLD CHAMPIONSHIP
+    REGISTER FOR A 2027 CHAMPIONSHIP
   </h1>
 
   <div class="site-tagline">You Can Play Too!</div>
 
-<section class="register-intro-card">
-  <p>
-    Register now to reserve your spot in the Four Square World Championship™! 
-    You’ll be asked to confirm your registration closer to the event to become 
-    an official competitor. We’ll contact you with details as game day approaches. 
-    <strong>Don’t miss your chance to be part of the action!</strong> 
-    And if you’re looking for official championship swag, check out our 
-    <a href="merch.html" style="color:#ffd700; font-weight:bold; text-decoration:none;">
-  MERCH page!
-</a>.
-  </p>
-</section>
-  
-<section class="register-intro">
- <form action="https://formspree.io/f/mjkelrld" method="POST">
-  <!-- Hidden subject line for your emails -->
-  <input type="hidden" name="_subject" value="New Registration for 2026 Four Square World Championship">
-  
-  <!-- Hidden redirect (Formspree free plan shows JSON, this avoids it) -->
-  <input type="hidden" name="_redirect" value="https://ecscoop22.github.io/FourSquareWorldChampionship/thanks.html">
 
-  <label for="name">Full Name</label>
-  <input type="text" id="name" name="name" required>
+  <!-- Registration Introduction -->
+  <section class="register-intro-card">
 
-  <label for="gender">Gender</label>
-  <select id="gender" name="gender" required>
-    <option value="">-- Select Gender --</option>
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-    <option value="Other">Other</option>
-  </select>
+    <p>
+      Ready to compete? Register your interest in the
+      <strong>Four Square National Championship™</strong>,
+      the <strong>Four Square World Championship™</strong>,
+      or <strong>both!</strong>
+    </p>
 
-  <label for="age">Age</label>
-  <input type="number" id="age" name="age" required>
+    <p>
+      Select the championship you'd like to participate in below and provide
+      your information. We'll contact you with additional details and
+      confirmation as the events approach.
+    </p>
 
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required>
+    <p>
+      <strong>Don't miss your chance to be part of the action!</strong>
+      And if you're looking for official championship swag, check out our
+      <a href="merch.html" style="color:#ffd700; font-weight:bold; text-decoration:none;">
+        MERCH page!
+      </a>
+    </p>
 
-  <label for="phone">Phone Number</label>
-  <input type="tel" id="phone" name="phone" required>
+  </section>
 
-  <label for="location">Where do you live?</label>
-  <input type="text" id="location" name="location" required>
 
-  <!-- Optional: notes box -->
-  <label for="notes">Additional Notes</label>
-  <textarea id="notes" name="notes" rows="3"></textarea>
+  <!-- Registration Form -->
+  <section class="register-intro">
 
-  <button type="submit">Register</button>
-</form>
-  
-</section>  <!-- ✅ this closes the card wrapper -->
+    <form action="https://formspree.io/f/mjkelrld" method="POST">
 
-<div class="event-details">
-  <p class="event-date">Tentative Date: March, 13, 2027
-  <p class="event-location">Location: TBD </p>
-</div>
+      <!-- Hidden subject line for your emails -->
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Four Square Championship Registration"
+      >
+
+      <!-- Hidden redirect -->
+      <input
+        type="hidden"
+        name="_redirect"
+        value="https://ecscoop22.github.io/FourSquareWorldChampionship/thanks.html"
+      >
+
+
+      <!-- Championship Selection -->
+      <label for="championship">
+        Which Championship Are You Registering For?
+      </label>
+
+      <select id="championship" name="championship" required>
+        <option value="">-- Select Championship --</option>
+
+        <option value="2027 Four Square National Championship">
+          2027 Four Square National Championship™
+        </option>
+
+        <option value="2027 Four Square World Championship">
+          2027 Four Square World Championship™
+        </option>
+
+        <option value="Both 2027 Four Square National and World Championships">
+          Both the National and World Championship™
+        </option>
+
+      </select>
+
+
+      <!-- National Champion Benefit -->
+      <div style="
+        margin: 20px 0;
+        padding: 15px 20px;
+        background-color: #f5f5f5;
+        border-left: 5px solid #b22222;
+        border-radius: 6px;
+        text-align: left;
+      ">
+
+        <p style="margin: 0;">
+          🏆 <strong>National Championship Bonus:</strong>
+        </p>
+
+        <p style="margin: 8px 0 0 0;">
+          The <strong>National Champion</strong> earns
+          <strong>free entry into the Four Square World Championship™.</strong>
+          Win the national title and your World Championship entry is on us!
+        </p>
+
+      </div>
+
+
+      <!-- Player Information -->
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="">-- Select Gender --</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" required>
+
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+
+      <label for="location">Where do you live?</label>
+      <input type="text" id="location" name="location" required>
+
+
+      <!-- Optional Notes -->
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" name="notes" rows="3"></textarea>
+
+
+      <!-- Submit -->
+      <button type="submit">Register</button>
+
+    </form>
+
+  </section>
+
+
+  <!-- Championship Details -->
+  <div class="event-details">
+
+    <p class="event-date">
+      <strong>2027 Four Square National Championship™</strong><br>
+      Date: TBD
+    </p>
+
+    <p class="event-location">
+      Location: TBD
+    </p>
+
+
+    <p class="event-date" style="margin-top: 1.5em;">
+      <strong>2027 Four Square World Championship™</strong><br>
+      Date: TBD
+    </p>
+
+    <p class="event-location">
+      Location: TBD
+    </p>
+
+  </div>
+
 </main>
-  
+
+
 <footer>
   <p style="text-align: center; font-weight: bold; margin-top: 3em;">
     The nation's finest resource for all things four square.<br>
@@ -145,5 +259,6 @@
     All Rights Reserved.
   </p>
 </footer>
+
 </body>
 </html>
