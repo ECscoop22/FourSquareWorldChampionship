@@ -15,15 +15,67 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 
   <style>
-    .card { margin: 1em 0; padding: 1em; border-radius: 12px; background: #fff; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
-    form input, form textarea { width: 100%; padding: 8px; margin: 6px 0; border: 1px solid #ccc; border-radius: 6px; }
-    button { padding: 8px 16px; margin-top: 8px; border: none; border-radius: 6px; cursor: pointer; background: #e63946; color: white; }
-    button:hover { background: #c92f3f; }
-    .event { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 8px; }
+
+    /* =========================================
+       GAME HUB FORM & CARD STYLES
+       ========================================= */
+
+    .card {
+      margin: 1em 0;
+      padding: 1em;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Keep all Game Hub form controls in Fredoka */
+    form input,
+    form textarea,
+    form select,
+    form button {
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    form button,
+    button {
+      font-family: 'Fredoka', sans-serif;
+      padding: 8px 16px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #e63946;
+      color: white;
+    }
+
+    button:hover {
+      background: #c92f3f;
+    }
+
+    .event {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
   </style>
 </head>
 
+
 <body class="game-hub-page">
+
 
 <header class="site-header">
 
@@ -57,6 +109,7 @@
       />
     </a>
 
+
     <!-- Navigation -->
     <nav style="
       flex: 1 1 auto;
@@ -85,101 +138,290 @@
 
 </header>
 
+
 <main style="padding-top:0 !important;">
 
-  <h1 class="glow-title" style="text-align:center; margin-bottom: 8px;">
-    <span class="pulse-ball">🔴</span> GAME HUB <span class="pulse-ball">🔴</span>
+
+  <!-- =========================================
+       GAME HUB TITLE
+       ========================================= -->
+
+  <h1
+    class="glow-title"
+    style="text-align:center; margin-bottom:8px;"
+  >
+    <span class="pulse-ball">🔴</span>
+    GAME HUB
+    <span class="pulse-ball">🔴</span>
   </h1>
 
-  <p class="site-tagline" style="text-align:center; margin: 0 0 10px 0;">
+
+  <p
+    class="site-tagline"
+    style="text-align:center; margin:0 0 10px 0;"
+  >
     Connect. Play. Share the Fun.
   </p>
 
-  <section class="gamehub-intro" style="max-width:900px; margin: 0 auto; text-align:center;">
-    <p style="font-size:1.1rem; line-height:1.6;">
+
+  <!-- =========================================
+       GAME HUB INTRO
+       ========================================= -->
+
+  <section
+    class="gamehub-intro"
+    style="
+      max-width:900px;
+      margin:0 auto;
+      text-align:center;
+    "
+  >
+
+    <p
+      style="
+        font-size:1.1rem;
+        line-height:1.6;
+        margin-bottom:5px;
+      "
+    >
       One of the biggest challenges in playing Four Square is finding people to play with.
       The Game Hub was created to change that. Whether you're hosting a match or looking to join one,
       this is where the Four Square community comes to play.
     </p>
+
   </section>
 
-  <section class="card" style="max-width:720px; margin:-40px auto 40px auto; text-align:center; background: linear-gradient(135deg, #800000, #008080);">
-    <h2 style="color: white;">Host a Game</h2>
+
+  <!-- =========================================
+       HOST A GAME
+       ========================================= -->
+
+  <section
+    class="card"
+    style="
+      max-width:720px;
+      margin:-40px auto 40px auto;
+      text-align:center;
+      background:linear-gradient(135deg, #800000, #008080);
+    "
+  >
+
+    <h2 style="color:white;">
+      Host a Game
+    </h2>
+
 
     <form id="gameForm">
-      <input type="text" id="title" placeholder="Game Title" required />
-      <input type="date" id="date" required />
-      <input type="text" id="location" placeholder="Location (e.g., Dallas, TX)" required />
-      <textarea id="highlights" placeholder="Highlights / Details (optional)"></textarea>
-      <input type="text" id="mediaUrl" placeholder="Media URL (optional)" />
-      <input type="text" id="submittedBy" placeholder="Your Name" required />
-      <button type="submit">Post Game</button>
+
+      <input
+        type="text"
+        id="title"
+        placeholder="Game Title"
+        required
+      />
+
+      <input
+        type="date"
+        id="date"
+        required
+      />
+
+      <input
+        type="text"
+        id="location"
+        placeholder="Location (e.g., Dallas, TX)"
+        required
+      />
+
+      <textarea
+        id="highlights"
+        placeholder="Highlights / Details (optional)"
+      ></textarea>
+
+      <input
+        type="text"
+        id="mediaUrl"
+        placeholder="Media URL (optional)"
+      />
+
+      <input
+        type="text"
+        id="submittedBy"
+        placeholder="Your Name"
+        required
+      />
+
+      <button type="submit">
+        Post Game
+      </button>
+
     </form>
+
   </section>
 
-  <section class="card upcoming-gradient" style="max-width:720px; margin:0 auto 40px auto; text-align:center;">
-    <h2 style="color: white;">Upcoming Games</h2>
+
+  <!-- =========================================
+       UPCOMING GAMES
+       ========================================= -->
+
+  <section
+    class="card upcoming-gradient"
+    style="
+      max-width:720px;
+      margin:0 auto 40px auto;
+      text-align:center;
+    "
+  >
+
+    <h2 style="color:white;">
+      Upcoming Games
+    </h2>
+
     <div id="upcomingGames"></div>
+
   </section>
 
-  <section class="card" style="max-width:720px; margin:40px auto 0 auto; text-align:center; background: linear-gradient(135deg, #800000, #008080);">
-    <h2 style="color: white;">Previous Games</h2>
+
+  <!-- =========================================
+       PREVIOUS GAMES
+       ========================================= -->
+
+  <section
+    class="card"
+    style="
+      max-width:720px;
+      margin:40px auto 0 auto;
+      text-align:center;
+      background:linear-gradient(135deg, #800000, #008080);
+    "
+  >
+
+    <h2 style="color:white;">
+      Previous Games
+    </h2>
+
     <div id="previousGames"></div>
+
   </section>
+
 
 </main>
 
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
 <footer>
-  <p style="text-align: center; font-weight: bold; margin-top: 3em;">
+
+  <p
+    style="
+      text-align:center;
+      font-weight:bold;
+      margin-top:3em;
+    "
+  >
     The nation's finest resource for all things four square.<br>
     © 2026 National Four Square League™. Four Square World Championship™.
     All Rights Reserved.
   </p>
+
 </footer>
 
+
+<!-- =========================================
+     GAME HUB JAVASCRIPT
+     ========================================= -->
+
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbzix8U_lib9XEsih0iDQR3GrRJIqhhjZdRuqlmjU5Guzh-n6hHwO6ypdXbCOwLwS3zt/exec";
+
+const API_URL =
+  "https://script.google.com/macros/s/AKfycbzix8U_lib9XEsih0iDQR3GrRJIqhhjZdRuqlmjU5Guzh-n6hHwO6ypdXbCOwLwS3zt/exec";
+
 
 async function loadGames() {
-  const upcomingContainer = document.getElementById("upcomingGames");
-  const previousContainer = document.getElementById("previousGames");
+
+  const upcomingContainer =
+    document.getElementById("upcomingGames");
+
+  const previousContainer =
+    document.getElementById("previousGames");
+
 
   try {
-    // Cache-busting helps prevent desktop browsers from displaying
-    // an older version of the Google Apps Script response.
-    const res = await fetch(API_URL + "?action=get&t=" + Date.now());
+
+    /*
+      Cache-busting helps prevent browsers from displaying
+      an older version of the Google Apps Script response.
+    */
+
+    const res =
+      await fetch(API_URL + "?action=get&t=" + Date.now());
+
 
     if (!res.ok) {
       throw new Error("Unable to load games.");
     }
 
-    const games = await res.json();
+
+    const games =
+      await res.json();
+
 
     upcomingContainer.innerHTML = "";
     previousContainer.innerHTML = "";
 
-    // Get today's date at midnight so we're comparing calendar dates,
-    // not the exact current time.
+
+    /*
+      Get today's date at midnight so we're comparing
+      calendar dates rather than the exact current time.
+    */
+
     const today = new Date();
+
     today.setHours(0, 0, 0, 0);
+
 
     const upcomingGames = [];
     const previousGames = [];
 
+
     games.forEach(game => {
 
-      // Convert the returned date into a reliable JavaScript date.
-      const gameDate = new Date(game.Date);
 
-      // Skip only if the API contains a genuinely invalid date.
+      /*
+        Convert the returned date into a JavaScript date.
+      */
+
+      const gameDate =
+        new Date(game.Date);
+
+
+      /*
+        Skip only genuinely invalid dates.
+      */
+
       if (isNaN(gameDate.getTime())) {
-        console.warn("Invalid game date:", game.Date, game);
+
+        console.warn(
+          "Invalid game date:",
+          game.Date,
+          game
+        );
+
         return;
       }
 
+
       gameDate.setHours(0, 0, 0, 0);
 
+
+      /*
+        Build the individual game card.
+      */
+
       const card = `
+
         <div
           class="game-card"
           style="
@@ -194,107 +436,184 @@ async function loadGames() {
             text-align:center;
           "
         >
-          <h3>${game.Title}</h3>
+
+          <h3>
+            ${game.Title}
+          </h3>
+
 
           <p>
             <strong>Date:</strong>
             ${gameDate.toLocaleDateString()}
           </p>
 
+
           <p>
             <strong>Location:</strong>
             ${game.Location}
           </p>
+
 
           <p>
             <strong>Highlights:</strong>
             ${game.Highlights || "None"}
           </p>
 
+
           ${
             game.MediaUrl
-              ? `<p>
-                   <a
-                     href="${game.MediaUrl}"
-                     target="_blank"
-                     style="font-weight:bold;"
-                   >
-                     View Media
-                   </a>
-                 </p>`
+              ? `
+                <p>
+                  <a
+                    href="${game.MediaUrl}"
+                    target="_blank"
+                    style="font-weight:bold;"
+                  >
+                    View Media
+                  </a>
+                </p>
+              `
               : ""
           }
 
+
           <p>
-            <em>Submitted by ${game.SubmittedBy}</em>
+            <em>
+              Submitted by ${game.SubmittedBy}
+            </em>
           </p>
+
         </div>
+
       `;
 
-      // Today and future = Upcoming
-      // Before today = Previous
+
+      /*
+        Today and future = Upcoming
+        Before today = Previous
+      */
+
       if (gameDate >= today) {
+
         upcomingGames.push({
           date: gameDate,
           html: card
         });
+
       } else {
+
         previousGames.push({
           date: gameDate,
           html: card
         });
+
       }
+
     });
 
-    // Upcoming games: soonest first
-    upcomingGames.sort((a, b) => a.date - b.date);
 
-    // Previous games: newest first
-    previousGames.sort((a, b) => b.date - a.date);
+    /*
+      Upcoming games:
+      Soonest first.
+    */
 
-    // Display upcoming games
+    upcomingGames.sort(
+      (a, b) => a.date - b.date
+    );
+
+
+    /*
+      Previous games:
+      Most recent first.
+    */
+
+    previousGames.sort(
+      (a, b) => b.date - a.date
+    );
+
+
+    /*
+      Display upcoming games.
+    */
+
     if (upcomingGames.length > 0) {
+
       upcomingContainer.innerHTML =
-        upcomingGames.map(game => game.html).join("");
+        upcomingGames
+          .map(game => game.html)
+          .join("");
+
     } else {
+
       upcomingContainer.innerHTML = `
+
         <p style="color:white; font-weight:bold;">
           No upcoming games currently posted.
         </p>
+
       `;
+
     }
 
-    // Display previous games
+
+    /*
+      Display previous games.
+    */
+
     if (previousGames.length > 0) {
+
       previousContainer.innerHTML =
-        previousGames.map(game => game.html).join("");
+        previousGames
+          .map(game => game.html)
+          .join("");
+
     } else {
+
       previousContainer.innerHTML = `
+
         <p style="color:white; font-weight:bold;">
           No previous games currently posted.
         </p>
+
       `;
+
     }
 
+
   } catch (err) {
-    console.error("Game Hub error:", err);
+
+    console.error(
+      "Game Hub error:",
+      err
+    );
+
 
     upcomingContainer.innerHTML = `
+
       <p style="color:white; font-weight:bold;">
         Unable to load upcoming games right now.
       </p>
+
     `;
 
+
     previousContainer.innerHTML = `
+
       <p style="color:white; font-weight:bold;">
         Unable to load previous games right now.
       </p>
+
     `;
+
   }
+
 }
 
+
 loadGames();
+
 </script>
+
 
 </body>
 </html>
