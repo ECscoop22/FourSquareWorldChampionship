@@ -347,7 +347,7 @@
   </section>
 
 
-    <!-- ========================================================= -->
+   <!-- ========================================================= -->
   <!-- WORLD CHAMPIONSHIP -->
   <!-- ========================================================= -->
 
@@ -397,38 +397,228 @@
       ></div>
 
 
-      <!-- Animated Trophy -->
+      <!-- Trophy + World Championship Logo -->
       <div
         style="
-          font-size: 2.4em;
-          line-height: 1;
-          margin: 0.15em 0 0.2em;
-          animation: trophyBounce 1.8s ease-in-out infinite;
-          display: inline-block;
-        "
-        aria-hidden="true"
-      >
-        🏆
-      </div>
-
-
-      <!-- World Championship Logo -->
-      <div
-        style="
-          margin: 0.1em auto 0.5em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 35px;
+          margin: 0.25em auto 0.55em;
         "
       >
-        <img
-          src="images/hero-banner.jpg"
-          alt="Four Square World Championship"
+
+        <!-- Left Trophy -->
+        <div
+          aria-hidden="true"
           style="
-            width: 130px;
-            max-width: 35%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
+            width: 82px;
+            flex: 0 0 82px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           "
-        />
+        >
+          <svg
+            viewBox="0 0 100 120"
+            width="78"
+            height="94"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="goldLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff1a8"/>
+                <stop offset="25%" stop-color="#ffd54a"/>
+                <stop offset="55%" stop-color="#d99a00"/>
+                <stop offset="80%" stop-color="#ffcf33"/>
+                <stop offset="100%" stop-color="#a96f00"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Handles -->
+            <path
+              d="M22 25 C5 20, 5 48, 25 50"
+              fill="none"
+              stroke="#c48700"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+            <path
+              d="M78 25 C95 20, 95 48, 75 50"
+              fill="none"
+              stroke="#c48700"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+
+            <!-- Cup -->
+            <path
+              d="M25 17
+                 L75 17
+                 L69 59
+                 C67 72, 58 80, 50 80
+                 C42 80, 33 72, 31 59
+                 Z"
+              fill="url(#goldLeft)"
+              stroke="#a96f00"
+              stroke-width="2"
+            />
+
+            <!-- Stem -->
+            <rect
+              x="45"
+              y="77"
+              width="10"
+              height="20"
+              rx="2"
+              fill="#d99a00"
+            />
+
+            <!-- Base -->
+            <path
+              d="M32 96 L68 96 L73 104 L27 104 Z"
+              fill="#b77b00"
+            />
+            <rect
+              x="23"
+              y="104"
+              width="54"
+              height="8"
+              rx="3"
+              fill="url(#goldLeft)"
+              stroke="#a96f00"
+              stroke-width="2"
+            />
+
+            <!-- Highlight -->
+            <path
+              d="M38 24 C35 40, 38 56, 45 64"
+              fill="none"
+              stroke="#fff6c7"
+              stroke-width="4"
+              stroke-linecap="round"
+              opacity="0.8"
+            />
+          </svg>
+        </div>
+
+
+        <!-- World Championship Logo -->
+        <div
+          style="
+            flex: 0 1 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <img
+            src="images/world championship logo.png"
+            alt="Four Square World Championship"
+            style="
+              width: 150px;
+              max-width: 30vw;
+              height: auto;
+              display: block;
+            "
+          />
+        </div>
+
+
+        <!-- Right Trophy -->
+        <div
+          aria-hidden="true"
+          style="
+            width: 82px;
+            flex: 0 0 82px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <svg
+            viewBox="0 0 100 120"
+            width="78"
+            height="94"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="goldRight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff1a8"/>
+                <stop offset="25%" stop-color="#ffd54a"/>
+                <stop offset="55%" stop-color="#d99a00"/>
+                <stop offset="80%" stop-color="#ffcf33"/>
+                <stop offset="100%" stop-color="#a96f00"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Handles -->
+            <path
+              d="M22 25 C5 20, 5 48, 25 50"
+              fill="none"
+              stroke="#c48700"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+            <path
+              d="M78 25 C95 20, 95 48, 75 50"
+              fill="none"
+              stroke="#c48700"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+
+            <!-- Cup -->
+            <path
+              d="M25 17
+                 L75 17
+                 L69 59
+                 C67 72, 58 80, 50 80
+                 C42 80, 33 72, 31 59
+                 Z"
+              fill="url(#goldRight)"
+              stroke="#a96f00"
+              stroke-width="2"
+            />
+
+            <!-- Stem -->
+            <rect
+              x="45"
+              y="77"
+              width="10"
+              height="20"
+              rx="2"
+              fill="#d99a00"
+            />
+
+            <!-- Base -->
+            <path
+              d="M32 96 L68 96 L73 104 L27 104 Z"
+              fill="#b77b00"
+            />
+            <rect
+              x="23"
+              y="104"
+              width="54"
+              height="8"
+              rx="3"
+              fill="url(#goldRight)"
+              stroke="#a96f00"
+              stroke-width="2"
+            />
+
+            <!-- Highlight -->
+            <path
+              d="M38 24 C35 40, 38 56, 45 64"
+              fill="none"
+              stroke="#fff6c7"
+              stroke-width="4"
+              stroke-linecap="round"
+              opacity="0.8"
+            />
+          </svg>
+        </div>
+
       </div>
 
 
