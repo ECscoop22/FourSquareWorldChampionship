@@ -3,617 +3,450 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Game Hub</title>
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+  <title>Gallery | National Four Square League</title>
 
-  <!-- Styles -->
   <link rel="stylesheet" href="styles-v2.css" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon.png" />
 
   <style>
+    body {
+      font-family: 'Fredoka', sans-serif;
+    }
 
-    /* =========================================
-       GAME HUB FORM & CARD STYLES
-       ========================================= */
+    .gallery-hero {
+      text-align: center;
+      margin: 2em auto 1.5em auto;
+      max-width: 900px;
+    }
 
-    .card {
-      margin: 1em 0;
-      padding: 1em;
+    .gallery-hero h1 {
+      margin-bottom: 0.2em;
+    }
+
+    .gallery-tagline {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #008080;
+      margin-top: 0;
+    }
+
+    .gallery-intro {
+      max-width: 850px;
+      margin: 0 auto 2em auto;
+      text-align: center;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .gallery-submit {
+      background: linear-gradient(135deg, #800000, #008080);
+      color: white;
+      text-align: center;
+      padding: 2em;
       border-radius: 12px;
-      background: #fff;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      margin: 2em auto 3em auto;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    /* Keep all Game Hub form controls in Fredoka */
-    form input,
-    form textarea,
-    form select,
-    form button {
-      font-family: 'Fredoka', sans-serif;
+    .gallery-submit h2 {
+      color: white;
+      margin-top: 0;
+      font-size: 1.8rem;
     }
 
-    form input,
-    form textarea,
-    form select {
-      width: 100%;
-      padding: 8px;
-      margin: 6px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-sizing: border-box;
+    .gallery-submit p {
+      color: white;
+      line-height: 1.6;
+      font-size: 1.05rem;
     }
 
-    form button,
-    button {
-      font-family: 'Fredoka', sans-serif;
-      padding: 8px 16px;
-      margin-top: 8px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+    .gallery-submit-button {
+      display: inline-block;
       background: #e63946;
       color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.8em 1.7em;
+      border-radius: 9px;
+      margin-top: 0.7em;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    button:hover {
-      background: #c92f3f;
+    .gallery-submit-button:hover {
+      opacity: 0.9;
     }
 
-    .event {
-      border: 1px solid #ddd;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
+    .gallery-categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2em;
+      max-width: 1000px;
+      margin: 0 auto 3em auto;
     }
 
+    .gallery-category {
+      background: #f7f7f7;
+      border-radius: 12px;
+      padding: 1.5em 1em;
+      text-align: center;
+      border: 2px solid #e6e6e6;
+    }
+
+    .gallery-category .icon {
+      font-size: 2.3rem;
+      margin-bottom: 0.3em;
+    }
+
+    .gallery-category h3 {
+      margin: 0.3em 0;
+      color: #800000;
+    }
+
+    .gallery-category p {
+      margin: 0;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .gallery-section {
+      max-width: 1000px;
+      margin: 0 auto 3em auto;
+    }
+
+    .gallery-section h2 {
+      text-align: center;
+      color: #800000;
+      margin-bottom: 0.5em;
+    }
+
+    .gallery-section-intro {
+      text-align: center;
+      line-height: 1.6;
+      margin-bottom: 1.5em;
+    }
+
+    .gallery-feature {
+      background: #f7f7f7;
+      border-radius: 12px;
+      padding: 2em;
+      text-align: center;
+      border: 2px solid #e6e6e6;
+    }
+
+    .gallery-feature h3 {
+      color: #008080;
+      font-size: 1.5rem;
+      margin-top: 0;
+    }
+
+    .gallery-placeholder {
+      background: white;
+      border: 2px dashed #bdbdbd;
+      border-radius: 10px;
+      padding: 3em 1.5em;
+      margin-top: 1.5em;
+      color: #666;
+    }
+
+    .gallery-placeholder .placeholder-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.4em;
+    }
+
+    .gallery-community {
+      background: linear-gradient(
+        135deg,
+        rgba(128,0,0,0.08),
+        rgba(0,128,128,0.08)
+      );
+      border-radius: 12px;
+      padding: 2em;
+      text-align: center;
+      margin-bottom: 3em;
+    }
+
+    .gallery-community h2 {
+      margin-top: 0;
+      color: #800000;
+    }
+
+    .gallery-community p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .gallery-final-cta {
+      text-align: center;
+      margin: 3em auto;
+      max-width: 800px;
+    }
+
+    .gallery-final-cta h2 {
+      color: #008080;
+    }
+
+    .gallery-final-cta p {
+      line-height: 1.6;
+    }
+
+    @media (max-width: 800px) {
+      .gallery-categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .gallery-categories {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
+<body>
 
-<body class="game-hub-page">
-
-
-<header class="site-header">
-
-  <div style="
-    display: flex;
-    align-items: center;
-    width: 100%;
-    flex-wrap: nowrap;
-    overflow: hidden;
-  ">
-
-    <!-- NFSL Logo -->
-    <a
-      href="index.html"
-      style="
+  <header class="site-header">
+    <div style="
+      display: flex;
+      align-items: center;
+      width: 100%;
+      flex-wrap: nowrap;
+      overflow: hidden;
+    ">
+      <a href="index.html" style="
         display: flex;
         align-items: center;
         margin-right: 18px;
         text-decoration: none;
         flex: 0 0 auto;
-      "
-    >
-      <img
-        src="images/NFSL logo.png"
-        alt="National Four Square League"
-        style="
-          height: 55px;
-          width: auto;
-          display: block;
-        "
-      />
-    </a>
-
-
-    <!-- Navigation -->
-<nav style="
-  flex: 1 1 auto;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 13px;
-">
-
-<a href="index.html">Home</a>
-<a href="what-is-four-square.html">What Is Four Square?</a>
-<a href="rules.html">Rules</a>
-<a href="world-championship.html">World Championship</a>
-<a href="national-championship.html">National Championship</a>
-<a href="register.html">Register</a>
-<a href="faq.html">Game Hub</a>
-<a href="blog.html">Blog</a>
-<a href="media.html">Media</a>
-<a href="merch.html">Merch</a>
-
-    </nav>
-
-  </div>
-
-</header>
-
-
-<main style="padding-top:0 !important;">
-
-
-  <!-- =========================================
-       GAME HUB TITLE
-       ========================================= -->
-
-  <h1
-    class="glow-title"
-    style="text-align:center; margin-bottom:8px;"
-  >
-    <span class="pulse-ball">🔴</span>
-    GAME HUB
-    <span class="pulse-ball">🔴</span>
-  </h1>
-
-
-  <p
-    class="site-tagline"
-    style="text-align:center; margin:0 0 10px 0;"
-  >
-    Connect. Play. Share the Fun.
-  </p>
-
-
-  <!-- =========================================
-       GAME HUB INTRO
-       ========================================= -->
-
-  <section
-    class="gamehub-intro"
-    style="
-      max-width:900px;
-      margin:0 auto;
-      text-align:center;
-    "
-  >
-
-    <p
-      style="
-        font-size:1.1rem;
-        line-height:1.6;
-        margin-bottom:5px;
-      "
-    >
-      One of the biggest challenges in playing Four Square is finding people to play with.
-      The Game Hub was created to change that. Whether you're hosting a match or looking to join one,
-      this is where the Four Square community comes to play.
-    </p>
-
-  </section>
-
-
-  <!-- =========================================
-       HOST A GAME
-       ========================================= -->
-
-  <section
-    class="card"
-    style="
-      max-width:720px;
-      margin:-40px auto 40px auto;
-      text-align:center;
-      background:linear-gradient(135deg, #800000, #008080);
-    "
-  >
-
-    <h2 style="color:white;">
-      Host a Game
-    </h2>
-
-
-    <form id="gameForm">
-
-      <input
-        type="text"
-        id="title"
-        placeholder="Game Title"
-        required
-      />
-
-      <input
-        type="date"
-        id="date"
-        required
-      />
-
-      <input
-        type="text"
-        id="location"
-        placeholder="Location (e.g., Dallas, TX)"
-        required
-      />
-
-      <textarea
-        id="highlights"
-        placeholder="Highlights / Details (optional)"
-      ></textarea>
-
-      <input
-        type="text"
-        id="mediaUrl"
-        placeholder="Media URL (optional)"
-      />
-
-      <input
-        type="text"
-        id="submittedBy"
-        placeholder="Your Name"
-        required
-      />
-
-      <button type="submit">
-        Post Game
-      </button>
-
-    </form>
-
-  </section>
-
-
-  <!-- =========================================
-       UPCOMING GAMES
-       ========================================= -->
-
-  <section
-    class="card upcoming-gradient"
-    style="
-      max-width:720px;
-      margin:0 auto 40px auto;
-      text-align:center;
-    "
-  >
-
-    <h2 style="color:white;">
-      Upcoming Games
-    </h2>
-
-    <div id="upcomingGames"></div>
-
-  </section>
-
-
-  <!-- =========================================
-       PREVIOUS GAMES
-       ========================================= -->
-
-  <section
-    class="card"
-    style="
-      max-width:720px;
-      margin:40px auto 0 auto;
-      text-align:center;
-      background:linear-gradient(135deg, #800000, #008080);
-    "
-  >
-
-    <h2 style="color:white;">
-      Previous Games
-    </h2>
-
-    <div id="previousGames"></div>
-
-  </section>
-
-
-</main>
-
-
-<!-- =========================================
-     FOOTER
-     ========================================= -->
-
-<footer>
-
-  <p
-    style="
-      text-align:center;
-      font-weight:bold;
-      margin-top:3em;
-    "
-  >
-© 2026 National Four Square League™. Home of the Four Square National Championship™ and Four Square World Championship™. All Rights Reserved.
-  </p>
-
-</footer>
-
-
-<!-- =========================================
-     GAME HUB JAVASCRIPT
-     ========================================= -->
-
-<script>
-
-const API_URL =
-  "https://script.google.com/macros/s/AKfycbzix8U_lib9XEsih0iDQR3GrRJIqhhjZdRuqlmjU5Guzh-n6hHwO6ypdXbCOwLwS3zt/exec";
-
-
-async function loadGames() {
-
-  const upcomingContainer =
-    document.getElementById("upcomingGames");
-
-  const previousContainer =
-    document.getElementById("previousGames");
-
-
-  try {
-
-    /*
-      Cache-busting helps prevent browsers from displaying
-      an older version of the Google Apps Script response.
-    */
-
-    const res =
-      await fetch(API_URL + "?action=get&t=" + Date.now());
-
-
-    if (!res.ok) {
-      throw new Error("Unable to load games.");
-    }
-
-
-    const games =
-      await res.json();
-
-
-    upcomingContainer.innerHTML = "";
-    previousContainer.innerHTML = "";
-
-
-    /*
-      Get today's date at midnight so we're comparing
-      calendar dates rather than the exact current time.
-    */
-
-    const today = new Date();
-
-    today.setHours(0, 0, 0, 0);
-
-
-    const upcomingGames = [];
-    const previousGames = [];
-
-
-    games.forEach(game => {
-
-
-      /*
-        Convert the returned date into a JavaScript date.
-      */
-
-      const gameDate =
-        new Date(game.Date);
-
-
-      /*
-        Skip only genuinely invalid dates.
-      */
-
-      if (isNaN(gameDate.getTime())) {
-
-        console.warn(
-          "Invalid game date:",
-          game.Date,
-          game
-        );
-
-        return;
-      }
-
-
-      gameDate.setHours(0, 0, 0, 0);
-
-
-      /*
-        Build the individual game card.
-      */
-
-      const card = `
-
-        <div
-          class="game-card"
-          style="
-            display:block !important;
-            visibility:visible !important;
-            background:white;
-            color:#333;
-            padding:20px;
-            margin:20px 0;
-            border-radius:12px;
-            box-shadow:0 4px 10px rgba(0,0,0,0.1);
-            text-align:center;
-          "
-        >
-
-          <h3>
-            ${game.Title}
-          </h3>
-
-
+      ">
+        <img src="images/NFSL logo.png"
+             alt="National Four Square League"
+             style="
+               height: 55px;
+               width: auto;
+               display: block;
+             " />
+      </a>
+
+      <nav style="
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 13px;
+      ">
+        <a href="index.html">Home</a>
+        <a href="what-is-four-square.html">What Is Four Square?</a>
+        <a href="rules.html">Rules</a>
+        <a href="world-championship.html">World Championship</a>
+        <a href="national-championship.html">National Championship</a>
+        <a href="register.html">Register</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="media.html">Media</a>
+        <a href="merch.html">Merch</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="gallery-hero">
+      <h1>📸 GALLERY</h1>
+
+      <p class="gallery-tagline">
+        See Four Square in action across the country.
+      </p>
+
+      <p class="gallery-intro">
+        Four Square is meant to be played, shared, and enjoyed everywhere.
+        The NFSL Gallery is a place to showcase the people and places keeping
+        the game going, from school clubs and pickup games to camps,
+        community events, competitive tournaments, and everything in between.
+      </p>
+    </section>
+
+
+    <!-- SUBMIT PHOTOS / VIDEOS -->
+    <section class="gallery-submit">
+
+      <h2>📸 Have Four Square Photos or Videos?</h2>
+
+      <p>
+        We want to see them! Whether you're playing in a tournament,
+        running a school club, hosting a pickup game, attending a camp,
+        or simply getting together with friends for a game of Four Square,
+        send your photos and videos our way.
+      </p>
+
+      <p>
+        Your submission may be featured in the NFSL Gallery and shared
+        with the Four Square community.
+      </p>
+
+      <a
+        class="gallery-submit-button"
+        href="mailto:ericcostanza@yahoo.com?subject=Four Square Gallery Submission&body=Name:%0D%0AEvent or Game:%0D%0ALocation:%0D%0ADate:%0D%0A%0D%0ATell us about your Four Square game or event:%0D%0A"
+      >
+        SUBMIT PHOTOS &amp; VIDEOS →
+      </a>
+
+      <p style="font-size:0.9rem; margin-top:1em; margin-bottom:0;">
+        Please attach your photos or videos to the email before sending.
+      </p>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="gallery-section">
+
+      <h2>FOUR SQUARE EVERYWHERE</h2>
+
+      <p class="gallery-section-intro">
+        From casual games to championship competition, Four Square is being
+        played in all kinds of places and in all kinds of ways.
+      </p>
+
+      <div class="gallery-categories">
+
+        <div class="gallery-category">
+          <div class="icon">🏫</div>
+          <h3>Clubs</h3>
           <p>
-            <strong>Date:</strong>
-            ${gameDate.toLocaleDateString()}
+            School and community Four Square clubs bringing players together.
+          </p>
+        </div>
+
+        <div class="gallery-category">
+          <div class="icon">🔴</div>
+          <h3>Pickup Games</h3>
+          <p>
+            Friends, families, neighbors, and anyone looking for a game.
+          </p>
+        </div>
+
+        <div class="gallery-category">
+          <div class="icon">☀️</div>
+          <h3>Camps &amp; Events</h3>
+          <p>
+            Four Square camps, community events, and opportunities to play.
+          </p>
+        </div>
+
+        <div class="gallery-category">
+          <div class="icon">🏆</div>
+          <h3>Tournaments</h3>
+          <p>
+            Competitive Four Square from local tournaments to championship events.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOUR SQUARE INVITATIONAL -->
+    <section class="gallery-section">
+
+      <h2>FOUR SQUARE INVITATIONAL</h2>
+
+      <p class="gallery-section-intro">
+        The Four Square Invitational brings players together for competitive
+        Four Square and is another example of the game continuing to grow.
+      </p>
+
+      <div class="gallery-feature">
+
+        <h3>Four Square Invitational</h3>
+
+        <div class="gallery-placeholder">
+
+          <div class="placeholder-icon">📸🎥</div>
+
+          <strong>Photos &amp; Videos Coming Soon</strong>
+
+          <p style="margin-bottom:0.5em;">
+            Have photos or videos from the Four Square Invitational?
+            Send them to us and they may be featured here.
           </p>
 
-
-          <p>
-            <strong>Location:</strong>
-            ${game.Location}
-          </p>
-
-
-          <p>
-            <strong>Highlights:</strong>
-            ${game.Highlights || "None"}
-          </p>
-
-
-          ${
-            game.MediaUrl
-              ? `
-                <p>
-                  <a
-                    href="${game.MediaUrl}"
-                    target="_blank"
-                    style="font-weight:bold;"
-                  >
-                    View Media
-                  </a>
-                </p>
-              `
-              : ""
-          }
-
-
-          <p>
-            <em>
-              Submitted by ${game.SubmittedBy}
-            </em>
-          </p>
+          <a
+            href="mailto:ericcostanza@yahoo.com?subject=Four Square Invitational Photos or Videos"
+            style="
+              color:#800000;
+              font-weight:bold;
+              text-decoration:none;
+            "
+          >
+            SEND INVITATIONAL MEDIA →
+          </a>
 
         </div>
 
-      `;
+      </div>
+
+    </section>
 
 
-      /*
-        Today and future = Upcoming
-        Before today = Previous
-      */
+    <!-- COMMUNITY SHOWCASE -->
+    <section class="gallery-community">
 
-      if (gameDate >= today) {
+      <h2>FOUR SQUARE IS EVERYWHERE</h2>
 
-        upcomingGames.push({
-          date: gameDate,
-          html: card
-        });
-
-      } else {
-
-        previousGames.push({
-          date: gameDate,
-          html: card
-        });
-
-      }
-
-    });
-
-
-    /*
-      Upcoming games:
-      Soonest first.
-    */
-
-    upcomingGames.sort(
-      (a, b) => a.date - b.date
-    );
-
-
-    /*
-      Previous games:
-      Most recent first.
-    */
-
-    previousGames.sort(
-      (a, b) => b.date - a.date
-    );
-
-
-    /*
-      Display upcoming games.
-    */
-
-    if (upcomingGames.length > 0) {
-
-      upcomingContainer.innerHTML =
-        upcomingGames
-          .map(game => game.html)
-          .join("");
-
-    } else {
-
-      upcomingContainer.innerHTML = `
-
-        <p style="color:white; font-weight:bold;">
-          No upcoming games currently posted.
-        </p>
-
-      `;
-
-    }
-
-
-    /*
-      Display previous games.
-    */
-
-    if (previousGames.length > 0) {
-
-      previousContainer.innerHTML =
-        previousGames
-          .map(game => game.html)
-          .join("");
-
-    } else {
-
-      previousContainer.innerHTML = `
-
-        <p style="color:white; font-weight:bold;">
-          No previous games currently posted.
-        </p>
-
-      `;
-
-    }
-
-
-  } catch (err) {
-
-    console.error(
-      "Game Hub error:",
-      err
-    );
-
-
-    upcomingContainer.innerHTML = `
-
-      <p style="color:white; font-weight:bold;">
-        Unable to load upcoming games right now.
+      <p>
+        The National Four Square League wants to help showcase the people
+        keeping Four Square alive and growing. Whether it's four friends
+        playing on a driveway, a school club competing after class, a summer
+        camp full of new players, or a tournament filled with serious
+        competition, every game is part of the Four Square community.
       </p>
 
-    `;
+    </section>
 
 
-    previousContainer.innerHTML = `
+    <!-- FINAL CTA -->
+    <section class="gallery-final-cta">
 
-      <p style="color:white; font-weight:bold;">
-        Unable to load previous games right now.
+      <h2>Have Something to Share?</h2>
+
+      <p>
+        Help us build the ultimate collection of Four Square moments.
+        Send us your photos and videos and show the world how you're playing.
       </p>
 
-    `;
+      <a
+        class="gallery-submit-button"
+        href="mailto:ericcostanza@yahoo.com?subject=Four Square Gallery Submission&body=Name:%0D%0AEvent or Game:%0D%0ALocation:%0D%0ADate:%0D%0A%0D%0ATell us about your Four Square game or event:%0D%0A"
+      >
+        SHARE YOUR FOUR SQUARE →
+      </a>
 
-  }
+    </section>
 
-}
+  </main>
 
 
-loadGames();
-
-</script>
-
+  <!-- FOOTER -->
+  <footer>
+    <p style="text-align: center; font-weight: bold; margin-top: 3em;">
+      The nation's finest resource for all things four square.<br>
+      © 2026 National Four Square League™. Home of the Four Square National Championship™
+      and Four Square World Championship™. All Rights Reserved.
+    </p>
+  </footer>
 
 </body>
 </html>
