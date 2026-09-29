@@ -18,7 +18,7 @@
 
 <link rel="icon" type="image/png" href="images/favicon.png" />
 
-<style> body { font-family: 'Fredoka', sans-serif; } /* Gallery Introduction */ .gallery-intro { max-width: 900px; margin: 0 auto 2.5em auto; text-align: center; line-height: 1.7; font-size: 1.05rem; } /* Submit Media Box */ .gallery-submit { background: linear-gradient(135deg, #800000, #008080); color: white; text-align: center; padding: 2em; border-radius: 12px; margin: 3em auto 3em auto; max-width: 900px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); } .gallery-submit h2 { color: white; margin-top: 0; font-size: 1.8rem; } .gallery-submit p { color: white; line-height: 1.6; font-size: 1.05rem; } .gallery-submit-button { display: inline-block; background: #e63946; color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; padding: 0.8em 1.7em; border-radius: 9px; margin-top: 0.7em; box-shadow: 0 4px 8px rgba(0,0,0,0.2); } .gallery-submit-button:hover { opacity: 0.9; } /* Gallery Sections */ .gallery-section { max-width: 1000px; margin: 0 auto 3em auto; } .gallery-section h2 { text-align: center; color: #800000; margin-bottom: 0.5em; } .gallery-section-intro { text-align: center; line-height: 1.6; margin-bottom: 1.5em; } /* Category Grid */ .gallery-categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2em; max-width: 1000px; margin: 0 auto; } .gallery-category { background: #f7f7f7; border-radius: 12px; padding: 1.5em 1em; text-align: center; border: 2px solid #e6e6e6; } .gallery-category .icon { font-size: 2.3rem; margin-bottom: 0.3em; } .gallery-category h3 { margin: 0.3em 0; color: #800000; } .gallery-category p { margin: 0; line-height: 1.5; font-size: 0.95rem; } /* Featured Gallery Content */ .gallery-feature { background: #f7f7f7; border-radius: 12px; padding: 2em; text-align: center; border: 2px solid #e6e6e6; margin-bottom: 2em; } .gallery-feature h3 { color: #008080; font-size: 1.5rem; margin-top: 0; } /* Video Container */ .gallery-video { max-width: 850px; margin: 1.5em auto 0 auto; } .gallery-video iframe { width: 100%; height: 475px; border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); } /* Placeholder */ .gallery-placeholder { background: white; border: 2px dashed #bdbdbd; border-radius: 10px; padding: 3em 1.5em; margin-top: 1.5em; color: #666; } .gallery-placeholder .placeholder-icon { font-size: 2.5rem; margin-bottom: 0.4em; } /* Responsive */ @media (max-width: 800px) { .gallery-categories { grid-template-columns: repeat(2, 1fr); } .gallery-video iframe { height: 350px; } } @media (max-width: 500px) { .gallery-categories { grid-template-columns: 1fr; } .gallery-video iframe { height: 250px; } } </style>
+<style> body { font-family: 'Fredoka', sans-serif; } /* PAGE INTRO */ .gallery-intro { max-width: 900px; margin: 0 auto 2.5em auto; text-align: center; line-height: 1.7; font-size: 1.08rem; } /* FOUR SQUARE EVERYWHERE */ .gallery-section { max-width: 1200px; margin: 0 auto 3em auto; } .gallery-section > h2 { text-align: center; color: #800000; margin-bottom: 0.5em; } .gallery-section-intro { text-align: center; line-height: 1.6; margin: 0 auto 1.8em auto; max-width: 850px; } /* FOUR CATEGORY COLUMNS */ .gallery-categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2em; width: 100%; } /* CATEGORY CARD */ .gallery-category { background: #f7f7f7; border-radius: 12px; padding: 1.3em; text-align: center; border: 2px solid #e6e6e6; box-shadow: 0 3px 10px rgba(0,0,0,0.08); display: flex; flex-direction: column; box-sizing: border-box; } .gallery-category .icon { font-size: 2.3rem; margin-bottom: 0.2em; } .gallery-category h3 { margin: 0.2em 0 0.5em 0; color: #800000; font-size: 1.35rem; } .gallery-category > p { margin: 0 0 1.2em 0; line-height: 1.5; font-size: 0.95rem; } /* MEDIA ITEM INSIDE CATEGORY */ .gallery-media-card { background: white; border-radius: 10px; border: 1px solid #ddd; padding: 1em; margin-top: auto; box-shadow: 0 2px 7px rgba(0,0,0,0.08); } .gallery-media-card h4 { color: #008080; margin: 0 0 0.5em 0; font-size: 1.05rem; } .gallery-media-card p { font-size: 0.9rem; line-height: 1.5; margin: 0 0 1em 0; } /* INSTAGRAM FEATURE */ .instagram-feature { display: block; text-decoration: none; color: inherit; } .instagram-feature-image { background: linear-gradient(135deg, #800000, #008080); color: white; border-radius: 8px; padding: 1.5em 0.8em; font-size: 2.4rem; margin-bottom: 0.8em; } .instagram-feature-label { display: inline-block; background: #800000; color: white; padding: 0.45em 0.8em; border-radius: 6px; font-size: 0.85rem; font-weight: bold; margin-top: 0.3em; } /* VIDEO */ .gallery-video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 0.8em; } .gallery-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; } /* COMING SOON MEDIA */ .gallery-coming-soon { background: #fafafa; border: 2px dashed #c9c9c9; border-radius: 8px; padding: 1.2em 0.8em; color: #666; font-size: 0.9rem; line-height: 1.5; } .gallery-coming-soon .icon { font-size: 2rem; margin-bottom: 0.3em; } /* SUBMISSION SECTION */ .gallery-submit { background: linear-gradient(135deg, #800000, #008080); color: white; text-align: center; padding: 2em; border-radius: 12px; margin: 3em auto 2em auto; max-width: 900px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); } .gallery-submit h2 { color: white; margin-top: 0; font-size: 1.8rem; } .gallery-submit p { color: white; line-height: 1.6; font-size: 1.05rem; } .gallery-submit-button { display: inline-block; background: #e63946; color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; padding: 0.8em 1.7em; border-radius: 9px; margin-top: 0.7em; box-shadow: 0 4px 8px rgba(0,0,0,0.2); } .gallery-submit-button:hover { opacity: 0.9; } /* RESPONSIVE */ @media (max-width: 950px) { .gallery-categories { grid-template-columns: repeat(2, 1fr); } } @media (max-width: 550px) { .gallery-categories { grid-template-columns: 1fr; } } </style>
 
 </head>
 
@@ -67,15 +67,42 @@
 ">
 
   <a href="index.html">Home</a>
-  <a href="what-is-four-square.html">What Is Four Square?</a>
-  <a href="rules.html">Rules</a>
-  <a href="world-championship.html">World Championship</a>
-  <a href="national-championship.html">National Championship</a>
-  <a href="register.html">Register</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="blog.html">Blog</a>
-  <a href="media.html">Media</a>
-  <a href="merch.html">Merch</a>
+
+  <a href="what-is-four-square.html">
+    What Is Four Square?
+  </a>
+
+  <a href="rules.html">
+    Rules
+  </a>
+
+  <a href="world-championship.html">
+    World Championship
+  </a>
+
+  <a href="national-championship.html">
+    National Championship
+  </a>
+
+  <a href="register.html">
+    Register
+  </a>
+
+  <a href="gallery.html">
+    Gallery
+  </a>
+
+  <a href="blog.html">
+    Blog
+  </a>
+
+  <a href="media.html">
+    Media
+  </a>
+
+  <a href="merch.html">
+    Merch
+  </a>
 
 </nav>
 
@@ -91,7 +118,16 @@
 
 <!-- Left: Camera -->
 
-<span class="trophy-icon pulse" aria-hidden="true">📸</span>
+<span
+class="trophy-icon pulse"
+aria-hidden="true"
+
+
+
+
+📸
+
+</span>
 
 <div class="wc-title-text">
 
@@ -107,7 +143,16 @@
 
 <!-- Right: Video -->
 
-<span class="trophy-icon pulse" aria-hidden="true">🎥</span>
+<span
+class="trophy-icon pulse"
+aria-hidden="true"
+
+
+
+
+🎥
+
+</span>
 
 </div>
 
@@ -126,6 +171,9 @@ community events, competitive tournaments, and everything in between.
 
 </section>
 
+
+
+
 <!-- FOUR SQUARE EVERYWHERE -->
 
 <section class="gallery-section">
@@ -134,16 +182,19 @@ community events, competitive tournaments, and everything in between.
 
 <p class="gallery-section-intro">
 
-From casual games to championship competition, Four Square is being
-played in all kinds of places and in all kinds of ways. The Gallery
-will showcase photos and videos submitted by players, families,
-clubs, organizers, and Four Square fans from across the country.
+From casual games to organized clubs, community events, and competitive
+tournaments, Four Square is being played in all kinds of places and
+in all kinds of ways. Explore the Gallery by category.
 
 </p>
 
+<!-- FOUR CATEGORY COLUMNS -->
+
 <div class="gallery-categories">
 
+<!-- ========================= -->
 <!-- CLUBS -->
+<!-- ========================= -->
 
 <div class="gallery-category">
 
@@ -156,13 +207,70 @@ clubs, organizers, and Four Square fans from across the country.
   </h3>
 
   <p>
-    School and community Four Square clubs bringing players together.
+    School and community Four Square clubs bringing players together
+    and giving the game a place to grow.
   </p>
+
+
+  <!-- Uni High Feature -->
+
+  <div class="gallery-media-card">
+
+    <h4>
+      Uni High Four Square Club
+    </h4>
+
+    <a
+      href="https://www.instagram.com/unifoursquareclub/"
+      target="_blank"
+      rel="noopener"
+      class="instagram-feature"
+    >
+
+      <div class="instagram-feature-image">
+        📸🎥
+      </div>
+
+      <p>
+        Check out game footage and Four Square action from the
+        Uni High Four Square Club on Instagram.
+      </p>
+
+      <span class="instagram-feature-label">
+        VIEW CLUB MEDIA →
+      </span>
+
+    </a>
+
+  </div>
+
+
+  <!-- Future Club Submissions -->
+
+  <div class="gallery-coming-soon" style="margin-top:1em;">
+
+    <div class="icon">
+      📸
+    </div>
+
+    <strong>
+      More Club Media Coming Soon
+    </strong>
+
+    <div>
+      Have a Four Square club you'd like featured?
+      Submit your photos or videos below.
+    </div>
+
+  </div>
 
 </div>
 
 
+
+<!-- ========================= -->
 <!-- PICKUP GAMES -->
+<!-- ========================= -->
 
 <div class="gallery-category">
 
@@ -176,12 +284,48 @@ clubs, organizers, and Four Square fans from across the country.
 
   <p>
     Friends, families, neighbors, and anyone looking for a game.
+    Four Square doesn't need a tournament to be fun.
   </p>
+
+
+  <div class="gallery-coming-soon">
+
+    <div class="icon">
+      📸🎥
+    </div>
+
+    <strong>
+      Photos &amp; Videos Coming Soon
+    </strong>
+
+    <div style="margin-top:0.5em;">
+
+      We're looking for pickup games from everywhere:
+      driveways, parks, schools, backyards, and beyond.
+
+    </div>
+
+  </div>
+
+
+  <div style="
+    margin-top:1em;
+    font-size:0.85rem;
+    color:#666;
+  ">
+
+    Have a great pickup game to share?
+    Submit it below.
+
+  </div>
 
 </div>
 
 
+
+<!-- ========================= -->
 <!-- CAMPS & EVENTS -->
+<!-- ========================= -->
 
 <div class="gallery-category">
 
@@ -194,13 +338,48 @@ clubs, organizers, and Four Square fans from across the country.
   </h3>
 
   <p>
-    Four Square camps, community events, and opportunities to play.
+    Four Square camps, community events, school events, and
+    other opportunities to get together and play.
   </p>
+
+
+  <div class="gallery-coming-soon">
+
+    <div class="icon">
+      📸🎥
+    </div>
+
+    <strong>
+      Photos &amp; Videos Coming Soon
+    </strong>
+
+    <div style="margin-top:0.5em;">
+
+      Show us how your camp or event brings
+      people together through Four Square.
+
+    </div>
+
+  </div>
+
+
+  <div style="
+    margin-top:1em;
+    font-size:0.85rem;
+    color:#666;
+  ">
+
+    Submit your camp or event media below.
+
+  </div>
 
 </div>
 
 
+
+<!-- ========================= -->
 <!-- TOURNAMENTS -->
+<!-- ========================= -->
 
 <div class="gallery-category">
 
@@ -213,227 +392,90 @@ clubs, organizers, and Four Square fans from across the country.
   </h3>
 
   <p>
-    Competitive Four Square from local tournaments to championship events.
+    Competitive Four Square from local tournaments and invitationals
+    to the biggest championship events.
   </p>
 
-</div>
 
-</div>
+  <!-- Four Square Invitational -->
 
-</section>
+  <div class="gallery-media-card">
 
-<!-- TOURNAMENTS -->
-
-<section class="gallery-section">
-
-<h2> 🏆 TOURNAMENTS </h2>
-
-<p class="gallery-section-intro">
-
-Four Square competition takes many forms, from local tournaments and
-invitational events to major championship competition. This section
-showcases the players, games, moments, and memories from tournaments
-around the Four Square community.
-
-</p>
-
-<!-- FOUR SQUARE INVITATIONAL -->
-
-<div class="gallery-feature">
-
-<h3>
-  Four Square Invitational
-</h3>
-
-<p style="
-  max-width:850px;
-  margin:0 auto 1.2em auto;
-  line-height:1.7;
-">
-
-  The Four Square Invitational brings together players for competitive
-  Four Square and showcases the energy, strategy, and excitement that
-  make the game such a great competitive sport.
-
-</p>
+    <h4>
+      Four Square Invitational
+    </h4>
 
 
-<!-- INVITATIONAL VIDEO -->
+    <div class="gallery-video-wrapper">
 
-<div class="gallery-video">
+      <iframe
+        src="https://www.youtube.com/embed/z9YYwg4WOdY?start=24"
+        title="Four Square Invitational"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
 
-  <iframe
-    src="https://www.youtube.com/embed/z9YYwg4WOdY?start=24"
-    title="Four Square Invitational"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-
-</div>
+    </div>
 
 
-<p style="
-  margin-top:1.2em;
-  margin-bottom:0;
-  font-size:0.95rem;
-  color:#555;
-">
+    <p>
 
-  Four Square Invitational video coverage.
+      The Four Square Invitational brings players together for
+      competitive Four Square and showcases the energy, skill,
+      strategy, and excitement that make the game such a great
+      competitive sport.
 
-</p>
+    </p>
 
-</div>
 
-<!-- MORE TOURNAMENT MEDIA -->
+    <div style="
+      font-size:0.85rem;
+      color:#666;
+      margin-top:0.5em;
+    ">
 
-<div class="gallery-feature">
+      🎥 Four Square Invitational game footage
 
-<h3>
-  More Tournament Action
-</h3>
+    </div>
 
-<div class="gallery-placeholder">
-
-  <div class="placeholder-icon">
-    📸🎥
   </div>
 
-  <strong>
-    More Tournament Photos &amp; Videos Coming Soon
-  </strong>
 
-  <p style="
-    margin-bottom:0.7em;
-    line-height:1.6;
-  ">
+  <!-- Future Tournament Submissions -->
 
-    Have photos or videos from a Four Square tournament?
-    Send them to us and they may be featured here.
+  <div class="gallery-coming-soon" style="margin-top:1em;">
 
-  </p>
+    <div class="icon">
+      🏆📸
+    </div>
 
-  <a
-    href="mailto:ericcostanza@yahoo.com?subject=Four Square Tournament Photos or Videos"
-    style="
-      color:#800000;
-      font-weight:bold;
-      text-decoration:none;
-    "
-  >
+    <strong>
+      More Tournament Media Coming Soon
+    </strong>
 
-    SEND TOURNAMENT MEDIA →
+    <div style="margin-top:0.5em;">
 
-  </a>
+      Have footage from a Four Square tournament?
+      We'd love to feature it.
 
-</div>
+    </div>
 
-</div>
-
-</section>
-
-<!-- FUTURE GALLERY SECTIONS -->
-
-<section class="gallery-section">
-
-<h2> CLUBS </h2>
-
-<div class="gallery-feature">
-
-<div class="gallery-placeholder">
-
-  <div class="placeholder-icon">
-    🏫📸
   </div>
 
-  <strong>
-    Club Photos &amp; Videos Coming Soon
-  </strong>
-
-  <p style="
-    margin-bottom:0;
-    line-height:1.6;
-  ">
-
-    Show us how your school or community Four Square club plays the game.
-
-  </p>
-
 </div>
 
 </div>
 
 </section>
 
-<section class="gallery-section">
 
-<h2> PICKUP GAMES </h2>
 
-<div class="gallery-feature">
-
-<div class="gallery-placeholder">
-
-  <div class="placeholder-icon">
-    🔴📸
-  </div>
-
-  <strong>
-    Pickup Game Photos &amp; Videos Coming Soon
-  </strong>
-
-  <p style="
-    margin-bottom:0;
-    line-height:1.6;
-  ">
-
-    Whether it's a backyard game, neighborhood matchup, family game,
-    or spontaneous battle, we want to see it.
-
-  </p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="gallery-section">
-
-<h2> CAMPS &amp; EVENTS </h2>
-
-<div class="gallery-feature">
-
-<div class="gallery-placeholder">
-
-  <div class="placeholder-icon">
-    ☀️📸
-  </div>
-
-  <strong>
-    Camp &amp; Event Photos &amp; Videos Coming Soon
-  </strong>
-
-  <p style="
-    margin-bottom:0;
-    line-height:1.6;
-  ">
-
-    Share the Four Square camps, events, and community gatherings
-    happening around the game.
-
-  </p>
-
-</div>
-
-</div>
-
-</section>
 
 <!-- SUBMIT PHOTOS / VIDEOS -->
 
 <section class="gallery-submit">
 
-<h2 style=" color:white; "> 📸 Have Four Square Photos or Videos? </h2>
+<h2> 📸 Have Four Square Photos or Videos? </h2>
 
 <p>
 
@@ -453,7 +495,7 @@ with the Four Square community.
 
 <a
 class="gallery-submit-button"
-href="mailto@yahoo.com?subject=Four Square Gallery Submission&body=Name:%0D%0AEvent or Game:%0D%0ALocation:%0D%0ADate:%0D%0ACategory (Clubs, Pickup Games, Camps & Events, or Tournaments):%0D%0A%0D%0ATell us about your Four Square game or event:%0D%0A"
+href="mailto@yahoo.com?subject=Four Square Gallery Submission&body=Name:%0D%0AEvent or Game:%0D%0ALocation:%0D%0ADate:%0D%0A%0D%0ACategory (Clubs, Pickup Games, Camps & Events, or Tournaments):%0D%0A%0D%0ATell us about your Four Square game or event:%0D%0A"
 
 
 
@@ -472,15 +514,18 @@ Please attach your photos or videos to the email before sending.
 
 </main>
 
+
+
+
 <!-- FOOTER -->
 
 <footer>
 
-<p style=" text-align:center; font-weight:bold; margin-top:3em; ">
+<p style=" text-align: center; font-weight: bold; margin-top: 3em; ">
 
 © 2026 National Four Square League™.
-Home of the Four Square National Championship™ and
-Four Square World Championship™.
+Home of the Four Square National Championship™
+and Four Square World Championship™.
 All Rights Reserved.
 
 </p>
