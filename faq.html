@@ -18,7 +18,7 @@
 
 <link rel="icon" type="image/png" href="images/favicon.png" />
 
-<style> body { font-family: 'Fredoka', sans-serif; } /* PAGE INTRO */ .gallery-intro { max-width: 900px; margin: 0 auto 2.5em auto; text-align: center; line-height: 1.7; font-size: 1.08rem; } /* FOUR SQUARE EVERYWHERE */ .gallery-section { max-width: 1200px; margin: 0 auto 3em auto; } .gallery-section > h2 { text-align: center; color: #800000; margin-bottom: 0.5em; } .gallery-section-intro { text-align: center; line-height: 1.6; margin: 0 auto 1.8em auto; max-width: 850px; } /* FOUR CATEGORY COLUMNS */ .gallery-categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2em; width: 100%; } /* CATEGORY CARD */ .gallery-category { background: #f7f7f7; border-radius: 12px; padding: 1.3em; text-align: center; border: 2px solid #e6e6e6; box-shadow: 0 3px 10px rgba(0,0,0,0.08); display: flex; flex-direction: column; box-sizing: border-box; } .gallery-category .icon { font-size: 2.3rem; margin-bottom: 0.2em; } .gallery-category h3 { margin: 0.2em 0 0.5em 0; color: #800000; font-size: 1.35rem; } .gallery-category > p { margin: 0 0 1.2em 0; line-height: 1.5; font-size: 0.95rem; } /* MEDIA ITEM INSIDE CATEGORY */ .gallery-media-card { background: white; border-radius: 10px; border: 1px solid #ddd; padding: 1em; margin-top: auto; box-shadow: 0 2px 7px rgba(0,0,0,0.08); } .gallery-media-card h4 { color: #008080; margin: 0 0 0.5em 0; font-size: 1.05rem; } .gallery-media-card p { font-size: 0.9rem; line-height: 1.5; margin: 0 0 1em 0; } /* INSTAGRAM FEATURE */ .instagram-feature { display: block; text-decoration: none; color: inherit; } .instagram-feature-image { background: linear-gradient(135deg, #800000, #008080); color: white; border-radius: 8px; padding: 1.5em 0.8em; font-size: 2.4rem; margin-bottom: 0.8em; } .instagram-feature-label { display: inline-block; background: #800000; color: white; padding: 0.45em 0.8em; border-radius: 6px; font-size: 0.85rem; font-weight: bold; margin-top: 0.3em; } /* VIDEO */ .gallery-video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 0.8em; } .gallery-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; } /* COMING SOON MEDIA */ .gallery-coming-soon { background: #fafafa; border: 2px dashed #c9c9c9; border-radius: 8px; padding: 1.2em 0.8em; color: #666; font-size: 0.9rem; line-height: 1.5; } .gallery-coming-soon .icon { font-size: 2rem; margin-bottom: 0.3em; } /* SUBMISSION SECTION */ .gallery-submit { background: linear-gradient(135deg, #800000, #008080); color: white; text-align: center; padding: 2em; border-radius: 12px; margin: 3em auto 2em auto; max-width: 900px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); } .gallery-submit h2 { color: white; margin-top: 0; font-size: 1.8rem; } .gallery-submit p { color: white; line-height: 1.6; font-size: 1.05rem; } .gallery-submit-button { display: inline-block; background: #e63946; color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; padding: 0.8em 1.7em; border-radius: 9px; margin-top: 0.7em; box-shadow: 0 4px 8px rgba(0,0,0,0.2); } .gallery-submit-button:hover { opacity: 0.9; } /* RESPONSIVE */ @media (max-width: 950px) { .gallery-categories { grid-template-columns: repeat(2, 1fr); } } @media (max-width: 550px) { .gallery-categories { grid-template-columns: 1fr; } } </style>
+<style> body { font-family: 'Fredoka', sans-serif; } /* PAGE INTRO */ .gallery-intro { max-width: 900px; margin: 0 auto 2.5em auto; text-align: center; line-height: 1.7; font-size: 1.08rem; } /* GALLERY SECTIONS */ .gallery-section { max-width: 1200px; margin: 0 auto 3em auto; } .gallery-section > h2 { text-align: center; color: #800000; margin-bottom: 0.5em; } .gallery-section-intro { text-align: center; line-height: 1.6; margin: 0 auto 1.8em auto; max-width: 850px; } /* FOUR CATEGORY COLUMNS */ .gallery-categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2em; width: 100%; } /* CATEGORY CARD */ .gallery-category { background: #f7f7f7; border-radius: 12px; padding: 1.3em; text-align: center; border: 2px solid #e6e6e6; box-shadow: 0 3px 10px rgba(0,0,0,0.08); box-sizing: border-box; min-width: 0; } .gallery-category .icon { font-size: 2.3rem; margin-bottom: 0.2em; } .gallery-category h3 { margin: 0.2em 0 0.5em 0; color: #800000; font-size: 1.35rem; } .gallery-category > p { margin: 0 0 1.2em 0; line-height: 1.5; font-size: 0.95rem; } /* MEDIA CARD */ .gallery-media-card { background: white; border-radius: 10px; border: 1px solid #ddd; padding: 1em; margin-top: 1em; box-shadow: 0 2px 7px rgba(0,0,0,0.08); box-sizing: border-box; } .gallery-media-card h4 { color: #008080; margin: 0 0 0.7em 0; font-size: 1.05rem; } .gallery-media-card p { font-size: 0.9rem; line-height: 1.5; margin: 0 0 1em 0; } /* INSTAGRAM FEATURE */ .instagram-feature { display: block; text-decoration: none; color: inherit; } .instagram-feature-image { background: linear-gradient(135deg, #800000, #008080); color: white; border-radius: 8px; padding: 1.5em 0.8em; font-size: 2.4rem; margin-bottom: 0.8em; } .instagram-feature-label { display: inline-block; background: #800000; color: white; padding: 0.45em 0.8em; border-radius: 6px; font-size: 0.85rem; font-weight: bold; margin-top: 0.3em; } /* VIDEO */ .gallery-video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 0.8em; } .gallery-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; } /* COMING SOON */ .gallery-coming-soon { background: #fafafa; border: 2px dashed #c9c9c9; border-radius: 8px; padding: 1.2em 0.8em; color: #666; font-size: 0.9rem; line-height: 1.5; margin-top: 1em; box-sizing: border-box; } .gallery-coming-soon .icon { font-size: 2rem; margin-bottom: 0.3em; } /* SUBMISSION SECTION */ .gallery-submit { background: linear-gradient(135deg, #800000, #008080); color: white; text-align: center; padding: 2em; border-radius: 12px; margin: 3em auto 2em auto; max-width: 900px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); box-sizing: border-box; } .gallery-submit h2 { color: white; margin-top: 0; font-size: 1.8rem; } .gallery-submit p { color: white; line-height: 1.6; font-size: 1.05rem; } .gallery-submit-button { display: inline-block; background: #e63946; color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; padding: 0.8em 1.7em; border-radius: 9px; margin-top: 0.7em; box-shadow: 0 4px 8px rgba(0,0,0,0.2); } .gallery-submit-button:hover { opacity: 0.9; } </style>
 
 </head>
 
@@ -29,6 +29,7 @@
 <div style=" display: flex; align-items: center; width: 100%; flex-wrap: nowrap; overflow: hidden; ">
 
 <!-- NFSL Logo -->
+
 <a
   href="index.html"
   style="
@@ -54,6 +55,7 @@
 
 
 <!-- Navigation -->
+
 <nav style="
   flex: 1 1 auto;
   min-width: 0;
@@ -112,11 +114,13 @@
 
 <main>
 
+<!-- ========================================= -->
+
 <!-- PAGE HERO -->
 
-<div class="title-row wc-title">
+<!-- ========================================= -->
 
-<!-- Left: Camera -->
+<div class="title-row wc-title">
 
 <span
 class="trophy-icon pulse"
@@ -141,8 +145,6 @@ aria-hidden="true"
 
 </div>
 
-<!-- Right: Video -->
-
 <span
 class="trophy-icon pulse"
 aria-hidden="true"
@@ -156,7 +158,14 @@ aria-hidden="true"
 
 </div>
 
+
+
+
+<!-- ========================================= -->
+
 <!-- PAGE INTRO -->
+
+<!-- ========================================= -->
 
 <section style=" background: linear-gradient(135deg, #800000, #008080); color: white; max-width: 900px; margin: 0 auto 2.5em auto; padding: 1.8em 2em; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); ">
 
@@ -174,7 +183,11 @@ community events, competitive tournaments, and everything in between.
 
 
 
+<!-- ========================================= -->
+
 <!-- FOUR SQUARE EVERYWHERE -->
+
+<!-- ========================================= -->
 
 <section class="gallery-section">
 
@@ -188,13 +201,17 @@ in all kinds of ways. Explore the Gallery by category.
 
 </p>
 
-<!-- FOUR CATEGORY COLUMNS -->
+<!-- ======================================= -->
+
+<!-- FOUR COLUMNS -->
+
+<!-- ======================================= -->
 
 <div class="gallery-categories">
 
-<!-- ========================= -->
-<!-- CLUBS -->
-<!-- ========================= -->
+<!-- ===================================== -->
+<!-- COLUMN 1: CLUBS -->
+<!-- ===================================== -->
 
 <div class="gallery-category">
 
@@ -207,8 +224,10 @@ in all kinds of ways. Explore the Gallery by category.
   </h3>
 
   <p>
+
     School and community Four Square clubs bringing players together
     and giving the game a place to grow.
+
   </p>
 
 
@@ -232,8 +251,10 @@ in all kinds of ways. Explore the Gallery by category.
       </div>
 
       <p>
+
         Check out game footage and Four Square action from the
         Uni High Four Square Club on Instagram.
+
       </p>
 
       <span class="instagram-feature-label">
@@ -245,21 +266,32 @@ in all kinds of ways. Explore the Gallery by category.
   </div>
 
 
-  <!-- Future Club Submissions -->
-
-  <div class="gallery-coming-soon" style="margin-top:1em;">
+  <div class="gallery-coming-soon">
 
     <div class="icon">
       📸
+    </div>
+
+    <strong>
+      More Club Media Coming Soon
+    </strong>
+
+    <div style="margin-top:0.5em;">
+
+      Have a Four Square club you'd like featured?
+      Submit your photos or videos below.
+
+    </div>
+
   </div>
 
 </div>
 
 
 
-<!-- ========================= -->
-<!-- PICKUP GAMES -->
-<!-- ========================= -->
+<!-- ===================================== -->
+<!-- COLUMN 2: PICKUP GAMES -->
+<!-- ===================================== -->
 
 <div class="gallery-category">
 
@@ -272,12 +304,32 @@ in all kinds of ways. Explore the Gallery by category.
   </h3>
 
   <p>
+
     Friends, families, neighbors, and anyone looking for a game.
     Four Square doesn't need a tournament to be fun.
+
   </p>
 
 
   <div class="gallery-coming-soon">
+
+    <div class="icon">
+      📸🎥
+    </div>
+
+    <strong>
+      Photos &amp; Videos Coming Soon
+    </strong>
+
+    <div style="margin-top:0.5em;">
+
+      We're looking for pickup games from everywhere:
+      driveways, parks, schools, backyards, and beyond.
+
+    </div>
+
+  </div>
+
 
   <div style="
     margin-top:1em;
@@ -294,9 +346,9 @@ in all kinds of ways. Explore the Gallery by category.
 
 
 
-<!-- ========================= -->
-<!-- CAMPS & EVENTS -->
-<!-- ========================= -->
+<!-- ===================================== -->
+<!-- COLUMN 3: CAMPS & EVENTS -->
+<!-- ===================================== -->
 
 <div class="gallery-category">
 
@@ -309,9 +361,32 @@ in all kinds of ways. Explore the Gallery by category.
   </h3>
 
   <p>
+
     Four Square camps, community events, school events, and
     other opportunities to get together and play.
+
   </p>
+
+
+  <div class="gallery-coming-soon">
+
+    <div class="icon">
+      📸🎥
+    </div>
+
+    <strong>
+      Photos &amp; Videos Coming Soon
+    </strong>
+
+    <div style="margin-top:0.5em;">
+
+      Show us how your camp or event brings
+      people together through Four Square.
+
+    </div>
+
+  </div>
+
 
   <div style="
     margin-top:1em;
@@ -327,9 +402,9 @@ in all kinds of ways. Explore the Gallery by category.
 
 
 
-<!-- ========================= -->
-<!-- TOURNAMENTS -->
-<!-- ========================= -->
+<!-- ===================================== -->
+<!-- COLUMN 4: TOURNAMENTS -->
+<!-- ===================================== -->
 
 <div class="gallery-category">
 
@@ -342,8 +417,10 @@ in all kinds of ways. Explore the Gallery by category.
   </h3>
 
   <p>
+
     Competitive Four Square from local tournaments and invitationals
     to the biggest championship events.
+
   </p>
 
 
@@ -391,9 +468,9 @@ in all kinds of ways. Explore the Gallery by category.
   </div>
 
 
-  <!-- Future Tournament Submissions -->
+  <!-- Future Tournament Media -->
 
-  <div class="gallery-coming-soon" style="margin-top:1em;">
+  <div class="gallery-coming-soon">
 
     <div class="icon">
       🏆📸
@@ -421,7 +498,11 @@ in all kinds of ways. Explore the Gallery by category.
 
 
 
+<!-- ========================================= -->
+
 <!-- SUBMIT PHOTOS / VIDEOS -->
+
+<!-- ========================================= -->
 
 <section class="gallery-submit">
 
@@ -467,7 +548,11 @@ Please attach your photos or videos to the email before sending.
 
 
 
+<!-- ========================================= -->
+
 <!-- FOOTER -->
+
+<!-- ========================================= -->
 
 <footer>
 
@@ -483,6 +568,5 @@ All Rights Reserved.
 </footer>
 
 </body> </html>
-
 
 
