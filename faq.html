@@ -1,181 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Gallery | National Four Square League</title>
 
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="stylesheet" href="styles-v2.css">
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="styles-v2.css" />
 
   <style>
+    /* =========================
+       GALLERY PAGE
+       ========================= */
+
+    .gallery-intro {
+      background: linear-gradient(135deg, #800000, #008080);
+      color: white;
+      max-width: 900px;
+      margin: 0 auto 2.5em auto;
+      padding: 1.8em 2em;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .gallery-intro p {
+      color: white;
+      margin: 0;
+      line-height: 1.7;
+      font-size: 1.08rem;
+    }
+
     .gallery-section {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto 3em auto;
     }
 
-    .gallery-section > h2 {
+    .gallery-section h2 {
       text-align: center;
-      color: #800000;
       margin-bottom: 0.5em;
     }
 
     .gallery-section-intro {
       text-align: center;
-      line-height: 1.6;
-      margin: 0 auto 1.8em auto;
       max-width: 850px;
+      margin: 0 auto 1.8em auto;
+      line-height: 1.6;
     }
 
-    .gallery-categories {
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.2em;
-      width: 100%;
-      align-items: start;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5em;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .gallery-category {
-      background: #f7f7f7;
+    .gallery-card {
+      background: #fff;
       border-radius: 12px;
-      padding: 1.3em;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
       text-align: center;
-      border: 2px solid #e6e6e6;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-      box-sizing: border-box;
-      min-width: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .gallery-category .icon {
-      font-size: 2.3rem;
-      margin-bottom: 0.2em;
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 7px 16px rgba(0,0,0,0.18);
     }
 
-    .gallery-category h3 {
-      margin: 0.2em 0 0.5em 0;
-      color: #800000;
-      font-size: 1.35rem;
+    .gallery-card h3 {
+      margin: 0.9em 0 0.5em 0;
     }
 
-    .gallery-category > p {
-      margin: 0 0 1.2em 0;
+    .gallery-card p {
+      padding: 0 1.2em 1.3em 1.2em;
       line-height: 1.5;
-      font-size: 0.95rem;
+      margin: 0;
     }
 
-    .gallery-media-card {
-      background: white;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      padding: 1em;
-      margin-top: 1em;
-      box-shadow: 0 2px 7px rgba(0,0,0,0.08);
-      box-sizing: border-box;
-    }
-
-    .gallery-media-card h4 {
-      color: #008080;
-      margin: 0 0 0.7em 0;
-      font-size: 1.05rem;
-    }
-
-    .gallery-media-card p {
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin: 0 0 1em 0;
-    }
-
-    .instagram-feature {
+    .gallery-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
       display: block;
+    }
+
+    .gallery-card a {
       text-decoration: none;
       color: inherit;
     }
 
-    .instagram-feature-image {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-      margin-bottom: 0.8em;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    .gallery-video {
+      max-width: 850px;
+      margin: 2em auto 0 auto;
     }
 
-    .instagram-feature-label {
-      display: inline-block;
-      background: #800000;
-      color: white;
-      padding: 0.45em 0.8em;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: bold;
-      margin-top: 0.3em;
-    }
-
-    .gallery-video-wrapper {
-      position: relative;
+    .gallery-video iframe {
       width: 100%;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 8px;
-      margin-bottom: 0.8em;
-    }
-
-    .gallery-video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      aspect-ratio: 16 / 9;
       border: 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     .gallery-submit {
-      background: linear-gradient(135deg, #800000, #008080);
-      color: white;
-      text-align: center;
-      padding: 2em;
-      border-radius: 12px;
-      margin: 3em auto 2em auto;
       max-width: 900px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      box-sizing: border-box;
+      margin: 3em auto;
+      padding: 2em;
+      background: #f5f5f5;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
     }
 
     .gallery-submit h2 {
-      color: white;
       margin-top: 0;
-      font-size: 1.8rem;
     }
 
     .gallery-submit p {
-      color: white;
       line-height: 1.6;
-      font-size: 1.05rem;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .gallery-submit-button {
       display: inline-block;
-      background: #e63946;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      padding: 0.8em 1.7em;
-      border-radius: 9px;
-      margin-top: 0.7em;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      cursor: pointer;
+      margin-top: 1em;
+      padding: 0.85em 1.5em;
       border: none;
+      border-radius: 8px;
+      background: #800000;
+      color: white;
       font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
     .gallery-submit-button:hover {
-      opacity: 0.9;
+      background: #008080;
+      transform: translateY(-2px);
     }
 
-    /* Gallery submission modal */
+    /* =========================
+       GALLERY MODAL
+       ========================= */
 
     .gallery-modal {
       display: none;
@@ -186,203 +160,151 @@
       width: 100%;
       height: 100%;
       overflow-y: auto;
-      background: rgba(0,0,0,0.72);
+      background: rgba(0,0,0,0.65);
       padding: 2em 1em;
       box-sizing: border-box;
     }
 
     .gallery-modal-content {
       position: relative;
-      background: white;
       max-width: 700px;
       margin: 2em auto;
+      background: white;
+      border-radius: 12px;
       padding: 2em;
-      border-radius: 14px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
       box-sizing: border-box;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
 
     .gallery-modal-content h2 {
-      color: #800000;
-      text-align: center;
       margin-top: 0;
-      margin-bottom: 0.35em;
-    }
-
-    .gallery-modal-intro {
       text-align: center;
-      line-height: 1.5;
-      margin: 0 0 1.5em 0;
-      color: #444;
     }
 
-    .gallery-close {
+    .gallery-modal-close {
       position: absolute;
       top: 10px;
       right: 16px;
-      color: #666;
       font-size: 2rem;
       font-weight: bold;
-      line-height: 1;
+      color: #666;
       cursor: pointer;
-      border: none;
-      background: transparent;
-      padding: 0;
+      line-height: 1;
     }
 
-    .gallery-close:hover {
+    .gallery-modal-close:hover {
       color: #800000;
     }
 
     .gallery-form-group {
-      margin-bottom: 1.15em;
+      margin-bottom: 1.1em;
     }
 
     .gallery-form-group label {
       display: block;
+      margin-bottom: 0.35em;
       font-weight: bold;
-      color: #800000;
-      margin-bottom: 0.4em;
     }
 
-.gallery-form-group input,
-.gallery-form-group select,
-.gallery-form-group textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.7em 0.75em;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 1rem;
-  background: white;
-  color: #333 !important;
-  -webkit-text-fill-color: #333;
-}
+    .gallery-form-group input,
+    .gallery-form-group select,
+    .gallery-form-group textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.7em 0.75em;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      background: white;
+      color: #333 !important;
+      -webkit-text-fill-color: #333;
+    }
 
-.gallery-form-group input::placeholder,
-.gallery-form-group textarea::placeholder {
-  color: #777 !important;
-  opacity: 1;
-}
+    .gallery-form-group input::placeholder,
+    .gallery-form-group textarea::placeholder {
+      color: #777 !important;
+      opacity: 1;
+    }
 
-.gallery-form-group select option {
-  color: #333;
-  background: white;
-}
+    .gallery-form-group select option {
+      color: #333;
+      background: white;
+    }
 
     .gallery-form-group textarea {
-      min-height: 110px;
+      min-height: 120px;
       resize: vertical;
     }
 
-    .gallery-form-group input:focus,
-    .gallery-form-group select:focus,
-    .gallery-form-group textarea:focus {
-      outline: none;
-      border-color: #008080;
-      box-shadow: 0 0 0 2px rgba(0,128,128,0.12);
-    }
-
-    .gallery-file-note {
-      font-size: 0.82rem;
-      line-height: 1.45;
+    .gallery-upload-note {
+      font-size: 0.9rem;
       color: #666;
-      margin-top: 0.45em;
-    }
-
-    .gallery-form-divider {
-      border: 0;
-      border-top: 1px solid #ddd;
-      margin: 1.5em 0;
+      line-height: 1.5;
+      margin-top: 0.4em;
     }
 
     .gallery-submit-form-button {
-      display: block;
       width: 100%;
-      background: #800000;
-      color: white;
+      padding: 0.85em;
       border: none;
       border-radius: 8px;
-      padding: 0.85em 1.2em;
+      background: #800000;
+      color: white;
       font-family: 'Fredoka', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
-      margin-top: 1.2em;
     }
 
     .gallery-submit-form-button:hover {
-      opacity: 0.9;
+      background: #008080;
     }
 
     .gallery-submit-form-button:disabled {
       opacity: 0.6;
-      cursor: wait;
+      cursor: not-allowed;
     }
 
-    .gallery-form-status {
+    .gallery-form-success {
       display: none;
-      text-align: center;
+      margin-top: 1em;
       padding: 1em;
       border-radius: 8px;
-      margin-top: 1em;
+      background: #e8f5e9;
+      color: #2e7d32;
+      text-align: center;
       line-height: 1.5;
     }
 
-    .gallery-success {
-      background: #e8f7f4;
-      border: 1px solid #008080;
-      color: #006666;
-    }
-
-    .gallery-error {
-      background: #fdeaea;
-      border: 1px solid #c62828;
-      color: #9b1c1c;
-    }
-
-    .gallery-success h3 {
-      margin-top: 0;
-      color: #008080;
-    }
-
-    .gallery-success p {
-      margin-bottom: 0;
-    }
-
-    .gallery-modal-note {
-      text-align: center;
-      color: #666;
-      font-size: 0.82rem;
+    .gallery-form-error {
+      display: none;
       margin-top: 1em;
-      line-height: 1.4;
+      padding: 1em;
+      border-radius: 8px;
+      background: #ffebee;
+      color: #b71c1c;
+      text-align: center;
+      line-height: 1.5;
     }
 
     @media (max-width: 800px) {
-      .gallery-categories {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 550px) {
-      .gallery-categories {
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
 
-      .gallery-modal {
-        padding: 1em 0.5em;
-      }
-
       .gallery-modal-content {
-        margin: 1em auto;
-        padding: 1.4em;
+        padding: 1.5em;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- =========================
+       HEADER
+       ========================= -->
 
   <header class="site-header">
     <div style="
@@ -433,9 +355,14 @@
     </div>
   </header>
 
+
+  <!-- =========================
+       MAIN CONTENT
+       ========================= -->
+
   <main>
 
-    <!-- Gallery Hero -->
+    <!-- Hero -->
 
     <div class="title-row wc-title">
       <span class="trophy-icon pulse" aria-hidden="true">📸</span>
@@ -449,24 +376,10 @@
     </div>
 
 
-    <!-- Gallery Intro -->
+    <!-- Intro -->
 
-    <section style="
-      background: linear-gradient(135deg, #800000, #008080);
-      color: white;
-      max-width: 900px;
-      margin: 0 auto 2.5em auto;
-      padding: 1.8em 2em;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    ">
-      <p style="
-        color: white;
-        margin: 0;
-        line-height: 1.7;
-        font-size: 1.08rem;
-      ">
+    <section class="gallery-intro">
+      <p>
         Four Square is meant to be played, shared, and enjoyed everywhere.
         The NFSL Gallery is a place to showcase the people and places keeping
         the game going, from school clubs and pickup games to camps,
@@ -475,132 +388,98 @@
     </section>
 
 
-    <!-- Four Square Everywhere -->
+    <!-- =========================
+         FOUR SQUARE EVERYWHERE
+         ========================= -->
 
     <section class="gallery-section">
 
-      <h2>FOUR SQUARE EVERYWHERE</h2>
+      <h2>Four Square Everywhere</h2>
 
       <p class="gallery-section-intro">
-        Whether you're playing at school, in your neighborhood, at a tournament,
-        or at a community event, Four Square has a way of bringing people
-        together. Explore some of the places and events where the game is being played.
+        Four Square can happen just about anywhere. From organized school
+        clubs to competitive tournaments and community events, these are
+        some of the ways players are keeping the game going.
       </p>
 
-
-      <div class="gallery-categories">
+      <div class="gallery-grid">
 
         <!-- Clubs -->
 
-        <div class="gallery-category">
+        <div class="gallery-card">
 
-          <div class="icon">🏫</div>
+          <a
+            href="https://www.instagram.com/unifoursquareclub/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="images/uniclub.png"
+              alt="Uni High Four Square Club"
+            />
 
-          <h3>Clubs</h3>
+            <h3>Clubs</h3>
+          </a>
 
           <p>
-            School and community Four Square clubs bringing players together
-            and giving the game a place to grow.
+            School and community Four Square clubs bring players together
+            regularly to learn, compete, and have fun.
           </p>
-
-          <div class="gallery-media-card">
-
-            <h4>Uni High Four Square Club</h4>
-
-            <a
-              href="https://www.instagram.com/unifoursquareclub/"
-              target="_blank"
-              rel="noopener"
-              class="instagram-feature"
-            >
-
-              <img
-                src="images/uniclub.png"
-                alt="Uni High Four Square Club game footage"
-                class="instagram-feature-image"
-              />
-
-              <p style="
-                margin:0 0 0.7em 0;
-                font-size:0.9rem;
-                line-height:1.5;
-              ">
-                Check out game footage and Four Square action from the
-                Uni High Four Square Club on Instagram.
-              </p>
-
-              <span class="instagram-feature-label">
-                VIEW CLUB MEDIA →
-              </span>
-
-            </a>
-
-          </div>
 
         </div>
 
 
         <!-- Pickup Games & Tournaments -->
 
-        <div class="gallery-category">
-
-          <div class="icon">🔴</div>
+        <div class="gallery-card">
 
           <h3>Pickup Games &amp; Tournaments</h3>
 
           <p>
-            From spontaneous pickup games to organized competitive events,
-            Four Square brings people together to play, compete, and have fun.
+            From casual pickup games to competitive tournaments,
+            Four Square brings people together wherever there is a court
+            and a ball.
           </p>
-
-          <div class="gallery-media-card">
-
-            <h4>Four Square Invitational</h4>
-
-            <div class="gallery-video-wrapper">
-
-              <iframe
-                src="https://www.youtube.com/embed/z9YYwg4WOdY?start=24"
-                title="Four Square Invitational game footage"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-              </iframe>
-
-            </div>
-
-            <p>
-              The Four Square Invitational brings players together for
-              competitive Four Square and showcases the energy, skill,
-              strategy, and excitement that make the game such a great
-              competitive sport.
-            </p>
-
-          </div>
 
         </div>
 
 
         <!-- Camps & Events -->
 
-        <div class="gallery-category">
-
-          <div class="icon">☀️</div>
+        <div class="gallery-card">
 
           <h3>Camps &amp; Events</h3>
 
           <p>
-            Four Square camps, community events, school events, and
-            other opportunities to get together and play.
+            Camps, community events, fundraisers, and other gatherings
+            are another great way to introduce new players to Four Square
+            and keep experienced players engaged.
           </p>
 
         </div>
 
       </div>
 
+
+      <!-- Four Square Invitational video -->
+
+      <div class="gallery-video">
+
+        <iframe
+          src="https://www.youtube.com/embed/z9YYwg4WOdY?start=24"
+          title="Four Square Invitational game footage"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
     </section>
 
 
-    <!-- Submit Media -->
+    <!-- =========================
+         SUBMISSION SECTION
+         ========================= -->
 
     <section class="gallery-submit">
 
@@ -629,33 +508,30 @@
   </main>
 
 
-  <!-- Submission Modal -->
+  <!-- =========================
+       GALLERY SUBMISSION MODAL
+       ========================= -->
 
   <div
     id="galleryModal"
     class="gallery-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="galleryModalTitle"
+    onclick="closeGalleryModal(event)"
   >
 
-    <div class="gallery-modal-content">
+    <div
+      class="gallery-modal-content"
+      onclick="event.stopPropagation()"
+    >
 
-      <button
-        type="button"
-        class="gallery-close"
+      <span
+        class="gallery-modal-close"
         onclick="closeGalleryModal()"
-        aria-label="Close submission form"
+        aria-label="Close"
       >
         &times;
-      </button>
+      </span>
 
-      <h2 id="galleryModalTitle">SHARE YOUR FOUR SQUARE MEDIA</h2>
-
-      <p class="gallery-modal-intro">
-        Tell us about your Four Square photo or video and upload your media below.
-      </p>
-
+      <h2>Submit Photos &amp; Videos</h2>
 
       <form
         id="gallerySubmissionForm"
@@ -668,12 +544,13 @@
 
           <label for="galleryName">Name *</label>
 
-<input
-  type="text"
-  id="galleryLocation"
-  name="fi-text-gameLocation"
-  placeholder="Town, school, park, venue, etc."
-/>
+          <input
+            type="text"
+            id="galleryName"
+            name="fi-sender-fullName"
+            placeholder="Your name"
+            required
+          />
 
         </div>
 
@@ -720,7 +597,7 @@
           <input
             type="text"
             id="galleryLocation"
-            name="fi-text-location"
+            name="fi-text-gameLocation"
             placeholder="Town, school, park, venue, etc."
           />
 
@@ -746,17 +623,20 @@
 
         <div class="gallery-form-group">
 
-          <label for="galleryCategory">Category *</label>
+          <label for="galleryCategory">Category</label>
 
           <select
             id="galleryCategory"
             name="fi-select-category"
-            required
           >
-            <option value="">Select a category...</option>
+            <option value="">Select a category</option>
             <option value="Clubs">Clubs</option>
-            <option value="Pickup Games & Tournaments">Pickup Games &amp; Tournaments</option>
-            <option value="Camps & Events">Camps &amp; Events</option>
+            <option value="Pickup Games & Tournaments">
+              Pickup Games &amp; Tournaments
+            </option>
+            <option value="Camps & Events">
+              Camps &amp; Events
+            </option>
           </select>
 
         </div>
@@ -766,39 +646,40 @@
 
         <div class="gallery-form-group">
 
-          <label for="galleryDescription">Tell Us About It</label>
+          <label for="galleryDescription">
+            Tell us about the photos or video
+          </label>
 
           <textarea
             id="galleryDescription"
             name="fi-text-description"
-            placeholder="Tell us what we're looking at and anything else you'd like us to know."
+            placeholder="Tell us what is happening in the photos or video, who is playing, or anything else you'd like us to know."
           ></textarea>
 
         </div>
-
-
-        <hr class="gallery-form-divider">
 
 
         <!-- File Upload -->
 
         <div class="gallery-form-group">
 
-          <label for="galleryFiles">
-            Upload Photos or Videos
+          <label for="galleryAttachments">
+            Upload Photos / Videos
           </label>
 
           <input
             type="file"
-            id="galleryFiles"
+            id="galleryAttachments"
             name="fi-file-attachments[]"
-            accept="image/*,video/*"
             multiple
+            accept="image/*,video/*"
           />
 
-          <div class="gallery-file-note">
-            You can select multiple photos and/or videos. The combined upload
-            limit is 25 MB per submission.
+          <div class="gallery-upload-note">
+            You can upload multiple photos or videos. Please keep the
+            total size of all uploaded files to 25 MB or less.
+            If a video or file is too large to upload, use the video
+            link field below instead.
           </div>
 
         </div>
@@ -809,7 +690,7 @@
         <div class="gallery-form-group">
 
           <label for="galleryVideoUrl">
-            Video URL
+            Video Link
           </label>
 
           <input
@@ -819,33 +700,12 @@
             placeholder="https://www.youtube.com/... or https://www.instagram.com/..."
           />
 
-          <div class="gallery-file-note">
-            If your video is too large to upload, paste the YouTube,
-            Instagram, or other video link here instead.
+          <div class="gallery-upload-note">
+            If your video is already online, paste the YouTube,
+            Instagram, or other video URL here. You can provide a
+            link instead of uploading the video, or provide both.
           </div>
 
-        </div>
-
-
-        <!-- Status -->
-
-        <div
-          id="galleryFormError"
-          class="gallery-form-status gallery-error"
-          role="alert"
-        ></div>
-
-
-        <div
-          id="galleryFormSuccess"
-          class="gallery-form-status gallery-success"
-          role="status"
-        >
-          <h3>Thank You!</h3>
-          <p>
-            Your Four Square photos or videos have been submitted to the NFSL.
-            We appreciate you helping us showcase the game!
-          </p>
         </div>
 
 
@@ -856,14 +716,27 @@
           id="galleryFormSubmit"
           class="gallery-submit-form-button"
         >
-          SUBMIT MEDIA →
+          SUBMIT PHOTOS &amp; VIDEOS
         </button>
 
-        <p class="gallery-modal-note">
-          By submitting media, you are giving the National Four Square League
-          permission to consider using the submitted photos or videos on NFSL
-          websites, social media, or other promotional materials.
-        </p>
+
+        <!-- Success -->
+
+        <div
+          id="galleryFormSuccess"
+          class="gallery-form-success"
+        >
+          Thanks! Your photos and/or videos have been submitted to the NFSL.
+          We appreciate you helping us showcase Four Square!
+        </div>
+
+
+        <!-- Error -->
+
+        <div
+          id="galleryFormError"
+          class="gallery-form-error"
+        ></div>
 
       </form>
 
@@ -872,7 +745,9 @@
   </div>
 
 
-  <!-- Footer -->
+  <!-- =========================
+       FOOTER
+       ========================= -->
 
   <footer>
     <p style="text-align: center; font-weight: bold; margin-top: 3em;">
@@ -882,7 +757,9 @@
   </footer>
 
 
-  <!-- Forminit SDK -->
+  <!-- =========================
+       FORMinit
+       ========================= -->
 
   <script src="https://forminit.com/sdk/v1/forminit.js"></script>
 
@@ -892,162 +769,183 @@
 
     const forminit = new Forminit();
 
-    const galleryModal = document.getElementById('galleryModal');
-    const galleryForm = document.getElementById('gallerySubmissionForm');
-    const galleryFormSubmit = document.getElementById('galleryFormSubmit');
-    const galleryFormError = document.getElementById('galleryFormError');
-    const galleryFormSuccess = document.getElementById('galleryFormSuccess');
 
+    /* =========================
+       OPEN / CLOSE MODAL
+       ========================= */
 
     function openGalleryModal() {
 
-      galleryModal.style.display = 'block';
+      const modal = document.getElementById('galleryModal');
+
+      modal.style.display = 'block';
 
       document.body.style.overflow = 'hidden';
-
-      setTimeout(function() {
-        document.getElementById('galleryName').focus();
-      }, 100);
 
     }
 
 
-    function closeGalleryModal() {
+    function closeGalleryModal(event) {
 
-      galleryModal.style.display = 'none';
+      if (
+        event &&
+        event.target &&
+        event.target.id !== 'galleryModal'
+      ) {
+        return;
+      }
+
+      const modal = document.getElementById('galleryModal');
+
+      modal.style.display = 'none';
 
       document.body.style.overflow = '';
 
     }
 
 
-    /* Close when clicking outside the modal */
-
-    galleryModal.addEventListener('click', function(event) {
-
-      if (event.target === galleryModal) {
-        closeGalleryModal();
-      }
-
-    });
-
-
-    /* Close with Escape */
+    /* =========================
+       ESC KEY
+       ========================= */
 
     document.addEventListener('keydown', function(event) {
 
-      if (
-        event.key === 'Escape' &&
-        galleryModal.style.display === 'block'
-      ) {
-        closeGalleryModal();
+      if (event.key === 'Escape') {
+
+        const modal = document.getElementById('galleryModal');
+
+        if (modal.style.display === 'block') {
+
+          closeGalleryModal();
+
+        }
+
       }
 
     });
 
 
-    /* Handle Gallery submission */
+    /* =========================
+       FORM SUBMISSION
+       ========================= */
 
-    galleryForm.addEventListener('submit', async function(event) {
+    document
+      .getElementById('gallerySubmissionForm')
+      .addEventListener('submit', async function(event) {
 
-      event.preventDefault();
-
-
-      galleryFormError.style.display = 'none';
-      galleryFormError.textContent = '';
-
-      galleryFormSuccess.style.display = 'none';
+        event.preventDefault();
 
 
-      /*
-       * Forminit allows up to 25 MB total file upload per submission.
-       * Check this before sending so users get a useful message rather
-       * than a generic upload error.
-       */
+        const galleryForm = event.target;
 
-      const files = document.getElementById('galleryFiles').files;
+        const submitButton =
+          document.getElementById('galleryFormSubmit');
 
-      let totalBytes = 0;
+        const successMessage =
+          document.getElementById('galleryFormSuccess');
 
-      for (let i = 0; i < files.length; i++) {
-        totalBytes += files[i].size;
-      }
-
-      const maxBytes = 25 * 1024 * 1024;
-
-      if (totalBytes > maxBytes) {
-
-        galleryFormError.textContent =
-          'Your selected files are larger than the 25 MB total upload limit. ' +
-          'Please remove some files or use the Video URL field for a video ' +
-          'that is already online.';
-
-        galleryFormError.style.display = 'block';
-
-        return;
-
-      }
+        const errorMessage =
+          document.getElementById('galleryFormError');
 
 
-      /* Disable button while submitting */
+        successMessage.style.display = 'none';
 
-      galleryFormSubmit.disabled = true;
-
-      galleryFormSubmit.textContent = 'SUBMITTING...';
+        errorMessage.style.display = 'none';
 
 
-      try {
+        /* =========================
+           CHECK TOTAL FILE SIZE
+           ========================= */
 
-        const formData = new FormData(galleryForm);
+        const fileInput =
+          document.getElementById('galleryAttachments');
 
-        const {
-          data,
-          error
-        } = await forminit.submit(
-          GALLERY_FORM_ID,
-          formData
-        );
+        let totalSize = 0;
+
+        if (fileInput && fileInput.files) {
+
+          for (const file of fileInput.files) {
+
+            totalSize += file.size;
+
+          }
+
+        }
 
 
-        if (error) {
+        const maxSize = 25 * 1024 * 1024;
 
-          galleryFormError.textContent =
-            error.message ||
-            'There was a problem submitting your media. Please try again.';
 
-          galleryFormError.style.display = 'block';
+        if (totalSize > maxSize) {
 
-          galleryFormSubmit.disabled = false;
+          errorMessage.textContent =
+            'The total size of your uploaded files is over 25 MB. Please remove one or more files, or provide a video link instead.';
 
-          galleryFormSubmit.textContent = 'SUBMIT MEDIA →';
+          errorMessage.style.display = 'block';
 
           return;
 
         }
 
 
-        /* Successful submission */
+        /* =========================
+           SUBMIT TO FORMINIT
+           ========================= */
 
-        galleryForm.reset();
+        submitButton.disabled = true;
 
-        galleryFormSubmit.style.display = 'none';
+        submitButton.textContent = 'SUBMITTING...';
 
-        galleryFormSuccess.style.display = 'block';
 
-      } catch (err) {
+        try {
 
-        galleryFormError.textContent =
-          'There was a problem submitting your media. Please try again.';
+          const formData = new FormData(galleryForm);
 
-        galleryFormError.style.display = 'block';
 
-        galleryFormSubmit.disabled = false;
+          const { data, error } = await forminit.submit(
+            GALLERY_FORM_ID,
+            formData
+          );
 
-        galleryFormSubmit.textContent = 'SUBMIT MEDIA →';
 
-      }
+          if (error) {
 
-    });
+            throw new Error(
+              error.message || 'There was a problem submitting the form.'
+            );
+
+          }
+
+
+          /* =========================
+             SUCCESS
+             ========================= */
+
+          galleryForm.reset();
+
+          submitButton.style.display = 'none';
+
+          successMessage.style.display = 'block';
+
+        }
+
+        catch (error) {
+
+          console.error(error);
+
+          errorMessage.textContent =
+            'There was a problem submitting your submission. Please try again.';
+
+          errorMessage.style.display = 'block';
+
+          submitButton.disabled = false;
+
+          submitButton.textContent =
+            'SUBMIT PHOTOS & VIDEOS';
+
+        }
+
+      });
 
   </script>
 
