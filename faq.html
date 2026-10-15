@@ -1109,35 +1109,25 @@ and Four Square World Championship™. All Rights Reserved.
 
 <script src="https://forminit.com/sdk/v1/forminit.js"></script>
 
-
 <script>
-
 const GALLERY_FORM_ID = 'fn1yxdvnn3f';
-
 const forminit = new Forminit();
-
 
 /* ========================================= */
 /* OPEN MODAL */
 /* ========================================= */
 
 function openGalleryModal() {
-
   const modal = document.getElementById('galleryModal');
-
   modal.style.display = 'block';
-
   document.body.style.overflow = 'hidden';
-
 }
-
 
 /* ========================================= */
 /* CLOSE MODAL */
 /* ========================================= */
 
 function closeGalleryModal(event) {
-
   if (
     event &&
     event.target &&
@@ -1147,34 +1137,23 @@ function closeGalleryModal(event) {
   }
 
   const modal = document.getElementById('galleryModal');
-
   modal.style.display = 'none';
-
   document.body.style.overflow = '';
-
 }
-
 
 /* ========================================= */
 /* ESC KEY */
 /* ========================================= */
 
 document.addEventListener('keydown', function(event) {
-
   if (event.key === 'Escape') {
-
     const modal = document.getElementById('galleryModal');
 
     if (modal.style.display === 'block') {
-
       closeGalleryModal();
-
     }
-
   }
-
 });
-
 
 /* ========================================= */
 /* FORM SUBMISSION */
@@ -1183,126 +1162,105 @@ document.addEventListener('keydown', function(event) {
 document
   .getElementById('gallerySubmissionForm')
   .addEventListener('submit', async function(event) {
-
     event.preventDefault();
 
-
     const galleryForm = event.target;
-
-    const submitButton =
-      document.getElementById('galleryFormSubmit');
-
-    const successMessage =
-      document.getElementById('galleryFormSuccess');
-
-    const errorMessage =
-      document.getElementById('galleryFormError');
-
+    const submitButton = document.getElementById('galleryFormSubmit');
+    const successMessage = document.getElementById('galleryFormSuccess');
+    const errorMessage = document.getElementById('galleryFormError');
 
     successMessage.style.display = 'none';
-
     errorMessage.style.display = 'none';
 
-
-    /* ========================================= */
     /* CHECK FILE SIZE */
-    /* ========================================= */
 
-    const fileInput =
-      document.getElementById('galleryAttachments');
-
+    const fileInput = document.getElementById('galleryAttachments');
     let totalSize = 0;
 
-
     if (fileInput && fileInput.files) {
-
       for (const file of fileInput.files) {
-
         totalSize += file.size;
-
       }
-
     }
 
-
-    const maxSize =
-      25 * 1024 * 1024;
-
+    const maxSize = 25 * 1024 * 1024;
 
     if (totalSize > maxSize) {
-
       errorMessage.textContent =
         'The total size of your uploaded files is over 25 MB. Please remove one or more files, or provide a video link instead.';
 
       errorMessage.style.display = 'block';
-
       return;
-
     }
 
-
-    /* ========================================= */
     /* SUBMIT TO FORMINIT */
-    /* ========================================= */
 
     submitButton.disabled = true;
-
     submitButton.textContent = 'SUBMITTING...';
 
-
     try {
+      const formData = new FormData(galleryForm);
 
-      const formData =
-        new FormData(galleryForm);
+      const result = await forminit.submit(
+        GALLERY_FORM_ID,
+        formData
+      );
 
+      console.log('NFSL Gallery Forminit result:', result);
 
-      const { data, error } =
-        await forminit.submit(
-          GALLERY_FORM_ID,
-          formData
-        );
+      if (result && result.error) {
+        const formError = result.error;
 
+        console.error('Forminit returned an error:', formError);
 
-      if (error) {
+        let details =
+          formError.message ||
+          formError.error ||
+          'Forminit did not provide an error message.';
 
-        throw new Error(
-          error.message ||
-          'There was a problem submitting the form.'
-        );
+        if (formError.code) {
+          details += ' (Code: ' + formError.code + ')';
+        }
 
+        throw new Error(details);
       }
 
+      if (!result || !result.data) {
+        throw new Error(
+          'Forminit returned no confirmation that the submission was received. Check the browser console.'
+        );
+      }
 
-      /* ========================================= */
       /* SUCCESS */
-      /* ========================================= */
 
       galleryForm.reset();
-
       submitButton.style.display = 'none';
-
       successMessage.style.display = 'block';
 
-    }
+      console.log(
+        'Gallery submission successful. Submission ID:',
+        result.data.hashId
+      );
 
-    catch (error) {
+    } catch (error) {
+      console.error('NFSL Gallery submission failed:', error);
 
-      console.error(error);
+      let errorText =
+        'There was a problem submitting your submission.';
 
-      errorMessage.textContent =
-        'There was a problem submitting your submission. Please try again.';
+      if (error && error.message) {
+        errorText += ' ' + error.message;
+      } else {
+        errorText += ' Check the browser console for details.';
+      }
 
+      errorMessage.textContent = errorText;
       errorMessage.style.display = 'block';
 
       submitButton.disabled = false;
-
-      submitButton.textContent =
-        'SUBMIT PHOTOS & VIDEOS';
-
+      submitButton.textContent = 'SUBMIT PHOTOS & VIDEOS';
     }
-
   });
-
 </script>
 
 
