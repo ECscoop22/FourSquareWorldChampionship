@@ -140,31 +140,15 @@
   <img src="images/4 Square World Championship™.PNG" alt="" style="width: 19%; max-height: 85px; object-fit: contain;">
   <img src="images/4 Square World Championship™.PNG" alt="" style="width: 19%; max-height: 85px; object-fit: contain;">
 </div>
-      src="images/NFSL logo.png"
-      alt="National Four Square League"
-      style="
-        display: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 180px;
-        max-width: 45%;
-        height: auto;
-        z-index: 10;
-        pointer-events: none;
-      "
-    />
-
   </div>
 
 </section>
 
 <!-- YouTube Player API -->
-<script src="https://www.youtube.com/iframe_api"></script>
-
 <script>
   let wcVideoPlayer;
+  let wcVideoCheckTimer;
+  const wcVideoOverlay = document.getElementById('wc-video-logo-overlay');
 
   function onYouTubeIframeAPIReady() {
     wcVideoPlayer = new YT.Player('wc-main-video', {
@@ -172,25 +156,33 @@
         onStateChange: function(event) {
           if (event.data === YT.PlayerState.PLAYING) {
             checkVideoTime();
+          } else {
+            clearTimeout(wcVideoCheckTimer);
+            wcVideoOverlay.style.display = 'none';
           }
         }
       }
     });
   }
 
-function checkVideoTime() {
-  if (player && player.getPlayerState() === YT.PlayerState.PLAYING) {
-    const currentTime = player.getCurrentTime();
+  function checkVideoTime() {
+    clearTimeout(wcVideoCheckTimer);
 
-    if (currentTime >= 5 && currentTime < 11) {
-      overlay.style.display = 'flex';
-    } else {
-      overlay.style.display = 'none';
+    if (
+      wcVideoPlayer &&
+      wcVideoPlayer.getPlayerState() === YT.PlayerState.PLAYING
+    ) {
+      const currentTime = wcVideoPlayer.getCurrentTime();
+
+      if (currentTime >= 5 && currentTime < 11) {
+        wcVideoOverlay.style.display = 'flex';
+      } else {
+        wcVideoOverlay.style.display = 'none';
+      }
+
+      wcVideoCheckTimer = setTimeout(checkVideoTime, 100);
     }
-
-    setTimeout(checkVideoTime, 250);
   }
-}
 </script>
 
 <section class="wc-batched-section">
